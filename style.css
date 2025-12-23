@@ -140,3 +140,153 @@ nav a:hover {
     display: none; /* clean mobile look */
   }
 }
+.section {
+  padding: 100px 80px;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  color: #9e9e9e;
+  max-width: 500px;
+  line-height: 1.6;
+}
+.collection-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+.collection-card {
+  background: #111;
+  border-radius: 16px;
+  padding: 40px;
+  min-height: 200px;
+  transition: 0.4s ease;
+  border: 1px solid #1f1f1f;
+}
+
+.collection-card:hover {
+  transform: translateY(-8px);
+  border-color: #444;
+}
+
+.collection-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.collection-card p {
+  color: #8e8e8e;
+  font-size: 14px;
+}
+.custom-section {
+  background: linear-gradient(to bottom, #0b0b0b, #111);
+}
+
+.custom-box {
+  margin-top: 60px;
+  max-width: 700px;
+  background: #111;
+  padding: 50px;
+  border-radius: 18px;
+  border: 1px solid #1f1f1f;
+}
+
+.custom-form {
+  display: grid;
+  gap: 25px;
+}
+
+.custom-form input,
+.custom-form textarea {
+  background: transparent;
+  border: 1px solid #333;
+  padding: 14px 16px;
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.custom-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+.custom-form input::placeholder,
+.custom-form textarea::placeholder {
+  color: #777;
+}
+
+.custom-form button {
+  margin-top: 10px;
+  padding: 14px;
+  background: white;
+  color: black;
+  border: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.custom-form button:hover {
+  background: #ddd;
+}
+
+.action-btn {
+  padding: 12px 20px;
+  border: 1px solid #333;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.action-btn:hover {
+  background: white;
+  color: black;
+}
+.action-btn {
+  padding: 12px 20px;
+  border: 1px solid #333;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.action-btn:hover {
+  background: white;
+  color: black;
+}
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 900px) {
+  .section {
+    padding: 60px 40px;
+  }
+
+  .custom-box {
+    padding: 35px;
+  }
+}
+
