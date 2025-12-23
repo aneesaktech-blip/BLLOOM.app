@@ -1,42 +1,160 @@
-body {
+/* RESET */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+html, body {
+  background: #ffffff;
+  color: #111;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  border-bottom: 1px solid #eee;
+  background: white;
+}
+
+.logo {
+  font-size: 28px;
+  letter-spacing: 5px;
+}
+
+nav a {
+  margin-left: 30px;
+  color: #111;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  opacity: 0.6;
+}
+
+/* HERO */
+.hero.editorial {
+  height: 90vh;
+  background: #e8e8e8;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+}
+
+.hero-text h1 {
+  font-size: 90px;
+  letter-spacing: 8px;
+}
+
+.hero-text p {
+  margin: 20px 0;
+  font-size: 18px;
+  color: #444;
+}
+
+.btn {
+  padding: 14px 38px;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.btn.dark {
   background: black;
   color: white;
-  font-family: Arial;
 }
 
-/* TOP */
-.top {
+/* STRIP */
+.strip {
   padding: 20px;
   text-align: center;
-  border-bottom: 1px solid gray;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 
-/* MIDDLE */
-.middle {
-  height: 80vh;
+/* SECTIONS */
+.section {
+  padding: 100px 60px;
+}
+
+.section.wide {
+  padding: 120px 80px;
+}
+
+.center {
   text-align: center;
-  padding-top: 100px;
+  margin-bottom: 50px;
 }
 
-.middle h2 {
-  font-size: 40px;
+/* GRID */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.middle p {
-  color: lightgray;
+.image-box {
+  background: #dcdcdc;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
 }
 
-button {
-  padding: 10px 25px;
-  background: gold;
-  border: none;
+.text-box h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.text-box p {
   font-size: 16px;
+  color: #555;
+  line-height: 1.7;
 }
 
-/* BOTTOM */
-.bottom {
-  text-align: center;
-  padding: 20px;
-  color: gray;
+.link {
+  display: inline-block;
+  margin-top: 30px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
 }
+
+/* CARDS */
+.cards.luxury {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: #f4f4f4;
+  height: 420px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  font-size: 13px;
+  border-top: 1px solid #eee;
+  color: #777;
+}
+
