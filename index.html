@@ -1,72 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>BLLOOM</title>
-  <link rel="stylesheet" href="style.css">
 
-  <!-- REQUIRED FOR 3D MODELS -->
-  <script type="module"
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- MODEL VIEWER (MUST BE IN HEAD, ONLY ONCE) -->
+  <script
+    type="module"
     src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
   </script>
-
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <header class="navbar dark">
   <div class="logo">BLLOOM</div>
- <nav>
-  <a href="/">Home</a>
-  <a href="/men.html">Men</a>
-  <a href="/women.html">Women</a>
-</nav>
-
+  <nav>
+    <a href="/">HOME</a>
+  </nav>
 </header>
 
-<!-- HERO SECTION -->
 <section class="hero-dark">
 
-  <!-- LEFT TEXT -->
   <div class="hero-content">
     <h1>Craft Your Style.<br>Your Way.</h1>
-    <p>
-      Premium silhouettes designed for movement,
-      comfort, and confidence.
-    </p>
+    <p>Premium silhouettes built for confidence.</p>
     <a class="btn-outline" href="#">SHOP NOW</a>
   </div>
 
-  <!-- RIGHT 3D MODEL -->
+  <!-- 3D MODEL -->
   <div class="hero-model">
     <model-viewer
-  src="https://res.cloudinary.com/dviponk13/raw/upload/v1766527204/hoodie_rjsjpl.glb"
-  camera-controls
-  auto-rotate
-  rotation-per-second="20deg"
-  exposure="1.2"
-  shadow-intensity="1"
-  environment-image="neutral"
-  camera-orbit="0deg 75deg 2.5m"
-  min-camera-orbit="auto auto 2m"
-  max-camera-orbit="auto auto 3.5m"
-  crossorigin="anonymous"
-  style="width:100%; height:100%; background:transparent;">
-</model-viewer>
-
+      src="https://res.cloudinary.com/dviponk13/raw/upload/v1766527204/hoodie_rjsjpl.glb"
+      camera-controls
+      auto-rotate
+      rotation-per-second="20deg"
+      exposure="1.2"
+      shadow-intensity="1"
+      environment-image="neutral"
+      camera-orbit="0deg 75deg 2.8m"
+      min-camera-orbit="auto auto 2m"
+      max-camera-orbit="auto auto 4m"
+      crossorigin="anonymous">
+    </model-viewer>
   </div>
 
 </section>
 
-<!-- FOOTER -->
 <footer class="dark-footer">
   © 2025 BLLOOM
 </footer>
 
 </body>
 </html>
-
-
-
