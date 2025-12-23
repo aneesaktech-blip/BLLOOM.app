@@ -289,4 +289,85 @@ nav a:hover {
     padding: 35px;
   }
 }
+/* SOFT DEPTH */
+.hero-dark,
+.section {
+  position: relative;
+}
+
+.hero-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.04), transparent 60%);
+  pointer-events: none;
+}
+.hero-content h1 {
+  text-transform: uppercase;
+}
+
+.section-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.collection-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(255,255,255,0.05),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.collection-card:hover::after {
+  opacity: 1;
+}
+.section {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: sectionReveal 1s ease forwards;
+}
+
+.section:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+.section:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes sectionReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.btn-outline {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-outline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s;
+  z-index: -1;
+}
+
+.btn-outline:hover::after {
+  transform: scaleX(1);
+}
+
 
