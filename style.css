@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +10,15 @@
 
 html, body {
   width: 100%;
-  height: 100%;
+  height: auto;
   background: #0b0b0b;
   color: white;
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 .navbar.dark {
   display: flex;
   justify-content: space-between;
@@ -40,7 +45,9 @@ nav a:hover {
   color: white;
 }
 
-/* HERO SECTION */
+/* =========================
+   HERO SECTION (TEXT + 3D)
+========================= */
 .hero-dark {
   min-height: calc(100vh - 90px);
   display: grid;
@@ -50,6 +57,7 @@ nav a:hover {
   gap: 40px;
 }
 
+/* LEFT TEXT */
 .hero-content h1 {
   font-size: 64px;
   line-height: 1.1;
@@ -71,24 +79,64 @@ nav a:hover {
   text-decoration: none;
   font-size: 13px;
   letter-spacing: 2px;
+  transition: 0.3s;
 }
 
-/* IMAGE PLACEHOLDER */
-.hero-image {
+.btn-outline:hover {
+  background: white;
+  color: black;
+}
+
+/* =========================
+   3D MODEL CONTAINER
+========================= */
+.hero-model {
   height: 520px;
   background: radial-gradient(circle at top, #2a2a2a, #0b0b0b);
+  border-radius: 14px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555;
-  letter-spacing: 2px;
 }
 
-/* FOOTER */
+/* Make model-viewer fill box */
+.hero-model model-viewer {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================
+   FOOTER
+========================= */
 .dark-footer {
   padding: 30px;
   text-align: center;
   font-size: 12px;
   color: #666;
   border-top: 1px solid #1f1f1f;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .hero-dark {
+    grid-template-columns: 1fr;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .hero-model {
+    height: 420px;
+    margin-top: 40px;
+  }
+
+  nav {
+    display: none; /* clean mobile look */
+  }
 }
