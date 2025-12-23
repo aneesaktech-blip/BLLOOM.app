@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: Arial;
+}
+
+/* TOP */
+.top {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid gray;
+}
+
+/* MIDDLE */
+.middle {
+  height: 80vh;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.middle h2 {
+  font-size: 40px;
+}
+
+.middle p {
+  color: lightgray;
+}
+
+button {
+  padding: 10px 25px;
+  background: gold;
+  border: none;
+  font-size: 16px;
+}
+
+/* BOTTOM */
+.bottom {
+  text-align: center;
+  padding: 20px;
+  color: gray;
+}
