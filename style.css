@@ -65,6 +65,10 @@ body {
   outline: none;
   border-color: #444;
 }
+.nav-search {
+  margin-top: 32px; /* ⬇️ more down */
+}
+
 
 /* ACTION LINKS */
 .nav-actions {
@@ -85,7 +89,12 @@ body {
 .nav-actions a:hover {
   color: white;
 }
-
+.nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
 /* BADGE */
 .badge {
   position: absolute;
@@ -97,6 +106,7 @@ body {
   padding: 2px 6px;
   border-radius: 50%;
 }
+
 
 /* =========================
    HERO SECTION
@@ -513,29 +523,55 @@ body {
   display: block;
 }
 
-/* FLOWER DECORATION ON SEARCH BAR */
 .nav-search {
   position: relative;
 }
 
+/* FLOWERS */
 .nav-search::before,
 .nav-search::after {
   content: "✿";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
   pointer-events: none;
 }
 
 .nav-search::before {
-  left: -18px;
+  left: -22px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .nav-search::after {
-  right: -18px;
+  right: -22px;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
+/* EXTRA FLOWERS */
+.nav-search input::before,
+.nav-search input::after {
+  content: "✿";
+  position: absolute;
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+}
+
+.nav-search input::before {
+  left: 14px;
+  top: -18px;
+}
+
+.nav-search input::after {
+  right: 14px;
+  top: -18px;
+}
+.nav-search::before,
+.nav-search::after {
+  text-shadow: 0 0 6px rgba(255,255,255,0.4);
+}
+
 .menu-wrapper {
   position: relative;
 }
@@ -579,6 +615,3 @@ body {
 .menu-dropdown.show {
   display: block;
 }
-
-
-
