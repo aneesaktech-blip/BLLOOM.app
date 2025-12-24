@@ -407,6 +407,8 @@ body {
 
 /* SEARCH BAR */
 .nav-search input {
+  
+
   width: 420px;
   padding: 12px 18px;
   background: rgba(255,255,255,0.08);
@@ -421,6 +423,11 @@ body {
 .nav-search input::placeholder {
   color: #aaa;
 }
+/* PUSH SEARCH BAR DOWN */
+.nav-search {
+  margin-top: 22px; /* ⬇️ adjust this if you want more */
+}
+
 
 /* RIGHT SIDE */
 .nav-right {
@@ -493,5 +500,29 @@ body {
 /* SHOW MENU */
 .menu-wrapper:hover .menu-dropdown {
   display: block;
+}
+
+/* FLOWER DECORATION ON SEARCH BAR */
+.nav-search {
+  position: relative;
+}
+
+.nav-search::before,
+.nav-search::after {
+  content: "✿";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+.nav-search::before {
+  left: -18px;
+}
+
+.nav-search::after {
+  right: -18px;
 }
 
