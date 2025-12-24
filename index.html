@@ -1,21 +1,15 @@
-
-
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
 
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="/theme.css">
-  
+  <link rel="stylesheet" href="/theme.css" />
 
-  <!-- MODEL VIEWER -->
+  <!-- MODEL VIEWER (MANDATORY) -->
   <script
     type="module"
     src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
@@ -23,6 +17,7 @@
 </head>
 
 <body>
+
   <!-- NAVBAR -->
   <header class="navbar dark">
     <div class="logo">BLOOM</div>
@@ -34,7 +29,9 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- =========================
+       HERO SECTION
+  ========================= -->
   <section class="hero-section">
     <div class="hero-dark">
 
@@ -57,103 +54,80 @@
           rotation-per-second="30deg"
           exposure="1"
           shadow-intensity="1"
-          environment-image="neutral"
-        >
+          environment-image="neutral">
         </model-viewer>
       </div>
 
-     
+      <!-- SCROLL INDICATOR -->
+      <div
+        class="scroll-indicator"
+        onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">
+        ↓
+      </div>
 
-<!-- =========================
-     HERO (TOP SECTION)
-  <!-- SCROLL INDICATOR -->
-  <div
-    class="scroll-indicator"
-    onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">
-    ↓
-  </div>
-
-</section>
-
-<!-- =========================
-     PRODUCTS (EMPTY FOR NOW)
-========================= -->
-<section class="section" id="products">
-  <h2 class="section-title">Products</h2>
-  <p class="section-subtitle">
-    New drops coming soon. Stay tuned.
-  </p>
-
-  <!-- Products will be added here later -->
-</section>
-
-<!-- =========================
-     FEATURED COLLECTIONS
-========================= -->
-<section class="section">
-  <h2 class="section-title">Featured Collections</h2>
-  <p class="section-subtitle">
-    Designed for modern silhouettes and everyday confidence.
-  </p>
-
-  <div class="collection-grid">
-    <div class="collection-card">
-      <h3>Oversized Hoodies</h3>
-      <p>Street-ready comfort.</p>
     </div>
+  </section>
 
-    <div class="collection-card">
-      <h3>Minimal Tees</h3>
-      <p>Clean. Soft. Everyday.</p>
+  <!-- =========================
+       PRODUCTS (EMPTY)
+  ========================= -->
+  <section class="section" id="products">
+    <h2 class="section-title">Products</h2>
+    <p class="section-subtitle">
+      New drops coming soon. Stay tuned.
+    </p>
+  </section>
+
+  <!-- =========================
+       FEATURED COLLECTIONS
+  ========================= -->
+  <section class="section">
+    <h2 class="section-title">Featured Collections</h2>
+    <p class="section-subtitle">
+      Designed for modern silhouettes and everyday confidence.
+    </p>
+
+    <div class="collection-grid">
+      <div class="collection-card">
+        <h3>Oversized Hoodies</h3>
+        <p>Street-ready comfort.</p>
+      </div>
+
+      <div class="collection-card">
+        <h3>Minimal Tees</h3>
+        <p>Clean. Soft. Everyday.</p>
+      </div>
+
+      <div class="collection-card">
+        <h3>Custom Fits</h3>
+        <p>Designed your way.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="collection-card">
-      <h3>Custom Fits</h3>
-      <p>Designed your way.</p>
+  <!-- =========================
+       CUSTOMIZATION REQUEST
+  ========================= -->
+  <section class="section custom-section">
+    <h2 class="section-title">Customize Your Fit</h2>
+    <p class="section-subtitle">
+      Want something unique? Tell us exactly what you want.
+    </p>
+
+    <div class="custom-box">
+      <form class="custom-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="text" placeholder="Product Type (Hoodie / Tee)" required />
+        <textarea placeholder="Describe your custom request" required></textarea>
+        <button type="submit">SUBMIT REQUEST</button>
+      </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- =========================
-     CUSTOMIZATION REQUEST
-========================= -->
-<section class="section custom-section">
-  <h2 class="section-title">Customize Your Fit</h2>
-  <p class="section-subtitle">
-    Want something unique? Tell us exactly what you want.
-  </p>
-
-  <div class="custom-box">
-    <form class="custom-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="text" placeholder="Product Type (Hoodie / Tee)" required>
-      <textarea placeholder="Describe your custom request" required></textarea>
-      <button type="submit">SUBMIT REQUEST</button>
-    </form>
-  </div>
-</section>
-
-<!-- =========================
-     FOOTER
-========================= -->
-<footer class="dark-footer">
-  © 2025 BLLOOM
-</footer>
+  <!-- FOOTER -->
+  <footer class="dark-footer">
+    © 2025 BLLOOM
+  </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
