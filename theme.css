@@ -27,92 +27,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* ================================
-   NAVBAR
-   ================================ */
 
-.navbar {
-  position: relative;
-  height: 90px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 60px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-/* LEFT LINKS */
-.nav-left {
-  display: flex;
-  gap: 32px;
-}
-
-.nav-link {
-  position: relative;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--silver-dim);
-  text-decoration: none;
-  padding-bottom: 6px;
-  transition: color 0.3s ease;
-}
-
-/* BLOOD UNDERLINE */
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--blood-glow);
-  box-shadow: 0 0 10px var(--blood-glow);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover {
-  color: var(--silver-main);
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* CENTER LOGO */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.brand-logo {
-  margin: 0;
-  font-size: 42px;
-  letter-spacing: 10px;
-  font-weight: 600;
-  color: var(--silver-main);
-  text-shadow:
-    0 0 10px rgba(255,255,255,0.35),
-    0 0 25px rgba(255,255,255,0.15);
-  animation: subtle-flicker 6s infinite;
-}
-
-/* BLOOD DOT */
-.brand-logo::after {
-  content: ".";
-  color: var(--blood-glow);
-  text-shadow: 0 0 12px var(--blood-glow);
-}
-
-/* SUBTLE FLICKER */
-@keyframes subtle-flicker {
-  0%, 100% { opacity: 1; }
-  48% { opacity: 0.96; }
-  50% { opacity: 0.85; }
-  52% { opacity: 0.97; }
-}
 
 /* ================================
    OPTIONAL GLOBAL HELPERS
@@ -163,9 +78,8 @@ a:visited {
 a:focus {
   outline: none;
 }
-/* ===== PAGE LINKS BOX (HOME / SHOP / ETC) ===== */
 /* ================================
-   NAVBAR LAYOUT
+   NAVBAR — FINAL CLEAN VERSION
    ================================ */
 
 .navbar {
@@ -174,51 +88,23 @@ a:focus {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 0 60px;
+  padding: 0 100px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ================================
-   LEFT (WOMEN / MEN)
-   ================================ */
-
+/* LEFT: WOMEN / MEN */
 .nav-left {
   display: flex;
   gap: 28px;
 }
 
-.nav-link {
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--silver-dim);
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 4px;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: var(--silver-main);
-}
-
-/* ================================
-   CENTER (LOGO)
-   ================================ */
-
+/* CENTER: LOGO */
 .nav-center {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  pointer-events: none; /* prevents overlap interaction */
   z-index: 1;
-}
-
-.nav-pages-box {
-  z-index: 2;
-}
-.nav-pages-box {
-  transform: translateX(20px);
+  pointer-events: none;
 }
 
 .brand-logo {
@@ -231,44 +117,51 @@ a:focus {
     0 0 10px rgba(255,255,255,0.35),
     0 0 25px rgba(255,255,255,0.15);
 }
-
-/* BLOOD ACCENT DOT */
+/* SUBTLE BLOOD STICKER */
 .brand-logo::after {
-  content: ".";
-  color: var(--blood-glow);
-  margin-left: 6px;
-  text-shadow: 0 0 10px var(--blood-glow);
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background: var(--blood-glow);
+  box-shadow: 0 0 6px var(--blood-glow);
+  vertical-align: middle;
 }
 
-/* ================================
-   RIGHT BOX (HOME / SHOP / ETC)
-   ================================ */
 
+
+
+/* RIGHT: PAGE LINKS BOX */
 .nav-pages-box {
   margin-left: auto;
   display: flex;
   gap: 22px;
   padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 14px;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 18px rgba(255, 0, 0, 0.08);
+  z-index: 2;
 }
 
-/* LINKS INSIDE BOX */
+/* LINKS */
 .page-link {
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--silver-dim);
-  text-decoration: none;
   position: relative;
   padding-bottom: 4px;
   transition: color 0.3s ease;
 }
 
-/* BLOOD UNDERLINE */
+.page-link:hover {
+  color: var(--silver-main);
+}
+
 .page-link::after {
   content: "";
   position: absolute;
@@ -281,93 +174,7 @@ a:focus {
   transition: width 0.3s ease;
 }
 
-.page-link:hover {
-  color: var(--silver-main);
-}
-
 .page-link:hover::after {
   width: 100%;
 }
 
-/* OPTIONAL: BOX HOVER GLOW */
-.nav-pages-box:hover {
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.15);
-}
-
-/* ================================
-   GLOBAL LINK RESET (IMPORTANT)
-   ================================ */
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-a:visited {
-  color: inherit;
-}
-
-a:focus {
-  outline: none;
-}
-
-.nav-pages-box {
-  display: flex;
-  gap: 22px;
-  padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 14px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 18px rgba(255, 0, 0, 0.08);
-}
-
-/* LINKS INSIDE BOX */
-.page-link {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--silver-dim);
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 4px;
-  transition: color 0.3s ease;
-}
-
-/* BLOOD UNDERLINE */
-.page-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--blood-glow);
-  box-shadow: 0 0 8px var(--blood-glow);
-  transition: width 0.3s ease;
-}
-
-.page-link:hover {
-  color: var(--silver-main);
-}
-
-.page-link:hover::after {
-  width: 100%;
-}
-
-/* OPTIONAL: BOX HOVER */
-.nav-pages-box:hover {
-  box-shadow: 0 0 28px rgba(255, 0, 0, 0.14);
-}
-.nav-pages-box {
-  margin-left: auto;
-}
-
-/* PUSH RIGHT NAV FURTHER RIGHT */
-.nav-pages-box {
-  margin-left: auto;
-  margin-right: 20px;
-}
-.navbar {
-  padding: 0 80px; /* was 60px */
-}
