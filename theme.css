@@ -1,0 +1,78 @@
+/* ===== BLOODY SILVER THEME ===== */
+
+:root {
+  --bg-black: #0b0b0e;
+  --bg-soft: #15151b;
+
+  --silver-main: #e2e2e6;
+  --silver-dim: #a9a9b0;
+
+  --blood-dark: #5a0000;
+  --blood-main: #8b0000;
+  --blood-glow: #ff1a1a;
+}
+
+/* Global background */
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, #1a1a1f 0%, #0b0b0e 70%);
+  color: var(--silver-main);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== TEXT GLOW ===== */
+.glow-text {
+  color: var(--silver-main);
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.45),
+    0 0 18px rgba(255,255,255,0.18);
+}
+
+/* ===== NAV LINKS ===== */
+nav a {
+  color: var(--silver-dim);
+  text-decoration: none;
+  margin: 0 18px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--silver-main);
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.5),
+    0 0 22px rgba(255,255,255,0.25);
+}
+
+/* ===== BLOOD BUTTON ===== */
+.blood-btn {
+  background: linear-gradient(135deg, var(--blood-dark), var(--blood-main));
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow:
+    0 0 12px var(--blood-glow),
+    0 0 35px rgba(255, 0, 0, 0.45);
+  transition: all 0.3s ease;
+}
+
+.blood-btn:hover {
+  box-shadow:
+    0 0 22px var(--blood-glow),
+    0 0 60px var(--blood-glow);
+  transform: translateY(-2px);
+}
+
+/* ===== GLASS CARD ===== */
+.glass-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.18);
+}
