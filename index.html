@@ -7,9 +7,10 @@
 
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="/theme.css" />
+    <link rel="stylesheet" href="theme.css" />
 
-  <!-- MODEL VIEWER (MANDATORY) -->
+
+  <!-- MODEL VIEWER -->
   <script
     type="module"
     src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
@@ -18,15 +19,40 @@
 
 <body>
 
-  <!-- NAVBAR -->
+  <!-- =========================
+       NAVBAR
+  ========================= -->
   <header class="navbar dark">
-    <div class="logo">BLOOM</div>
-    <nav>
-      <a href="#">HOME</a>
-      <a href="#">COLLECTION</a>
-      <a href="#">CUSTOM</a>
-      <a href="#">CONTACT</a>
+    <div class="logo">BLLOOM</div>
+
+    <!-- MAIN NAV LINKS -->
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/shop">Shop</a>
+      <a href="/customization">Customization</a>
+      
     </nav>
+
+    <!-- SEARCH -->
+    <div class="nav-search">
+      <input
+        type="text"
+        placeholder="Search products..."
+        aria-label="Search" />
+    </div>
+
+    <!-- ACTION LINKS -->
+    <div class="nav-actions">
+      <a href="/wishlist" class="nav-icon">
+        Wishlist
+        <span class="badge">0</span>
+      </a>
+
+      <a href="/cart" class="nav-icon">
+        Cart
+        <span class="badge">0</span>
+      </a>
+    </div>
   </header>
 
   <!-- =========================
@@ -35,25 +61,23 @@
   <section class="hero-section">
     <div class="hero-dark">
 
-      <!-- LEFT TEXT -->
+      <!-- HERO TEXT -->
       <div class="hero-content">
         <h1>Craft Your<br>Style</h1>
         <p>
           Premium custom fashion designed to match your individuality.
           Crafted with precision, styled with purpose.
         </p>
-        <a href="#" class="btn-outline">SHOP NOW</a>
+        <a href="/shop" class="btn-outline">Shop Now</a>
       </div>
 
       <!-- 3D JACKET -->
       <div class="hero-model">
         <model-viewer
-          src="/jacket.glb"
-          camera-controls
+          src="https://res.cloudinary.com/dviponk13/image/upload/v1766527204/hoodie_rjsjpl.glb"
           auto-rotate
-          rotation-per-second="30deg"
+          camera-controls
           exposure="1"
-          shadow-intensity="1"
           environment-image="neutral">
         </model-viewer>
       </div>
@@ -61,7 +85,7 @@
       <!-- SCROLL INDICATOR -->
       <div
         class="scroll-indicator"
-        onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">
+        onclick="document.getElementById('collections').scrollIntoView({ behavior: 'smooth' })">
         ↓
       </div>
 
@@ -69,19 +93,9 @@
   </section>
 
   <!-- =========================
-       PRODUCTS (EMPTY)
+       COLLECTIONS SECTION
   ========================= -->
-  <section class="section" id="products">
-    <h2 class="section-title">Products</h2>
-    <p class="section-subtitle">
-      New drops coming soon. Stay tuned.
-    </p>
-  </section>
-
-  <!-- =========================
-       FEATURED COLLECTIONS
-  ========================= -->
-  <section class="section">
+  <section class="section" id="collections">
     <h2 class="section-title">Featured Collections</h2>
     <p class="section-subtitle">
       Designed for modern silhouettes and everyday confidence.
@@ -106,7 +120,7 @@
   </section>
 
   <!-- =========================
-       CUSTOMIZATION REQUEST
+       CUSTOMIZATION SECTION
   ========================= -->
   <section class="section custom-section">
     <h2 class="section-title">Customize Your Fit</h2>
@@ -117,16 +131,18 @@
     <div class="custom-box">
       <form class="custom-form">
         <input type="text" placeholder="Your Name" required />
-        <input type="text" placeholder="Product Type (Hoodie / Tee)" required />
+        <input type="text" placeholder="Product Type" required />
         <textarea placeholder="Describe your custom request" required></textarea>
         <button type="submit">SUBMIT REQUEST</button>
       </form>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
   <footer class="dark-footer">
-    © 2025 BLLOOM
+    © 2025 BLLOOM. All rights reserved.
   </footer>
 
 </body>
