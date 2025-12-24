@@ -110,13 +110,17 @@ a:focus {
 .brand-logo {
   margin: 0;
   font-size: 42px;
-  letter-spacing: 10px;
   font-weight: 600;
+  letter-spacing: 10px;
   color: var(--silver-main);
   text-shadow:
     0 0 10px rgba(255,255,255,0.35),
     0 0 25px rgba(255,255,255,0.15);
+
+  display: inline-flex;          /* 🔑 KEY FIX */
+  align-items: center;           /* 🔑 KEY FIX */
 }
+
 /* SUBTLE BLOOD STICKER */
 .brand-logo::after {
   content: "";
