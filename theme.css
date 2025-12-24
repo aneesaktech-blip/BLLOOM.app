@@ -164,6 +164,143 @@ a:focus {
   outline: none;
 }
 /* ===== PAGE LINKS BOX (HOME / SHOP / ETC) ===== */
+/* ================================
+   NAVBAR LAYOUT
+   ================================ */
+
+.navbar {
+  position: relative;
+  height: 90px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ================================
+   LEFT (WOMEN / MEN)
+   ================================ */
+
+.nav-left {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-link {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver-dim);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--silver-main);
+}
+
+/* ================================
+   CENTER (LOGO)
+   ================================ */
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.brand-logo {
+  margin: 0;
+  font-size: 42px;
+  letter-spacing: 10px;
+  font-weight: 600;
+  color: var(--silver-main);
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.35),
+    0 0 25px rgba(255,255,255,0.15);
+}
+
+/* BLOOD ACCENT DOT */
+.brand-logo::after {
+  content: ".";
+  color: var(--blood-glow);
+  margin-left: 6px;
+  text-shadow: 0 0 10px var(--blood-glow);
+}
+
+/* ================================
+   RIGHT BOX (HOME / SHOP / ETC)
+   ================================ */
+
+.nav-pages-box {
+  margin-left: auto;
+  display: flex;
+  gap: 22px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.08);
+}
+
+/* LINKS INSIDE BOX */
+.page-link {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver-dim);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+/* BLOOD UNDERLINE */
+.page-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--blood-glow);
+  box-shadow: 0 0 8px var(--blood-glow);
+  transition: width 0.3s ease;
+}
+
+.page-link:hover {
+  color: var(--silver-main);
+}
+
+.page-link:hover::after {
+  width: 100%;
+}
+
+/* OPTIONAL: BOX HOVER GLOW */
+.nav-pages-box:hover {
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.15);
+}
+
+/* ================================
+   GLOBAL LINK RESET (IMPORTANT)
+   ================================ */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:focus {
+  outline: none;
+}
 
 .nav-pages-box {
   display: flex;
