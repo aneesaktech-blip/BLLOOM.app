@@ -86,11 +86,15 @@ nav a:hover {
   background: white;
   color: black;
 }
-
 /* =========================
-/* 3D MODEL — FLOATING OBJECT */
+   3D MODEL — FLOATING OBJECT
+========================= */
+
 .hero-model {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
 }
 
@@ -107,17 +111,13 @@ nav a:hover {
 
   animation: floatModel 10s ease-in-out infinite;
 }
+
 @keyframes floatModel {
-  0% {
-    transform: translateY(0) rotateY(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotateY(8deg);
-  }
-  100% {
-    transform: translateY(0) rotateY(0deg);
-  }
+  0%   { transform: translateY(0) rotateY(0deg); }
+  50%  { transform: translateY(-20px) rotateY(8deg); }
+  100% { transform: translateY(0) rotateY(0deg); }
 }
+
 
 /* =========================
    FOOTER
@@ -401,6 +401,7 @@ nav a:hover {
     transform: translate(-50%, 10px);
   }
 }
+
 
 
 
