@@ -374,6 +374,10 @@ body {
 /* =========================
    HEADER – FINAL LOGIC
 ========================= */
+.navbar.dark {
+  padding-top: 22px;
+  padding-bottom: 18px;
+}
 
 .navbar.dark {
   display: flex;
@@ -393,14 +397,21 @@ body {
 }
 
 /* NAV LINKS */
+.nav-links {
+  margin-top: 18px; /* pulls words down */
+}
+
 .nav-links a {
   margin: 0 18px;
   color: #e0e0e0;
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 1px;
+   
 }
-
+.nav-links {
+  margin-top: 24px; /* pulls words down */
+}
 .nav-links a:hover {
   color: white;
 }
@@ -568,5 +579,6 @@ body {
 .menu-dropdown.show {
   display: block;
 }
+
 
 
