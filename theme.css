@@ -22,10 +22,43 @@
 
 body {
   margin: 0;
-  background: radial-gradient(circle at top, #1a1a1f 0%, #0b0b0e 70%);
   color: var(--silver-main);
   font-family: 'Poppins', sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(139, 0, 0, 0.35),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(90, 0, 0, 0.25),
+      transparent 50%
+    ),
+    linear-gradient(
+      180deg,
+      #141417 0%,
+      #0c0c0f 40%,
+      #08080a 100%
+    );
 }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
 
 
 
