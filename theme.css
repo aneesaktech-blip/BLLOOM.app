@@ -1,8 +1,11 @@
-/* ===== BLOODY SILVER THEME ===== */
+/* ================================
+   BLLOOM — SILVER x BLOOD THEME
+   ================================ */
 
+/* ----- VARIABLES ----- */
 :root {
-  --bg-black: #0b0b0e;
-  --bg-soft: #15151b;
+  --bg-dark: #0b0b0e;
+  --bg-soft: #14141a;
 
   --silver-main: #e2e2e6;
   --silver-dim: #a9a9b0;
@@ -12,40 +15,118 @@
   --blood-glow: #ff1a1a;
 }
 
-/* Global background */
+/* ----- GLOBAL RESET ----- */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top, #1a1a1f 0%, #0b0b0e 70%);
+  background: radial-gradient(circle at top, #1a1a1f 0%, #0b0b0e 70%);
   color: var(--silver-main);
   font-family: 'Poppins', sans-serif;
 }
 
-/* ===== TEXT GLOW ===== */
-.glow-text {
-  color: var(--silver-main);
-  text-shadow:
-    0 0 6px rgba(255,255,255,0.45),
-    0 0 18px rgba(255,255,255,0.18);
+/* ================================
+   NAVBAR
+   ================================ */
+
+.navbar {
+  position: relative;
+  height: 90px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ===== NAV LINKS ===== */
-nav a {
+/* LEFT LINKS */
+.nav-left {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: var(--silver-dim);
   text-decoration: none;
-  margin: 0 18px;
-  font-weight: 500;
-  transition: 0.3s ease;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
+/* BLOOD UNDERLINE */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--blood-glow);
+  box-shadow: 0 0 10px var(--blood-glow);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--silver-main);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* CENTER LOGO */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.brand-logo {
+  margin: 0;
+  font-size: 42px;
+  letter-spacing: 10px;
+  font-weight: 600;
   color: var(--silver-main);
   text-shadow:
-    0 0 10px rgba(255,255,255,0.5),
-    0 0 22px rgba(255,255,255,0.25);
+    0 0 10px rgba(255,255,255,0.35),
+    0 0 25px rgba(255,255,255,0.15);
+  animation: subtle-flicker 6s infinite;
 }
 
-/* ===== BLOOD BUTTON ===== */
+/* BLOOD DOT */
+.brand-logo::after {
+  content: ".";
+  color: var(--blood-glow);
+  text-shadow: 0 0 12px var(--blood-glow);
+}
+
+/* SUBTLE FLICKER */
+@keyframes subtle-flicker {
+  0%, 100% { opacity: 1; }
+  48% { opacity: 0.96; }
+  50% { opacity: 0.85; }
+  52% { opacity: 0.97; }
+}
+
+/* ================================
+   OPTIONAL GLOBAL HELPERS
+   ================================ */
+
+.glass-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.18);
+}
+
 .blood-btn {
   background: linear-gradient(135deg, var(--blood-dark), var(--blood-main));
   color: #fff;
@@ -65,14 +146,4 @@ nav a:hover {
     0 0 22px var(--blood-glow),
     0 0 60px var(--blood-glow);
   transform: translateY(-2px);
-}
-
-/* ===== GLASS CARD ===== */
-.glass-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(14px);
-  border-radius: 18px;
-  padding: 22px;
-  box-shadow: 0 0 35px rgba(255, 0, 0, 0.18);
 }
