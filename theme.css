@@ -210,6 +210,15 @@ a:focus {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: none; /* prevents overlap interaction */
+  z-index: 1;
+}
+
+.nav-pages-box {
+  z-index: 2;
+}
+.nav-pages-box {
+  transform: translateX(20px);
 }
 
 .brand-logo {
@@ -354,3 +363,11 @@ a:focus {
   margin-left: auto;
 }
 
+/* PUSH RIGHT NAV FURTHER RIGHT */
+.nav-pages-box {
+  margin-left: auto;
+  margin-right: 20px;
+}
+.navbar {
+  padding: 0 80px; /* was 60px */
+}
