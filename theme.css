@@ -163,3 +163,53 @@ a:visited {
 a:focus {
   outline: none;
 }
+/* ===== PAGE LINKS BOX (HOME / SHOP / ETC) ===== */
+
+.nav-pages-box {
+  display: flex;
+  gap: 22px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.08);
+}
+
+/* LINKS INSIDE BOX */
+.page-link {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver-dim);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+/* BLOOD UNDERLINE */
+.page-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--blood-glow);
+  box-shadow: 0 0 8px var(--blood-glow);
+  transition: width 0.3s ease;
+}
+
+.page-link:hover {
+  color: var(--silver-main);
+}
+
+.page-link:hover::after {
+  width: 100%;
+}
+
+/* OPTIONAL: BOX HOVER */
+.nav-pages-box:hover {
+  box-shadow: 0 0 28px rgba(255, 0, 0, 0.14);
+}
