@@ -88,22 +88,35 @@ nav a:hover {
 }
 
 /* =========================
-   3D MODEL CONTAINER
-========================= */
+/* 3D MODEL — FLOATING OBJECT */
 .hero-model {
-  height: 520px;
-  background: radial-gradient(circle at top, #2a2a2a, #0b0b0b);
-  border-radius: 14px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  pointer-events: none;
 }
 
-/* Make model-viewer fill box */
+/* The jacket itself */
 .hero-model model-viewer {
-  width: 100%;
-  height: 100%;
+  width: 420px;
+  height: 420px;
+
+  background: transparent !important;
+
+  filter:
+    drop-shadow(0 40px 80px rgba(0,0,0,0.6))
+    drop-shadow(0 0 30px rgba(255,0,0,0.25));
+
+  animation: floatModel 10s ease-in-out infinite;
+}
+@keyframes floatModel {
+  0% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(8deg);
+  }
+  100% {
+    transform: translateY(0) rotateY(0deg);
+  }
 }
 
 /* =========================
@@ -388,6 +401,7 @@ nav a:hover {
     transform: translate(-50%, 10px);
   }
 }
+
 
 
 
