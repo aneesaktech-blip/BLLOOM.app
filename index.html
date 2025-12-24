@@ -23,37 +23,54 @@
        NAVBAR
   ========================= -->
   <header class="navbar dark">
-    <div class="logo">BLLOOM</div>
 
-    <!-- MAIN NAV LINKS -->
+  <!-- LEFT -->
+  <div class="logo">BLLOOM</div>
+
+  <!-- CENTER -->
+  <div class="nav-center">
     <nav class="nav-links">
-      <a href="/">Home</a>
       <a href="/shop">Shop</a>
+      <a href="/collections">Collections</a>
       <a href="/customization">Customization</a>
-      
     </nav>
 
-    <!-- SEARCH -->
+    <!-- SEARCH BAR -->
     <div class="nav-search">
       <input
         type="text"
         placeholder="Search products..."
-        aria-label="Search" />
+        aria-label="Search"
+      />
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="nav-right">
+
+    <a href="/wishlist" class="icon-btn">♡</a>
+    <a href="/cart" class="icon-btn">🛒</a>
+
+    <!-- LOGIN (SEPARATE) -->
+    <a href="/login" class="login-btn">Login</a>
+
+    <!-- MENU DROPDOWN -->
+    <div class="menu-wrapper">
+      <span class="menu-icon">☰</span>
+
+      <div class="menu-dropdown">
+        <a href="/account">My Account</a>
+        <a href="/profile">Profile</a>
+        <a href="/settings">Settings</a>
+        <a href="/orders">Orders</a>
+        <a href="/history">History</a>
+        <a href="/recent">Last Seen Products</a>
+      </div>
     </div>
 
-    <!-- ACTION LINKS -->
-    <div class="nav-actions">
-      <a href="/wishlist" class="nav-icon">
-        Wishlist
-        <span class="badge">0</span>
-      </a>
+  </div>
 
-      <a href="/cart" class="nav-icon">
-        Cart
-        <span class="badge">0</span>
-      </a>
-    </div>
-  </header>
+</header>
 
   <!-- =========================
        HERO SECTION
@@ -147,3 +164,4 @@
 
 </body>
 </html>
+
