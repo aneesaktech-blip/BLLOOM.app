@@ -192,7 +192,7 @@ body {
   right: 6%;
   transform: translateY(-50%);
   z-index: 1;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .hero-model model-viewer {
@@ -615,3 +615,4 @@ body {
 .menu-dropdown.show {
   display: block;
 }
+
