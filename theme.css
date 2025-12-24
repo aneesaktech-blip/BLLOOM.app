@@ -124,14 +124,14 @@ a:focus {
 /* SUBTLE BLOOD STICKER */
 .brand-logo::after {
   content: "";
-  display: inline-block;
   width: 6px;
   height: 6px;
-  margin-left: 10px;
+  margin-left: 14px;             /* 👈 real spacing, not letter-spacing */
   border-radius: 50%;
   background: var(--blood-glow);
   box-shadow: 0 0 6px var(--blood-glow);
-  vertical-align: middle;
+
+  flex-shrink: 0;                /* 🔑 prevents squeezing */
 }
 
 
