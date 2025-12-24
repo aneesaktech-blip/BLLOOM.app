@@ -165,8 +165,24 @@
   <footer class="dark-footer">
     © 2025 BLLOOM. All rights reserved.
   </footer>
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const menuDropdown = document.getElementById("menuDropdown");
+
+  if (menuToggle && menuDropdown) {
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      menuDropdown.classList.toggle("show");
+    });
+
+    document.addEventListener("click", () => {
+      menuDropdown.classList.remove("show");
+    });
+  }
+</script>
 
 </body>
 </html>
+
 
 
