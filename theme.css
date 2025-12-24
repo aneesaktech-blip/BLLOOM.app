@@ -79,76 +79,67 @@ a:focus {
   outline: none;
 }
 /* ================================
-   NAVBAR — FINAL CLEAN VERSION
+   GRID NAVBAR — FINAL FIX
    ================================ */
 
 .navbar {
-  position: relative;
   height: 90px;
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  padding: 0 100px;
+  padding: 0 80px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* LEFT: WOMEN / MEN */
+/* LEFT */
 .nav-left {
   display: flex;
   gap: 28px;
 }
 
-/* CENTER: LOGO */
+/* CENTER */
 .nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  pointer-events: none;
+  display: flex;
+  justify-content: center;
 }
 
 .brand-logo {
   margin: 0;
   font-size: 42px;
   font-weight: 600;
-  letter-spacing: 10px;
+  letter-spacing: 8px; /* reduced slightly */
   color: var(--silver-main);
   text-shadow:
     0 0 10px rgba(255,255,255,0.35),
     0 0 25px rgba(255,255,255,0.15);
 
-  display: inline-flex;          /* 🔑 KEY FIX */
-  align-items: center;           /* 🔑 KEY FIX */
+  display: inline-flex;
+  align-items: center;
 }
 
-/* SUBTLE BLOOD STICKER */
+/* BLOOD STICKER — SAFE */
 .brand-logo::after {
   content: "";
   width: 6px;
   height: 6px;
-  margin-left: 14px;             /* 👈 real spacing, not letter-spacing */
+  margin-left: 14px;
   border-radius: 50%;
   background: var(--blood-glow);
   box-shadow: 0 0 6px var(--blood-glow);
-
-  flex-shrink: 0;                /* 🔑 prevents squeezing */
+  flex-shrink: 0;
 }
 
-
-
-
-/* RIGHT: PAGE LINKS BOX */
+/* RIGHT BOX */
 .nav-pages-box {
-  margin-left: auto;
   display: flex;
   gap: 22px;
-  padding: 12px 20px;
+  padding: 12px 22px;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 14px;
-  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
   box-shadow: 0 0 18px rgba(255, 0, 0, 0.08);
-  z-index: 2;
 }
 
 /* LINKS */
@@ -181,4 +172,3 @@ a:focus {
 .page-link:hover::after {
   width: 100%;
 }
-
