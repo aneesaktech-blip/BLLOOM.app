@@ -49,12 +49,11 @@ nav a:hover {
    HERO SECTION (TEXT + 3D)
 ========================= */
 .hero-dark {
-  min-height: calc(100vh - 90px);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  position: relative;     /* 🔑 allows layering */
+  min-height: 90vh;
   padding: 0 80px;
-  gap: 40px;
+  display: flex;
+  align-items: center;
 }
 
 /* LEFT TEXT */
@@ -69,6 +68,12 @@ nav a:hover {
   max-width: 420px;
   line-height: 1.6;
   margin-bottom: 40px;
+   
+  position: relative;
+  z-index: 3;             /* 🔑 text in front */
+  max-width: 520px;
+
+
 }
 
 /* BUTTON */
@@ -91,18 +96,18 @@ nav a:hover {
 ========================= */
 
 .hero-model {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;     /* 🔑 removes it from layout */
+  right: 10%;             /* controls how much it overlaps text */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;             /* behind text */
   pointer-events: none;
 }
 
-/* The jacket itself */
+
 .hero-model model-viewer {
   width: 420px;
   height: 420px;
-
   background: transparent !important;
 
   filter:
@@ -111,6 +116,7 @@ nav a:hover {
 
   animation: floatModel 10s ease-in-out infinite;
 }
+
 
 @keyframes floatModel {
   0%   { transform: translateY(0) rotateY(0deg); }
@@ -401,6 +407,7 @@ nav a:hover {
     transform: translate(-50%, 10px);
   }
 }
+
 
 
 
