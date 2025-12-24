@@ -50,79 +50,64 @@ nav a:hover {
 ========================= */
 .hero-section {
   position: relative;
+  min-height: 100vh;
   overflow: visible;
 }
+
 .hero-dark {
-  position: relative;     /* 🔑 allows layering */
-  min-height: 90vh;
+  position: relative;
+  min-height: 100vh;
   padding: 0 80px;
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 /* LEFT TEXT */
+.hero-content {
+  position: relative;
+  z-index: 5;
+}
+
 .hero-content h1 {
   font-size: 64px;
   line-height: 1.1;
   margin-bottom: 25px;
+  text-transform: uppercase;
 }
 
 .hero-content p {
   color: #9e9e9e;
-  max-width: 420px;
+  max-width: 520px;
   line-height: 1.6;
   margin-bottom: 40px;
-   
   position: relative;
-  z-index: 3;             /* 🔑 text in front */
-  max-width: 520px;
-
-
+  z-index: 5;
 }
 
-/* BUTTON */
-.btn-outline {
-  padding: 14px 40px;
-  border: 2px solid white;
-  color: white;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 2px;
-  transition: 0.3s;
-}
-
-.btn-outline:hover {
-  background: white;
-  color: black;
-}
 /* =========================
    3D MODEL — FLOATING OBJECT
 ========================= */
-
 .hero-model {
   position: absolute;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
+  z-index: 2;
   pointer-events: none;
-  z-index: 1;
 }
 
-
-
+/* FORCE model-viewer to render */
 .hero-model model-viewer {
+  display: block;              /* 🔥 REQUIRED */
   width: 420px;
   height: 420px;
-  background: transparent !important;
-
-  filter:
-    drop-shadow(0 40px 80px rgba(0,0,0,0.6))
-    drop-shadow(0 0 30px rgba(255,0,0,0.25));
+  background: transparent;
 
   animation: floatModel 10s ease-in-out infinite;
 }
 
-
+/* FLOATING ANIMATION */
 @keyframes floatModel {
   0%   { transform: translateY(0) rotateY(0deg); }
   50%  { transform: translateY(-20px) rotateY(8deg); }
@@ -412,6 +397,7 @@ nav a:hover {
     transform: translate(-50%, 10px);
   }
 }
+
 
 
 
