@@ -8,9 +8,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html, body {
-  width: 100%;
-  height: auto;
+body {
   background: #0b0b0b;
   color: white;
   overflow-x: hidden;
@@ -21,37 +19,91 @@ html, body {
 ========================= */
 .navbar.dark {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 28px 60px;
   border-bottom: 1px solid #1f1f1f;
+  gap: 30px;
 }
 
 .logo {
   font-size: 28px;
-  letter-spacing: 5px;
   font-weight: bold;
+  letter-spacing: 5px;
 }
 
-nav a {
-  margin-left: 30px;
+/* NAV LINKS */
+.nav-links a {
+  margin-right: 30px;
   color: #bdbdbd;
   text-decoration: none;
   font-size: 13px;
   letter-spacing: 1px;
+  transition: 0.3s;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: white;
 }
 
+/* SEARCH BAR */
+.nav-search input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #222;
+  padding: 10px 14px;
+  color: white;
+  font-size: 12px;
+  border-radius: 8px;
+  width: 200px;
+}
+
+.nav-search input::placeholder {
+  color: #777;
+}
+
+.nav-search input:focus {
+  outline: none;
+  border-color: #444;
+}
+
+/* ACTION LINKS */
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.nav-actions a {
+  margin-left: 25px;
+  color: #bdbdbd;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-actions a:hover {
+  color: white;
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
 /* =========================
-   HERO SECTION (TEXT + 3D)
+   HERO SECTION
 ========================= */
 .hero-section {
   position: relative;
   min-height: 100vh;
-  overflow: visible;
 }
 
 .hero-dark {
@@ -60,13 +112,35 @@ nav a:hover {
   padding: 0 80px;
   display: flex;
   align-items: center;
-  z-index: 1;
 }
 
-/* LEFT TEXT */
+/* 🔴 RED GLOW DOT */
+.hero-dark::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(255,0,0,0.35), transparent 70%);
+  top: 50%;
+  right: 12%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+/* 🪟 GLASS DEPTH */
+.hero-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.04), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* HERO CONTENT */
 .hero-content {
   position: relative;
-  z-index: 5;
+  z-index: 2;
 }
 
 .hero-content h1 {
@@ -81,74 +155,72 @@ nav a:hover {
   max-width: 520px;
   line-height: 1.6;
   margin-bottom: 40px;
-  position: relative;
-  z-index: 5;
+}
+
+/* BUTTON */
+.btn-outline {
+  padding: 14px 40px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: black;
 }
 
 /* =========================
-   3D MODEL — FLOATING OBJECT
+   3D MODEL
 ========================= */
 .hero-model {
   position: absolute;
   top: 50%;
-  right: 5%;
+  right: 6%;
   transform: translateY(-50%);
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
 }
 
-/* FORCE model-viewer to render */
 .hero-model model-viewer {
-  display: block;              /* 🔥 REQUIRED */
+  display: block;
   width: 420px;
   height: 420px;
   background: transparent;
-
   animation: floatModel 10s ease-in-out infinite;
 }
 
-/* FLOATING ANIMATION */
 @keyframes floatModel {
-  0%   { transform: translateY(0) rotateY(0deg); }
-  50%  { transform: translateY(-20px) rotateY(8deg); }
+  0% { transform: translateY(0) rotateY(0deg); }
+  50% { transform: translateY(-20px) rotateY(8deg); }
   100% { transform: translateY(0) rotateY(0deg); }
 }
 
-
 /* =========================
-   FOOTER
+   SCROLL INDICATOR
 ========================= */
-.dark-footer {
-  padding: 30px;
-  text-align: center;
-  font-size: 12px;
-  color: #666;
-  border-top: 1px solid #1f1f1f;
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  color: #777;
+  animation: bounce 1.5s infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 10px); }
 }
 
 /* =========================
-   MOBILE RESPONSIVE
+   SECTIONS
 ========================= */
-@media (max-width: 900px) {
-  .hero-dark {
-    grid-template-columns: 1fr;
-    padding: 40px;
-    text-align: center;
-  }
-
-  .hero-content h1 {
-    font-size: 48px;
-  }
-
-  .hero-model {
-    height: 420px;
-    margin-top: 40px;
-  }
-
-  nav {
-    display: none; /* clean mobile look */
-  }
-}
 .section {
   padding: 100px 80px;
 }
@@ -156,6 +228,7 @@ nav a:hover {
 .section-title {
   font-size: 36px;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .section-subtitle {
@@ -163,6 +236,8 @@ nav a:hover {
   max-width: 500px;
   line-height: 1.6;
 }
+
+/* COLLECTION GRID */
 .collection-grid {
   margin-top: 60px;
   display: grid;
@@ -175,8 +250,8 @@ nav a:hover {
   border-radius: 16px;
   padding: 40px;
   min-height: 200px;
-  transition: 0.4s ease;
   border: 1px solid #1f1f1f;
+  transition: 0.4s ease;
 }
 
 .collection-card:hover {
@@ -193,6 +268,10 @@ nav a:hover {
   color: #8e8e8e;
   font-size: 14px;
 }
+
+/* =========================
+   CUSTOM SECTION
+========================= */
 .custom-section {
   background: linear-gradient(to bottom, #0b0b0b, #111);
 }
@@ -247,161 +326,48 @@ nav a:hover {
   background: #ddd;
 }
 
-.action-btn {
-  padding: 12px 20px;
-  border: 1px solid #333;
-  background: transparent;
-  color: white;
+/* =========================
+   FOOTER
+========================= */
+.dark-footer {
+  padding: 30px;
+  text-align: center;
   font-size: 12px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.3s;
+  color: #666;
+  border-top: 1px solid #1f1f1f;
 }
 
-.action-btn:hover {
-  background: white;
-  color: black;
-}
-.action-btn {
-  padding: 12px 20px;
-  border: 1px solid #333;
-  background: transparent;
-  color: white;
-  font-size: 12px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.action-btn:hover {
-  background: white;
-  color: black;
-}
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 900px) {
+  .navbar.dark {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .nav-search input {
+    width: 100%;
+  }
+
+  .hero-dark {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .hero-model {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin-top: 40px;
+  }
+
   .section {
     padding: 60px 40px;
   }
-
-  .custom-box {
-    padding: 35px;
-  }
 }
-/* SOFT DEPTH */
-.hero-dark,
-.section {
-  position: relative;
-}
-
-.hero-dark::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.04), transparent 60%);
-  pointer-events: none;
-}
-.hero-content h1 {
-  text-transform: uppercase;
-}
-
-.section-title {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-.collection-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.collection-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(255,255,255,0.05),
-    transparent
-  );
-  opacity: 0;
-  transition: 0.4s;
-}
-
-.collection-card:hover::after {
-  opacity: 1;
-}
-.section {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: sectionReveal 1s ease forwards;
-}
-
-.section:nth-of-type(2) {
-  animation-delay: 0.2s;
-}
-.section:nth-of-type(3) {
-  animation-delay: 0.4s;
-}
-
-@keyframes sectionReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.btn-outline {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-outline::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: white;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: 0.3s;
-  z-index: -1;
-}
-
-.btn-outline:hover::after {
-  transform: scaleX(1);
-}
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 28px;
-  color: #777;
-  animation: bounce 1.5s infinite;
-  cursor: pointer;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translate(-50%, 0);
-  }
-  50% {
-    transform: translate(-50%, 10px);
-  }
-}
-
-
-
-
-
-
-
-
