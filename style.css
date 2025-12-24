@@ -371,3 +371,127 @@ body {
     padding: 60px 40px;
   }
 }
+/* =========================
+   HEADER – FINAL LOGIC
+========================= */
+
+.navbar.dark {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 60px;
+  position: relative;
+  z-index: 10;
+}
+
+/* CENTER STACK */
+.nav-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* NAV LINKS */
+.nav-links a {
+  margin: 0 18px;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* SEARCH BAR */
+.nav-search input {
+  width: 420px;
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  color: white;
+  font-size: 13px;
+}
+
+.nav-search input::placeholder {
+  color: #aaa;
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ICONS */
+.icon-btn {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* LOGIN */
+.login-btn {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 6px;
+}
+
+.login-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* MENU DROPDOWN */
+.menu-wrapper {
+  position: relative;
+}
+
+.menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+/* DROPDOWN PANEL */
+.menu-dropdown {
+  position: absolute;
+  top: 140%;
+  right: 0;
+  min-width: 200px;
+  background: rgba(15,15,15,0.95);
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 10px 0;
+  display: none;
+}
+
+.menu-dropdown a {
+  display: block;
+  padding: 10px 16px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.menu-dropdown a:hover {
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+/* SHOW MENU */
+.menu-wrapper:hover .menu-dropdown {
+  display: block;
+}
+
