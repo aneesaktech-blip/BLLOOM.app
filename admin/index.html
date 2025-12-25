@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BLLOOM Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Global -->
+  <link rel="stylesheet" href="../global.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+
+<body class="admin">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h2>BLLOOM</h2>
+
+  <nav>
+    <button class="tab active" data-tab="dashboard">Dashboard</button>
+    <button class="tab" data-tab="products">Products</button>
+    <button class="tab" data-tab="coupons">Coupons</button>
+    <button class="tab" data-tab="orders">Orders</button>
+    <button class="tab" data-tab="settings">Site Control</button>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- DASHBOARD -->
+  <section class="panel active" id="dashboard">
+    <h1>Dashboard</h1>
+
+    <div class="stats">
+      <div class="card">Products<br><span id="stat-products">0</span></div>
+      <div class="card">Coupons<br><span id="stat-coupons">0</span></div>
+      <div class="card">Orders<br><span>—</span></div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="panel" id="products">
+    <h1>Products</h1>
+
+    <form id="productForm">
+      <input placeholder="Product name" required />
+      <input type="number" placeholder="Price" required />
+      <input placeholder="Category" />
+      <input placeholder="Image URL" />
+      <button>Add Product</button>
+    </form>
+
+    <div id="productList"></div>
+  </section>
+
+  <!-- COUPONS -->
+  <section class="panel" id="coupons">
+    <h1>Coupons</h1>
+
+    <form id="couponForm">
+      <input placeholder="Code (e.g. BLOOM10)" required />
+      <input type="number" placeholder="Discount %" required />
+      <button>Add Coupon</button>
+    </form>
+
+    <div id="couponList"></div>
+  </section>
+
+  <!-- ORDERS -->
+  <section class="panel" id="orders">
+    <h1>Orders</h1>
+    <p>Order tracking will appear here when backend is connected.</p>
+  </section>
+
+  <!-- SITE CONTROL -->
+  <section class="panel" id="settings">
+    <h1>Site Control</h1>
+
+    <label class="toggle">
+      <input type="checkbox" checked />
+      Enable Shop
+    </label>
+
+    <label class="toggle">
+      <input type="checkbox" />
+      Enable Coupons
+    </label>
+
+    <label class="toggle">
+      <input type="checkbox" checked />
+      Enable Custom Orders
+    </label>
+  </section>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
