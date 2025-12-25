@@ -1,87 +1,114 @@
-/* ================= LOGIN PAGE ================= */
-
-/* Page wrapper */
-.login-wrapper {
-  max-width: 420px;
-  margin: 18vh auto;
-  position: relative;
+/* ================= BACK LINK ================= */
+.back-link {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
-/* Glass card */
-.login-wrapper .glass {
+/* ================= LOGIN PAGE ================= */
+.login-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  padding: 0 80px;
+  align-items: center;
+  gap: 80px;
+}
+
+/* ================= LEFT INFO ================= */
+.login-info h1 {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.helper {
+  max-width: 420px;
+  margin-bottom: 40px;
+}
+
+.brand-note {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.brand-note span {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ================= RIGHT CARD ================= */
+.login-card {
+  max-width: 420px;
+  padding: 42px;
+}
+
+/* ================= FORM ================= */
+.field {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: 40px;
-  position: relative;
+  gap: 6px;
+  margin-bottom: 18px;
 }
 
-/* Soft background glow (subtle, calmer than signup) */
-.login-wrapper .glass::before {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  background: radial-gradient(
-    circle,
-    rgba(255,255,255,0.12),
-    transparent 65%
-  );
-  opacity: 0.4;
-  z-index: -1;
+label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
 }
 
-/* Heading */
-.login-wrapper h2 {
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-/* Inputs */
-.login-wrapper input {
-  padding: 14px;
-  font-size: 0.95rem;
-}
-
-/* Button */
-.login-wrapper .btn {
-  margin-top: 6px;
-}
-
-/* Helper links */
-.login-wrapper .helper-links {
+.options {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.small-text {
   font-size: 0.85rem;
-  opacity: 0.85;
+  opacity: 0.7;
+  margin-bottom: 20px;
 }
 
-/* ================= STAGGERED INPUT ANIMATION ================= */
-.login-wrapper input {
-  opacity: 0;
-  animation: loginInputReveal 0.6s ease forwards;
-}
-
-.login-wrapper input:nth-child(2) { animation-delay: 0.1s; }
-.login-wrapper input:nth-child(3) { animation-delay: 0.2s; }
-
-@keyframes loginInputReveal {
-  from {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.switch {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  text-align: center;
 }
 
 /* ================= MOBILE ================= */
-@media (max-width: 520px) {
-  .login-wrapper {
-    margin: 14vh 20px;
+@media (max-width: 900px) {
+  .login-page {
+    grid-template-columns: 1fr;
+    padding: 0 30px;
+    gap: 40px;
   }
 
-  .login-wrapper .glass {
-    padding: 32px;
+  .login-info {
+    text-align: center;
+  }
+
+  .helper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .back-link {
+    position: static;
+    margin-bottom: 20px;
+    display: inline-block;
   }
 }
