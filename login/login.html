@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <title>Login — BLLOOM</title>
-  <link rel="stylesheet" href="login.css" />
+
+  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <a href="../index.html">← Back to Home</a>
-  <form onsubmit="redirectHome(event)">
 
-
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../global.css" />
+  <link rel="stylesheet" href="login.css" />
 </head>
-<body>
+
+<body class="page">
+
+  <!-- Back link -->
+  <a href="../index.html" class="back-link">← Back to Home</a>
 
   <div class="login-page">
 
-    <!-- Left: Message / Brand Voice -->
+    <!-- LEFT : BRAND MESSAGE -->
     <div class="login-info">
       <h1>Welcome back.</h1>
+
       <p class="subtitle">
         Your style journey continues here.
       </p>
@@ -31,46 +37,62 @@
       </div>
     </div>
 
-    <!-- Right: Login Form -->
-    <div class="login-card">
+    <!-- RIGHT : LOGIN CARD -->
+    <div class="login-card glass float">
+
       <h2>Login</h2>
       <p class="small-text">Glad to see you again.</p>
 
-      <form>
+      <form onsubmit="redirectHome(event)">
+
         <div class="field">
           <label>Email</label>
-          <input type="email" placeholder="you@example.com" required />
+          <input
+            type="email"
+            placeholder="you@example.com"
+            required
+          />
         </div>
 
         <div class="field">
           <label>Password</label>
-          <input type="password" placeholder="••••••••" required />
+          <input
+            type="password"
+            placeholder="••••••••"
+            required
+          />
         </div>
 
         <div class="options">
-          <label>
+          <label class="remember">
             <input type="checkbox" />
             Remember me
           </label>
-          <a href="#">Forgot password?</a>
+
+          <a href="#" class="forgot">Forgot password?</a>
         </div>
 
-        <button type="submit">Enter BLLOOM</button>
+        <button type="submit" class="btn">
+          Enter BLLOOM
+        </button>
+
       </form>
 
       <p class="switch">
         New here?
-        <a href="#">Create an account</a>
+        <a href="../signup/signup.html">Create an account</a>
       </p>
+
     </div>
 
   </div>
-<script>
-  function redirectHome(e) {
-    e.preventDefault();
-    window.location.href = "../index.html";
-  }
-</script>
+
+  <script>
+    function redirectHome(e) {
+      e.preventDefault();
+      window.location.href = "../index.html";
+    }
+  </script>
 
 </body>
 </html>
