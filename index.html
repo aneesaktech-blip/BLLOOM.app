@@ -222,7 +222,32 @@
 </div>
 
 <script src="ai-chat.js"></script>
+  <script>
+  const draggables = document.querySelectorAll(".draggable");
+  const giftBox = document.getElementById("gift-box");
+
+  let draggedItem = null;
+
+  draggables.forEach(item => {
+    item.addEventListener("mousedown", () => {
+      draggedItem = item;
+      item.style.zIndex = 1000;
+    });
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!draggedItem) return;
+    draggedItem.style.left = e.pageX - draggedItem.offsetWidth / 2 + "px";
+    draggedItem.style.top = e.pageY - draggedItem.offsetHeight / 2 + "px";
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (!draggedItem) return;
+
+    const giftRect = giftBox.getBound
+
 
 </body>
 </html>
+
 
