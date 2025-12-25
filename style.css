@@ -721,31 +721,6 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
-/* =========================
-   HERO BASE
-========================= */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 30% 50%, rgba(120,0,0,0.35), transparent 55%),
-    #000;
-  overflow: hidden;
-}
-
-/* =========================
-   SILHOUETTE BACKGROUND
-========================= */
-.fashion-silhouette {
-  position: absolute;
-  right: -5%;
-  bottom: -5%;
-  height: 95%;
-  width: auto;
-  z-index: 1;
-  pointer-events: none;
-  filter: blur(0.2px); /* soft editorial look */
-}
 
 /* =========================
    HERO TEXT
@@ -790,3 +765,4 @@ body {
   background: #fff;
   color: #000;
 }
+
