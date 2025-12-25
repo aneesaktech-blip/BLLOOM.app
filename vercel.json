@@ -3,3 +3,13 @@
     { "src": "/", "dest": "/index.html" }
   ]
 }
+{
+  "rewrites": [
+    { "source": "/login", "destination": "/login/login.html" },
+    { "source": "/signup", "destination": "/signup/signup.html" },
+    { "source": "/cart", "destination": "/cart/index.html" },
+    { "source": "/buy-now", "destination": "/cart/buy-now.html" },
+    { "source": "/payment", "destination": "/payment/payment.html" },
+    { "source": "/success", "destination": "/payment/success.html" }
+  ]
+}
