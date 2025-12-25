@@ -1,331 +1,87 @@
-/* ======================
-   RESET
-====================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", system-ui, sans-serif;
-}
+/* ================= LOGIN PAGE ================= */
 
-body {
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(120,0,0,0.35), transparent 50%),
-    #000;
-  color: #fff;
-}
-
-/* ======================
-   LAYOUT
-====================== */
-.login-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-  padding: 40px;
-}
-
-/* ======================
-   LEFT SIDE (VOICE)
-====================== */
-.login-info {
+/* Page wrapper */
+.login-wrapper {
   max-width: 420px;
+  margin: 18vh auto;
+  position: relative;
 }
 
-.login-info h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  opacity: 0.85;
-  margin-bottom: 24px;
-}
-
-.helper {
-  font-size: 0.95rem;
-  opacity: 0.7;
-  line-height: 1.6;
-}
-
-.brand-note {
-  margin-top: 32px;
-  padding-left: 16px;
-  border-left: 2px solid rgba(255,255,255,0.3);
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.brand-note span {
-  letter-spacing: 0.3em;
-  font-weight: 600;
-}
-
-/* ======================
-   LOGIN CARD
-====================== */
-.login-card {
-  width: 360px;
-  padding: 36px;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(14px);
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-
-.login-card h2 {
-  font-size: 1.6rem;
-  margin-bottom: 6px;
-}
-
-.small-text {
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin-bottom: 24px;
-}
-
-/* ======================
-   FORM
-====================== */
-.field {
+/* Glass card */
+.login-wrapper .glass {
   display: flex;
   flex-direction: column;
-  margin-bottom: 18px;
-}
-
-.field label {
-  font-size: 0.75rem;
-  opacity: 0.7;
-  margin-bottom: 6px;
-}
-
-.field input {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 12px 14px;
-  border-radius: 8px;
-  color: #fff;
-  outline: none;
-}
-
-.field input:focus {
-  border-color: #fff;
-}
-
-/* ======================
-   OPTIONS
-====================== */
-.options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.75rem;
-  opacity: 0.8;
-  margin-bottom: 24px;
-}
-
-.options a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.options a:hover {
-  text-decoration: underline;
-}
-
-/* ======================
-   BUTTON
-====================== */
-button {
-  width: 100%;
-  padding: 14px;
-  background: #fff;
-  color: #000;
-  border: none;
-  border-radius: 999px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-button:hover {
-  transform: translateY(-1px);
-  opacity: 0.9;
-}
-
-/* ======================
-   SWITCH TEXT
-====================== */
-.switch {
-  margin-top: 20px;
-  font-size: 0.8rem;
-  opacity: 0.8;
-  text-align: center;
-}
-
-.switch a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.switch a:hover {
-  text-decoration: underline;
-}
-
-/* ======================
-   RESPONSIVE
-====================== */
-@media (max-width: 900px) {
-  .login-page {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .login-info {
-    max-width: none;
-  }
-}
-/* ======================
-   PAGE ENTRANCE ANIMATION
-====================== */
-.login-page {
-  animation: fadeSlide 1s ease forwards;
-}
-
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ======================
-   LEFT TEXT ANIMATION
-====================== */
-.login-info h1 {
-  animation: textReveal 1.2s ease forwards;
-}
-
-.login-info .subtitle,
-.login-info .helper,
-.login-info .brand-note {
-  opacity: 0;
-  animation: textReveal 1.2s ease forwards;
-  animation-delay: 0.2s;
-}
-
-@keyframes textReveal {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ======================
-   LOGIN CARD FLOAT-IN
-====================== */
-.login-card {
-  animation: cardFloat 1.1s ease forwards;
-}
-
-@keyframes cardFloat {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* ======================
-   INPUT INTERACTION
-====================== */
-.field input {
-  transition: all 0.3s ease;
-}
-
-.field input:focus {
-  border-color: #fff;
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
-}
-
-/* ======================
-   BUTTON MICRO-ANIMATION
-====================== */
-button {
+  gap: 18px;
+  padding: 40px;
   position: relative;
-  overflow: hidden;
 }
 
-button::after {
+/* Soft background glow (subtle, calmer than signup) */
+.login-wrapper .glass::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(0,0,0,0.15),
-    transparent
+  inset: -50%;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.12),
+    transparent 65%
   );
-  transform: translateX(-100%);
+  opacity: 0.4;
+  z-index: -1;
 }
 
-button:hover::after {
-  animation: shine 0.8s ease;
+/* Heading */
+.login-wrapper h2 {
+  text-align: center;
+  margin-bottom: 8px;
 }
 
-@keyframes shine {
-  to {
-    transform: translateX(100%);
-  }
+/* Inputs */
+.login-wrapper input {
+  padding: 14px;
+  font-size: 0.95rem;
 }
 
-button:hover {
-  transform: translateY(-2px);
+/* Button */
+.login-wrapper .btn {
+  margin-top: 6px;
 }
 
-/* ======================
-   CHECKBOX + LINKS
-====================== */
-.options a {
-  transition: opacity 0.3s ease;
+/* Helper links */
+.login-wrapper .helper-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  opacity: 0.85;
 }
 
-.options a:hover {
-  opacity: 1;
-}
-.field {
+/* ================= STAGGERED INPUT ANIMATION ================= */
+.login-wrapper input {
   opacity: 0;
-  animation: fieldFade 0.8s ease forwards;
+  animation: loginInputReveal 0.6s ease forwards;
 }
 
-.field:nth-child(1) { animation-delay: 0.2s; }
-.field:nth-child(2) { animation-delay: 0.4s; }
+.login-wrapper input:nth-child(2) { animation-delay: 0.1s; }
+.login-wrapper input:nth-child(3) { animation-delay: 0.2s; }
 
-@keyframes fieldFade {
+@keyframes loginInputReveal {
   from {
+    transform: translateY(10px);
     opacity: 0;
-    transform: translateY(12px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 520px) {
+  .login-wrapper {
+    margin: 14vh 20px;
+  }
+
+  .login-wrapper .glass {
+    padding: 32px;
   }
 }
