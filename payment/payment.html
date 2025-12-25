@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure Payment — BLLOOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Global system -->
+  <link rel="stylesheet" href="../global.css" />
+  <link rel="stylesheet" href="payment.css" />
+</head>
+
+<body class="page">
+
+  <!-- Back -->
+  <a href="../cart/buy-now.html" class="back-link">← Back to checkout</a>
+
+  <div class="payment-layout">
+
+    <!-- LEFT: PAYMENT METHODS -->
+    <div class="payment-left glass">
+
+      <h2>Complete Payment</h2>
+      <p class="subtitle">Choose your payment method</p>
+
+      <!-- Payment options -->
+      <div class="methods">
+
+        <label class="method active">
+          <input type="radio" name="pay" checked />
+          <span>Card</span>
+        </label>
+
+        <label class="method">
+          <input type="radio" name="pay" />
+          <span>UPI</span>
+        </label>
+
+        <label class="method">
+          <input type="radio" name="pay" />
+          <span>Net Banking</span>
+        </label>
+
+      </div>
+
+      <!-- Card details -->
+      <div class="card-form">
+
+        <div class="field">
+          <label>Card number</label>
+          <input type="text" placeholder="1234 5678 9012 3456" />
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label>Expiry</label>
+            <input type="text" placeholder="MM / YY" />
+          </div>
+
+          <div class="field">
+            <label>CVC</label>
+            <input type="text" placeholder="•••" />
+          </div>
+        </div>
+
+      </div>
+
+      <button class="btn pay-btn" onclick="goSuccess()">
+        Pay ₹2,499
+      </button>
+
+      <p class="secure">
+        🔒 Secured by BLLOOM Payments
+      </p>
+
+    </div>
+
+    <!-- RIGHT: SUMMARY -->
+    <div class="payment-right glass float">
+
+      <h3>Order summary</h3>
+
+      <div class="summary-item">
+        <span>Custom Jacket</span>
+        <span>₹2,499</span>
+      </div>
+
+      <div class="summary-item">
+        <span>Delivery</span>
+        <span>₹0</span>
+      </div>
+
+      <div class="summary-item total">
+        <span>Total</span>
+        <span>₹2,499</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    function goSuccess() {
+      window.location.href = "success.html";
+    }
+  </script>
+
+</body>
+</html>
