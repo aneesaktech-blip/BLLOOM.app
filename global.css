@@ -157,12 +157,115 @@ h1, h2 {
   padding: 15px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-
-/* =====================================
-   FOOTER (OPTIONAL)
-===================================== */
-footer {
-  padding: 40px;
-  text-align: center;
-  opacity: 0.6;
+/* ================= PAGE REVEAL ================= */
+body {
+  animation: pageReveal 0.8s var(--ease-main) forwards;
 }
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+/* ================= BUTTONS ================= */
+button,
+.btn {
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    #ff4d6d
+  );
+  border: none;
+  padding: 14px 34px;
+  border-radius: 40px;
+  color: var(--white);
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-main),
+              box-shadow 0.3s var(--ease-main);
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(225,29,72,0.45);
+}
+
+/* subtle click glow */
+button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.35), transparent);
+  opacity: 0;
+}
+
+button:active::after {
+  opacity: 1;
+  transition: 0s;
+}
+/* ================= GLASS CARD ================= */
+.glass {
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.06)
+  );
+  backdrop-filter: var(--blur-lg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+}
+/* ================= INPUTS ================= */
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: rgba(255,255,255,0.14);
+  color: var(--white);
+  font-size: 0.95rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+/* ================= FLOAT UTILITY ================= */
+.float {
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+/* ================= LAYOUT HELPERS ================= */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 120px 80px;
+}
+
+
