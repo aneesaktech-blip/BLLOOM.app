@@ -81,78 +81,76 @@
   <!-- =========================
        HERO SECTION
   ========================= -->
+<svg class="fashion-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
 
-  <section class="hero">
-  <svg class="fashion-graphic" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <!-- DOT TEXTURE -->
+  <defs>
+    <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="rgba(255,255,255,0.15)" />
+    </pattern>
+  </defs>
 
-    <!-- DOT PATTERN -->
-    <defs>
-      <pattern id="dotTexture" width="18" height="18" patternUnits="userSpaceOnUse">
-        <circle cx="2" cy="2" r="1.3" fill="rgba(255,255,255,0.18)" />
-      </pattern>
-    </defs>
+  <rect width="100%" height="100%" fill="url(#dots)" />
 
-    <!-- Background -->
-    <rect width="100%" height="100%" fill="url(#dotTexture)" />
+  <!-- BLLOOM MALL -->
+  <rect x="900" y="180" width="520" height="380"
+        fill="none"
+        stroke="rgba(255,255,255,0.5)"
+        stroke-width="2"
+        stroke-dasharray="10 8" />
 
-    <!-- BLLOOM MALL (abstract building) -->
-    <rect x="900" y="180" width="520" height="380"
-          fill="none"
-          stroke="rgba(255,255,255,0.45)"
-          stroke-width="2"
-          stroke-dasharray="8 8" />
+  <text x="1160" y="160"
+        text-anchor="middle"
+        font-size="28"
+        letter-spacing="12"
+        fill="rgba(255,255,255,0.6)">
+    BLLOOM
+  </text>
 
-    <text x="1160" y="155"
-          text-anchor="middle"
-          font-size="28"
-          letter-spacing="10"
-          fill="rgba(255,255,255,0.6)">
-      BLLOOM MALL
-    </text>
+  <!-- WOMAN (SKIRT) -->
+  <path d="M360 250
+           C340 210, 380 210, 360 250
+           L330 420
+           L390 420 Z"
+        fill="none"
+        stroke="white"
+        stroke-width="2"
+        stroke-dasharray="4 6"/>
 
-    <!-- Woman with skirt -->
-    <path d="M350 260
-             C330 220, 370 220, 350 260
-             L330 400
-             L370 400 Z"
-          fill="none"
-          stroke="white"
-          stroke-width="2"
-          stroke-dasharray="4 6"/>
+  <!-- MAN -->
+  <path d="M460 250
+           C440 215, 480 215, 460 250
+           L440 430
+           L480 430 Z"
+        fill="none"
+        stroke="white"
+        stroke-width="2"
+        stroke-dasharray="4 6"/>
 
-    <!-- Man -->
-    <path d="M450 260
-             C430 215, 470 215, 450 260
-             L430 420
-             L470 420 Z"
-          fill="none"
-          stroke="white"
-          stroke-width="2"
-          stroke-dasharray="4 6"/>
+  <!-- EXTRA PEOPLE -->
+  <path d="M560 280 L550 420 L570 420 Z"
+        fill="none"
+        stroke="rgba(255,255,255,0.6)"
+        stroke-dasharray="3 6"/>
 
-    <!-- Extra shoppers -->
-    <path d="M550 280 L540 420 L560 420 Z"
-          fill="none"
-          stroke="rgba(255,255,255,0.6)"
-          stroke-dasharray="3 6"/>
+  <path d="M630 300 L620 420 L640 420 Z"
+        fill="none"
+        stroke="rgba(255,255,255,0.6)"
+        stroke-dasharray="3 6"/>
 
-    <path d="M620 300 L610 420 L630 420 Z"
-          fill="none"
-          stroke="rgba(255,255,255,0.6)"
-          stroke-dasharray="3 6"/>
+  <!-- SHOPPING BAGS -->
+  <rect x="330" y="370" width="18" height="26"
+        fill="none"
+        stroke="rgba(255,255,255,0.7)"
+        stroke-dasharray="3 4"/>
 
-    <!-- Shopping bags -->
-    <rect x="330" y="360" width="18" height="24"
-          fill="none"
-          stroke="rgba(255,255,255,0.7)"
-          stroke-dasharray="2 4"/>
+  <rect x="480" y="370" width="18" height="26"
+        fill="none"
+        stroke="rgba(255,255,255,0.7)"
+        stroke-dasharray="3 4"/>
 
-    <rect x="470" y="360" width="18" height="24"
-          fill="none"
-          stroke="rgba(255,255,255,0.7)"
-          stroke-dasharray="2 4"/>
+</svg>
 
-  </svg>
 
   <div class="hero-content">
     <h1>CRAFT YOUR<br>STYLE</h1>
@@ -283,6 +281,7 @@
 
 </body>
 </html>
+
 
 
 
