@@ -82,16 +82,67 @@
        HERO SECTION
   ========================= -->
  <section class="hero">
-  <div class="hero-bg"></div>
+  <svg class="hero-graphic" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">
+
+    <!-- Background dots -->
+    <defs>
+      <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1.2" fill="rgba(255,255,255,0.15)" />
+      </pattern>
+    </defs>
+
+    <rect width="100%" height="100%" fill="url(#dots)" />
+
+    <!-- BLOOM Mall (abstract building) -->
+    <rect x="800" y="150" width="450" height="350"
+          fill="none"
+          stroke="rgba(255,255,255,0.4)"
+          stroke-width="2"
+          stroke-dasharray="6 6"/>
+
+    <text x="1025" y="130"
+          text-anchor="middle"
+          fill="rgba(255,255,255,0.6)"
+          letter-spacing="8"
+          font-size="24">
+      BLLOOM
+    </text>
+
+    <!-- Woman silhouette -->
+    <path d="M300 250
+             C280 200, 320 200, 300 250
+             L280 420
+             L320 420 Z"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-dasharray="4 4"/>
+
+    <!-- Man silhouette -->
+    <path d="M420 260
+             C400 210, 440 210, 420 260
+             L400 430
+             L440 430 Z"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-dasharray="4 4"/>
+
+    <!-- Clothing outlines -->
+    <path d="M290 330 L260 380 L300 420 L340 380 Z"
+          fill="none"
+          stroke="rgba(255,255,255,0.6)"
+          stroke-width="1.5"
+          stroke-dasharray="3 6"/>
+
+  </svg>
 
   <div class="hero-content">
     <h1>CRAFT YOUR<br>STYLE</h1>
     <p>
-      Premium custom fashion designed to match your individuality.
-      Crafted with precision, styled with purpose.
+      Fashion engineered through design, identity, and technology.
     </p>
-
-    <a href="#shop" class="btn-outline">Shop Now</a>
+    <a class="btn-outline" href="#shop">Shop Now</a>
   </div>
 </section>
 
@@ -212,6 +263,7 @@
 
 </body>
 </html>
+
 
 
 
