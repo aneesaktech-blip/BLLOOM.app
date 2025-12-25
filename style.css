@@ -794,4 +794,13 @@ body {
   background: #fff;
   color: #000;
 }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.08;
+  pointer-events: none;
+}
+
 
