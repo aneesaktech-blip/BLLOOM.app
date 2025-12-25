@@ -1,0 +1,106 @@
+.admin {
+  display: flex;
+  min-height: 100vh;
+  background: #0b0b0f;
+  color: white;
+  font-family: system-ui, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #111;
+  padding: 30px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar .tab {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.sidebar .tab.active {
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 40px;
+}
+
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+/* Cards */
+.stats {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background: #1a1a22;
+  padding: 30px;
+  border-radius: 14px;
+  min-width: 150px;
+}
+
+.card span {
+  font-size: 2rem;
+}
+
+/* Forms */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form input {
+  padding: 10px;
+  background: #1a1a22;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+
+form button {
+  padding: 10px 20px;
+  background: #e11d48;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Lists */
+#productList div,
+#couponList div {
+  background: #1a1a22;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Toggles */
+.toggle {
+  display: block;
+  margin-bottom: 15px;
+}
