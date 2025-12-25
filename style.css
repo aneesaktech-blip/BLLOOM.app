@@ -733,6 +733,22 @@ body {
 /* BIG dotted girl layer */
 .fashion-girl {
   position: absolute;
+   .fashion-girl {
+  position: absolute;
+  right: 6%;
+  bottom: -4%;
+  height: 90%;
+  width: auto;
+
+  z-index: 1;          /* 👈 LOW layer */
+  opacity: 0.85;
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 5;          /* 👈 HIGHER than SVG */
+}
+
   right: 5%;
   bottom: -5%;
   height: 90%;
@@ -759,4 +775,5 @@ body {
   position: relative;
   z-index: 3;
 }
+
 
