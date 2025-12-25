@@ -1,1 +1,81 @@
+/* ================= PAGE REVEAL ================= */
+.page {
+  animation: pageReveal 0.9s var(--ease-main) forwards;
+}
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* ================= FLOATING ELEMENT ================= */
+.float {
+  animation: floatSoft 7s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* ================= BUTTON GLOW ================= */
+.btn {
+  position: relative;
+  padding: 14px 34px;
+  border-radius: 40px;
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    #ff4d6d
+  );
+  border: none;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 60px rgba(225,29,72,0.45);
+}
+
+/* ================= GLASS CARD ================= */
+.glass {
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.16),
+    rgba(255,255,255,0.05)
+  );
+  backdrop-filter: var(--blur-lg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+}
+
+/* ================= INPUT FOCUS ================= */
+input {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  color: white;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
 
