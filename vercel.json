@@ -29,6 +29,11 @@
       "source": "/payment/success.html",
       "destination": "/success",
       "permanent": true
+    },
+    {
+      "source": "/admin/index.html",
+      "destination": "/admin",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -43,23 +48,8 @@
     { "source": "/buy-now", "destination": "/cart/buy-now.html" },
 
     { "source": "/payment", "destination": "/payment/payment.html" },
-    { "source": "/success", "destination": "/payment/success.html" }
-  ]
-}
-{
-  "redirects": [
-    {
-      "source": "/admin/index.html",
-      "destination": "/admin",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/success", "destination": "/payment/success.html" },
 
-    { "source": "/login", "destination": "/login/login.html" },
-    { "source": "/signup", "destination": "/signup/signup.html" },
-    { "source": "/shop", "destination": "/shop/shop.html" },
-    { "source": "/cart", "destination": "/cart/index.html" }
+    { "source": "/admin", "destination": "/admin/index.html" }
   ]
 }
