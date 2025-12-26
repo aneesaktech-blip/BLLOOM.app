@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- 3D Model -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
@@ -18,8 +17,10 @@
 <body>
 
 <!-- ================= HEADER ================= -->
-<header class="navbar">
-  <div class="nav-left logo">BLLOOM</div>
+<header class="navbar" id="navbar">
+  <div class="nav-left">
+    <span class="logo" id="navLogo">BLLOOM</span>
+  </div>
 
   <div class="nav-center">
     <nav class="nav-links">
@@ -39,12 +40,21 @@
     <button class="icon-btn">♡</button>
     <button class="icon-btn">🛒</button>
     <button class="login-btn">Login</button>
+
+    <div class="menu">
+      <button class="icon-btn" id="menuBtn">∞</button>
+      <div class="dropdown" id="dropdown">
+        <a href="#">Wishlist</a>
+        <a href="#">Orders</a>
+        <a href="#">Profile</a>
+      </div>
+    </div>
   </div>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
-  <h1 class="hero-brand">BLLOOM</h1>
+  <h1 class="hero-brand" id="heroBrand">BLLOOM</h1>
 
   <div class="hero-model">
     <model-viewer
@@ -56,53 +66,41 @@
   </div>
 </section>
 
-<!-- ================= FEATURED PRODUCTS ================= -->
+<!-- ================= FEATURED ================= -->
 <section class="section featured" id="featured">
-  <h2 class="section-title">Featured Products</h2>
-  <p class="section-subtitle">Oversized fits. Clean silhouettes.</p>
+  <h2>Featured Products</h2>
 
   <div class="product-grid">
     <div class="product-card">
       <div class="product-img"></div>
-      <h3>Oversized Hoodie</h3>
-      <p>₹2,499</p>
+      <p>Oversized Hoodie</p>
     </div>
-
     <div class="product-card">
       <div class="product-img"></div>
-      <h3>Street Jacket</h3>
-      <p>₹3,299</p>
+      <p>Street Jacket</p>
     </div>
-
     <div class="product-card">
       <div class="product-img"></div>
-      <h3>Minimal Tee</h3>
-      <p>₹1,299</p>
+      <p>Minimal Tee</p>
     </div>
   </div>
 </section>
 
 <!-- ================= CUSTOMIZATION ================= -->
 <section class="section customization" id="customization">
-  <div class="custom-left">
-    <h2>Customization</h2>
-    <p>
-      Choose your fabric, fit, material and design.
-      Create something that represents you.
-    </p>
-  </div>
+  <h2>Customization</h2>
+  <p>Create something that represents you.</p>
 
   <form class="custom-form">
-    <input type="text" placeholder="Type of clothing (hoodie, jacket…)" required />
+    <input type="text" placeholder="Type of clothing" required />
     <input type="text" placeholder="Material / Fabric" required />
     <textarea placeholder="Describe your design idea" required></textarea>
     <button type="submit">Submit Request</button>
   </form>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="footer">
-  © 2025 BLLOOM. All rights reserved.
+  © 2025 BLLOOM
 </footer>
 
 <script src="script.js"></script>
