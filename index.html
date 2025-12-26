@@ -2,102 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BLLOOM</title>
 
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ================= GLOBAL GRID GUIDES ================= -->
-<div class="grid-overlay">
-  <span></span><span></span><span></span><span></span>
-</div>
-
-<!-- ================= TOP NAV ================= -->
+<!-- ================= NAV ================= -->
 <header class="top-nav">
 
   <div class="nav-left">
-    <button class="nav-tab active">MEN</button>
-    <button class="nav-tab">WOMEN</button>
-    <button class="nav-tab">ACCESSORIES</button>
+    <button class="tab active">MEN</button>
+    <button class="tab">WOMEN</button>
+    <button class="tab">ACCESSORIES</button>
+  </div>
+
+  <!-- SEARCH (MOVED DOWN + CENTERED) -->
+  <div class="nav-search">
+    <input type="text" placeholder="SEARCH" />
+    <span>🔍</span>
   </div>
 
   <div class="nav-right">
-    <div class="search-box">
-      <span class="search-label">SEARCH</span>
-      <input type="text" />
-      <span class="search-icon">⌕</span>
-    </div>
+    <!-- LOGO SECTION TOP RIGHT -->
+    <div class="brand-mini">BLLOOM</div>
 
-    <button class="icon-btn">♡</button>
-    <button class="icon-btn">🛒</button>
-    <button class="icon-btn">👤</button>
-    <button class="icon-btn infinity">∞</button>
+    <button class="icon">♡</button>
+    <button class="icon">🛒</button>
+    <button class="icon">👤</button>
+    <button class="icon infinity">∞</button>
   </div>
 
 </header>
 
-<!-- ================= EDITORIAL HERO ================= -->
+<!-- ================= HERO ================= -->
 <section class="editorial-hero">
 
-  <!-- geometric guide -->
-  <div class="circle-guide"></div>
-  <div class="cross-guide"></div>
+  <!-- guides -->
+  <div class="circle"></div>
+  <div class="cross"></div>
 
-  <!-- LEFT PANEL -->
-  <div class="panel panel-left">
-    <video src="hero.mp4" autoplay muted loop></video>
-
-    <div class="panel-caption">
-      <h4>BROWN COAT</h4>
-      <p class="price">₹699</p>
-      <div class="panel-actions">
-        <button>QUICK VIEW</button>
-        <button>ADD TO CART</button>
-      </div>
-    </div>
+  <!-- VIDEO PANELS -->
+  <div class="panel left">
+    <video src="hero.mp4" autoplay muted loop playsinline></video>
   </div>
 
-  <!-- CENTER PANEL -->
-  <div class="panel panel-center">
-    <video src="hero.mp4" autoplay muted loop></video>
+  <div class="panel center">
+    <video src="hero.mp4" autoplay muted loop playsinline></video>
   </div>
 
-  <!-- RIGHT PANEL -->
-  <div class="panel panel-right">
-    <video src="hero.mp4" autoplay muted loop></video>
-
-    <div class="panel-text">
-      <p>
-        Our latest clothing<br>
-        collection is special<br>
-        for autumn.
-      </p>
-    </div>
+  <div class="panel right">
+    <video src="hero.mp4" autoplay muted loop playsinline></video>
   </div>
 
-  <!-- BRAND -->
-  <h1 class="brand-text">BLLOOM</h1>
+  <!-- BIG BRAND -->
+  <h1 class="brand">BLLOOM</h1>
 
   <!-- CTA -->
-  <button class="cta-btn">NEW COLLECTION</button>
+  <button class="cta">NEW COLLECTION</button>
 
 </section>
 
 <!-- ================= FEATURED ================= -->
 <section class="featured">
-  <h2>Featured Collection</h2>
+  <h2>Featured Products</h2>
 
-  <div class="featured-grid">
-    <div class="featured-card"></div>
-    <div class="featured-card"></div>
-    <div class="featured-card"></div>
+  <div class="grid">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
   </div>
 </section>
 
-<script src="script.js"></script>
+<!-- ================= CUSTOMIZATION ================= -->
+<section class="customization">
+  <h2>Customization</h2>
+  <p>Create your own style — fabric, fit, design.</p>
+
+  <form class="custom-form">
+    <input type="text" placeholder="Clothing type" required />
+    <input type="text" placeholder="Material / Fabric" required />
+    <textarea placeholder="Describe your design" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
 </body>
 </html>
