@@ -14,19 +14,16 @@
 <body>
 
 <!-- ================= HEADER ================= -->
-<header class="navbar">
-
-  <!-- LEFT -->
+<header class="navbar" id="navbar">
   <div class="nav-left">
-    <span class="logo">BLLOOM</span>
+    <span class="logo" id="logo">BLLOOM</span>
   </div>
 
-  <!-- CENTER -->
   <div class="nav-center">
     <nav class="nav-links">
-      <a href="/shop">Shop</a>
-      <a href="/collections">Collections</a>
-      <a href="/customization">Customization</a>
+      <a href="#">Shop</a>
+      <a href="#">Collections</a>
+      <a href="#">Customization</a>
     </nav>
 
     <div class="nav-search">
@@ -34,44 +31,69 @@
     </div>
   </div>
 
-  <!-- RIGHT -->
   <div class="nav-right">
-    <span class="icon">🛒</span>
-    <span class="login">Login</span>
+    <span>♡</span>
+    <span>🛒</span>
+    <span>Login</span>
+    <span>⋮</span>
   </div>
-
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
+  <h1 class="hero-brand" id="heroBrand">BLLOOM</h1>
 
-  <!-- BIG BLLOOM -->
-  <h1 class="hero-brand">BLLOOM</h1>
-
-  <!-- IMMERSIVE FRAME -->
-  <div class="hero-frame">
+  <div class="hero-model">
     <model-viewer
       src="https://res.cloudinary.com/dviponk13/image/upload/v1766527204/hoodie_rjsjpl.glb"
       auto-rotate
       camera-controls
-      exposure="1.05"
+      exposure="1.1"
       environment-image="neutral">
     </model-viewer>
   </div>
-
 </section>
 
 <!-- ================= FEATURED ================= -->
-<section class="section">
+<section class="section featured">
   <h2>Featured Products</h2>
-  <p>Oversized fits. Clean silhouettes.</p>
+
+  <div class="product-grid">
+    <div class="product-card"></div>
+    <div class="product-card"></div>
+    <div class="product-card"></div>
+  </div>
 </section>
 
-<!-- ================= CUSTOM ================= -->
-<section class="section alt">
-  <h2>Customization</h2>
-  <p>Create your own style.</p>
+<!-- ================= CUSTOMIZATION ================= -->
+<section class="section customization">
+  <div class="custom-visual"></div>
+
+  <div class="custom-info">
+    <h2>Customization</h2>
+    <p>
+      Choose fabric, fit, material, and design.  
+      Create something that represents you.
+    </p>
+  </div>
 </section>
+
+<!-- ================= SCROLL SCRIPT ================= -->
+<script>
+  const brand = document.getElementById("heroBrand");
+  const logo = document.getElementById("logo");
+
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+
+    const scale = Math.max(0.45, 1 - y / 300);
+    brand.style.transform = `translate(-50%, ${y * 0.2}px) scale(${scale})`;
+    brand.style.opacity = Math.max(0, 1 - y / 250);
+
+    logo.style.transform = `scale(${Math.min(1, y / 200)})`;
+    logo.style.opacity = Math.min(1, y / 200);
+  });
+</script>
 
 </body>
 </html>
