@@ -1,39 +1,26 @@
 <!-- redeploy check -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM — Craft Your Style</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="theme.css" />
   <link rel="stylesheet" href="global.css" />
 
-  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- MODEL VIEWER -->
-  <script
-    type="module"
-    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-  </script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
 <body class="page">
 
-<!-- =========================
-     NAVBAR
-========================= -->
+<!-- ================= NAVBAR ================= -->
 <header class="navbar dark">
+  <div class="logo"><a href="/">BLLOOM</a></div>
 
-  <!-- LEFT -->
-  <div class="logo">
-    <a href="/">BLLOOM</a>
-  </div>
-
-  <!-- CENTER -->
   <div class="nav-center">
     <nav class="nav-links">
       <a href="/shop">Shop</a>
@@ -41,26 +28,17 @@
       <a href="/customization">Customization</a>
     </nav>
 
-    <!-- SEARCH -->
     <div class="nav-search">
-      <input
-        type="text"
-        placeholder="Search products..."
-        aria-label="Search"
-      />
+      <input type="text" placeholder="Search products..." />
     </div>
   </div>
 
-  <!-- RIGHT -->
   <div class="nav-right">
-
     <a href="/cart" class="icon-btn">🛒</a>
     <a href="/login" class="login-btn">Login</a>
 
-    <!-- MENU -->
     <div class="menu-wrapper">
       <button class="menu-icon" id="menuToggle">∞</button>
-
       <div class="menu-dropdown" id="menuDropdown">
         <button class="menu-item">My Account</button>
         <button class="menu-item">Orders</button>
@@ -68,246 +46,117 @@
         <button class="menu-item">Recently viewed</button>
       </div>
     </div>
-
   </div>
 </header>
 
-
+<!-- ================= HERO ================= -->
 <section class="hero">
 
-
+  <!-- FLOATING TAGS -->
   <div class="floating-ui">
-    <span class="ui-card draggable" data-item="jacket">JACKET</span>
-    <span class="ui-card draggable" data-item="new">NEW DROP</span>
-    <span class="ui-card draggable" data-item="sale">SALE −20%</span>
-    <span class="ui-card draggable" data-item="custom">CUSTOM FIT</span>
-    <span class="ui-card draggable" data-item="cart">ADD TO CART</span>
+    <span class="ui-card draggable">JACKET</span>
+    <span class="ui-card draggable">NEW DROP</span>
+    <span class="ui-card draggable">SALE −20%</span>
+    <span class="ui-card draggable">CUSTOM FIT</span>
+    <span class="ui-card draggable">ADD TO CART</span>
   </div>
 
-</section> 
-  <!-- end hero -->
-
-
-
-
-  
-
-  <!-- HERO CONTENT -->
+  <!-- HERO TEXT -->
   <div class="hero-content">
     <h1>CRAFT YOUR<br>STYLE</h1>
-    <p>
-      Fashion designed for movement, identity, and confidence.
-    </p>
+    <p>Fashion designed for movement, identity, and confidence.</p>
     <a href="/shop" class="btn-outline">Shop Now</a>
   </div>
 
+  <!-- 3D MODEL -->
+  <div class="hero-model">
+    <model-viewer
+      src="https://res.cloudinary.com/dviponk13/image/upload/v1766527204/hoodie_rjsjpl.glb"
+      auto-rotate
+      camera-controls
+      exposure="1"
+      environment-image="neutral">
+    </model-viewer>
+  </div>
+
+  <!-- SCROLL -->
+  <div class="scroll-indicator">↓</div>
 </section>
 
-<!-- =========================
-     3D MODEL
-========================= -->
-<div class="hero-model">
-  <model-viewer
-    src="https://res.cloudinary.com/dviponk13/image/upload/v1766527204/hoodie_rjsjpl.glb"
-    auto-rotate
-    camera-controls
-    exposure="1"
-    environment-image="neutral">
-  </model-viewer>
-</div>
-
-<!-- SCROLL INDICATOR -->
-<div
-  class="scroll-indicator"
-  onclick="document.getElementById('collections').scrollIntoView({ behavior: 'smooth' })">
-  ↓
-</div>
-
-<!-- =========================
-     COLLECTIONS
-========================= -->
+<!-- ================= COLLECTIONS ================= -->
 <section class="section" id="collections">
   <h2 class="section-title">Featured Collections</h2>
-  <p class="section-subtitle">
-    Designed for modern silhouettes and everyday confidence.
-  </p>
+  <p class="section-subtitle">Designed for modern silhouettes and everyday confidence.</p>
 
   <div class="collection-grid">
-    <div class="collection-card">
-      <h3>Oversized Hoodies</h3>
-      <p>Street-ready comfort.</p>
-    </div>
-
-    <div class="collection-card">
-      <h3>Minimal Tees</h3>
-      <p>Clean. Soft. Everyday.</p>
-    </div>
-
-    <div class="collection-card">
-      <h3>Custom Fits</h3>
-      <p>Designed your way.</p>
-    </div>
+    <div class="collection-card"><h3>Oversized Hoodies</h3><p>Street-ready comfort.</p></div>
+    <div class="collection-card"><h3>Minimal Tees</h3><p>Clean. Soft. Everyday.</p></div>
+    <div class="collection-card"><h3>Custom Fits</h3><p>Designed your way.</p></div>
   </div>
 </section>
 
-<!-- =========================
-     CUSTOMIZATION
-========================= -->
-<section class="section custom-section">
-  <h2 class="section-title">Customize Your Fit</h2>
-  <p class="section-subtitle">
-    Want something unique? Tell us exactly what you want.
-  </p>
-
-  <div class="custom-box">
-    <form class="custom-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="text" placeholder="Product Type" required />
-      <textarea placeholder="Describe your custom request" required></textarea>
-      <button type="submit">SUBMIT REQUEST</button>
-    </form>
-  </div>
-</section>
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- ================= FOOTER ================= -->
 <footer class="dark-footer">
   © 2025 BLLOOM. All rights reserved.
 </footer>
 
-<!-- =========================
-     MENU SCRIPT
-========================= -->
+<!-- ================= GIFT BIN ================= -->
+<div id="gift-box">
+  🎁
+  <span class="gift-text">Drop here</span>
+</div>
+
+<!-- ================= MENU SCRIPT ================= -->
 <script>
   const menuToggle = document.getElementById("menuToggle");
   const menuDropdown = document.getElementById("menuDropdown");
 
-  if (menuToggle && menuDropdown) {
-    menuToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      menuDropdown.classList.toggle("show");
-    });
+  menuToggle?.addEventListener("click", e => {
+    e.stopPropagation();
+    menuDropdown.classList.toggle("show");
+  });
 
-    document.addEventListener("click", () => {
-      menuDropdown.classList.remove("show");
-    });
-  }
+  document.addEventListener("click", () => {
+    menuDropdown.classList.remove("show");
+  });
 </script>
 
-<!-- =========================
-     AI CHAT
-========================= -->
-<div id="ai-chat-btn">💬</div>
+<!-- ================= DRAG SCRIPT (SINGLE, CLEAN) ================= -->
+<script>
+  const cards = document.querySelectorAll(".draggable");
+  const bin = document.getElementById("gift-box");
+  let active = null;
 
-<div id="ai-chatbox">
-  <div class="ai-header">
-    <span>Bloom AI Assistant</span>
-    <button id="close-ai">✕</button>
-  </div>
-
-  <div class="ai-messages" id="ai-messages">
-    <div class="ai-message bot">
-      Hi 👋 I’m biAX. How can I help you today?
-    </div>
-  </div>
-
-  <div class="ai-input">
-    <input type="text" id="ai-input" placeholder="Ask me anything..." />
-    <button id="send-ai">➤</button>
-  </div>
-</div>
-
-<script src="ai-chat.js"></script>
-  <script>
-  const draggables = document.querySelectorAll(".draggable");
-  const giftBox = document.getElementById("gift-box");
-
-  let draggedItem = null;
-
-  draggables.forEach(item => {
-    item.addEventListener("mousedown", () => {
-      draggedItem = item;
-      item.style.zIndex = 1000;
+  cards.forEach(card => {
+    card.addEventListener("mousedown", () => {
+      active = card;
+      card.style.zIndex = 9999;
     });
   });
 
-  document.addEventListener("mousemove", (e) => {
-    if (!draggedItem) return;
-    draggedItem.style.left = e.pageX - draggedItem.offsetWidth / 2 + "px";
-    draggedItem.style.top = e.pageY - draggedItem.offsetHeight / 2 + "px";
+  document.addEventListener("mousemove", e => {
+    if (!active) return;
+    active.style.left = e.pageX - active.offsetWidth / 2 + "px";
+    active.style.top = e.pageY - active.offsetHeight / 2 + "px";
   });
 
   document.addEventListener("mouseup", () => {
-    if (!draggedItem) return;
+    if (!active) return;
 
-    const giftRect = giftBox.getBound
- 
+    const b = bin.getBoundingClientRect();
+    const c = active.getBoundingClientRect();
 
-  <div id="gift-box">
-    🎁
-    <span class="gift-text">Drop here</span>
-  </div>
+    if (c.left < b.right && c.right > b.left && c.top < b.bottom && c.bottom > b.top) {
+      active.style.display = "none";
+      window.location.href = "/shop?filter=best";
+    }
 
-</section>
-
-<!-- GIFT BOX -->
-<div id="gift-box">
-  🎁
-  <span class="gift-text">Drop here</span>
-    
-</div>
-      <script>
-  console.log("DRAG SCRIPT ACTIVE");
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".draggable");
-    const bin = document.getElementById("gift-box");
-
-    console.log("Cards:", cards.length, "Bin:", bin);
-
-    let active = null;
-
-    cards.forEach(card => {
-      card.addEventListener("mousedown", () => {
-        active = card;
-        card.style.zIndex = 9999;
-      });
-    });
-
-    document.addEventListener("mousemove", e => {
-      if (!active) return;
-      active.style.left = e.pageX - active.offsetWidth / 2 + "px";
-      active.style.top = e.pageY - active.offsetHeight / 2 + "px";
-    });
-
-    document.addEventListener("mouseup", () => {
-      if (!active) return;
-
-      const b = bin.getBoundingClientRect();
-      const c = active.getBoundingClientRect();
-
-      if (
-        c.left < b.right &&
-        c.right > b.left &&
-        c.top < b.bottom &&
-        c.bottom > b.top
-      ) {
-        active.style.display = "none";
-        window.location.href = "/shop?filter=best";
-      }
-
-      active = null;
-    });
+    active = null;
   });
 </script>
 
+<!-- AI CHAT -->
+<script src="ai-chat.js"></script>
+
 </body>
 </html>
-
-
-
-
-
-
-
