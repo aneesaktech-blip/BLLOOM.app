@@ -6,102 +6,97 @@
   <title>BLLOOM</title>
 
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- 3D Model -->
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="navbar" id="navbar">
+<!-- ================= GLOBAL GRID GUIDES ================= -->
+<div class="grid-overlay">
+  <span></span><span></span><span></span><span></span>
+</div>
+
+<!-- ================= TOP NAV ================= -->
+<header class="top-nav">
+
   <div class="nav-left">
-    <span class="logo" id="navLogo">BLLOOM</span>
-  </div>
-
-  <div class="nav-center">
-    <nav class="nav-links">
-      <a href="#featured">Shop</a>
-      <a href="#featured">Collections</a>
-      <a href="#customization">Customization</a>
-    </nav>
-
-    <div class="search-wrapper">
-      <span class="flower">✿</span>
-      <input type="text" placeholder="Search products..." />
-      <span class="flower">✿</span>
-    </div>
+    <button class="nav-tab active">MEN</button>
+    <button class="nav-tab">WOMEN</button>
+    <button class="nav-tab">ACCESSORIES</button>
   </div>
 
   <div class="nav-right">
+    <div class="search-box">
+      <span class="search-label">SEARCH</span>
+      <input type="text" />
+      <span class="search-icon">⌕</span>
+    </div>
+
     <button class="icon-btn">♡</button>
     <button class="icon-btn">🛒</button>
-    <button class="login-btn">Login</button>
+    <button class="icon-btn">👤</button>
+    <button class="icon-btn infinity">∞</button>
+  </div>
 
-    <div class="menu">
-      <button class="icon-btn" id="menuBtn">∞</button>
-      <div class="dropdown" id="dropdown">
-        <a href="#">Wishlist</a>
-        <a href="#">Orders</a>
-        <a href="#">Profile</a>
+</header>
+
+<!-- ================= EDITORIAL HERO ================= -->
+<section class="editorial-hero">
+
+  <!-- geometric guide -->
+  <div class="circle-guide"></div>
+  <div class="cross-guide"></div>
+
+  <!-- LEFT PANEL -->
+  <div class="panel panel-left">
+    <video src="hero.mp4" autoplay muted loop></video>
+
+    <div class="panel-caption">
+      <h4>BROWN COAT</h4>
+      <p class="price">₹699</p>
+      <div class="panel-actions">
+        <button>QUICK VIEW</button>
+        <button>ADD TO CART</button>
       </div>
     </div>
   </div>
-</header>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <h1 class="hero-brand" id="heroBrand">BLLOOM</h1>
-
-  <div class="hero-model">
-    <model-viewer
-      src="https://res.cloudinary.com/dviponk13/image/upload/v1766527204/hoodie_rjsjpl.glb"
-      auto-rotate
-      camera-controls
-      exposure="1.1">
-    </model-viewer>
+  <!-- CENTER PANEL -->
+  <div class="panel panel-center">
+    <video src="hero.mp4" autoplay muted loop></video>
   </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="panel panel-right">
+    <video src="hero.mp4" autoplay muted loop></video>
+
+    <div class="panel-text">
+      <p>
+        Our latest clothing<br>
+        collection is special<br>
+        for autumn.
+      </p>
+    </div>
+  </div>
+
+  <!-- BRAND -->
+  <h1 class="brand-text">BLLOOM</h1>
+
+  <!-- CTA -->
+  <button class="cta-btn">NEW COLLECTION</button>
+
 </section>
 
 <!-- ================= FEATURED ================= -->
-<section class="section featured" id="featured">
-  <h2>Featured Products</h2>
+<section class="featured">
+  <h2>Featured Collection</h2>
 
-  <div class="product-grid">
-    <div class="product-card">
-      <div class="product-img"></div>
-      <p>Oversized Hoodie</p>
-    </div>
-    <div class="product-card">
-      <div class="product-img"></div>
-      <p>Street Jacket</p>
-    </div>
-    <div class="product-card">
-      <div class="product-img"></div>
-      <p>Minimal Tee</p>
-    </div>
+  <div class="featured-grid">
+    <div class="featured-card"></div>
+    <div class="featured-card"></div>
+    <div class="featured-card"></div>
   </div>
 </section>
-
-<!-- ================= CUSTOMIZATION ================= -->
-<section class="section customization" id="customization">
-  <h2>Customization</h2>
-  <p>Create something that represents you.</p>
-
-  <form class="custom-form">
-    <input type="text" placeholder="Type of clothing" required />
-    <input type="text" placeholder="Material / Fabric" required />
-    <textarea placeholder="Describe your design idea" required></textarea>
-    <button type="submit">Submit Request</button>
-  </form>
-</section>
-
-<footer class="footer">
-  © 2025 BLLOOM
-</footer>
 
 <script src="script.js"></script>
 </body>
