@@ -233,6 +233,19 @@ body {
   z-index: 1;               /* behind video */
   pointer-events: none;
 }
+.brand {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(10rem, 22vw, 18rem);
+  letter-spacing: 14px;
+  color: #6f1d1b;   /* maroon */
+  z-index: 4;       /* above video */
+  pointer-events: none;
+}
+
 
 
 
