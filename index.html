@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
@@ -27,11 +29,25 @@
   </nav>
 
   <div class="header-right">
-    <a href="#">Wishlist</a>
-    <a href="#">Cart</a>
-    <a href="#">Login</a>
+    <a href="/wishlist.html" class="icon-btn" title="Wishlist">♡</a>
+    <a href="/cart.html" class="icon-btn" title="Cart">🛒</a>
+    <a href="/login.html" class="login-btn">Login</a>
+
+    <!-- Infinity Menu -->
+    <button class="menu-infinity" id="menuToggle">∞</button>
+
+    <div class="menu-dropdown" id="menuDropdown">
+      <a href="/account.html">My Account</a>
+      <a href="/orders.html">Orders</a>
+      <a href="/support.html">Support</a>
+    </div>
   </div>
 </header>
+
+
+ 
+
+
 
 <!-- HERO -->
 <section class="hero">
@@ -81,6 +97,21 @@
     bloom.style.transform = `translate(-50%, -50%) scale(${scale})`;
   });
 </script>
+<script>
+  const toggle = document.getElementById("menuToggle");
+  const dropdown = document.getElementById("menuDropdown");
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdown.style.display =
+      dropdown.style.display === "block" ? "none" : "block";
+  });
+
+  document.addEventListener("click", () => {
+    dropdown.style.display = "none";
+  });
+</script>
 
 </body>
 </html>
+
