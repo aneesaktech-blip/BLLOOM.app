@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,102 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<!-- THICK MAROON BAR -->
-<div class="top-strip"></div>
+<!-- TOP BAR -->
+<div class="top-bar"></div>
 
-<!-- NAV -->
-<header class="top-nav">
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-small">BLLOOM</div>
 
-  <!-- LEFT -->
-  <div class="nav-left">
-    <span class="brand-mini">BLLOOM</span>
-    <button class="tab active">MEN</button>
-    <button class="tab">WOMEN</button>
-    <button class="tab">ACCESSORIES</button>
+  <nav class="menu">
+    <a href="#">MEN</a>
+    <a href="#">WOMEN</a>
+    <a href="#">ACCESSORIES</a>
+  </nav>
+
+  <div class="header-right">
+    <a href="#">Wishlist</a>
+    <a href="#">Cart</a>
+    <a href="#">Login</a>
   </div>
-
-  <!-- SEARCH -->
-  <div class="nav-search">
-    <span class="flower">✿</span>
-    <input type="text" placeholder="SEARCH" />
-    <span class="flower">✿</span>
-  </div>
-
-  <!-- RIGHT -->
-  <div class="nav-right">
-    <a href="wishlist.html">♡</a>
-    <a href="cart.html">🛒</a>
-    <a href="login.html" class="login">Login</a>
-    <span class="infinity">∞</span>
-  </div>
-
 </header>
 
 <!-- HERO -->
 <section class="hero">
-<div class="brand-shadow">BLLOOM</div>
 
-  <div class="circle"></div>
-
-  <!-- LEFT VIDEO BLOCK -->
-  <div class="panel left">
-    <video
-      src="hero.mp4"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto">
+  <!-- VIDEO -->
+  <div class="hero-video">
+    <video autoplay muted loop playsinline>
+      <source src="hero.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- CENTER VIDEO BLOCK -->
-  <div class="panel center">
-    <video
-      src="hero.mp4"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto">
-    </video>
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <input type="text" placeholder="SEARCH" />
   </div>
 
-  <!-- RIGHT VIDEO BLOCK -->
-  <div class="panel right">
-    <video
-      src="hero.mp4"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto">
-    </video>
-  </div>
+  <!-- BLOOM SHADOW -->
+  <div class="brand-shadow">BLLOOM</div>
 
-  <!-- BIG BLOOM TEXT -->
-  <h1 class="brand" id="brand">BLLOOM</h1>
-
-  <button class="cta">NEW COLLECTION</button>
+  <!-- MAIN BLOOM -->
+  <div class="brand" id="brand">BLLOOM</div>
 
 </section>
 
-  <!-- BIG BLOOM -->
-  <h1 class="brand" id="brand">BLLOOM</h1>
-
-  <button class="cta">NEW COLLECTION</button>
-
-</section>
-
-<!-- FEATURED COLLECTION -->
+<!-- FEATURED -->
 <section class="section">
-  <h2>Featured Collection</h2>
+  <h2>Featured Collections</h2>
+
   <div class="cards">
     <div class="card"></div>
     <div class="card"></div>
@@ -110,13 +68,19 @@
 </section>
 
 <!-- CUSTOMIZATION -->
-<section class="section custom">
+<section class="custom">
   <h2>Customization</h2>
-  <p>Choose fabric, fit, material & design.</p>
+  <p>Choose fabric, fit, material and design.</p>
 </section>
 
-<script src="script.js"></script>
+<script>
+  // BLOOM SHRINK ON SCROLL
+  window.addEventListener("scroll", () => {
+    const bloom = document.getElementById("brand");
+    const scale = Math.max(0.6, 1 - window.scrollY / 600);
+    bloom.style.transform = `translate(-50%, -50%) scale(${scale})`;
+  });
+</script>
+
 </body>
 </html>
-
-
