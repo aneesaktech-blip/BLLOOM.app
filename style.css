@@ -1,6 +1,4 @@
-/* ===============================
-   RESET
-================================ */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -8,297 +6,181 @@
 }
 
 body.page {
-  font-family: 'Montserrat', Arial, sans-serif;
-  background: #0b0b0b;
-  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  background: #2a2a2a;
+  color: #eee;
   overflow-x: hidden;
 }
 
-/* ===============================
-   NAVBAR
-================================ */
+/* ================= HEADER ================= */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   height: 76px;
+  width: 100%;
   z-index: 1000;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 36px;
-  background: rgba(15, 15, 15, 0.75);
+
+  background: rgba(42,42,42,0.88);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-.logo a {
-  color: #fff;
-  font-weight: 600;
+.small-logo {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: 0.3s ease;
   letter-spacing: 4px;
-  text-decoration: none;
+  font-weight: 700;
 }
 
-/* CENTER */
+.small-logo.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .nav-center {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .nav-links {
   display: flex;
+  justify-content: center;
   gap: 28px;
   margin-bottom: 6px;
 }
 
 .nav-links a {
-  color: #cfcfcf;
+  color: #d0d0d0;
   text-decoration: none;
-  font-size: 14px;
 }
 
 .nav-search input {
   width: 420px;
-  max-width: 80vw;
   padding: 12px 20px;
   border-radius: 999px;
   border: none;
-  outline: none;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.14);
   color: white;
 }
 
-/* RIGHT */
 .nav-right {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .icon-btn,
-.login-btn,
-.menu-icon {
-  color: white;
-  background: rgba(255,255,255,0.08);
+.login-btn {
+  background: rgba(255,255,255,0.14);
   padding: 8px 14px;
   border-radius: 999px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* MENU */
-.menu-wrapper {
-  position: relative;
-}
-
-.menu-dropdown {
-  position: absolute;
-  top: 44px;
-  right: 0;
-  background: #111;
-  border-radius: 12px;
-  padding: 8px;
-  display: none;
-  flex-direction: column;
-  min-width: 160px;
-}
-
-.menu-dropdown.show {
-  display: flex;
-}
-
-.menu-item {
-  background: none;
-  border: none;
   color: white;
-  padding: 10px;
-  text-align: left;
-  cursor: pointer;
+  text-decoration: none;
 }
 
-.menu-item:hover {
-  background: rgba(255,255,255,0.08);
-  border-radius: 8px;
-}
-
-/* ===============================
-   HERO
-================================ */
+/* ================= HERO ================= */
 .hero {
   margin-top: 76px;
-  min-height: calc(100vh - 76px);
+  height: calc(100vh - 76px);
   position: relative;
   overflow: hidden;
 
-  background:
-    radial-gradient(circle at top left, #3a0b0b, #0b0b0b 70%);
+  background: linear-gradient(
+    135deg,
+    #3b0b0b,
+    #2a2a2a,
+    #3b0b0b
+  );
 }
 
-/* HERO CONTENT */
-.hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 600px;
-  padding: 120px 80px;
-}
-
-.hero-content h1 {
-  font-size: 72px;
-  line-height: 0.95;
-  font-weight: 700;
-  margin-bottom: 20px;
+/* BIG BLLOOM */
+.hero-brand {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(6rem, 14vw, 14rem);
+  font-weight: 900;
+  letter-spacing: 10px;
+  z-index: 6;
 
   background: linear-gradient(
     180deg,
-    #a00000,
-    #4a0000
+    #b00000,
+    #5a0000
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  transition: transform 0.1s linear, opacity 0.1s linear;
 }
 
-.hero-content p {
-  color: #cfcfcf;
-  margin-bottom: 26px;
+/* ================= HOODIE ================= */
+.hero-model {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
 }
 
-.btn-outline {
-  padding: 14px 32px;
-  border-radius: 999px;
-  border: 1px solid #7a0000;
-  color: white;
-  text-decoration: none;
+.hero-model model-viewer {
+  width: 88vw;
+  height: 88vh;
+
+  filter:
+    drop-shadow(0 90px 180px rgba(0,0,0,0.35))
+    drop-shadow(0 0 140px rgba(140,0,0,0.45));
 }
 
-/* ===============================
-   FLOATING UI TAGS
-================================ */
+/* ================= FLOATING UI ================= */
 .floating-ui {
   position: absolute;
   inset: 0;
-  z-index: 4;
+  z-index: 7;
   pointer-events: none;
 }
 
 .ui-card {
   position: absolute;
-  padding: 10px 18px;
+  padding: 12px 22px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.12);
-  color: white;
-  font-size: 12px;
+  background: rgba(255,255,255,0.2);
+  color: #f2f2f2;
+  font-size: 13px;
   letter-spacing: 1px;
-  cursor: grab;
   pointer-events: auto;
 }
 
-/* default positions */
-.ui-card:nth-child(1) { top: 180px; right: 420px; }
-.ui-card:nth-child(2) { top: 260px; right: 520px; }
-.ui-card:nth-child(3) { top: 340px; right: 460px; }
-.ui-card:nth-child(4) { top: 420px; right: 560px; }
-.ui-card:nth-child(5) { top: 500px; right: 480px; }
+/* positions */
+.ui-card:nth-child(1) { top: 42%; left: 52%; }
+.ui-card:nth-child(2) { top: 50%; left: 45%; }
+.ui-card:nth-child(3) { top: 58%; left: 54%; }
+.ui-card:nth-child(4) { top: 66%; left: 47%; }
+.ui-card:nth-child(5) { top: 74%; left: 52%; }
 
-/* ===============================
-   3D MODEL
-================================ */
-.hero-model {
-  position: absolute;
-  right: 60px;
-  top: 120px;
-  z-index: 2;
-}
-
-.hero-model model-viewer {
-  width: 520px;   /* HUGE */
-  height: 520px;  /* HUGE */
-
-  background: transparent;
-  filter:
-    drop-shadow(0 40px 80px rgba(0,0,0,0.7))
-    drop-shadow(0 0 40px rgba(160,0,0,0.35));
-}
-
-/* ===============================
-   SCROLL INDICATOR
-================================ */
-.scroll-indicator {
-  position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0.6;
-  animation: bounce 1.6s infinite;
-  cursor: pointer;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, 10px); }
-}
-
-/* ===============================
-   COLLECTIONS
-================================ */
-.section {
-  padding: 100px 80px;
-}
-
-.section-title {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.section-subtitle {
-  color: #aaa;
-  margin-bottom: 40px;
-}
-
-.collection-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.collection-card {
-  background: #111;
-  border-radius: 20px;
-  padding: 40px;
-}
-
-/* ===============================
-   FOOTER
-================================ */
-.dark-footer {
-  padding: 40px;
-  text-align: center;
-  background: #0b0b0b;
-  color: #777;
-}
-
-/* ===============================
-   GIFT BOX
-================================ */
+/* ================= GIFT ================= */
 #gift-box {
   position: fixed;
   bottom: 30px;
   right: 30px;
   z-index: 999;
   background: #7a0000;
-  color: white;
   padding: 18px;
-  border-radius: 16px;
-  text-align: center;
+  border-radius: 18px;
+  color: white;
 }
 
 .gift-text {
-  display: block;
   font-size: 12px;
-  opacity: 0.8;
+  opacity: 0.85;
 }
