@@ -173,11 +173,7 @@ body {
   color: #111;
   font-size: 14px;
 }
-.hero-video {
-  position: absolute;
-  inset: 0;
-  z-index: 9999;
-}
+
 
 .hero-video video {
   width: 100%;
@@ -203,3 +199,4 @@ body {
   background: #6f1d1b;
   color: white;
 }
+
