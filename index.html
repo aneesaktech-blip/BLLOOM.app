@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -254,9 +254,56 @@
 <div id="gift-box">
   🎁
   <span class="gift-text">Drop here</span>
+    
 </div>
+      <script>
+  console.log("DRAG SCRIPT ACTIVE");
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".draggable");
+    const bin = document.getElementById("gift-box");
+
+    console.log("Cards:", cards.length, "Bin:", bin);
+
+    let active = null;
+
+    cards.forEach(card => {
+      card.addEventListener("mousedown", () => {
+        active = card;
+        card.style.zIndex = 9999;
+      });
+    });
+
+    document.addEventListener("mousemove", e => {
+      if (!active) return;
+      active.style.left = e.pageX - active.offsetWidth / 2 + "px";
+      active.style.top = e.pageY - active.offsetHeight / 2 + "px";
+    });
+
+    document.addEventListener("mouseup", () => {
+      if (!active) return;
+
+      const b = bin.getBoundingClientRect();
+      const c = active.getBoundingClientRect();
+
+      if (
+        c.left < b.right &&
+        c.right > b.left &&
+        c.top < b.bottom &&
+        c.bottom > b.top
+      ) {
+        active.style.display = "none";
+        window.location.href = "/shop?filter=best";
+      }
+
+      active = null;
+    });
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
