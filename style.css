@@ -220,5 +220,19 @@ body {
   background: #6f1d1b;
   color: #fff;
 }
+.brand-shadow {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(14rem, 30vw, 26rem);
+  letter-spacing: 18px;
+  color: #cfd3d6;           /* light silvery grey */
+  opacity: 0.15;            /* VERY subtle */
+  z-index: 1;               /* behind video */
+  pointer-events: none;
+}
+
 
 
