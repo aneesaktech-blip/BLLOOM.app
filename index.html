@@ -5,45 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
 
-  <!-- CSS ORDER -->
-  <link rel="stylesheet" href="/theme.css" />
-  <link rel="stylesheet" href="/global.css" />
+  <!-- CSS -->
   <link rel="stylesheet" href="/style.css" />
 
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
 
+  <!-- MODEL VIEWER -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
-<body class="page">
+<body>
 
 <!-- ================= HEADER ================= -->
 <header class="navbar">
-  <div class="logo small-logo">BLLOOM</div>
+  <div class="logo">BLLOOM</div>
 
-  <div class="nav-center">
-    <nav class="nav-links">
-      <a href="/shop">Shop</a>
-      <a href="/collections">Collections</a>
-      <a href="/customization">Customization</a>
-    </nav>
-
-    <div class="nav-search">
-      <input type="text" placeholder="Search products..." />
-    </div>
+  <div class="search-wrap">
+    <input type="text" placeholder="Search products..." />
   </div>
 
-  <div class="nav-right">
-    <a href="/cart" class="icon-btn">🛒</a>
-    <a href="/login" class="login-btn">Login</a>
+  <div class="nav-actions">
+    <a href="/cart">🛒</a>
+    <a href="/login">Login</a>
   </div>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
-
   <!-- BIG BLLOOM -->
-  <h1 class="hero-brand" id="heroBrand">BLLOOM</h1>
+  <h1 class="hero-brand">BLLOOM</h1>
 
   <!-- BIG CENTER HOODIE -->
   <div class="hero-model">
@@ -55,46 +46,32 @@
       environment-image="neutral">
     </model-viewer>
   </div>
-
-  <!-- FLOATING TAGS -->
-  <div class="floating-ui">
-    <span class="ui-card">JACKET</span>
-    <span class="ui-card">NEW DROP</span>
-    <span class="ui-card">SALE −20%</span>
-    <span class="ui-card">CUSTOM FIT</span>
-    <span class="ui-card">ADD TO CART</span>
-  </div>
-
 </section>
 
-<!-- GIFT BIN -->
-<div id="gift-box">
-  🎁
-  <span class="gift-text">Drop here</span>
-</div>
+<!-- ================= FEATURED ================= -->
+<section class="section">
+  <h2 class="section-title">Featured Products</h2>
+  <p class="section-subtitle">Oversized fits. Minimal silhouettes.</p>
 
-<!-- ================= SCROLL SCRIPT ================= -->
-<script>
-  const brand = document.getElementById("heroBrand");
-  const headerLogo = document.querySelector(".small-logo");
+  <div class="card-grid">
+    <div class="card">Oversized Hoodies</div>
+    <div class="card">Street Tees</div>
+    <div class="card">Winter Layers</div>
+  </div>
+</section>
 
-  window.addEventListener("scroll", () => {
-    const y = window.scrollY;
-    const max = 220;
+<!-- ================= CUSTOMIZATION ================= -->
+<section class="section alt">
+  <h2 class="section-title">Customization</h2>
+  <p class="section-subtitle">Design it your way.</p>
 
-    const scale = Math.max(0.45, 1 - y / max);
-    const opacity = Math.max(0, 1 - y / 180);
+  <button class="cta-btn">Request Custom Fit</button>
+</section>
 
-    brand.style.transform = `translate(-50%, ${y * 0.3}px) scale(${scale})`;
-    brand.style.opacity = opacity;
-
-    if (y > 140) {
-      headerLogo.classList.add("show");
-    } else {
-      headerLogo.classList.remove("show");
-    }
-  });
-</script>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  © 2025 BLLOOM. All rights reserved.
+</footer>
 
 </body>
 </html>
