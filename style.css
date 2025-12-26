@@ -122,12 +122,37 @@ body {
   z-index: 1;
 }
 
-/* VIDEO PANELS */
+
+/* VIDEO PANELS — BLACK EDITORIAL BLOCKS */
 .panel {
   position: absolute;
+  background: #000;              /* BLACK BLOCK */
   overflow: hidden;
   z-index: 2;
 }
+
+/* VIDEO INSIDE BLOCK */
+.panel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;                 /* lets black show through */
+  filter: contrast(1.05);
+}
+
+/* Optional cinematic crop */
+.panel.left video {
+  object-position: 20% center;
+}
+
+.panel.center video {
+  object-position: 50% center;
+}
+
+.panel.right video {
+  object-position: 80% center;
+}
+
 
 .panel video {
   width: 100%;
@@ -218,3 +243,4 @@ body {
   color: #fff;
   padding: 60px;
 }
+
