@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,51 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<!-- THIN MAROON STRIP -->
+<!-- THICK MAROON BAR -->
 <div class="top-strip"></div>
 
-<!-- ================= NAV ================= -->
+<!-- NAV -->
 <header class="top-nav">
 
+  <!-- LEFT -->
   <div class="nav-left">
+    <span class="brand-mini">BLLOOM</span>
     <button class="tab active">MEN</button>
     <button class="tab">WOMEN</button>
     <button class="tab">ACCESSORIES</button>
   </div>
 
-  <!-- SEARCH BAR -->
+  <!-- SEARCH -->
   <div class="nav-search">
     <span class="flower">✿</span>
     <input type="text" placeholder="SEARCH" />
     <span class="flower">✿</span>
   </div>
 
+  <!-- RIGHT -->
   <div class="nav-right">
-    <div class="brand-mini">BLLOOM</div>
-
-    <a href="wishlist.html" class="icon">♡</a>
-    <a href="cart.html" class="icon">🛒</a>
-    <a href="login.html" class="login-link">Login</a>
-    <button class="icon infinity">∞</button>
+    <a href="wishlist.html">♡</a>
+    <a href="cart.html">🛒</a>
+    <a href="login.html" class="login">Login</a>
+    <span class="infinity">∞</span>
   </div>
 
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero">
 
   <div class="circle"></div>
 
-  <!-- VIDEO PANELS -->
+  <!-- BLACK VIDEO BLOCKS -->
   <div class="panel left">
     <video src="hero.mp4" autoplay muted loop playsinline></video>
   </div>
@@ -62,11 +61,27 @@
     <video src="hero.mp4" autoplay muted loop playsinline></video>
   </div>
 
-  <!-- BIG BRAND -->
+  <!-- BIG BLOOM -->
   <h1 class="brand" id="brand">BLLOOM</h1>
 
   <button class="cta">NEW COLLECTION</button>
 
+</section>
+
+<!-- FEATURED COLLECTION -->
+<section class="section">
+  <h2>Featured Collection</h2>
+  <div class="cards">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
+</section>
+
+<!-- CUSTOMIZATION -->
+<section class="section custom">
+  <h2>Customization</h2>
+  <p>Choose fabric, fit, material & design.</p>
 </section>
 
 <script src="script.js"></script>
