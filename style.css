@@ -9,7 +9,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   background: #2a2a2a;
   color: #eee;
-  overflow-x: hidden;
 }
 
 /* ================= HEADER ================= */
@@ -18,59 +17,64 @@ body {
   top: 0;
   z-index: 1000;
 
-  height: 72px;
-  padding: 0 36px;
-
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
 
+  padding: 16px 36px;
   background: rgba(42,42,42,0.9);
   backdrop-filter: blur(12px);
 }
 
+/* LEFT */
 .logo {
   font-weight: 900;
   letter-spacing: 4px;
 }
 
-.search-wrap {
+/* CENTER */
+.nav-center {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.search-wrap input {
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #d0d0d0;
+  font-size: 14px;
+}
+
+.nav-search input {
   width: 420px;
-  max-width: 80%;
+  max-width: 80vw;
   padding: 12px 20px;
   border-radius: 999px;
   border: none;
   background: rgba(255,255,255,0.15);
-  color: #fff;
+  color: white;
 }
 
-.nav-actions {
+/* RIGHT */
+.nav-right {
   display: flex;
   gap: 16px;
-}
-
-.nav-actions a {
-  color: #fff;
-  text-decoration: none;
-  background: rgba(255,255,255,0.15);
-  padding: 8px 14px;
-  border-radius: 999px;
 }
 
 /* ================= HERO ================= */
 .hero {
   min-height: 90vh;
-  position: relative;
+  padding-top: 60px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   background: linear-gradient(
     135deg,
@@ -82,78 +86,45 @@ body {
 
 /* BIG BLLOOM */
 .hero-brand {
-  font-size: clamp(5rem, 14vw, 12rem);
+  font-size: clamp(5rem, 14vw, 13rem);
   font-weight: 900;
   letter-spacing: 10px;
-  margin-bottom: 20px;
-  z-index: 2;
+  margin-bottom: 40px;
 
   background: linear-gradient(180deg, #b00000, #5a0000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* BIG CENTER HOODIE */
-.hero-model {
-  width: 100%;
+/* IMMERSIVE FRAME */
+.hero-frame {
+  width: 82%;
+  max-width: 1200px;
+  height: 70vh;
+
+  border-radius: 40px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(18px);
+
   display: flex;
+  align-items: center;
   justify-content: center;
+
+  box-shadow:
+    inset 0 0 60px rgba(0,0,0,0.4),
+    0 40px 100px rgba(0,0,0,0.35);
 }
 
-.hero-model model-viewer {
-  width: 75vw;
-  height: 75vh;
+.hero-frame model-viewer {
+  width: 90%;
+  height: 90%;
 }
 
 /* ================= SECTIONS ================= */
 .section {
   padding: 120px 80px;
-  background: #2a2a2a;
 }
 
 .section.alt {
   background: #3b0b0b;
-}
-
-.section-title {
-  font-size: 48px;
-  margin-bottom: 12px;
-}
-
-.section-subtitle {
-  color: #ccc;
-  margin-bottom: 40px;
-}
-
-/* GRID */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-}
-
-.card {
-  background: rgba(255,255,255,0.12);
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-}
-
-/* CTA */
-.cta-btn {
-  padding: 14px 32px;
-  border-radius: 999px;
-  border: none;
-  font-weight: 700;
-  background: linear-gradient(135deg, #7a0000, #a00000);
-  color: white;
-  cursor: pointer;
-}
-
-/* ================= FOOTER ================= */
-.footer {
-  padding: 40px;
-  text-align: center;
-  color: #aaa;
-  background: #2a2a2a;
 }
