@@ -2,14 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
+<!-- THIN MAROON STRIP -->
+<div class="top-strip"></div>
 
 <!-- ================= NAV ================= -->
 <header class="top-nav">
@@ -20,30 +26,28 @@
     <button class="tab">ACCESSORIES</button>
   </div>
 
-  <!-- SEARCH (MOVED DOWN + CENTERED) -->
+  <!-- SEARCH BAR -->
   <div class="nav-search">
+    <span class="flower">✿</span>
     <input type="text" placeholder="SEARCH" />
-    <span>🔍</span>
+    <span class="flower">✿</span>
   </div>
 
   <div class="nav-right">
-    <!-- LOGO SECTION TOP RIGHT -->
     <div class="brand-mini">BLLOOM</div>
 
-    <button class="icon">♡</button>
-    <button class="icon">🛒</button>
-    <button class="icon">👤</button>
+    <a href="wishlist.html" class="icon">♡</a>
+    <a href="cart.html" class="icon">🛒</a>
+    <a href="login.html" class="login-link">Login</a>
     <button class="icon infinity">∞</button>
   </div>
 
 </header>
 
 <!-- ================= HERO ================= -->
-<section class="editorial-hero">
+<section class="hero">
 
-  <!-- guides -->
   <div class="circle"></div>
-  <div class="cross"></div>
 
   <!-- VIDEO PANELS -->
   <div class="panel left">
@@ -59,36 +63,12 @@
   </div>
 
   <!-- BIG BRAND -->
-  <h1 class="brand">BLLOOM</h1>
+  <h1 class="brand" id="brand">BLLOOM</h1>
 
-  <!-- CTA -->
   <button class="cta">NEW COLLECTION</button>
 
 </section>
 
-<!-- ================= FEATURED ================= -->
-<section class="featured">
-  <h2>Featured Products</h2>
-
-  <div class="grid">
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-  </div>
-</section>
-
-<!-- ================= CUSTOMIZATION ================= -->
-<section class="customization">
-  <h2>Customization</h2>
-  <p>Create your own style — fabric, fit, design.</p>
-
-  <form class="custom-form">
-    <input type="text" placeholder="Clothing type" required />
-    <input type="text" placeholder="Material / Fabric" required />
-    <textarea placeholder="Describe your design" required></textarea>
-    <button type="submit">Submit</button>
-  </form>
-</section>
-
+<script src="script.js"></script>
 </body>
 </html>
