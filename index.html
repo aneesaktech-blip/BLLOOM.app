@@ -5,13 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="/style.css" />
-
-  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
 
-  <!-- MODEL VIEWER -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
@@ -19,25 +15,41 @@
 
 <!-- ================= HEADER ================= -->
 <header class="navbar">
-  <div class="logo">BLLOOM</div>
 
-  <div class="search-wrap">
-    <input type="text" placeholder="Search products..." />
+  <!-- LEFT -->
+  <div class="nav-left">
+    <span class="logo">BLLOOM</span>
   </div>
 
-  <div class="nav-actions">
-    <a href="/cart">🛒</a>
-    <a href="/login">Login</a>
+  <!-- CENTER -->
+  <div class="nav-center">
+    <nav class="nav-links">
+      <a href="/shop">Shop</a>
+      <a href="/collections">Collections</a>
+      <a href="/customization">Customization</a>
+    </nav>
+
+    <div class="nav-search">
+      <input type="text" placeholder="Search products..." />
+    </div>
   </div>
+
+  <!-- RIGHT -->
+  <div class="nav-right">
+    <span class="icon">🛒</span>
+    <span class="login">Login</span>
+  </div>
+
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
+
   <!-- BIG BLLOOM -->
   <h1 class="hero-brand">BLLOOM</h1>
 
-  <!-- BIG CENTER HOODIE -->
-  <div class="hero-model">
+  <!-- IMMERSIVE FRAME -->
+  <div class="hero-frame">
     <model-viewer
       src="https://res.cloudinary.com/dviponk13/image/upload/v1766527204/hoodie_rjsjpl.glb"
       auto-rotate
@@ -46,32 +58,20 @@
       environment-image="neutral">
     </model-viewer>
   </div>
+
 </section>
 
 <!-- ================= FEATURED ================= -->
 <section class="section">
-  <h2 class="section-title">Featured Products</h2>
-  <p class="section-subtitle">Oversized fits. Minimal silhouettes.</p>
-
-  <div class="card-grid">
-    <div class="card">Oversized Hoodies</div>
-    <div class="card">Street Tees</div>
-    <div class="card">Winter Layers</div>
-  </div>
+  <h2>Featured Products</h2>
+  <p>Oversized fits. Clean silhouettes.</p>
 </section>
 
-<!-- ================= CUSTOMIZATION ================= -->
+<!-- ================= CUSTOM ================= -->
 <section class="section alt">
-  <h2 class="section-title">Customization</h2>
-  <p class="section-subtitle">Design it your way.</p>
-
-  <button class="cta-btn">Request Custom Fit</button>
+  <h2>Customization</h2>
+  <p>Create your own style.</p>
 </section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  © 2025 BLLOOM. All rights reserved.
-</footer>
 
 </body>
 </html>
