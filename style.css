@@ -114,11 +114,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-/* BLACK BLOCKS */
+/* VIDEO BLOCKS */
 .panel {
   position: absolute;
-  background: #000;
+  background: black;   /* editorial black section */
   overflow: hidden;
 }
 
@@ -126,7 +125,23 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.85;
+  display: block;
+}
+/* BLACK BLOCKS */
+.panel {
+  position: absolute;
+  background: #000;
+  overflow: hidden;
+   z-index: 2;
+
+}
+
+.panel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;                    /* FULL visibility */
+  filter: brightness(0.95) contrast(1.1);
 }
 
 /* POSITIONS */
@@ -154,6 +169,8 @@ body {
 
 /* BIG BLOOM (MOVED UP) */
 .brand {
+  
+  z-index: 3;
   position: absolute;
   top: 42%;
   left: 50%;
@@ -199,3 +216,4 @@ body {
   background: #6f1d1b;
   color: #fff;
 }
+
