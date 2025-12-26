@@ -173,6 +173,19 @@ body {
   color: #111;
   font-size: 14px;
 }
+.hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 9999;
+}
+
+.hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: red;   /* DEBUG */
+}
+
 
 .menu-dropdown a:hover {
   background: #f3f3f3;
@@ -190,4 +203,5 @@ body {
   background: #6f1d1b;
   color: white;
 }
+
 
