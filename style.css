@@ -44,7 +44,9 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  background: #dfe3e6;
+
+  background: #0b0b0b; 
+
   overflow: hidden;
 }
 
@@ -199,4 +201,5 @@ body {
   background: #6f1d1b;
   color: white;
 }
+
 
