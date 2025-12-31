@@ -243,6 +243,17 @@ body {
 }
 
 
+.hero {
+  height: 100vh;
+  background: red;
+}
+
+.debug-box {
+  color: white;
+  font-size: 40px;
+  padding: 40px;
+}
+
 
 
 
