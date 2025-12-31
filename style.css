@@ -172,22 +172,22 @@ body {
 }
 
 
-
 .hero {
   position: relative;
   height: 100vh;
-  background: #b7afa4; /* brown-grey like ref */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #b7afa4;
   overflow: hidden;
 }
+
+/* VIDEO-IN-TEXT */
 .video-text {
   position: absolute;
-  display: inline-block;        /* 🔥 THIS FIXES THE STRIP */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  display: inline-block;
+  padding: 0.25em 0;
 
   font-family: 'Playfair Display', serif;
   font-size: clamp(8rem, 20vw, 18rem);
@@ -199,10 +199,10 @@ body {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 
-  padding: 0.2em 0;              /* 🔥 GIVES HEIGHT */
-  z-index: 4;
+  z-index: 3;
 }
 
+/* VIDEO MASK */
 .text-video {
   position: absolute;
   inset: 0;
@@ -210,29 +210,21 @@ body {
   height: 100%;
   object-fit: cover;
 
-  opacity: 1;
+  opacity: 0.95;
   pointer-events: none;
 }
-
-
-
 
 /* HALF CIRCLE */
 .hero-circle {
   position: absolute;
-  width: 1000px;
-  height: 1000px;
-  border: 1px solid rgba(255,255,255,0.25);
+  width: 1100px;
+  height: 1100px;
+  border: 1px solid rgba(255,255,255,0.35);
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-}
-
-
-
-
 }
 
 /* CTA */
@@ -245,54 +237,6 @@ body {
   border-radius: 999px;
   border: none;
   background: #fff;
-  z-index: 5;
+  z-index: 4;
   cursor: pointer;
 }
-
-.video-text {
-  position: absolute;
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0.05em;
-  color: transparent;
-
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-
-  pointer-events: none;
-  z-index: 4;
-}
-
-.text-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 1; /* 🔥 video strength */
-}
-.video-text.center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: clamp(8rem, 20vw, 18rem);
-}
-.video-text.left {
-  top: 52%;
-  left: 18%;
-  transform: translate(-50%, -50%) rotate(-8deg);
-  font-size: clamp(4rem, 10vw, 9rem);
-  opacity: 1;
-}
-.video-text.left {
-  top: 52%;
-  left: 18%;
-  transform: translate(-50%, -50%) rotate(-8deg);
-  font-size: clamp(4rem, 10vw, 9rem);
-  opacity: 1;
-}
-
-
-
-
