@@ -40,13 +40,15 @@ body {
   font-weight: 500;
 }
 
-/* HERO */
+
 .hero {
   position: relative;
-  height: 100vh;
-
-  background: #0b0b0b; 
-
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #EFE9E1 0%,
+    #E6DFD6 100%
+  );
   overflow: hidden;
 }
 
@@ -201,5 +203,6 @@ body {
   background: #6f1d1b;
   color: white;
 }
+
 
 
