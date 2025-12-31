@@ -108,14 +108,21 @@ body {
 
 /* VIDEO */
 .hero-video {
+
+  opacity: 1;              
+  filter: saturate(1) contrast(1.1);
+
+
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  opacity: 0.75; /* IMPORTANT: lets text breathe */
+  pointer-events: none;
 }
+
+
 
 /* SOFT OVERLAY */
 .hero::after {
@@ -234,6 +241,7 @@ body {
 .search-center::after {
   right: 30px;
 }
+
 
 
 
