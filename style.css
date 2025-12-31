@@ -213,7 +213,7 @@ body {
 .search-center::before,
 .search-center::after {
   content: "✧";
-  font-size: 20px;
+  font-size: 78px;
   opacity: 0.4;
   position: absolute;
   top: 50%;
@@ -232,4 +232,5 @@ body {
 .search-center::after {
   right: -26px;
 }
+
 
