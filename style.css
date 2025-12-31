@@ -222,22 +222,60 @@ body {
   letter-spacing: 0.1em;
   z-index: 4;
 }
-
+/* HERO */
 .hero {
   position: relative;
   height: 100vh;
-  width: 100%;
-  background: transparent !important; /* VERY IMPORTANT */
   overflow: hidden;
 }
 
-/* FORCE VIDEO TO TOP */
-#bgVideo {
-  position: fixed;        /* <- THIS IS THE KEY CHANGE */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+/* VIDEO */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: -1;            /* <- puts it behind EVERYTHING */
+  z-index: 1;
+  opacity: 0.85;
+  filter: saturate(1) contrast(1.1);
+  pointer-events: none;
 }
+
+/* OVERLAY */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(167,160,152,0.35);
+  z-index: 2;
+}
+
+/* BIG BLOOM */
+.brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(6rem, 20vw, 18rem);
+  color: rgba(255,255,255,0.95);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* CTA */
+.cta {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 36px;
+  border-radius: 999px;
+  border: none;
+  background: #fff;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  z-index: 4;
+}
+
+
