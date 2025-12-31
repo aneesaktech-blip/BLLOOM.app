@@ -183,20 +183,26 @@ body {
   overflow: hidden;
 }
 .video-text {
-  position: relative;
+  position: absolute;
+  display: inline-block;        /* 🔥 THIS FIXES THE STRIP */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   font-family: 'Playfair Display', serif;
   font-size: clamp(8rem, 20vw, 18rem);
   font-weight: 600;
+  letter-spacing: 0.05em;
   line-height: 1;
-  letter-spacing: 0.02em;
-  color: transparent;
 
-  /* THIS IS THE MASK */
+  color: transparent;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 
-  z-index: 2;
+  padding: 0.2em 0;              /* 🔥 GIVES HEIGHT */
+  z-index: 4;
 }
+
 .text-video {
   position: absolute;
   inset: 0;
@@ -204,10 +210,7 @@ body {
   height: 100%;
   object-fit: cover;
 
-  /* THIS MAKES VIDEO SHOW THROUGH TEXT */
-  mix-blend-mode: screen;
-
-  opacity: 1; /* 🔥 THIS is where you control strength */
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -224,7 +227,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 1;
 }
 
 
@@ -289,6 +292,7 @@ body {
   font-size: clamp(4rem, 10vw, 9rem);
   opacity: 1;
 }
+
 
 
 
