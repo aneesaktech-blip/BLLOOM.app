@@ -46,8 +46,9 @@ body {
   min-height: 100vh;
   background: linear-gradient(
     180deg,
-    #EFE9E1 0%,
-    #E6DFD6 100%
+    #E3C9A8 0%,
+    #D2B48C 40%,
+    #8B5A2B 100%
   );
   overflow: hidden;
 }
@@ -203,6 +204,7 @@ body {
   background: #6f1d1b;
   color: white;
 }
+
 
 
 
