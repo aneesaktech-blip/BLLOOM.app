@@ -11,21 +11,23 @@ body {
   color: #111;
 }
 
-/* TOP STRIP */
 .top-strip {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 6px;
+  height: 29px;              /* thicker strip */
   background: #fff;
   display: flex;
   justify-content: center;
-  gap: 32px;
   align-items: center;
-  font-size: 10px;
-  letter-spacing: 0.6em;
+  gap: 48px;                 /* more breathing space */
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;           /* bigger BLOOM letters */
+  letter-spacing: 0.8em;     /* spaced luxury look */
+  color: #111;
   z-index: 300;
 }
+
 
 /* HEADER */
 .top {
@@ -185,3 +187,4 @@ body {
   height: 280px;
   background: #ccc;
 }
+
