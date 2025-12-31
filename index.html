@@ -11,118 +11,86 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<body>
 
 <!-- TOP STRIP -->
 <div class="top-strip">
-  <span>B</span><span>L</span><span>L</span><span>O</span><span>O</span><span>M</span>
+  B &nbsp;&nbsp; L &nbsp;&nbsp; L &nbsp;&nbsp; O &nbsp;&nbsp; O &nbsp;&nbsp; M
 </div>
 
 <!-- HEADER -->
-<header class="top">
-  <div class="nav-left">
+<header class="header">
+  <nav class="menu">
     <button class="active">MEN</button>
     <button>WOMEN</button>
     <button>ACCESSORIES</button>
+  </nav>
+
+  <div class="search-wrap">
+    <input placeholder="SEARCH" />
   </div>
-    <div class="search-center">
-  <input type="text" placeholder="SEARCH">
-</div>
-  <div class="nav-right">
 
-
-    <a href="wishlist.html" class="icon">♡</a>
-    <a href="cart.html" class="icon">🛒</a>
-    <a href="login/login.html" class="login-link">Login</a>
-    <button class="infinity-btn" id="menuToggle">∞</button>
-
-    <div class="menu-dropdown" id="menuDropdown">
-      <a href="#">My Account</a>
-      <a href="#">Orders</a>
-      <a href="#">Support</a>
-    </div>
+  <div class="icons">
+    ♡ 🛒 Login ∞
   </div>
 </header>
+
+<!-- HERO -->
 <section class="hero">
-  <section class="hero">
 
   <div class="hero-circle"></div>
 
   <h1 class="video-text">
     BLLOOM
-    <video
-      class="text-video"
-      src="hero.mp4"
-      autoplay
-      muted
-      loop
-      playsinline>
-    </video>
+    <video src="hero.mp4" autoplay muted loop playsinline></video>
   </h1>
 
   <button class="cta">NEW COLLECTION</button>
-    
-  <div class="hero-circle"></div>
-
-  <h1 class="brand" id="brand">BLLOOM</h1>
-
 
 </section>
 
-
-  
-
-
-
- 
-
 <!-- FEATURED PRODUCTS -->
-<section class="section light">
-  <h2>Featured Products</h2>
+<section class="featured">
+  <h2>Featured</h2>
 
-  <div class="product-grid">
-    <div class="product-card"></div>
-    <div class="product-card"></div>
-    <div class="product-card"></div>
+  <div class="products">
+    <div class="product">
+      <p>BROWN COAT</p>
+      <span>₹699</span>
+    </div>
+
+    <div class="product">
+      <p>OVERSIZED TEE</p>
+      <span>₹499</span>
+    </div>
+
+    <div class="product">
+      <p>TAILORED TROUSER</p>
+      <span>₹999</span>
+    </div>
   </div>
 </section>
 
 <!-- CUSTOMIZATION -->
-<section class="section dark">
-  <h2>Customization</h2>
-  <p>Choose fabric, fit, material and design.</p>
+<section class="custom">
+  <h2>Customize Your Fit</h2>
+
+  <p>Tell us what you want. We make it real.</p>
+
+  <form>
+    <input placeholder="Fabric preference" />
+    <input placeholder="Fit (oversized / slim / custom)" />
+    <input placeholder="Color / vibe" />
+    <textarea placeholder="Anything special you want?"></textarea>
+    <button>SEND REQUEST</button>
+  </form>
 </section>
 
-<!-- SCRIPTS -->
-<script>
-  // Shrink BLLOOM on scroll
-  window.addEventListener("scroll", () => {
-    const brand = document.getElementById("brand");
-    const scrolled = window.scrollY;
-
-    const scale = Math.max(0.55, 1 - scrolled / 600);
-    const translateY = Math.min(scrolled / 3, 160);
-
-    brand.style.transform =
-      `translate(-50%, -50%) scale(${scale}) translateY(-${translateY}px)`;
-  });
-
-  // Infinity dropdown
-  const toggle = document.getElementById("menuToggle");
-  const dropdown = document.getElementById("menuDropdown");
-
-  toggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    dropdown.style.display =
-      dropdown.style.display === "block" ? "none" : "block";
-  });
-
-  document.addEventListener("click", () => {
-    dropdown.style.display = "none";
-  });
-</script>
+</body>
 
 </body>
 </html>
+
 
 
 
