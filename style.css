@@ -188,8 +188,48 @@ body {
   background: #ccc;
 }
 
+/* CENTER SEARCH */
+.search-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 250;
+}
 
+/* OVAL SEARCH BAR */
+.search-center input {
+  width: 320px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: rgba(255,255,255,0.9);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-align: center;
+  outline: none;
+}
 
+/* 🌸 FLOWERS (LEFT & RIGHT) */
+.search-center::before,
+.search-center::after {
+  content: "✧";
+  font-size: 20px;
+  opacity: 0.4;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: rgba(0,0,0,0.35);
+  font-family: 'Playfair Display', serif;
+}
 
+/* LEFT FLOWER */
+.search-center::before {
+  left: -26px;
+}
 
+/* RIGHT FLOWER */
+.search-center::after {
+  right: -26px;
+}
 
