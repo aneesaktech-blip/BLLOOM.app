@@ -5,84 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header class="top">
+<!-- TOP STRIP -->
+<div class="top-strip">
+  <span>B</span><span>L</span><span>L</span><span>O</span><span>O</span><span>M</span>
+</div>
 
-  <!-- LEFT NAV -->
+<!-- HEADER -->
+<header class="top">
   <div class="nav-left">
     <button class="active">MEN</button>
     <button>WOMEN</button>
     <button>ACCESSORIES</button>
   </div>
 
-  <!-- RIGHT NAV -->
   <div class="nav-right">
-
     <input type="text" placeholder="SEARCH">
-
     <a href="wishlist.html" class="icon">♡</a>
     <a href="cart.html" class="icon">🛒</a>
     <a href="login/login.html" class="login-link">Login</a>
-
-    <!-- Infinity -->
     <button class="infinity-btn" id="menuToggle">∞</button>
 
-    <!-- Dropdown -->
     <div class="menu-dropdown" id="menuDropdown">
-      <a href="account.html">My Account</a>
-      <a href="orders.html">Orders</a>
-      <a href="support.html">Support</a>
+      <a href="#">My Account</a>
+      <a href="#">Orders</a>
+      <a href="#">Support</a>
     </div>
-
   </div>
-
 </header>
 
-
+<!-- HERO -->
 <section class="hero">
 
+  <!-- VIDEO -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+
+  <!-- CIRCLE -->
   <div class="circle"></div>
 
-  <div class="hero-grid">
+  <!-- BIG BRAND -->
+  <h1 class="brand" id="brand">BLLOOM</h1>
 
-    <!-- LEFT CARD -->
-    <div class="card small">
-      <img src="images/model-left.jpg" alt="">
-      <div class="card-info">
-        <h4>BROWN COAT</h4>
-        <p>₹699</p>
-        <div class="card-actions">
-          <span>Quick View</span>
-          <button>Add to cart</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- CENTER -->
-    <div class="center">
-      <img src="images/model-center.jpg" alt="">
-      <button class="cta">NEW COLLECTION</button>
-    </div>
-
-    <!-- RIGHT -->
-    <div class="side">
-      <img src="images/model-right.jpg" alt="">
-      <p class="caption">
-        Our latest clothing<br>
-        collection is special<br>
-        for autumn.
-      </p>
-    </div>
-
-  </div>
-
-  <h1 class="brand">BLLOOM</h1>
+  <!-- CTA -->
+  <button class="cta">NEW COLLECTION</button>
 
 </section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section light">
+  <h2>Featured Products</h2>
+
+  <div class="product-grid">
+    <div class="product-card"></div>
+    <div class="product-card"></div>
+    <div class="product-card"></div>
+  </div>
+</section>
+
+<!-- CUSTOMIZATION -->
+<section class="section dark">
+  <h2>Customization</h2>
+  <p>Choose fabric, fit, material and design.</p>
+</section>
+
+<!-- SCRIPTS -->
+<script>
+  // Shrink BLLOOM on scroll
+  window.addEventListener("scroll", () => {
+    const brand = document.getElementById("brand");
+    const scrolled = window.scrollY;
+
+    const scale = Math.max(0.55, 1 - scrolled / 600);
+    const translateY = Math.min(scrolled / 3, 160);
+
+    brand.style.transform =
+      `translate(-50%, -50%) scale(${scale}) translateY(-${translateY}px)`;
+  });
+
+  // Infinity dropdown
+  const toggle = document.getElementById("menuToggle");
+  const dropdown = document.getElementById("menuDropdown");
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdown.style.display =
+      dropdown.style.display === "block" ? "none" : "block";
+  });
+
+  document.addEventListener("click", () => {
+    dropdown.style.display = "none";
+  });
+</script>
 
 </body>
 </html>
