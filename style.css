@@ -98,78 +98,7 @@ body {
   color: #111;
 }
 
-/* HERO */
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  background: #a7a098; /* fallback if video fails */
-}
 
-/* VIDEO */
-.hero-video {
-
-  opacity: 1;              
-  filter: saturate(1) contrast(1.1);
-
-
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  pointer-events: none;
-}
-
-
-
-/* SOFT OVERLAY */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(167,160,152,0.55);
-  z-index: 2;
-}
-
-/* CIRCLE */
-.circle {
-  position: absolute;
-  width: 900px;
-  height: 900px;
-  border: 1px solid rgba(255,255,255,0.4);
-  border-radius: 50%;
-  z-index: 3;
-}
-
-/* BRAND TEXT */
-.brand {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Playfair Display', serif;
-  font-size: 200px;
-  color: rgba(255,255,255,0.95);
-  z-index: 4;
-  pointer-events: none;
-  transition: transform 0.2s ease;
-}
-
-/* CTA */
-.cta {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 12px 32px;
-  border-radius: 999px;
-  border: none;
-  background: #fff;
-  font-size: 13px;
-  z-index: 5;
-}
 
 /* SECTIONS */
 .section {
@@ -243,18 +172,58 @@ body {
 }
 
 
+/* HERO */
 .hero {
+  position: relative;
   height: 100vh;
-  background: red;
+  overflow: hidden;
 }
 
-.debug-box {
-  color: white;
-  font-size: 40px;
-  padding: 40px;
+/* VIDEO */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.85;
+  filter: saturate(1) contrast(1.1);
+  pointer-events: none;
 }
 
+/* SOFT OVERLAY */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(167,160,152,0.35);
+  z-index: 2;
+}
 
+/* BRAND TEXT */
+.brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(6rem, 20vw, 18rem);
+  color: rgba(255,255,255,0.95);
+  z-index: 3;
+  pointer-events: none;
+}
 
-
-
+/* CTA */
+.cta {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 36px;
+  border-radius: 999px;
+  border: none;
+  background: #fff;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  z-index: 4;
+}
