@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
 
-  <!-- FONT -->
+  <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -31,7 +30,7 @@
   <div class="header-right">
     <a href="/wishlist.html" class="icon-btn" title="Wishlist">♡</a>
     <a href="/cart.html" class="icon-btn" title="Cart">🛒</a>
-    <a href="/login.html" class="login-btn">Login</a>
+    <a href="/login/login.html" class="login-btn">Login</a>
 
     <!-- Infinity Menu -->
     <button class="menu-infinity" id="menuToggle">∞</button>
@@ -44,23 +43,16 @@
   </div>
 </header>
 
-
- 
-
-
-
 <!-- HERO -->
 <section class="hero">
 
+  <!-- VIDEO -->
   <div class="hero-video">
-  <video autoplay muted loop playsinline preload="auto">
-    <source src="./BLLOOM.app/hero.mp4" type="video/mp4">
-  </video>
-</div>
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="./BLLOOM.app/hero.mp4" type="video/mp4">
+    </video>
+  </div>
 
- 
-
-</section>
   <!-- SEARCH -->
   <div class="search-wrap">
     <input type="text" placeholder="SEARCH" />
@@ -91,6 +83,7 @@
   <p>Choose fabric, fit, material and design.</p>
 </section>
 
+<!-- SCRIPTS -->
 <script>
   // BLOOM SHRINK ON SCROLL
   window.addEventListener("scroll", () => {
@@ -99,7 +92,9 @@
     bloom.style.transform = `translate(-50%, -50%) scale(${scale})`;
   });
 </script>
+
 <script>
+  // MENU DROPDOWN
   const toggle = document.getElementById("menuToggle");
   const dropdown = document.getElementById("menuDropdown");
 
@@ -116,6 +111,3 @@
 
 </body>
 </html>
-
-
-
