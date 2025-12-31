@@ -1,6 +1,4 @@
-/* =========================
-   RESET
-========================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -13,24 +11,19 @@ body {
   color: #111;
 }
 
-/* =========================
-   TOP BAR
-========================= */
+/* TOP BAR */
 .top-bar {
   height: 10px;
   background: #6f1d1b;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 .header {
   height: 70px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  background: transparent;
   position: relative;
   z-index: 10;
 }
@@ -50,9 +43,7 @@ body {
   font-weight: 500;
 }
 
-/* =========================
-   HEADER RIGHT
-========================= */
+/* HEADER RIGHT */
 .header-right {
   display: flex;
   align-items: center;
@@ -62,13 +53,10 @@ body {
 
 .icon-btn {
   font-size: 18px;
-  text-decoration: none;
   color: #6f1d1b;
 }
 
 .login-btn {
-  text-decoration: none;
-  font-weight: 500;
   color: #111;
 }
 
@@ -77,7 +65,6 @@ body {
   border: none;
   font-size: 22px;
   cursor: pointer;
-  color: #111;
 }
 
 /* DROPDOWN */
@@ -91,14 +78,11 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   display: none;
   overflow: hidden;
-  z-index: 30;
 }
 
 .menu-dropdown a {
   display: block;
   padding: 10px 16px;
-  text-decoration: none;
-  color: #111;
   font-size: 14px;
 }
 
@@ -106,25 +90,21 @@ body {
   background: #f3f3f3;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero {
   position: relative;
   min-height: 100vh;
   background: linear-gradient(
     180deg,
-    #3a3a38 0%,     /* dark warm grey top */
+    #3a3a38 0%,
     #5a5a56 35%,
     #8a8a84 65%,
-    #b3b1ac 100%    /* lighter warm grey bottom */
+    #b3b1ac 100%
   );
   overflow: hidden;
 }
 
-/* =========================
-   HERO VIDEO
-========================= */
+/* VIDEO */
 .hero-video {
   position: absolute;
   inset: 0;
@@ -138,7 +118,7 @@ body {
   filter: contrast(1.05) saturate(0.9);
 }
 
-/* VIDEO OVERLAY (EDITORIAL CONTROL) */
+/* OVERLAY */
 .hero::after {
   content: "";
   position: absolute;
@@ -152,9 +132,7 @@ body {
   z-index: 2;
 }
 
-/* =========================
-   SEARCH
-========================= */
+/* SEARCH */
 .search-wrap {
   position: absolute;
   top: 90px;
@@ -169,13 +147,9 @@ body {
   border-radius: 999px;
   border: none;
   outline: none;
-  background: #fff;
-  font-weight: 500;
 }
 
-/* =========================
-   BRAND TEXT (BLLOOM)
-========================= */
+/* BRAND */
 .brand-shadow {
   position: absolute;
   top: 52%;
@@ -202,13 +176,11 @@ body {
   text-shadow: 0 12px 40px rgba(0,0,0,0.25);
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* SECTIONS */
 .section {
   padding: 100px 60px;
   background: #111;
-  color: white;
+  color: #fff;
 }
 
 .cards {
@@ -223,9 +195,7 @@ body {
   background: #000;
 }
 
-/* =========================
-   CUSTOM SECTION
-========================= */
+/* CUSTOM */
 .custom {
   padding: 120px 60px;
   background: #6f1d1b;
