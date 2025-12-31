@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
 
-  <!-- FONTS -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- CSS -->
@@ -14,10 +14,10 @@
 
 <body>
 
-<!-- TOP BAR -->
+<!-- Top bar -->
 <div class="top-bar"></div>
 
-<!-- HEADER -->
+<!-- Header -->
 <header class="header">
   <div class="logo-small">BLLOOM</div>
 
@@ -28,83 +28,40 @@
   </nav>
 
   <div class="header-right">
-    <a href="wishlist.html" class="icon-btn">♡</a>
-    <a href="cart.html" class="icon-btn">🛒</a>
-    <a href="login/login.html" class="login-btn">Login</a>
-
-    <button class="menu-infinity" id="menuToggle">∞</button>
-
-    <div class="menu-dropdown" id="menuDropdown">
-      <a href="#">My Account</a>
-      <a href="#">Orders</a>
-      <a href="#">Support</a>
-    </div>
+    <a href="#">♡</a>
+    <a href="#">🛒</a>
+    <a href="login/login.html">Login</a>
   </div>
 </header>
 
-<!-- HERO -->
+<!-- Hero -->
 <section class="hero">
 
-  <!-- VIDEO -->
-  <div class="hero-video">
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="hero.mp4" type="video/mp4">
-    </video>
-  </div>
+  <!-- Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
 
-  <!-- SEARCH -->
+  <!-- Search -->
   <div class="search-wrap">
-    <input type="text" placeholder="SEARCH" />
+    <input type="text" placeholder="SEARCH">
   </div>
 
-  <!-- BRAND -->
+  <!-- Brand -->
   <div class="brand-shadow">BLLOOM</div>
-  <div class="brand" id="brand">BLLOOM</div>
+  <div class="brand">BLLOOM</div>
 
 </section>
 
-<!-- FEATURED -->
+<!-- Featured -->
 <section class="section">
   <h2>Featured Collections</h2>
-
   <div class="cards">
     <div class="card"></div>
     <div class="card"></div>
     <div class="card"></div>
   </div>
 </section>
-
-<!-- CUSTOM -->
-<section class="custom">
-  <h2>Customization</h2>
-  <p>Choose fabric, fit, material and design.</p>
-</section>
-
-<!-- SCRIPTS -->
-<script>
-  // BLLOOM SCALE ON SCROLL
-  window.addEventListener("scroll", () => {
-    const bloom = document.getElementById("brand");
-    const scale = Math.max(0.6, 1 - window.scrollY / 600);
-    bloom.style.transform = `translate(-50%, -50%) scale(${scale})`;
-  });
-</script>
-
-<script>
-  // MENU TOGGLE
-  const toggle = document.getElementById("menuToggle");
-  const dropdown = document.getElementById("menuDropdown");
-
-  toggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    dropdown.style.display =
-      dropdown.style.display === "block" ? "none" : "block";
-  });
-
-  document.addEventListener("click", () => {
-    dropdown.style.display = "none";
-  });
-</script>
 
 </body>
 </html>
