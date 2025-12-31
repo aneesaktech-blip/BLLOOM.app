@@ -225,12 +225,13 @@ body {
 
 /* LEFT FLOWER */
 .search-center::before {
-  left: -26px;
+  left: 30px;
 }
 
 /* RIGHT FLOWER */
 .search-center::after {
-  right: -26px;
+  right: 30px;
 }
+
 
 
