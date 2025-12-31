@@ -20,7 +20,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 48px;                 /* more breathing space */
+  gap: 78px;                 /* more breathing space */
   font-family: 'Playfair Display', serif;
   font-size: 25px;           /* bigger BLOOM letters */
   letter-spacing: 0.8em;     /* spaced luxury look */
@@ -187,4 +187,5 @@ body {
   height: 280px;
   background: #ccc;
 }
+
 
