@@ -11,27 +11,31 @@ body {
   color: #111;
 }
 
+/* =========================
+   TOP STRIP
+========================= */
 .top-strip {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 25px;              /* thicker strip */
+  height: 28px;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 195px;                 /* more breathing space */
+  gap: 195px;
   font-family: 'Playfair Display', serif;
-  font-size: 25px;           /* bigger BLOOM letters */
-  letter-spacing: 0.8em;     /* spaced luxury look */
+  font-size: 25px;
+  letter-spacing: 0.8em;
   color: #111;
   z-index: 300;
 }
 
-
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 .top {
-  padding: 40px 50px 20px;
+  padding: 60px 50px 20px;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -66,7 +70,8 @@ body {
   width: 220px;
 }
 
-.icon, .login-link {
+.icon,
+.login-link {
   text-decoration: none;
   color: #111;
 }
@@ -98,35 +103,9 @@ body {
   color: #111;
 }
 
-
-
-/* SECTIONS */
-.section {
-  padding: 120px 60px;
-}
-
-.section.light {
-  background: #f3f3f3;
-}
-
-.section.dark {
-  background: #111;
-  color: #fff;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.product-card {
-  height: 280px;
-  background: #ccc;
-}
-
-/* CENTER SEARCH */
+/* =========================
+   CENTER SEARCH
+========================= */
 .search-center {
   position: absolute;
   left: 50%;
@@ -134,7 +113,6 @@ body {
   z-index: 250;
 }
 
-/* OVAL SEARCH BAR */
 .search-center input {
   width: 320px;
   padding: 14px 28px;
@@ -147,12 +125,10 @@ body {
   outline: none;
 }
 
-/* 🌸 FLOWERS (LEFT & RIGHT) */
+/* FLOWER DECOR */
 .search-center::before,
 .search-center::after {
   content: "✧";
-  font-size: 300px;
-  opacity: 1;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -161,16 +137,12 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-/* LEFT FLOWER */
-.search-center::before {
-  left: 30px;
-}
+.search-center::before { left: 30px; }
+.search-center::after  { right: 30px; }
 
-/* RIGHT FLOWER */
-.search-center::after {
-  right: 30px;
-}
-
+/* =========================
+   HERO
+========================= */
 .hero {
   position: relative;
   height: 100vh;
@@ -178,12 +150,15 @@ body {
   overflow: hidden;
 }
 
-/* TEXT CONTAINER */
+/* VIDEO TEXT (BLLOOM) */
 .video-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  display: inline-block;          /* 🔑 FIX */
+  padding: 0.25em 0;              /* 🔑 FIX */
 
   font-family: 'Playfair Display', serif;
   font-size: clamp(8rem, 20vw, 18rem);
@@ -192,27 +167,19 @@ body {
   line-height: 1;
 
   color: transparent;
-
-  /* 🔥 THIS IS CRITICAL */
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 
   z-index: 3;
 }
 
-/* VIDEO MASK */
+/* VIDEO INSIDE TEXT */
 .text-video {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  /* 🔥 THIS MAKES VIDEO SHOW THROUGH TEXT */
-  -webkit-mask-image: linear-gradient(black, black);
-  mask-image: linear-gradient(black, black);
-
   opacity: 0.95;
   pointer-events: none;
 }
@@ -243,3 +210,77 @@ body {
   z-index: 4;
   cursor: pointer;
 }
+
+/* =========================
+   SECTIONS (SAFE FLOW)
+========================= */
+.section {
+  padding: 120px 60px;
+  position: relative;
+}
+
+.section.light {
+  background: #f3f3f3;
+}
+
+.section.dark {
+  background: #111;
+  color: #fff;
+}
+
+/* FEATURED PRODUCTS */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.product-card {
+  height: 280px;
+  background: #fff;
+  padding: 24px;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   CUSTOMIZATION (BIG)
+========================= */
+.custom-big h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.custom-sub {
+  max-width: 600px;
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+
+.custom-form {
+  max-width: 640px;
+}
+
+.custom-form input,
+.custom-form textarea {
+  width: 100%;
+  padding: 18px;
+  margin-bottom: 18px;
+  border: none;
+  font-size: 14px;
+}
+
+.custom-form button {
+  padding: 16px 40px;
+  border-radius: 999px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
+
