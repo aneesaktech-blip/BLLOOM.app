@@ -103,6 +103,7 @@ body {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  background: #a7a098; /* fallback if video fails */
 }
 
 /* VIDEO */
@@ -113,14 +114,15 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  opacity: 0.75; /* IMPORTANT: lets text breathe */
 }
 
-/* OVERLAY */
+/* SOFT OVERLAY */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(167,160,152,0.75);
+  background: rgba(167,160,152,0.55);
   z-index: 2;
 }
 
@@ -134,7 +136,7 @@ body {
   z-index: 3;
 }
 
-/* BRAND */
+/* BRAND TEXT */
 .brand {
   position: absolute;
   top: 50%;
@@ -232,6 +234,7 @@ body {
 .search-center::after {
   right: 30px;
 }
+
 
 
 
