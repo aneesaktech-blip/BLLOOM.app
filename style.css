@@ -386,49 +386,40 @@ body {
 
 
 
-/* LOGIN TEXT — FONT + SIZE */
-.icons {
-  font-family: 'Inter', sans-serif;   /* clean modern */
-  font-size: 15px;                    /* overall size slightly bigger */
-  letter-spacing: 0.04em;
+.icons-panel {
+  background: rgba(255, 255, 255, 0.18); /* lighter than header */
+  padding: 10px 18px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
 }
-
-/* specifically emphasize Login */
-.icons span,
-.icons a,
-.icons {
-  font-weight: 500;
-}
-
-/* OPTIONAL: make Login stand out more */
-.icons {
-  gap: 10px;
-}
-
-
-/* ICONS CONTAINER — MORE SPACE */
 .icons {
   display: flex;
   align-items: center;
-  gap: 18px;                 /* 👈 BIGGER spacing between heart, cart, Login */
-  font-size: 17px;           /* 👈 overall size bump */
-  color: #111;
+  gap: 18px;
 }
-
-/* LOGIN TEXT — BIG + CURSIVE + COOL */
-.icons {
-  font-family: 'Playfair Display', fantasy;
-  font-style: italics;        /* 👈 cursive feel */
-  letter-spacing: 0.008em;    /* 👈 luxury spacing */
+.icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: invert(1); /* makes icons white */
+  opacity: 0.9;
 }
-
-/* EXTRA EMPHASIS FOR LOGIN WORD */
-.icons {
-  font-weight: 200;
+.icon.heart {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.5' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-6-4.35-9-8.28C-1.5 6.6 4.5 2.4 8.4 5.4c1.2.9 2.4 2.4 3.6 3.6 1.2-1.2 2.4-2.7 3.6-3.6C19.5 2.4 25.5 6.6 21 12.72 18 16.65 12 21 12 21z'/%3E%3C/svg%3E");
 }
-.icons {
-  text-transform: lowercase;
-  font-size: 30px;
+.icon.bag {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.5' viewBox='0 0 24 24'%3E%3Cpath d='M6 7h12l-1 14H7L6 7z'/%3E%3Cpath d='M9 7a3 3 0 016 0'/%3E%3C/svg%3E");
+}
+.icon.user {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.5' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='8' r='4'/%3E%3Cpath d='M4 21c2-4 14-4 16 0'/%3E%3C/svg%3E");
+}
+.icon:hover {
+  opacity: 1;
+  transform: scale(1.08);
+  transition: 0.25s ease;
 }
 
 
