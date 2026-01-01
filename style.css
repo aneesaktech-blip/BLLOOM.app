@@ -430,6 +430,16 @@ body {
 }
 
 
+.icons .infinity {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;          /* ⬆ bigger infinity */
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+  opacity: 0.95;
+  cursor: pointer;
+}
+
 
 
 
