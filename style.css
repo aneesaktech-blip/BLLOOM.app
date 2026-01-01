@@ -406,6 +406,31 @@ body {
 }
 
 
+/* ICONS CONTAINER — MORE SPACE */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;                 /* 👈 BIGGER spacing between heart, cart, Login */
+  font-size: 17px;           /* 👈 overall size bump */
+  color: #111;
+}
+
+/* LOGIN TEXT — BIG + CURSIVE + COOL */
+.icons {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;        /* 👈 cursive feel */
+  letter-spacing: 0.08em;    /* 👈 luxury spacing */
+}
+
+/* EXTRA EMPHASIS FOR LOGIN WORD */
+.icons {
+  font-weight: 600;
+}
+.icons {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
 
 
 
