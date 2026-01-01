@@ -19,18 +19,22 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 28px;
-  background: #fff;
+  height: 34px;                 /* ⬆ taller strip */
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1095px;
+
+  gap: 260px;                   /* 🔥 MORE spacing between letters */
+
   font-family: 'Playfair Display', serif;
-  font-size: 25px;
-  letter-spacing: 0.8em;
+  font-size: 28px;              /* ⬆ bigger letters */
+  letter-spacing: 2em;        /* ⬆ luxury spacing */
+
   color: #111;
   z-index: 300;
 }
+
 
 /* =========================
    HEADER (MATCHES YOUR HTML)
@@ -362,6 +366,7 @@ body {
 .hero-overlay {
   background: rgba(183,175,164,0.08);  /* MUCH lighter */
 }
+
 
 
 
