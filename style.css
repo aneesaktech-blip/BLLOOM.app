@@ -417,19 +417,20 @@ body {
 
 /* LOGIN TEXT — BIG + CURSIVE + COOL */
 .icons {
-  font-family: 'Playfair Display', serif;
-  font-style: bold;        /* 👈 cursive feel */
+  font-family: 'Playfair Display', fantasy;
+  font-style: italics;        /* 👈 cursive feel */
   letter-spacing: 0.008em;    /* 👈 luxury spacing */
 }
 
 /* EXTRA EMPHASIS FOR LOGIN WORD */
 .icons {
-  font-weight: 600;
+  font-weight: 200;
 }
 .icons {
   text-transform: lowercase;
   font-size: 30px;
 }
+
 
 
 
