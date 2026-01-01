@@ -386,6 +386,25 @@ body {
 
 
 
+/* LOGIN TEXT — FONT + SIZE */
+.icons {
+  font-family: 'Inter', sans-serif;   /* clean modern */
+  font-size: 15px;                    /* overall size slightly bigger */
+  letter-spacing: 0.04em;
+}
+
+/* specifically emphasize Login */
+.icons span,
+.icons a,
+.icons {
+  font-weight: 500;
+}
+
+/* OPTIONAL: make Login stand out more */
+.icons {
+  gap: 10px;
+}
+
 
 
 
