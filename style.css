@@ -26,14 +26,14 @@ body {
   justify-content: center;
   align-items: center;
 
-  padding-top: 4px;            /* 🔥 pushes letters UP */
+  padding-top: 2px;            /* 🔥 pushes letters UP */
   padding-bottom: 2px;
 
   gap: 260px;
 
   font-family: 'Playfair Display', serif;
   font-size: 28px;
-  letter-spacing: 0.9em;
+  letter-spacing: 1.3em;
   color: #111;
 
   z-index: 300;
@@ -383,6 +383,7 @@ body {
   background: #bcb5aa;   
 
 }
+
 
 
 
