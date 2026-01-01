@@ -130,26 +130,39 @@ body {
   height: 100vh;
   background: #b7afa4;
   overflow: hidden;
-  z-index: 1;
-  
-
-}
-.hero * {
-  position: absolute;
 }
 
+/* VIDEO CONTAINER (BOXED LOOK) */
 .video-text {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 75%;
+  height: 42%;
   transform: translate(-50%, -50%);
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(8rem, 20vw, 18rem);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: transparent;
-  -webkit-background-clip: text;
-  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* subtle frame */
+  background: rgba(0,0,0,0.05);
+}
+ .video-text video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 1;                 /* FULL clarity */
+  filter: contrast(1.1) saturate(1.05);
+}
+
+
+}
+.hero * {
+  position: absolute;
 }
 
 .text-video {
@@ -187,19 +200,22 @@ body {
   z-index: 3;
 }
 /* BIG BLOOM (SCROLL SHRINK) */
-.brand {
- 
+
+ .brand {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  z-index: 2;
+
   font-family: 'Playfair Display', serif;
-  font-size: clamp(10rem, 24vw, 22rem);
+  font-size: clamp(6rem, 14vw, 12rem);  /* smaller than before */
   font-weight: 600;
-  letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.85);
-  z-index: 4;
+  letter-spacing: 0.04em;
+
+  color: rgba(255,255,255,0.9);        /* readable but not harsh */
+  text-align: center;
   pointer-events: none;
+
+
+  
   transition: transform 0.25s ease;
 }
 
@@ -341,5 +357,9 @@ body {
 }
 
 
+
+.hero-overlay {
+  background: rgba(183,175,164,0.08);  /* MUCH lighter */
+}
 
 
