@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+  <title>Men – BLLOOM</title>
   <link rel="stylesheet" href="/theme.css">
-
-  <meta charset="UTF-8">
-  <title>Coming Soon</title>
+  <link rel="stylesheet" href="/layout.css">
 </head>
 <body>
-  <h1>Coming Soon</h1>
-  <p>We’re working on this collection.</p>
+
+<div id="header"></div>
+
+<section class="page-hero">
+  <h1>MEN</h1>
+</section>
+
+<section class="product-grid">
+  <!-- products -->
+</section>
+
+<script>
+fetch("/header.html")
+  .then(r => r.text())
+  .then(t => document.getElementById("header").innerHTML = t);
+</script>
+
 </body>
 </html>
