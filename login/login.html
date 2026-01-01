@@ -1,98 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
   <title>Login — BLLOOM</title>
-
-  <!-- Responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Global + Page CSS -->
-  <link rel="stylesheet" href="../global.css" />
-  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="login.css">
 </head>
+<body>
 
-<body class="page">
+<div class="login-wrapper">
 
-  <!-- Back link -->
-  <a href="../index.html" class="back-link">← Back to Home</a>
+  <div class="login-box">
+    <h1>Welcome back</h1>
+    <p>Log in to continue</p>
 
-  <div class="login-page">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
 
-    <!-- LEFT : BRAND MESSAGE -->
-    <div class="login-info">
-      <h1>Welcome back.</h1>
+    <button>Login</button>
 
-      <p class="subtitle">
-        Your style journey continues here.
-      </p>
-
-      <p class="helper">
-        Log in to access your saved styles, wishlist, and custom design requests.
-      </p>
-
-      <div class="brand-note">
-        <span>BLLOOM</span> is more than clothing —  
-        it’s how you choose to show up.
-      </div>
-    </div>
-
-    <!-- RIGHT : LOGIN CARD -->
-    <div class="login-card glass float">
-
-      <h2>Login</h2>
-      <p class="small-text">Glad to see you again.</p>
-
-      <form onsubmit="redirectHome(event)">
-
-        <div class="field">
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="you@example.com"
-            required
-          />
-        </div>
-
-        <div class="field">
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="••••••••"
-            required
-          />
-        </div>
-
-        <div class="options">
-          <label class="remember">
-            <input type="checkbox" />
-            Remember me
-          </label>
-
-          <a href="#" class="forgot">Forgot password?</a>
-        </div>
-
-        <button type="submit" class="btn">
-          Enter BLLOOM
-        </button>
-
-      </form>
-
-      <p class="switch">
-        New here?
-        <a href="../signup/signup.html">Create an account</a>
-      </p>
-
-    </div>
-
+    <span>New here? <a href="/signup">Create account</a></span>
   </div>
 
-  <script>
-    function redirectHome(e) {
-      e.preventDefault();
-      window.location.href = "../index.html";
-    }
-  </script>
+</div>
 
 </body>
 </html>
