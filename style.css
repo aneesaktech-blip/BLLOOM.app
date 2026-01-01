@@ -418,8 +418,8 @@ body {
 /* LOGIN TEXT — BIG + CURSIVE + COOL */
 .icons {
   font-family: 'Playfair Display', serif;
-  font-style: italic;        /* 👈 cursive feel */
-  letter-spacing: 0.08em;    /* 👈 luxury spacing */
+  font-style: bold;        /* 👈 cursive feel */
+  letter-spacing: 0.008em;    /* 👈 luxury spacing */
 }
 
 /* EXTRA EMPHASIS FOR LOGIN WORD */
@@ -427,9 +427,10 @@ body {
   font-weight: 600;
 }
 .icons {
-  text-transform: uppercase;
-  font-size: 18px;
+  text-transform: lowercase;
+  font-size: 30px;
 }
+
 
 
 
