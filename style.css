@@ -19,19 +19,23 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 34px;                 /* ⬆ taller strip */
+  height: 36px;
+
   background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  gap: 260px;                   /* 🔥 MORE spacing between letters */
+  padding-top: 4px;            /* 🔥 pushes letters UP */
+  padding-bottom: 2px;
+
+  gap: 260px;
 
   font-family: 'Playfair Display', serif;
-  font-size: 28px;              /* ⬆ bigger letters */
-  letter-spacing: 1.2em;        /* ⬆ luxury spacing */
-
+  font-size: 28px;
+  letter-spacing: 0.9em;
   color: #111;
+
   z-index: 300;
 }
 
@@ -45,10 +49,10 @@ body {
   top: 34px;                    /* sits below top-strip */
   
 
-  background: #b1aa9f;          /* 🔥 darker than body */
+  background: #9a9286;      /* 🔥 darker than body */
   border-bottom: 1px solid rgba(0,0,0,0.08);
 
-  padding: 20px 48px;
+  padding: 13px 48px;
 
 
   top: 28px;               /* below top-strip */
@@ -379,6 +383,7 @@ body {
   background: #bcb5aa;   
 
 }
+
 
 
 
