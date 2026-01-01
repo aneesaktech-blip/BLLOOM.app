@@ -1,50 +1,82 @@
-/* ================= NAVBAR ================= */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
+/* TOP STRIP */
+.top-strip {
+  height: 28px;
+  background: #fff;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 22px 64px;
-  background: rgba(10,10,15,0.55);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.navbar nav a {
-  margin: 0 18px;
-  font-weight: 500;
-  position: relative;
-}
-
-.navbar nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    var(--accent),
-    transparent
-  );
-  transition: width 0.4s var(--ease-main);
-}
-
-.navbar nav a:hover::after {
+  gap: 210px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.85em;
+  font-size: 22px;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 300;
 }
 
-/* ================= SECTIONS ================= */
-section {
-  padding: 120px 80px;
+/* HEADER */
+.header {
+  margin-top: 28px;
+  background: var(--bg-header);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 48px;
+  justify-content: space-between;
 }
 
-/* ================= FOOTER ================= */
-footer {
-  padding: 80px;
+/* MENU */
+.menu a {
+  text-decoration: none;
+  color: #111;
+  margin-right: 26px;
+  letter-spacing: 0.14em;
+  font-size: 13px;
+}
+
+.menu a.active {
+  background: #111;
+  color: #fff;
+  padding: 6px 14px;
+}
+
+/* SEARCH */
+.search-wrap input {
+  width: 340px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  letter-spacing: 0.16em;
   text-align: center;
-  opacity: 0.6;
+}
+
+/* ICON PANEL */
+.icons-panel {
+  background: var(--bg-panel);
+  padding: 12px 22px;
+  border-radius: 999px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  opacity: 0.9;
+}
+
+/* SVG ICONS */
+.icon.heart { background: url("/icons/heart.svg") center/contain no-repeat; }
+.icon.bag { background: url("/icons/bag.svg") center/contain no-repeat; }
+.icon.user { background: url("/icons/user.svg") center/contain no-repeat; }
+
+.infinity-btn {
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Italiana', serif;
 }
