@@ -212,7 +212,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: clamp(14rem, 25vw, 17rem);
   font-weight: 900;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.04em;
 
   color: rgba(255,255,255,0.92);
   pointer-events: none;
@@ -362,6 +362,7 @@ body {
 .hero-overlay {
   background: rgba(183,175,164,0.08);  /* MUCH lighter */
 }
+
 
 
 
