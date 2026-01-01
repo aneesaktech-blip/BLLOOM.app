@@ -226,34 +226,43 @@ body {
   color: #fff;
 }
 
-/* FEATURED */
+/* =========================
+   FEATURED PRODUCTS
+========================= */
 .featured {
-  padding: 120px 80px;
+  padding: 140px 80px;
   background: #b7afa4;
 }
 
 .featured h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  margin-bottom: 40px;
+  font-size: 52px;
+  margin-bottom: 50px;
 }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 36px;
 }
 
 .product-card {
   background: #fff;
+  border-radius: 20px;
   padding: 24px;
-  border-radius: 18px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
+}
+
+.product-img {
+  height: 220px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #cfc6bb, #b7afa4);
+  margin-bottom: 20px;
 }
 
 .product-card h3 {
@@ -264,31 +273,34 @@ body {
 .product-card .price {
   font-size: 14px;
   opacity: 0.7;
+  margin-bottom: 16px;
 }
 
 .product-card button {
-  margin-top: 18px;
-  padding: 10px 22px;
+  padding: 10px 24px;
   border-radius: 999px;
   border: 1px solid #111;
   background: transparent;
   cursor: pointer;
 }
 
-/* CUSTOMIZATION */
+
+/* =========================
+   CUSTOMIZATION
+========================= */
 .customize {
-  padding: 140px 80px;
+  padding: 160px 80px;
   background: #a79f95;
 }
 
 .customize h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 56px;
+  font-size: 64px;
   margin-bottom: 18px;
 }
 
 .customize p {
-  max-width: 520px;
+  max-width: 560px;
   font-size: 16px;
   opacity: 0.85;
   margin-bottom: 48px;
@@ -303,7 +315,7 @@ body {
   width: 100%;
   padding: 18px 20px;
   margin-bottom: 20px;
-  border-radius: 12px;
+  border-radius: 14px;
   border: none;
   font-size: 14px;
 }
@@ -314,10 +326,12 @@ body {
 }
 
 .custom-form button {
-  padding: 16px 42px;
+  padding: 16px 44px;
   border-radius: 999px;
   border: none;
   background: #111;
   color: #fff;
   cursor: pointer;
 }
+
+
