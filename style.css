@@ -74,26 +74,23 @@ body {
 
 
 
-
-/* LEFT MENU */
 .menu {
   display: flex;
-  align-items: center;
+  gap: 26px;
 }
 
-.menu button {
-  background: none;
-  border: none;
-  margin-right: 22px;
+.menu a {
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
-  letter-spacing: 0.12em;
-  cursor: pointer;
+  letter-spacing: 0.14em;
+  color: #111;
+  padding: 6px 14px;
 }
 
-.menu .active {
+.menu a.active {
   background: #111;
   color: #fff;
-  padding: 6px 14px;
 }
 
 /* CENTER SEARCH */
@@ -439,5 +436,6 @@ body {
   opacity: 0.95;
   cursor: pointer;
 }
+
 
 
