@@ -2,141 +2,265 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLLOOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --muted: #777;
+      --border: #e6e6e6;
+      --accent: #e10600;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Inter", sans-serif;
+      line-height: 1.4;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    section {
+      padding: 80px 6vw;
+    }
+
+    /* ================= NAV ================= */
+    header {
+      padding: 24px 6vw;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin-right: 28px;
+      text-decoration: none;
+      color: var(--fg);
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      letter-spacing: 0.08em;
+    }
+
+    .hero p {
+      margin-top: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ================= COLLAGE / NEW DROP ================= */
+    .collage {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .collage h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 0.06em;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 36px;
+      border: 1px solid var(--fg);
+      text-decoration: none;
+      color: var(--fg);
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+    }
+
+    /* ================= INFO STRIPS ================= */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-box {
+      padding: 40px;
+      border-right: 1px solid var(--border);
+    }
+
+    .info-box:last-child {
+      border-right: none;
+    }
+
+    .info-box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.08em;
+    }
+
+    .info-box p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* ================= PRODUCTS ================= */
+    .products h2 {
+      text-align: center;
+      margin-bottom: 60px;
+      letter-spacing: 0.15em;
+      font-size: 1rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .product {
+      border: 1px solid var(--border);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product h4 {
+      margin-top: 16px;
+      font-weight: 400;
+      font-size: 0.95rem;
+    }
+
+    .product span {
+      display: block;
+      margin-top: 8px;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      padding: 60px 6vw;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .collage {
+        grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-box {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-
-<!-- TOP STRIP -->
-<div class="top-strip">
-  B &nbsp;&nbsp; L &nbsp;&nbsp; L &nbsp;&nbsp; O &nbsp;&nbsp; O &nbsp;&nbsp; M
-</div>
-
-<!-- HEADER -->
-<nav class="menu">
-  <a href="/men/" class="active">MEN</a>
-  <a href="/women/">WOMEN</a>
-  <a href="/accessories/">ACCESSORIES</a>
-</nav>
-
-
-  <div class="search-wrap">
-    <input placeholder="SEARCH" />
-  </div>
-<div class="icons-panel">
-  <a href="/wishlist/" class="icon heart"></a>
-  <a href="/cart/" class="icon bag"></a>
-  <a href="/login/" class="icon user"></a>
-  <button class="infinity-btn">∞</button>
-</div>
-
-
-</div>
-
-
+<header>
+  <strong>BLLOOM</strong>
+  <nav>
+    <a href="#">SHOP</a>
+    <a href="#">ABOUT</a>
+    <a href="#">STUDIO</a>
+    <a href="#">CONTACT</a>
+  </nav>
 </header>
+
 <section class="hero">
-
-  <div class="hero-circle"></div>
-
-  <!-- BIG WHITE SHRINKING TITLE -->
-  <h1 class="brand" id="brand">BLLOOM</h1>
-
-  <!-- VIDEO FILLED TITLE -->
-  <div class="video-text">
-    <video class="text-video" src="hero.mp4" autoplay muted loop playsinline></video>
-    BLLOOM
-  </div>
-
-  <button class="cta">NEW COLLECTION</button>
-
+  <h1>BLLOOM</h1>
+  <p>Crafted for those who don’t blend in</p>
 </section>
 
+<section class="collage">
+  <div>
+    <h2>NEW DROP</h2>
+    <a href="#" class="btn">SHOP NOW</a>
+  </div>
+  <img src="hero-product.jpg" alt="New Drop">
+</section>
 
-<script>
-  window.addEventListener("scroll", () => {
-    const bloom = document.getElementById("brand");
-    if (!bloom) return;
+<section class="info-grid">
+  <div class="info-box">
+    <h3>THE BLLOOM STUDIO</h3>
+    <p>Where street meets precision.</p>
+  </div>
+  <div class="info-box">
+    <h3>LIMITED PIECES</h3>
+    <p>No restocks. No repeats.</p>
+  </div>
+  <div class="info-box">
+    <h3>ABOUT BLLOOM</h3>
+    <p>Designed in limited drops. Made to stand apart.</p>
+  </div>
+</section>
 
-    const scale = Math.max(0.55, 1 - window.scrollY / 600);
-    bloom.style.transform = `translate(-50%, -50%) scale(${scale})`;
-  });
-</script>
-
-<!-- FEATURED PRODUCTS -->
-<section class="featured">
-  <h2>Featured</h2>
-
+<section class="products">
+  <h2>LATEST ARRIVALS</h2>
   <div class="product-grid">
-    <div class="product-card">
-      <div class="product-img"></div>
-      <h3>Brown Coat</h3>
-      <p class="price">₹699</p>
-      <button>Add to cart</button>
+    <div class="product">
+      <img src="p1.jpg">
+      <h4>Structured Jacket</h4>
+      <span>₹6,499</span>
     </div>
-
-    <div class="product-card">
-      <div class="product-img"></div>
-      <h3>Oversized Tee</h3>
-      <p class="price">₹499</p>
-      <button>Add to cart</button>
+    <div class="product">
+      <img src="p2.jpg">
+      <h4>Tailored Hoodie</h4>
+      <span>₹4,999</span>
     </div>
-
-    <div class="product-card">
-      <div class="product-img"></div>
-      <h3>Tailored Trouser</h3>
-      <p class="price">₹999</p>
-      <button>Add to cart</button>
+    <div class="product">
+      <img src="p3.jpg">
+      <h4>Tech Cargo Pants</h4>
+      <span>₹5,999</span>
+    </div>
+    <div class="product">
+      <img src="p4.jpg">
+      <h4>Minimal Tee</h4>
+      <span>₹2,499</span>
     </div>
   </div>
 </section>
-<section class="section dark custom-big">
-  <h2>Make It Yours</h2>
-  <p class="custom-sub">
-    Tell us what you imagine.  
-    Fabric, fit, mood — we’ll take care of the rest.
-  </p>
 
-  <form class="custom-form">
-    <input placeholder="What fabric do you want?" />
-    <input placeholder="Fit preference (oversized / slim / custom)" />
-    <input placeholder="Color, vibe, or reference" />
-    <textarea placeholder="Anything else you want to tell us?"></textarea>
-    <button>REQUEST CUSTOM PIECE</button>
-  </form>
-</section>
-
-
-
-
-
+<footer>
+  © BLLOOM — Designed in India. Worn without permission.
+</footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
