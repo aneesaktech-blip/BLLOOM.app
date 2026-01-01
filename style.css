@@ -136,15 +136,15 @@ body {
 .video-text {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 70%;
   width: 75%;
-  height: 42%;
+  height: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
+  z-index:2;
   /* subtle frame */
   background: rgba(0,0,0,0.05);
 }
@@ -154,6 +154,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+    z-index:2;
 
   opacity: 1;                 /* FULL clarity */
   filter: contrast(1.1) saturate(1.05);
@@ -203,19 +204,19 @@ body {
 
  .brand {
   position: absolute;
-  z-index: 2;
+  z-index: 5;                 /* 🔥 THIS WAS MISSING */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   font-family: 'Playfair Display', serif;
-  font-size: clamp(6rem, 14vw, 12rem);  /* smaller than before */
+  font-size: clamp(6rem, 14vw, 12rem);
   font-weight: 600;
   letter-spacing: 0.04em;
 
-  color: rgba(255,255,255,0.9);        /* readable but not harsh */
-  text-align: center;
+  color: rgba(255,255,255,0.92);
   pointer-events: none;
 
-
-  
   transition: transform 0.25s ease;
 }
 
@@ -361,5 +362,6 @@ body {
 .hero-overlay {
   background: rgba(183,175,164,0.08);  /* MUCH lighter */
 }
+
 
 
