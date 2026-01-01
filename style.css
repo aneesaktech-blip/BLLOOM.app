@@ -19,7 +19,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 36px;
+  height: 30px;
 
   background: #ffffff;
   display: flex;
@@ -383,6 +383,7 @@ body {
   background: #bcb5aa;   
 
 }
+
 
 
 
