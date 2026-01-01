@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title> SHOP – BLLOOM</title>
   <link rel="stylesheet" href="/theme.css">
-
-  <title>Shop – BLLOOM</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/layout.css">
 </head>
-
 <body>
 
-<header class="navbar dark">
-  <div class="logo">BLLOOM</div>
-  <nav class="menu">
-    <a href="index.html">Home</a>
-    <a href="wishlist.html">Wishlist</a>
-    <a href="cart.html">Cart</a>
-  </nav>
-</header>
+<div id="header"></div>
 
-<section class="page">
-  <h1>Shop</h1>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Black Hoodie</h3>
-      <p>₹2,999</p>
-      <button onclick="addToCart()">Add to Cart</button>
-      <button onclick="addToWishlist()">♡ Wishlist</button>
-      <a href="product.html">View</a>
-    </div>
-  </div>
+<section class="page-hero">
+  <h1>MEN</h1>
 </section>
 
-<script src="cart.js"></script>
-<script src="wishlist.js"></script>
+<section class="product-grid">
+  <!-- products -->
+</section>
+
+<script>
+fetch("/header.html")
+  .then(r => r.text())
+  .then(t => document.getElementById("header").innerHTML = t);
+</script>
+
 </body>
 </html>
