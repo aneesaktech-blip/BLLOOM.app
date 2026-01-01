@@ -1,56 +1,6 @@
 {
-  "redirects": [
-    {
-      "source": "/login/login.html",
-      "destination": "/login",
-      "permanent": true
-    },
-    {
-      "source": "/signup/signup.html",
-      "destination": "/signup",
-      "permanent": true
-    },
-    {
-      "source": "/cart/index.html",
-      "destination": "/cart",
-      "permanent": true
-    },
-    {
-      "source": "/cart/buy-now.html",
-      "destination": "/buy-now",
-      "permanent": true
-    },
-    {
-      "source": "/payment/payment.html",
-      "destination": "/payment",
-      "permanent": true
-    },
-    {
-      "source": "/payment/success.html",
-      "destination": "/success",
-      "permanent": true
-    },
-    {
-      "source": "/admin/index.html",
-      "destination": "/admin",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    { "source": "/login", "destination": "/login/login.html" },
-    { "source": "/signup", "destination": "/signup/signup.html" },
-
-    { "source": "/shop", "destination": "/shop/shop.html" },
-    { "source": "/collections", "destination": "/collections/collections.html" },
-    { "source": "/customization", "destination": "/customization/customization.html" },
-
-    { "source": "/cart", "destination": "/cart/index.html" },
-    { "source": "/buy-now", "destination": "/cart/buy-now.html" },
-
-    { "source": "/payment", "destination": "/payment/payment.html" },
-    { "source": "/success", "destination": "/payment/success.html" },
-
-    { "source": "/admin", "destination": "/admin/index.html" }
+  "version": 2,
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
-
