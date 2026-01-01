@@ -78,6 +78,28 @@ body {
   display: flex;
   justify-content: center;
 }
+.search-wrap {
+  position: relative;
+}
+
+.search-wrap::before,
+.search-wrap::after {
+  content: "✧";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: rgba(0,0,0,0.4);
+  pointer-events: none;
+}
+
+.search-wrap::before {
+  left: 14px;
+}
+
+.search-wrap::after {
+  right: 14px;
+}
 
 .search-wrap input {
   width: 320px;
@@ -113,33 +135,25 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  display: inline-block;   /* ✅ ADD */
-  padding: 0.25em 0;       /* ✅ ADD */
-
   font-family: 'Playfair Display', serif;
   font-size: clamp(8rem, 20vw, 18rem);
   font-weight: 600;
   letter-spacing: 0.05em;
-  line-height: 1;
-
   color: transparent;
-  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-
   z-index: 3;
 }
+
 .text-video {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  z-index: 0;           /* 🔑 BEHIND TEXT */
+  opacity: 0.12;   /* 🔥 THIS controls strength */
   pointer-events: none;
 }
+
 
 
 .hero-circle {
@@ -163,6 +177,21 @@ body {
   background: #fff;
   border: none;
   z-index: 3;
+}
+/* BIG BLOOM (SCROLL SHRINK) */
+.brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(10rem, 24vw, 22rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.85);
+  z-index: 4;
+  pointer-events: none;
+  transition: transform 0.25s ease;
 }
 
 /* =========================
@@ -293,6 +322,7 @@ body {
   color: #fff;
   cursor: pointer;
 }
+
 
 
 
