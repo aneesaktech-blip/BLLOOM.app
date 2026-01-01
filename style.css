@@ -146,19 +146,19 @@ body {
 .hero {
   position: relative;
   height: 100vh;
+  overflow: hidden;     /* 🔒 PREVENT VIDEO SPILL */
   background: #b7afa4;
-  overflow: hidden;
 }
 
-/* VIDEO TEXT (BLLOOM) */
+
 .video-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  display: inline-block;          /* 🔑 FIX */
-  padding: 0.25em 0;              /* 🔑 FIX */
+  display: inline-block;
+  padding: 0.3em 0;
 
   font-family: 'Playfair Display', serif;
   font-size: clamp(8rem, 20vw, 18rem);
@@ -170,21 +170,22 @@ body {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 
-  z-index: 3;
+  z-index: 2;   /* 🔥 ABOVE VIDEO */
 }
 
-/* VIDEO INSIDE TEXT */
 .text-video {
   position: absolute;
   inset: 0;
+
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.95;
+
+  z-index: 0;           /* 🔑 BEHIND TEXT */
   pointer-events: none;
 }
 
-/* HALF CIRCLE */
+
 .hero-circle {
   position: absolute;
   width: 1100px;
@@ -196,8 +197,6 @@ body {
   transform: translate(-50%, -50%);
   z-index: 1;
 }
-
-/* CTA */
 .cta {
   position: absolute;
   bottom: 80px;
@@ -205,10 +204,9 @@ body {
   transform: translateX(-50%);
   padding: 14px 36px;
   border-radius: 999px;
-  border: none;
   background: #fff;
-  z-index: 4;
-  cursor: pointer;
+  border: none;
+  z-index: 3;
 }
 
 /* =========================
@@ -228,39 +226,72 @@ body {
   color: #fff;
 }
 
-/* FEATURED PRODUCTS */
+/* FEATURED */
+.featured {
+  padding: 120px 80px;
+  background: #b7afa4;
+}
+
+.featured h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 40px;
+  gap: 32px;
 }
 
 .product-card {
-  height: 280px;
   background: #fff;
   padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.product-card .price {
   font-size: 14px;
-  letter-spacing: 0.12em;
-  display: flex;
-  align-items: flex-end;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  opacity: 0.7;
 }
 
-/* =========================
-   CUSTOMIZATION (BIG)
-========================= */
-.custom-big h2 {
+.product-card button {
+  margin-top: 18px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid #111;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* CUSTOMIZATION */
+.customize {
+  padding: 140px 80px;
+  background: #a79f95;
+}
+
+.customize h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 64px;
-  margin-bottom: 20px;
+  font-size: 56px;
+  margin-bottom: 18px;
 }
 
-.custom-sub {
-  max-width: 600px;
+.customize p {
+  max-width: 520px;
   font-size: 16px;
   opacity: 0.85;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .custom-form {
@@ -270,17 +301,23 @@ body {
 .custom-form input,
 .custom-form textarea {
   width: 100%;
-  padding: 18px;
-  margin-bottom: 18px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
   border: none;
   font-size: 14px;
 }
 
-.custom-form button {
-  padding: 16px 40px;
-  border-radius: 999px;
-  border: none;
-  background: #fff;
-  cursor: pointer;
+.custom-form textarea {
+  min-height: 120px;
+  resize: none;
 }
 
+.custom-form button {
+  padding: 16px 42px;
+  border-radius: 999px;
+  border: none;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
