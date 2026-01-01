@@ -34,20 +34,33 @@
     ♡ 🛒 Login ∞
   </div>
 </header>
-
-<!-- HERO -->
 <section class="hero">
 
   <div class="hero-circle"></div>
 
-  <h1 class="video-text">
+  <!-- BIG WHITE SHRINKING TITLE -->
+  <h1 class="brand" id="brand">BLLOOM</h1>
+
+  <!-- VIDEO FILLED TITLE -->
+  <div class="video-text">
+    <video class="text-video" src="hero.mp4" autoplay muted loop playsinline></video>
     BLLOOM
-    <video src="hero.mp4" autoplay muted loop playsinline></video>
-  </h1>
+  </div>
 
   <button class="cta">NEW COLLECTION</button>
 
 </section>
+
+
+<script>
+  window.addEventListener("scroll", () => {
+    const bloom = document.getElementById("brand");
+    if (!bloom) return;
+
+    const scale = Math.max(0.55, 1 - window.scrollY / 600);
+    bloom.style.transform = `translate(-50%, -50%) scale(${scale})`;
+  });
+</script>
 
 <!-- FEATURED PRODUCTS -->
 <section class="featured">
@@ -99,6 +112,7 @@
 
 </body>
 </html>
+
 
 
 
