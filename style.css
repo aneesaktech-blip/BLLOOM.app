@@ -29,7 +29,7 @@ body {
 
   font-family: 'Playfair Display', serif;
   font-size: 28px;              /* ⬆ bigger letters */
-  letter-spacing: 2em;        /* ⬆ luxury spacing */
+  letter-spacing: 1.2em;        /* ⬆ luxury spacing */
 
   color: #111;
   z-index: 300;
@@ -366,6 +366,7 @@ body {
 .hero-overlay {
   background: rgba(183,175,164,0.08);  /* MUCH lighter */
 }
+
 
 
 
