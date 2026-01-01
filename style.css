@@ -126,9 +126,17 @@ body {
    PREVENT HERO COLLISION
 ========================= */
 .hero {
-  padding-top: 100px;      /* space for fixed header */
-}
+  position: relative;
+  height: 100vh;
+  background: #b7afa4;
+  overflow: hidden;
+  z-index: 1;
+  
 
+}
+.hero * {
+  position: absolute;
+}
 
 .video-text {
   position: absolute;
@@ -180,6 +188,7 @@ body {
 }
 /* BIG BLOOM (SCROLL SHRINK) */
 .brand {
+ 
   position: absolute;
   top: 50%;
   left: 50%;
@@ -215,9 +224,12 @@ body {
    FEATURED PRODUCTS
 ========================= */
 .featured {
-  padding: 140px 80px;
+  position: relative;
+  padding: 120px 60px;
   background: #b7afa4;
+  z-index: 2;
 }
+
 
 .featured h2 {
   font-family: 'Playfair Display', serif;
@@ -323,6 +335,10 @@ body {
   cursor: pointer;
 }
 
+ .brand,
+.video-text {
+  pointer-events: none;
+}
 
 
 
