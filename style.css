@@ -32,7 +32,7 @@ body {
   line-height: 1.4;
 }
 
-/* ================= EDITORIAL LOGO (TOP) ================= */
+/* ================= EDITORIAL LOGO ================= */
 .editorial-logo {
   position: fixed;
   top: 24px;
@@ -46,11 +46,10 @@ body {
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* ================= HEADER / NAV ================= */
-header {
+/* ================= HEADER ================= */
+.navbar {
   position: fixed;
-  top: 96px; /* below big logo */
-  left: 0;
+  top: 96px;
   width: 100%;
   padding: 20px 6vw;
   display: flex;
@@ -60,17 +59,17 @@ header {
   z-index: 200;
 }
 
-nav a {
-  margin-left: 28px;
+.nav-links a {
+  margin: 0 18px;
   font-size: 0.85rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
 }
 
 /* ================= FLOATING SEARCH ================= */
 .floating-search {
   position: fixed;
+  top: 56px;
   right: 6vw;
-  top: 52px;
   z-index: 350;
 }
 
@@ -78,12 +77,12 @@ nav a {
   border: none;
   border-bottom: 1px solid var(--border);
   background: transparent;
-  padding: 4px 0;
+  padding: 6px 0;
   font-size: 0.85rem;
   outline: none;
 }
 
-/* ================= THIN STRIP (SCROLL DESTINATION) ================= */
+/* ================= THIN STRIP ================= */
 #blloomStrip {
   position: fixed;
   top: 0;
@@ -105,27 +104,28 @@ nav a {
   letter-spacing: 0.3em;
 }
 
-/* ================= HERO / VIDEO ================= */
+/* ================= HERO ================= */
 .hero-editorial {
-  margin-top: 220px; /* space for logo + header */
+  margin-top: 220px;
   min-height: 100vh;
-  padding: 0;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeUp 1.2s ease forwards;
-  transition: padding 0.4s ease;
-}
-
-.hero-editorial.shrink {
-  padding-top: 120px;
+  overflow: hidden;
 }
 
 .hero-editorial video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 8vw;
+  background: rgba(255,255,255,0.85);
 }
 
 /* ================= HERO TEXT ================= */
@@ -142,7 +142,12 @@ nav a {
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--muted);
-  max-width: 400px;
+  max-width: 420px;
+}
+
+/* ================= SHRINK ================= */
+.hero-editorial.shrink .hero-overlay {
+  padding-top: 120px;
 }
 
 /* ================= SECTIONS ================= */
@@ -177,7 +182,7 @@ section:not(.hero-editorial) {
   color: #fff;
 }
 
-/* ================= INFO ================= */
+/* ================= INFO GRID ================= */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -192,6 +197,17 @@ section:not(.hero-editorial) {
 
 .info-box:last-child {
   border-right: none;
+}
+
+.info-box h3 {
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 /* ================= PRODUCTS ================= */
@@ -219,6 +235,17 @@ section:not(.hero-editorial) {
   transform: translateY(-6px);
 }
 
+.product h4 {
+  margin-top: 16px;
+  font-weight: 400;
+}
+
+.product span {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent);
+}
+
 /* ================= FOOTER ================= */
 footer {
   padding: 60px 6vw;
@@ -226,18 +253,6 @@ footer {
   text-align: center;
   font-size: 0.8rem;
   color: var(--muted);
-}
-
-/* ================= ANIMATION ================= */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* ================= RESPONSIVE ================= */
@@ -257,5 +272,14 @@ footer {
   .info-box {
     border-right: none;
     border-bottom: 1px solid var(--border);
+  }
+
+  .editorial-logo {
+    font-size: 48px;
+    letter-spacing: 0.25em;
+  }
+
+  .navbar {
+    top: 72px;
   }
 }
