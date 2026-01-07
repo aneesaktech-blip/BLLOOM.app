@@ -19,6 +19,9 @@
 <div class="editorial-logo" id="editorialLogo">
   BLLOOM
 </div>
+<p class="daily-reminder" id="dailyReminder">
+  Build quietly. Market honestly. Let the product speak.
+</p>
 
 <!-- FLOATING SEARCH -->
 
@@ -122,26 +125,36 @@
 
 <!-- SCROLL LOGIC -->
 <script>
-  const logo = document.getElementById("editorialLogo");
-  const strip = document.getElementById("blloomStrip");
-  const hero = document.getElementById("hero");
+const logo = document.getElementById("editorialLogo");
+const strip = document.getElementById("blloomStrip");
+const reminder = document.getElementById("dailyReminder");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 120) {
-      logo.style.opacity = "0";
-      logo.style.transform = "translateX(-50%) scale(0.6)";
-      strip.style.opacity = "1";
-      hero.classList.add("shrink");
-    } else {
-      logo.style.opacity = "1";
-      logo.style.transform = "translateX(-50%) scale(1)";
-      strip.style.opacity = "0";
-      hero.classList.remove("shrink");
-    }
-  });
+window.addEventListener("scroll", () => {
+  const y = window.scrollY;
+
+  if (y > 120) {
+    /* SHRINK IN PLACE */
+    logo.style.transform = "scale(0.55)";
+    logo.style.opacity = "0";
+    logo.style.letterSpacing = "0.28em";  // smaller visual mass
+
+    strip.style.opacity = "1";
+    reminder.style.opacity = "0";
+  } else {
+    /* RESET CLEANLY */
+    logo.style.transform = "scale(1)";
+    logo.style.opacity = "1";
+    logo.style.letterSpacing = "0.45em";
+
+    strip.style.opacity = "0";
+    reminder.style.opacity = "1";
+  }
+});
 </script>
+
 
 </body>
 </html>
+
 
 
