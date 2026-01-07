@@ -1042,19 +1042,19 @@ footer {
 
 .hero-logo {
   position: fixed;
-  top: 140px;               /* keep below header */
+  top: 140px;
   left: 50%;
-  transform: translate(-50%, 0);
-  transform-origin: center center; /* 🔥 THIS LINE FIXES IT */
+  transform: translate(-50%, 0) scale(1);
+  transform-origin: center center;
   font-family: "Playfair Display", serif;
   font-size: clamp(70px, 12vw, 140px);
   letter-spacing: 0.38em;
   transition: transform 0.45s ease, opacity 0.45s ease;
-  pointer-events: none;
   z-index: 100;
+  pointer-events: none;
 }
 
-
+/* thin strip */
 #blloomStrip {
   position: fixed;
   top: 0;
@@ -1076,4 +1076,5 @@ footer {
   font-size: 12px;
   letter-spacing: 0.35em;
 }
+
 
