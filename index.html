@@ -133,34 +133,24 @@
   © BLLOOM — Designed in India. Worn without permission.
 </footer>
 
-<!-- SCROLL LOGIC -->
 <script>
-  const logo = document.querySelector(".hero-logo");
-  const strip = document.getElementById("blloomStrip");
-  const video = document.querySelector(".hero-video");
+const video = document.querySelector(".hero-video");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 120) {
-      strip.classList.add("active");
-      logo.style.opacity = "0";
-    } else {
-      strip.classList.remove("active");
-      logo.style.opacity = "1";
-    }
+window.addEventListener("scroll", () => {
+  const rect = video.getBoundingClientRect();
 
-    // play video only when near it
-    const videoTop = document.querySelector(".hero-video-block").offsetTop;
-    if (window.scrollY > videoTop - 300) {
-      video.play();
-    } else {
-      video.pause();
-    }
-  });
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    video.play();
+  } else {
+    video.pause();
+  }
+});
 </script>
 
 
 </body>
 </html>
+
 
 
 
