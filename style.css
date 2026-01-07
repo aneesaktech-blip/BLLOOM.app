@@ -886,5 +886,34 @@ footer {
   object-fit: cover;
 }
 
+.hero-image-block {
+  position: relative;
+  height: 55vh;
+  overflow: visible; /* ❗ WAS hidden — THIS WAS THE BUG */
+}
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 👈 pushes BLLOOM DOWN */
+  align-items: center;
+  padding-bottom: 40px; /* 👈 breathing room */
+}
+.hero-logo {
+  font-size: clamp(48px, 7vw, 100px); /* smaller */
+  letter-spacing: 0.32em;
+}
+.hero-video-block {
+  height: 75vh; /* ❗ REQUIRED */
+  background: black; /* safety fallback */
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 
