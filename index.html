@@ -309,10 +309,30 @@
       hero.classList.remove("shrink");
     }
   });
+  
+</script>
+<script>
+const logo = document.getElementById("editorialLogo");
+const strip = document.getElementById("blloomStrip");
+
+window.addEventListener("scroll", () => {
+  const y = window.scrollY;
+
+  if (y > 80) {
+    logo.style.transform = "translateX(-50%) scale(0.6)";
+    logo.style.opacity = "0";
+    strip.style.opacity = "1";
+  } else {
+    logo.style.transform = "translateX(-50%) scale(1)";
+    logo.style.opacity = "1";
+    strip.style.opacity = "0";
+  }
+});
 </script>
 
 </body>
 </html>
+
 
 
 
