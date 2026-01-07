@@ -135,26 +135,33 @@
 
 <!-- SCROLL LOGIC -->
 <script>
-  const hero = document.querySelector(".hero");
   const logo = document.querySelector(".hero-logo");
   const strip = document.getElementById("blloomStrip");
   const video = document.querySelector(".hero-video");
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 120) {
-      hero.classList.add("scrolled");
       strip.classList.add("active");
+      logo.style.opacity = "0";
+    } else {
+      strip.classList.remove("active");
+      logo.style.opacity = "1";
+    }
+
+    // play video only when near it
+    const videoTop = document.querySelector(".hero-video-block").offsetTop;
+    if (window.scrollY > videoTop - 300) {
       video.play();
     } else {
-      hero.classList.remove("scrolled");
-      strip.classList.remove("active");
       video.pause();
     }
   });
 </script>
 
+
 </body>
 </html>
+
 
 
 
