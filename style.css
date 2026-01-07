@@ -369,4 +369,123 @@ footer {
   transition: opacity 0.4s ease;
 }
 
+.hero-editorial {
+  position: relative;
+  height: 85vh;              /* ⬅ reduced from full screen */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.hero-brand {
+  position: relative;
+  height: 85vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.65),
+      rgba(255,255,255,0.65)
+    ),
+    url("brand.jpg");
+  background-size: cover;
+  background-position: center;
+  animation: slowZoom 18s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+.hero-center {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.brand-logo {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(90px, 14vw, 200px);
+  letter-spacing: 0.4em;
+}
+
+.brand-line {
+  margin-top: 22px;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  color: #666;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.15); }
+}
+.identity-showcase {
+  position: relative;
+  height: 70vh;              /* NOT huge */
+  overflow: hidden;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.identity {
+  position: absolute;
+  width: 35%;
+  height: 70%;
+  opacity: 0.35;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+/* MEN – slow horizontal power */
+.identity.men {
+  left: -10%;
+  background-image: url("men.jpg");
+  animation: menMove 18s linear infinite;
+}
+
+/* WOMEN – vertical elegance */
+.identity.women {
+  right: 10%;
+  background-image: url("women.jpg");
+  animation: womenMove 22s ease-in-out infinite;
+}
+
+/* KIDS – playful motion */
+.identity.kids {
+  bottom: -10%;
+  background-image: url("kids.jpg");
+  animation: kidsMove 14s ease-in-out infinite;
+}
+
+/* BIG BLLOOM */
+.identity-logo {
+  position: relative;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(80px, 12vw, 180px);
+  letter-spacing: 0.35em;
+  z-index: 3;
+}
+@keyframes menMove {
+  from { transform: translateX(0) scale(1); }
+  to   { transform: translateX(20%) scale(1.08); }
+}
+
+@keyframes womenMove {
+  0%   { transform: translateY(10%) scale(1); }
+  50%  { transform: translateY(-10%) scale(1.06); }
+  100% { transform: translateY(10%) scale(1); }
+}
+
+@keyframes kidsMove {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-20px) scale(1.1); }
+}
