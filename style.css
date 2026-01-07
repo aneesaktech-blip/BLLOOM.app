@@ -466,14 +466,7 @@ footer {
   animation: kidsMove 14s ease-in-out infinite;
 }
 
-/* BIG BLLOOM */
-.identity-logo {
-  position: relative;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(80px, 12vw, 180px);
-  letter-spacing: 0.35em;
-  z-index: 3;
-}
+
 @keyframes menMove {
   from { transform: translateX(0) scale(1); }
   to   { transform: translateX(20%) scale(1.08); }
@@ -489,3 +482,4 @@ footer {
   0%, 100% { transform: translateY(0) scale(1); }
   50%      { transform: translateY(-20px) scale(1.1); }
 }
+
