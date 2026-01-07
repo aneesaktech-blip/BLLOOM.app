@@ -238,3 +238,33 @@ footer {
     border-bottom: none;
   }
 }
+.hero-editorial {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 8vw;
+  background: #ffffff;
+}
+
+.editorial-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(80px, 14vw, 180px);
+  font-weight: 500;
+  letter-spacing: 6px;
+  margin: 0;
+}
+
+.editorial-tagline {
+  margin-top: 24px;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #777;
+ 
+x-width: 400px;
+}
+
+.hero-editorial {
+  padding-top: 120px;
+}
