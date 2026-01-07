@@ -33,31 +33,33 @@ body {
 }
 
 /* ================= EDITORIAL LOGO ================= */
+
 .editorial-logo {
-  position: fixed;
-  top: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 120px;   /* 🔽 reduced */
+  margin-bottom: 100px;
+  text-align: center;
   font-family: "Playfair Display", serif;
-  font-size: clamp(72px, 10vw, 140px);
+  font-size: clamp(72px, 12vw, 160px);
   letter-spacing: 0.45em;
-  z-index: 300;
-  pointer-events: none;
-  transition: transform 0.6s ease, opacity 0.6s ease;
 }
+
 
 /* ================= HEADER ================= */
 .navbar {
   position: fixed;
-  top: 96px;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 20px 6vw;
-  display: flex;
-  justify-content: center;
+  padding: 12px 6vw;     /* 🔽 reduced from 20px */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
   background: white;
   border-bottom: 1px solid var(--border);
-  z-index: 200;
+  z-index: 300;
 }
+
+
 
 .nav-links a {
   margin: 0 18px;
@@ -105,11 +107,12 @@ body {
 }
 
 /* ================= HERO ================= */
+
 .hero-editorial {
-  margin-top: 220px;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+
 }
 
 .hero-editorial video {
@@ -282,4 +285,49 @@ footer {
   .navbar {
     top: 72px;
   }
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-left {
+  justify-content: flex-start;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+.navbar a {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+}
+.below-header-search {
+  position: fixed;
+  top: 54px;            /* just below header */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 250;
+}
+
+.below-header-search input {
+  width: 160px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  font-size: 0.8rem;
+  padding: 6px 0;
+  outline: none;
+  letter-spacing: 0.12em;
+}
+.below-header-search input {
+  transition: width 0.3s ease;
+}
+
+.below-header-search input:focus {
+  width: 220px;
 }
