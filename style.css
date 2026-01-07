@@ -32,18 +32,32 @@ body {
   line-height: 1.4;
 }
 
-/* ================= NAV ================= */
+/* ================= EDITORIAL LOGO (TOP) ================= */
+.editorial-logo {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(72px, 10vw, 140px);
+  letter-spacing: 0.45em;
+  z-index: 300;
+  pointer-events: none;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* ================= HEADER / NAV ================= */
 header {
   position: fixed;
-  top: 0;
+  top: 96px; /* below big logo */
+  left: 0;
   width: 100%;
-  padding: 24px 6vw;
+  padding: 20px 6vw;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
+  justify-content: center;
+  background: white;
   border-bottom: 1px solid var(--border);
-  z-index: 100;
+  z-index: 200;
 }
 
 nav a {
@@ -52,28 +66,53 @@ nav a {
   letter-spacing: 0.12em;
 }
 
-/* ================= THIN STRIP ================= */
+/* ================= FLOATING SEARCH ================= */
+.floating-search {
+  position: fixed;
+  right: 6vw;
+  top: 52px;
+  z-index: 350;
+}
+
+.floating-search input {
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  padding: 4px 0;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+/* ================= THIN STRIP (SCROLL DESTINATION) ================= */
 #blloomStrip {
   position: fixed;
-  top: 72px;
+  top: 0;
   width: 100%;
-  height: 1px;
-  background: var(--border);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 99;
-}
-
-#blloomStrip.active {
-  opacity: 1;
-}
-
-/* ================= HERO (EDITORIAL) ================= */
-.hero-editorial {
-  min-height: 100vh;
-  padding: 160px 6vw 80px;
+  height: 48px;
+  background: white;
+  border-bottom: 1px solid var(--border);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: 400;
+  transition: opacity 0.4s ease;
+}
+
+#blloomStrip span {
+  font-family: "Playfair Display", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+}
+
+/* ================= HERO / VIDEO ================= */
+.hero-editorial {
+  margin-top: 220px; /* space for logo + header */
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
   justify-content: center;
   animation: fadeUp 1.2s ease forwards;
   transition: padding 0.4s ease;
@@ -83,6 +122,13 @@ nav a {
   padding-top: 120px;
 }
 
+.hero-editorial video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= HERO TEXT ================= */
 .editorial-title {
   font-family: "Playfair Display", serif;
   font-size: clamp(80px, 14vw, 180px);
@@ -97,18 +143,6 @@ nav a {
   text-transform: uppercase;
   color: var(--muted);
   max-width: 400px;
-}
-.editorial-logo {
-  position: fixed;
-  top: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Playfair Display", serif;
-  font-size: clamp(64px, 10vw, 140px);
-  letter-spacing: 0.4em;
-  z-index: 200;
-  transition: all 0.6s ease;
-  pointer-events: none;
 }
 
 /* ================= SECTIONS ================= */
@@ -225,60 +259,3 @@ footer {
     border-bottom: 1px solid var(--border);
   }
 }
-.navbar {
-  position: fixed;
-  top: 140px;
-  width: 100%;
-  padding: 20px 6vw;
-  display: flex;
-  justify-content: center;
-  background: white;
-  border-bottom: 1px solid var(--border);
-  z-index: 100;
-}
-#blloomStrip {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 48px;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  opacity: 0;
-  z-index: 300;
-}
-
-#blloomStrip span {
-  font-family: "Playfair Display", serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.3em;
-}
-.floating-search {
-  position: fixed;
-  right: 6vw;
-  top: 56px;
-  z-index: 250;
-}
-
-.floating-search input {
-  border: none;
-  border-bottom: 1px solid var(--border);
-  padding: 6px 0;
-  font-size: 0.85rem;
-  background: transparent;
-  outline: none;
-}
-.hero-editorial {
-  min-height: 100vh;
-  margin-top: 220px;
-  position: relative;
-}
-
-.hero-editorial video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
