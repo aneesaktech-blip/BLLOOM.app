@@ -47,7 +47,7 @@
   <div class="hero-image"></div>
 
   <!-- VIDEO (reveals on scroll) -->
-  <video class="hero-video" autoplay muted loop playsinline>
+  <video class="hero-video" muted loop playsinline>
     <source src="hero.mp4" type="video/mp4">
   </video>
 
@@ -128,47 +128,27 @@
 
 <!-- SCROLL LOGIC -->
 <script>
-const logo = document.getElementById("editorialLogo");
-const strip = document.getElementById("blloomStrip");
-const reminder = document.getElementById("dailyReminder");
-
-window.addEventListener("scroll", () => {
-  const y = window.scrollY;
-
-  if (y > 120) {
-    /* SHRINK IN PLACE */
-    logo.style.transform = "scale(0.55)";
-    logo.style.opacity = "0";
-    logo.style.letterSpacing = "0.28em";  // smaller visual mass
-
-    strip.style.opacity = "1";
-    reminder.style.opacity = "0";
-  } else {
-    /* RESET CLEANLY */
-    logo.style.transform = "scale(1)";
-    logo.style.opacity = "1";
-    logo.style.letterSpacing = "0.45em";
-
-    strip.style.opacity = "0";
-    reminder.style.opacity = "1";
-  }
-});
-</script>
-<script>
   const hero = document.querySelector(".hero");
+  const logo = document.querySelector(".hero-logo");
+  const strip = document.getElementById("blloomStrip");
+  const video = document.querySelector(".hero-video");
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 80) {
+    if (window.scrollY > 120) {
       hero.classList.add("scrolled");
+      strip.classList.add("active");
+      video.play();
     } else {
       hero.classList.remove("scrolled");
+      strip.classList.remove("active");
+      video.pause();
     }
   });
 </script>
 
-
 </body>
 </html>
+
 
 
 
