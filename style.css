@@ -712,4 +712,63 @@ footer {
 }
 
 
+/* ===== HERO BASE ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* IMAGE LAYER (TOP FIRST) */
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background: url("brand.jpg") center / cover no-repeat;
+  z-index: 2;
+  transition: opacity 1s ease;
+}
+
+/* VIDEO LAYER (BEHIND IMAGE) */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-logo {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(100px, 18vw, 240px);
+  letter-spacing: 0.35em;
+  margin: 0;
+  color: #000;
+}
+
+.hero-tagline {
+  margin-top: 28px;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: #111;
+}
+
+/* ===== SCROLL EFFECT ===== */
+.hero.scrolled .hero-image {
+  opacity: 0;
+}
+
 
