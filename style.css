@@ -50,14 +50,53 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 12px 6vw;     /* 🔽 reduced from 20px */
+  padding: 10px 6vw;        /* 🔥 REDUCED HEIGHT */
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   background: white;
   border-bottom: 1px solid var(--border);
   z-index: 300;
 }
+
+/* LEFT / RIGHT NAV */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-left {
+  justify-content: flex-start;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+.navbar a {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+}
+
+/* CENTER SEARCH (BACK IN HEADER) */
+.header-search {
+  display: flex;
+  justify-content: center;
+}
+
+.header-search input {
+  width: 150px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  font-size: 0.8rem;
+  padding: 4px 0;
+  outline: none;
+  letter-spacing: 0.12em;
+}
+
 
 
 
@@ -67,22 +106,7 @@ body {
   letter-spacing: 0.14em;
 }
 
-/* ================= FLOATING SEARCH ================= */
-.floating-search {
-  position: fixed;
-  top: 56px;
-  right: 6vw;
-  z-index: 350;
-}
 
-.floating-search input {
-  border: none;
-  border-bottom: 1px solid var(--border);
-  background: transparent;
-  padding: 6px 0;
-  font-size: 0.85rem;
-  outline: none;
-}
 
 /* ================= THIN STRIP ================= */
 #blloomStrip {
@@ -331,3 +355,4 @@ footer {
 .below-header-search input:focus {
   width: 220px;
 }
+
