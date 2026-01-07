@@ -139,22 +139,29 @@
 </footer>
 
 <script>
-const video = document.querySelector(".hero-video");
+const heroLogo = document.getElementById("heroLogo");
+const strip = document.getElementById("blloomStrip");
 
 window.addEventListener("scroll", () => {
-  const rect = video.getBoundingClientRect();
+  const y = window.scrollY;
 
-  if (rect.top < window.innerHeight && rect.bottom > 0) {
-    video.play();
+  if (y > 120) {
+    heroLogo.style.transform = "translateX(-50%) scale(0.45)";
+    heroLogo.style.opacity = "0";
+    strip.style.opacity = "1";
   } else {
-    video.pause();
+    heroLogo.style.transform = "translateX(-50%) scale(1)";
+    heroLogo.style.opacity = "1";
+    strip.style.opacity = "0";
   }
 });
 </script>
 
 
+
 </body>
 </html>
+
 
 
 
