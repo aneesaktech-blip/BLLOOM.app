@@ -41,6 +41,10 @@ body {
   font-family: "Playfair Display", serif;
   font-size: clamp(72px, 12vw, 160px);
   letter-spacing: 0.45em;
+ 
+  transform-origin: center center;   /* 🔥 THIS FIXES THE LEFT SHIFT */
+
+
 }
 
 
@@ -355,4 +359,14 @@ footer {
 .below-header-search input:focus {
   width: 220px;
 }
+.daily-reminder {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
 
