@@ -402,11 +402,6 @@ footer {
   z-index: 1;
 }
 
-.hero-center {
-  position: relative;
-  text-align: center;
-  z-index: 2;
-}
 
 .brand-logo {
   font-family: "Playfair Display", serif;
@@ -474,5 +469,6 @@ footer {
   0%, 100% { transform: translateY(0) scale(1); }
   50%      { transform: translateY(-20px) scale(1.1); }
 }
+
 
 
