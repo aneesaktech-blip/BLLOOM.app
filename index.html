@@ -7,8 +7,33 @@
 
   <!-- Fonts -->
  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
 
   <style>
+    .hero-editorial {
+  min-height: 100vh;
+  padding: 160px 6vw 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.editorial-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(80px, 14vw, 180px);
+  font-weight: 500;
+  margin: 0;
+}
+
+.editorial-tagline {
+  margin-top: 20px;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
     :root {
       --bg: #ffffff;
       --fg: #0a0a0a;
@@ -41,6 +66,8 @@
 
     /* ================= NAV ================= */
     header {
+    
+
       padding: 24px 6vw;
       border-bottom: 1px solid var(--border);
       display: flex;
@@ -56,12 +83,11 @@
       letter-spacing: 0.04em;
     }
 
-<section class="hero-editorial">
-  <h1 class="editorial-title">BLLOOM</h1>
-  <p class="editorial-tagline">
-    Crafted for those who don’t blend in
-  </p>
-</section>
+
+
+
+
+
 
     /* ================= COLLAGE / NEW DROP ================= */
     .collage {
@@ -179,32 +205,30 @@
   </style>
 </head>
 
+
 <body>
-<!-- THIN STRIP (STICKY) -->
-<div class="blloom-strip" id="blloomStrip">
-  <span>BLLOOM</span>
-</div>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <h1>BLLOOM</h1>
-  <p>Crafted for those who don’t blend in</p>
-</section>
 
-<header>
-  <strong>BLLOOM</strong>
-  <nav>
+<header class="navbar">
+    <div id="blloomStrip">
+      
+    </div>
+  <div class="nav-logo">BLLOOM</div>
+  <nav class="nav-links">
     <a href="#">SHOP</a>
     <a href="#">ABOUT</a>
     <a href="#">STUDIO</a>
     <a href="#">CONTACT</a>
   </nav>
 </header>
+ <section class="hero-editorial" id="hero">
 
-<section class="hero">
-  <h1>BLLOOM</h1>
-  <p>Crafted for those who don’t blend in</p>
+  <h1 class="editorial-title">BLLOOM</h1>
+  <p class="editorial-tagline">
+    Crafted for those who don’t blend in
+  </p>
 </section>
+
 
 <section class="collage">
   <div>
@@ -275,6 +299,7 @@
 
 </body>
 </html>
+
 
 
 
