@@ -1,233 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>BLLOOM</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Fonts -->
- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-
-  <style>
-    .hero-editorial {
-  min-height: 100vh;
-  padding: 160px 6vw 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.editorial-title {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(80px, 14vw, 180px);
-  font-weight: 500;
-  margin: 0;
-}
-
-.editorial-tagline {
-  margin-top: 20px;
-  font-size: 13px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-    :root {
-      --bg: #ffffff;
-      --fg: #0a0a0a;
-      --muted: #777;
-      --border: #e6e6e6;
-      --accent: #e10600;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: "Inter", sans-serif;
-      line-height: 1.4;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    section {
-      padding: 80px 6vw;
-    }
-
-    /* ================= NAV ================= */
-    header {
-    
-
-      padding: 24px 6vw;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav a {
-      margin-right: 28px;
-      text-decoration: none;
-      color: var(--fg);
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-    }
-
-
-
-
-
-
-
-    /* ================= COLLAGE / NEW DROP ================= */
-    .collage {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .collage h2 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      letter-spacing: 0.06em;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 36px;
-      border: 1px solid var(--fg);
-      text-decoration: none;
-      color: var(--fg);
-      font-size: 0.85rem;
-      letter-spacing: 0.15em;
-    }
-
-    /* ================= INFO STRIPS ================= */
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .info-box {
-      padding: 40px;
-      border-right: 1px solid var(--border);
-    }
-
-    .info-box:last-child {
-      border-right: none;
-    }
-
-    .info-box h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      letter-spacing: 0.08em;
-    }
-
-    .info-box p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* ================= PRODUCTS ================= */
-    .products h2 {
-      text-align: center;
-      margin-bottom: 60px;
-      letter-spacing: 0.15em;
-      font-size: 1rem;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-    }
-
-    .product {
-      border: 1px solid var(--border);
-      padding: 20px;
-      text-align: center;
-    }
-
-    .product h4 {
-      margin-top: 16px;
-      font-weight: 400;
-      font-size: 0.95rem;
-    }
-
-    .product span {
-      display: block;
-      margin-top: 8px;
-      color: var(--accent);
-      font-size: 0.9rem;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      padding: 60px 6vw;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    @media (max-width: 900px) {
-      .collage {
-        grid-template-columns: 1fr;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .info-box {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-      }
-    }
-  </style>
-</head>
-
-
 <body>
+
+<!-- BIG EDITORIAL LOGO (TOP) -->
 <div class="editorial-logo" id="editorialLogo">
   BLLOOM
 </div>
-<div id="blloomStrip">
-  <span>BLLOOM</span>
-</div>
+
+<!-- FLOATING SEARCH -->
 <div class="floating-search">
   <input type="text" placeholder="Search">
 </div>
-<section class="hero-editorial" id="hero">
-  <video autoplay muted loop playsinline>
-    <source src="hero.mp4" type="video/mp4">
-  </video>
-</section>
 
+<!-- THIN STRIP (DESTINATION LOGO) -->
+<div id="blloomStrip">
+  <span>BLLOOM</span>
+</div>
 
+<!-- HEADER (NAV ONLY) -->
 <header class="navbar">
-    <div id="blloomStrip">
-      
-    </div>
-  <div class="nav-logo">BLLOOM</div>
   <nav class="nav-links">
     <a href="#">SHOP</a>
     <a href="#">ABOUT</a>
@@ -235,15 +24,22 @@
     <a href="#">CONTACT</a>
   </nav>
 </header>
- <section class="hero-editorial" id="hero">
 
-  <h1 class="editorial-title">BLLOOM</h1>
-  <p class="editorial-tagline">
-    Crafted for those who don’t blend in
-  </p>
+<!-- HERO (VIDEO + TEXT TOGETHER) -->
+<section class="hero-editorial" id="hero">
+  <video autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-text">
+    <h1 class="editorial-title">BLLOOM</h1>
+    <p class="editorial-tagline">
+      Crafted for those who don’t blend in
+    </p>
+  </div>
 </section>
 
-
+<!-- COLLAGE -->
 <section class="collage">
   <div>
     <h2>NEW DROP</h2>
@@ -252,6 +48,7 @@
   <img src="hero-product.jpg" alt="New Drop">
 </section>
 
+<!-- INFO GRID -->
 <section class="info-grid">
   <div class="info-box">
     <h3>THE BLLOOM STUDIO</h3>
@@ -267,26 +64,27 @@
   </div>
 </section>
 
+<!-- PRODUCTS -->
 <section class="products">
   <h2>LATEST ARRIVALS</h2>
   <div class="product-grid">
     <div class="product">
-      <img src="p1.jpg">
+      <img src="p1.jpg" alt="Structured Jacket">
       <h4>Structured Jacket</h4>
       <span>₹6,499</span>
     </div>
     <div class="product">
-      <img src="p2.jpg">
+      <img src="p2.jpg" alt="Tailored Hoodie">
       <h4>Tailored Hoodie</h4>
       <span>₹4,999</span>
     </div>
     <div class="product">
-      <img src="p3.jpg">
+      <img src="p3.jpg" alt="Tech Cargo Pants">
       <h4>Tech Cargo Pants</h4>
       <span>₹5,999</span>
     </div>
     <div class="product">
-      <img src="p4.jpg">
+      <img src="p4.jpg" alt="Minimal Tee">
       <h4>Minimal Tee</h4>
       <span>₹2,499</span>
     </div>
@@ -296,46 +94,28 @@
 <footer>
   © BLLOOM — Designed in India. Worn without permission.
 </footer>
+
+<!-- SCROLL LOGIC (SINGLE, CLEAN) -->
 <script>
-  const hero = document.getElementById("hero");
+  const logo = document.getElementById("editorialLogo");
   const strip = document.getElementById("blloomStrip");
+  const hero = document.getElementById("hero");
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 120) {
-      strip.classList.add("active");
+    const y = window.scrollY;
+
+    if (y > 120) {
+      logo.style.opacity = "0";
+      logo.style.transform = "translateX(-50%) scale(0.6)";
+      strip.style.opacity = "1";
       hero.classList.add("shrink");
     } else {
-      strip.classList.remove("active");
+      logo.style.opacity = "1";
+      logo.style.transform = "translateX(-50%) scale(1)";
+      strip.style.opacity = "0";
       hero.classList.remove("shrink");
     }
   });
-  
-</script>
-<script>
-const logo = document.getElementById("editorialLogo");
-const strip = document.getElementById("blloomStrip");
-
-window.addEventListener("scroll", () => {
-  const y = window.scrollY;
-
-  if (y > 80) {
-    logo.style.transform = "translateX(-50%) scale(0.6)";
-    logo.style.opacity = "0";
-    strip.style.opacity = "1";
-  } else {
-    logo.style.transform = "translateX(-50%) scale(1)";
-    logo.style.opacity = "1";
-    strip.style.opacity = "0";
-  }
-});
 </script>
 
 </body>
-</html>
-
-
-
-
-
-
-
