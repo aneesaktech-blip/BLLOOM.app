@@ -1329,7 +1329,7 @@ body {
 
 /* 2️⃣ BUILD QUIETLY → VERY CLOSE TO IMAGE */
 .hero-manifesto {
-  margin-top: 0.5rem !important;   /* 🔥 VERY CLOSE */
+  margin-top: 0.0005rem !important;   /* 🔥 VERY CLOSE */
   margin-bottom: 2rem !important;
   padding: 0 !important;
   text-align: center;
@@ -1344,7 +1344,7 @@ body {
 
 /* 4️⃣ BANNER IMAGE → THIN STRIP */
 img.newyear-banner {
-  height: 90px !important;         /* 🔥 THIN */
+  height: 30px !important;         /* 🔥 THIN */
   width: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
@@ -1365,7 +1365,7 @@ img.model {
 
 /* 6️⃣ BLLOOM → SLIGHTLY UP + BOLDER */
 .hero-brand {
-  top: 9% !important;
+  top: 20% !important;
   font-weight: 700 !important;
 }
 
@@ -1373,4 +1373,5 @@ img.model {
 body {
   overflow-x: hidden !important;
 }
+
 
