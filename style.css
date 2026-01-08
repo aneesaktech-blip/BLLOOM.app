@@ -1152,11 +1152,18 @@ footer {
 
 /* ===== ONLY MODEL ADJUSTMENT ===== */
 
-img.model {
+/* ===== FORCE MOVE model.png ONLY ===== */
+
+img[src*="model.png"] {
   position: absolute !important;
-  top: -8vh !important;          /* 🔼 move UP a little */
-  z-index: 999 !important;       /* 🔝 above all layers */
+  top: -8vh !important;        /* 🔼 move UP a little */
+  left: 62% !important;        /* slight right shift (safe) */
+  transform: translateX(-50%) !important;
+  height: 72vh !important;     /* keep it controlled */
+  z-index: 999 !important;     /* 🔝 ABOVE EVERYTHING */
+  pointer-events: none !important;
 }
+
 
 
 
