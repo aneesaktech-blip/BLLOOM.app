@@ -1271,54 +1271,6 @@ footer {
   overflow: hidden;   /* hero stays clean */
 }
 
-/* ================= FORCE OVERRIDE : HERO OVERLAP ================= */
-
-/* NEW YEAR NEW ME — FORCE THIN BANNER */
-img.newyear-banner {
-  height: 110px !important;
-  width: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* MODEL — FORCE SMALLER & CLEAN OVERLAP */
-img.model {
-  position: absolute !important;
-  top: -12vh !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  height: 75vh !important;
-  width: auto !important;
-  z-index: 2 !important;
-  pointer-events: none !important;
-}
-
-/* REMOVE EXCESS GAP BELOW HERO */
-.hero-manifesto {
-  margin-top: 1.5rem !important;
-  margin-bottom: 2.5rem !important;
-}
-
-/* TIGHTEN GAP AROUND BANNER */
-.overlap-section {
-  margin-top: 1.5rem !important;
-  padding: 0 !important;
-}
-
-/* BLLOOM — SLIGHTLY UP + BOLDER */
-.hero-brand {
-  top: 10% !important;
-  font-weight: 700 !important;
-}
-
-/* SAFETY: PREVENT RANDOM OVERFLOW */
-body {
-  overflow-x: hidden !important;
-}
-
 
 /* ================= FINAL HARD OVERRIDE ================= */
 
@@ -1373,5 +1325,6 @@ img.model {
 body {
   overflow-x: hidden !important;
 }
+
 
 
