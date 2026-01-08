@@ -1296,19 +1296,19 @@ footer {
 
 /* 4️⃣ BANNER IMAGE → THIN STRIP */
 img.newyear-banner {
-  height: 30px !important;         /* 🔥 THIN */
+  height: 35px !important;         /* 🔥 THIN */
   width: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
   display: block !important;
-  margin: 0 !important;
+  margin: 22 !important;
 }
 
 /* 5️⃣ MODEL → PULLED UP + RIGHT SIDE */
 img.model {
   position: absolute !important;
-  top: -18vh !important;           /* 🔥 pulls model UP into banner */
-  left: 60% !important;            /* 🔥 move RIGHT (not center) */
+  top: 18vh !important;           /* 🔥 pulls model UP into banner */
+  left: 80% !important;            /* 🔥 move RIGHT (not center) */
   transform: translateX(-50%) !important;
   height: 72vh !important;         /* 🔥 smaller, not fat */
   z-index: 2 !important;
@@ -1317,7 +1317,7 @@ img.model {
 
 /* 6️⃣ BLLOOM → SLIGHTLY UP + BOLDER */
 .hero-brand {
-  top: 20% !important;
+  top: 2% !important;
   font-weight: 700 !important;
 }
 
@@ -1325,6 +1325,7 @@ img.model {
 body {
   overflow-x: hidden !important;
 }
+
 
 
 
