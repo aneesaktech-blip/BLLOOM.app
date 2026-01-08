@@ -1193,37 +1193,63 @@ footer {
 
 
 
-/* BRAND */
+
+.hero-image {
+  height: 65vh;
+  position: relative;
+  overflow: hidden;
+}
+
 .hero-brand {
   position: absolute;
-  top: 16%;
+  top: 18%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 4;
+  font-size: clamp(4rem, 12vw, 9rem);
   color: #fff;
+  z-index: 2;
 }
 
-
-
-
-/* HOOK */
 .hero-hook {
   position: absolute;
-  bottom: 8%;
+  bottom: 18%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100000;
-  color: #111111;
+  color: #fff;
+  z-index: 2;
 }
 
+.overlap-section {
+  position: relative;
+  padding-top: 6rem;
+}
+.banner-strip {
+  position: relative;
+  background: #f2f2f2;
+  padding: 3rem 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.strip-text {
+  position: relative;
+  z-index: 5;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  color: #111;
+}
 .model {
   position: absolute;
-  bottom: -45vh;          /* 🎯 HIPS land on NEW YEAR NEW ME */
+  top: -18vh;            /* 🎯 hips overlap strip */
   left: 50%;
   transform: translateX(-50%);
-  height: 100vh;          /* natural full-body scale */
-  z-index: 3;
+  height: 95vh;
+  z-index: 3;            /* BELOW TEXT, ABOVE STRIP */
   pointer-events: none;
 }
-
-
+.new-drop {
+  margin-top: 10rem;
+  text-align: center;
+  font-size: clamp(2rem, 6vw, 4rem);
+}
