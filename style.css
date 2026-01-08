@@ -1072,10 +1072,10 @@ footer {
 
 #blloomStrip span {
   font-family: "Playfair Display", serif;
-  font-size: 20px;              /* ⬅️ slightly bigger */
-  letter-spacing: 9em;        /* ⬅️ BIG GAP like luxury brands */
+  font-size: 25px;              /* ⬅️ slightly bigger */
+  letter-spacing: 10em;        /* ⬅️ BIG GAP like luxury brands */
   color: #111;
-  padding-left: 0.9em;          /* ⬅️ balances last letter */
+          /* ⬅️ balances last letter */
 }
 .hero-image {
   width: 100vw;
@@ -1092,6 +1092,7 @@ footer {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
 
 
 
