@@ -1156,7 +1156,7 @@ footer {
   content: "";
   position: absolute;
   left: 60%;
-  top: 180px;
+  top: 110px;
   transform: translateX(-50%);
   width: 320px;
   height: 1080px;
@@ -1193,6 +1193,7 @@ img[src*="model.png"],
   height: 1080px !important;           /* 🔥 was ~520px */
   width: 250px !important;            /* keeps proportions */
 }
+
 
 
 
