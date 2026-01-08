@@ -1159,7 +1159,7 @@ footer {
   top: 180px;
   transform: translateX(-50%);
   width: 320px;
-  height: 280px;
+  height: 1080px;
   background: url("model.png") center / contain no-repeat;
   z-index: 10;
   pointer-events: none;
@@ -1190,9 +1190,10 @@ img[src*="model.png"],
 
 /* 2️⃣ Increase model height slightly */
 .banner-strip::after {
-  height: 180px !important;           /* 🔥 was ~520px */
+  height: 1080px !important;           /* 🔥 was ~520px */
   width: 250px !important;            /* keeps proportions */
 }
+
 
 
 
