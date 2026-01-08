@@ -1243,13 +1243,14 @@ footer {
 
 img[src*="model.png"] {
   position: relative !important;
-  height: 600px !important;
+  height: 800px !important;
   top: -220px !important;     /* ← pulls it UP */
   right: -40px !important;   /* ← keeps it slightly right */
-  transform: scale(1.15) !important; /* slightly bigger */
+  transform: scale(2.15) !important; /* slightly bigger */
   z-index: 999 !important;
   pointer-events: none !important;
 }
+
 
 
 
