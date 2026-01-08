@@ -1272,52 +1272,53 @@ footer {
 }
 
 
-/* ================= FINAL HARD OVERRIDE ================= */
+/* ================= FINAL OVERRIDE — SPACING & BANNER ================= */
 
-/* 1️⃣ HERO IMAGE → REMOVE EXTRA SPACE BELOW */
-.hero-image {
-  margin-bottom: 0 !important;
-}
-
-/* 2️⃣ BUILD QUIETLY → VERY CLOSE TO IMAGE */
+/* 1️⃣ BUILD QUIETLY — FORCE IT JUST BELOW HERO IMAGE */
 .hero-manifesto {
-  margin-top: 0.00000000000000006rem !important;   /* 🔥 VERY CLOSE */
-  margin-bottom: 2rem !important;
+  margin-top: -2.5rem !important;   /* 🔥 PULL UP HARD */
+  margin-bottom: 1.5rem !important;
   padding: 0 !important;
-  text-align: center;
+  text-align: center !important;
 }
 
-/* 3️⃣ OVERLAP SECTION → NO EXTRA GAP */
+/* 2️⃣ OVERLAP SECTION — CONTROL FLOW */
 .overlap-section {
   position: relative !important;
-  margin-top: 1rem !important;     /* 🔥 small gap after manifesto */
+  margin-top: 0.5rem !important;    /* 🔥 SMALL GAP AFTER MANIFESTO */
   padding: 0 !important;
 }
 
-/* 4️⃣ BANNER IMAGE → THIN STRIP */
+/* 3️⃣ BANNER — NOT FULL WIDTH */
 img.newyear-banner {
-  height: 35px !important;         /* 🔥 THIN */
-  width: 100% !important;
+  width: 85% !important;            /* 🔥 NOT EDGE TO EDGE */
+  height: 85px !important;          /* 🔥 THIN STRIP */
+  margin: 0 auto !important;        /* CENTER IT */
   object-fit: cover !important;
   object-position: center !important;
   display: block !important;
-  margin: 22 !important;
+  border-radius: 2px !important;    /* subtle polish */
 }
 
-/* 5️⃣ MODEL → PULLED UP + RIGHT SIDE */
+/* 4️⃣ MODEL — OVER BANNER, RIGHT SIDE */
 img.model {
   position: absolute !important;
-  top: 18vh !important;           /* 🔥 pulls model UP into banner */
-  left: 80% !important;            /* 🔥 move RIGHT (not center) */
+  top: -14vh !important;            /* 🔥 OVERLAP BANNER */
+  left: 62% !important;             /* 🔥 SHIFT RIGHT */
   transform: translateX(-50%) !important;
-  height: 47vh !important;         /* 🔥 smaller, not fat */
+  height: 72vh !important;          /* 🔥 SMALLER */
   z-index: 2 !important;
   pointer-events: none !important;
 }
 
-/* 6️⃣ BLLOOM → SLIGHTLY UP + BOLDER */
+/* 5️⃣ GAP BETWEEN BANNER & NEW DROP */
+.new-drop {
+  margin-top: 3rem !important;      /* 🔥 CLEAR BUT SMALL GAP */
+}
+
+/* 6️⃣ BLLOOM — SLIGHTLY UP + STRONG */
 .hero-brand {
-  top: 2% !important;
+  top: 8% !important;
   font-weight: 700 !important;
 }
 
