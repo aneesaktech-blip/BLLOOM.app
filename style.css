@@ -985,7 +985,7 @@ footer {
 /* HERO IMAGE */
 .hero-image {
   position: relative;
-  height: 40vh;
+  height: 60vh;
   width: 100vw;
   background-image: url("brand.jpg");
   background-size: cover;
@@ -1009,8 +1009,8 @@ footer {
   transform: translate(-50%, -50%);
   font-family: "Playfair Display", serif;
   font-size: clamp(5rem, 14vw, 14rem);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 400;
+  letter-spacing: 0.8em;
   color: #fff;
   text-transform: uppercase;
   z-index: 2;
@@ -1024,8 +1024,8 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   font-family: "Inter", sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.9);
   z-index: 2;
@@ -1062,3 +1062,4 @@ footer {
   font-size: 12px;
   letter-spacing: 0.35em;
 }
+
