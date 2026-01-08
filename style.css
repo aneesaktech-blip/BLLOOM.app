@@ -183,7 +183,7 @@ body {
 }
 
 /* ================= SECTIONS ================= */
-section:not(.hero-editorial) {
+section.content {
   padding: 80px 6vw;
 }
 
@@ -1081,6 +1081,15 @@ footer {
   height: 60vh;
   background-size: cover;
   background-position: center;
+}
+
+
+.hero,
+.hero-editorial,
+.hero-image,
+.hero-brand {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 
