@@ -1094,6 +1094,61 @@ footer {
 }
 
 
+/* ================= 3D FLOATING MODEL ================= */
+
+.hero {
+  position: relative;
+  overflow: visible; /* IMPORTANT */
+}
+
+/* container */
+.hero-3d {
+  position: absolute;
+  left: 50%;
+  bottom: -120px; /* pulls model OUT of hero */
+  transform: translateX(-50%);
+  z-index: 6; /* above BLLOOM text */
+  pointer-events: none;
+}
+
+/* model image */
+.hero-3d img {
+  width: clamp(260px, 38vw, 520px);
+  transform:
+    perspective(1200px)
+    rotateX(6deg)
+    translateY(-20px);
+  filter:
+    drop-shadow(0 40px 60px rgba(0,0,0,0.25));
+  transition: transform 0.6s ease;
+}
+
+/* subtle hover life */
+.hero-3d img:hover {
+  transform:
+    perspective(1200px)
+    rotateX(0deg)
+    translateY(-30px)
+    scale(1.02);
+}
+
+.hero-logo,
+.brand-logo {
+  position: relative;
+  z-index: 4; /* BELOW model */
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0,0,0,0.15),
+    transparent 60%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
 
 
 
