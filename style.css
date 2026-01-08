@@ -1256,7 +1256,17 @@ img[src*="model.png"] {
 }
 
 
+img[src*="model.png"] {
+  transform: none !important;
+}
 
+/* In case parent is clipping it */
+img[src*="model.png"] {
+  overflow: visible !important;
+}
 
-
-
+/* Emergency: if parent is flex/grid */
+img[src*="model.png"] {
+  align-self: flex-end !important;
+  justify-self: end !important;
+}
