@@ -1625,3 +1625,149 @@ body {
   z-index: 3 !important;
 }
 
+.hero,
+.hero-section,
+.hero-wrapper {
+  position: relative !important;
+  height: 38vh !important;
+  max-height: 420px !important;
+  min-height: 300px !important;
+  overflow: hidden !important;
+}
+/* ================= FINAL HARD OVERRIDE ================= */
+/* DO NOT EDIT ABOVE THIS POINT */
+
+/* FULL WIDTH RESET */
+body {
+  overflow-x: hidden;
+}
+
+/* HERO FULL BLEED – KILLS LEFT WHITE GAP */
+.hero {
+  position: relative !important;
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  height: 85vh !important;
+  overflow: hidden !important;
+}
+
+/* IMAGE BACKGROUND */
+.hero-image {
+  position: absolute !important;
+  inset: 0 !important;
+  background: url("brand.jpg") center / cover no-repeat !important;
+  z-index: 1 !important;
+}
+
+/* VIDEO BEHIND IMAGE */
+.hero-video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: 0 !important;
+  opacity: 0 !important;
+  transition: opacity 1s ease !important;
+}
+
+/* ON SCROLL → IMAGE FADES, VIDEO SHOWS */
+.hero.scrolled .hero-image {
+  opacity: 0 !important;
+}
+
+.hero.scrolled .hero-video {
+  opacity: 1 !important;
+}
+
+/* BIG BLLOOM – PERFECT CENTER, NO SHIFT */
+.hero-logo {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+  transform-origin: center !important;
+  font-family: "Playfair Display", serif !important;
+  font-size: clamp(64px, 10vw, 150px) !important;
+  letter-spacing: 0.38em !important;
+  color: white !important;
+  z-index: 5 !important;
+  transition: transform 0.6s ease, opacity 0.6s ease !important;
+}
+
+/* SHRINK CLEANLY INTO STRIP */
+.hero.scrolled .hero-logo {
+  transform: translate(-50%, -50%) scale(0.6) !important;
+  opacity: 0 !important;
+}
+
+/* THIN WHITE STRIP */
+#blloomStrip {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 46px !important;
+  background: white !important;
+  border-bottom: 1px solid #e6e6e6 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 0 !important;
+  z-index: 99999 !important;
+  transition: opacity 0.4s ease !important;
+}
+
+.hero.scrolled ~ #blloomStrip,
+#blloomStrip.active {
+  opacity: 1 !important;
+}
+
+#blloomStrip span {
+  font-family: "Playfair Display", serif !important;
+  font-size: 13px !important;
+  letter-spacing: 0.45em !important;
+}
+
+/* MODEL PNG – FLOATING 3D EFFECT */
+.model-float {
+  position: absolute !important;
+  bottom: -10% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 6 !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.25)) !important;
+}
+
+/* NEW DROP – FIXED HEIGHT, CLEAN */
+.new-drop {
+  position: relative !important;
+  height: 36vh !important;
+  overflow: hidden !important;
+}
+
+/* VIDEO BEHIND NEW DROP */
+.new-drop-video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: 1 !important;
+}
+
+.new-drop::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(255,255,255,0.6) !important;
+  z-index: 2 !important;
+}
+
+.new-drop-content {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
