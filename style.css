@@ -1200,8 +1200,9 @@ img[src*="model.png"],
   width: 420px !important;     /* 🔥 bigger model */
   height: 2050px !important;    /* 🔥 taller model */
   left: 88% !important;        /* 🔥 move to the right */
-  top: 130px !important;      /* keeps overlap clean */
+  top: 30px !important;      /* keeps overlap clean */
 }
+
 
 
 
