@@ -1230,7 +1230,7 @@ footer {
   background-position: left center !important;
   background-size: cover !important;
 
-  height: 70px !important;        /* keeps it thin */
+  height: 50px !important;        /* keeps it thin */
   position: relative !important;
   z-index: 5 !important;
 }
@@ -1243,12 +1243,13 @@ footer {
 
 img[src*="model.png"] {
   position: relative !important;
-  top: -220px !important;     /* ← pulls it UP */
+  top: 220px !important;     /* ← pulls it UP */
   right: -40px !important;   /* ← keeps it slightly right */
   transform: scale(1.15) !important; /* slightly bigger */
   z-index: 999 !important;
   pointer-events: none !important;
 }
+
 
 
 
