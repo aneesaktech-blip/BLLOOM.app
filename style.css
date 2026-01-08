@@ -1160,9 +1160,10 @@ img.model {
   left: 62% !important;             /* 🔥 SHIFT RIGHT */
   transform: translateX(-50%) !important;
   height: 72vh !important;          /* 🔥 SMALLER */
-  z-index: 2 !important;
+  z-index: 9999 !important;
   pointer-events: none !important;
 }
+
 
 
 
