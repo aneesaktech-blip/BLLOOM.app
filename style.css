@@ -1173,7 +1173,7 @@ img[src*="model.png"],
 
 /* 3️⃣ REMOVE THAT BIG WHITE BLOCK */
 .banner-strip {
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0.005rem !important;
 }
 
 
@@ -1181,17 +1181,18 @@ img[src*="model.png"],
 
 /* 1️⃣ Reduce gap between video and banner */
 .hero-manifesto {
-  margin-bottom: 0.1rem !important;   /* 🔥 pulls banner closer */
+  margin-bottom: 0.001rem !important;   /* 🔥 pulls banner closer */
 }
 
 .banner-strip {
-  margin-top: 0.2rem !important;      /* 🔥 closes the gap */
+  margin-top: 0.002rem !important;      /* 🔥 closes the gap */
 }
 
 /* 2️⃣ Increase model height slightly */
 .banner-strip::after {
-  height: 280px !important;           /* 🔥 was ~520px */
-  width: 350px !important;            /* keeps proportions */
+  height: 180px !important;           /* 🔥 was ~520px */
+  width: 250px !important;            /* keeps proportions */
 }
+
 
 
