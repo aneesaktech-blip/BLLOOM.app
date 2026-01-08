@@ -1206,6 +1206,12 @@ img[src*="model.png"],
 
 
 
+/* ===== SHIFT BANNER LEFT (SHOW "YOU") ===== */
+
+.banner-strip {
+  background-position: 35% center !important; /* ← shifts banner left */
+}
+
 
 
 
