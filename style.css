@@ -609,13 +609,7 @@ footer {
   text-align: center;
 }
 
-.hero-logo {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(100px, 18vw, 240px);
-  letter-spacing: 0.35em;
-  margin: 0;
-  color: #000;
-}
+
 
 .hero-line {
   margin-top: 28px;
@@ -694,14 +688,7 @@ footer {
   text-align: center;
 }
 
-/* BIG LOGO */
-.hero-logo {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(100px, 18vw, 240px);
-  letter-spacing: 0.35em;
-  margin: 0;
-  color: #000;
-}
+
 
 /* TAGLINE */
 .hero-tagline {
@@ -751,13 +738,7 @@ footer {
   text-align: center;
 }
 
-.hero-logo {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(100px, 18vw, 240px);
-  letter-spacing: 0.35em;
-  margin: 0;
-  color: #000;
-}
+
 
 .hero-tagline {
   margin-top: 28px;
@@ -814,12 +795,6 @@ footer {
   transform: translateY(-50%);
 }
 
-.hero-logo {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(80px, 14vw, 180px);
-  letter-spacing: 0.45em;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-}
 
 /* shrink effect */
 .hero.scrolled .hero-logo {
@@ -864,11 +839,6 @@ footer {
   z-index: 2;
 }
 
-.hero-logo {
-  font-size: clamp(56px, 8vw, 120px); /* 👈 smaller */
-  letter-spacing: 0.35em;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-}
 
 /* GAP BETWEEN IMAGE & VIDEO */
 .hero-gap {
@@ -900,10 +870,7 @@ footer {
   align-items: center;
   padding-bottom: 40px; /* 👈 breathing room */
 }
-.hero-logo {
-  font-size: clamp(48px, 7vw, 100px); /* smaller */
-  letter-spacing: 0.32em;
-}
+
 .hero-video-block {
   height: 75vh; /* ❗ REQUIRED */
   background: black; /* safety fallback */
@@ -1042,27 +1009,6 @@ footer {
   text-transform: uppercase;
   color: #111;
 }
-#blloomStrip {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 46px;
-  background: white;
-  border-bottom: 1px solid #e6e6e6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  z-index: 9999;
-  transition: opacity 0.3s ease;
-}
-
-#blloomStrip span {
-  font-family: "Playfair Display", serif;
-  font-size: 12px;
-  letter-spacing: 0.35em;
-}
 
 
 .hero-brand.shrink {
@@ -1073,43 +1019,6 @@ footer {
 
 
 /* BIG BLLOOM (THE ONLY ONE) */
-.hero-logo {
-  position: fixed;
-  top: 140px;
-  left: 50%;
-  transform: translate(-50%, 0) scale(1);
-  transform-origin: center center;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(48px, 7vw, 100px);
-  letter-spacing: 0.32em;
-  transition: transform 0.45s ease, opacity 0.45s ease;
-  z-index: 100;
-  pointer-events: none;
-}
-
-/* THIN STRIP */
-#blloomStrip {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 46px;
-  background: white;
-  border-bottom: 1px solid #e6e6e6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  z-index: 9999;
-  transition: opacity 0.3s ease;
-}
-
-#blloomStrip span {
-  font-family: "Playfair Display", serif;
-  font-size: 12px;
-  letter-spacing: 0.35em;
-}
-
 
 /* THIN IMAGE STRIP BELOW TAGLINE */
 .banner-strip {
@@ -1121,4 +1030,51 @@ footer {
   background-position: center;
 
 }
+.hero-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center center;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(60px, 10vw, 140px);
+  letter-spacing: 0.35em;
+  color: #fff;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  z-index: 5;
+  pointer-events: none;
+}
 
+
+.hero.scrolled .hero-logo {
+  transform: translate(-50%, -50%) scale(0.6);
+  opacity: 0;
+}
+#blloomStrip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 46px;
+  background: white;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 99999; /* VERY IMPORTANT */
+  transition: opacity 0.4s ease;
+}
+
+#blloomStrip span {
+  font-family: "Playfair Display", serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  color: #111;
+}
+.hero-image {
+  width: 100vw;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+}
