@@ -1059,7 +1059,7 @@ footer {
   top: 0;
   left: 0;
   width: 100%;
-  height: 46px;
+  height: 35px;
   background: white;
   border-bottom: 1px solid #e6e6e6;
   display: flex;
@@ -1073,7 +1073,7 @@ footer {
 #blloomStrip span {
   font-family: "Playfair Display", serif;
   font-size: 25px;              /* ⬅️ slightly bigger */
-  letter-spacing: 10em;        /* ⬅️ BIG GAP like luxury brands */
+  letter-spacing: 8em;        /* ⬅️ BIG GAP like luxury brands */
   color: #111;
           /* ⬅️ balances last letter */
 }
@@ -1092,6 +1092,7 @@ footer {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
 
 
 
