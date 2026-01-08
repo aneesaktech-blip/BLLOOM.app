@@ -1212,6 +1212,22 @@ img[src*="model.png"],
   background-position: 35% center !important; /* ← shifts banner left */
 }
 
+/* ===== FORCE BANNER LEFT (HARD OVERRIDE) ===== */
+
+.banner-strip {
+  width: 85% !important;          /* not full width */
+  margin-left: 0 !important;      /* stick to left */
+  margin-right: auto !important;  /* prevent centering */
+  transform: translateX(-6%) !important; /* push left */
+  
+  background-position: left center !important;
+  background-size: cover !important;
+
+  height: 70px !important;        /* keeps it thin */
+  position: relative !important;
+  z-index: 5 !important;
+}
+
 
 
 
