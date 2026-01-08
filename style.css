@@ -1194,6 +1194,15 @@ img[src*="model.png"],
   width: 250px !important;            /* keeps proportions */
 }
 
+/* ===== MODEL FINAL ADJUST ===== */
+
+.banner-strip::after {
+  width: 420px !important;     /* 🔥 bigger model */
+  height: 650px !important;    /* 🔥 taller model */
+  left: 68% !important;        /* 🔥 move to the right */
+  top: 110px !important;      /* keeps overlap clean */
+}
+
 
 
 
