@@ -1505,4 +1505,24 @@ footer {
   width: clamp(260px, 36vw, 540px);
 }
 
+/* ================= FORCE MODEL VISIBILITY ================= */
+
+/* DETACH MODEL FROM ALL CLIPPING */
+.floating-model {
+  position: fixed !important;
+  top: 120px;                /* adjust vertical placement */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999999 !important;
+  pointer-events: none;
+}
+
+/* MODEL ITSELF */
+.floating-model img {
+  width: clamp(280px, 38vw, 560px);
+  height: auto;
+  max-height: none !important;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.35));
+}
+
 
