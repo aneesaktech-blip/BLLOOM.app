@@ -1077,11 +1077,7 @@ footer {
   color: #111;
 }
 
-.hero-image {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
+
 
 
 
@@ -1096,10 +1092,7 @@ footer {
 
 /* ================= 3D FLOATING MODEL ================= */
 
-.hero {
-  position: relative;
-  overflow: visible; /* IMPORTANT */
-}
+
 
 /* container */
 .hero-3d {
@@ -1154,8 +1147,15 @@ footer {
 .hero {
   position: relative;
   overflow: hidden;
-  background: #fff;
 }
+
+.hero-image {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  isolation: isolate; /* 🔥 THIS IS CRITICAL */
+}
+
 
 /* ================= HERO STACK FIX ================= */
 
@@ -1179,12 +1179,17 @@ footer {
   z-index: 1;
 }
 
-.banner-strip span {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  color: #111111;
+.banner-strip {
+  position: absolute;
+  top: 55%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 1.2rem 0;
+  text-align: center;
+  z-index: 2;
 }
+
 
 /* MAN — ABOVE STRIP */
 .man {
@@ -1192,32 +1197,24 @@ footer {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 88vh;
-  z-index: 4;   /* 👈 between BLLOOM & strip */
+  height: 80vh;
+  z-index: 3;
   pointer-events: none;
 }
+
 
 
 /* BRAND */
 .hero-brand {
   position: absolute;
-  top: 18%;              /* 👈 move it UP */
+  top: 16%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(4rem, 12vw, 9rem);
-  z-index: 5;
-  color: #ffffff;
-  pointer-events: none;
-  
+  z-index: 4;
+  color: #fff;
 }
 
-.banner-strip span {
-  font-size: clamp(2rem, 6vw, 4.5rem);
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  color: #111;
-  display: block;
-}
+
 
 
 /* HOOK */
@@ -1229,4 +1226,5 @@ footer {
   z-index: 100000;
   color: #111111;
 }
+
 
