@@ -1154,14 +1154,23 @@ footer {
 
 /* ===== FORCE MOVE model.png ONLY ===== */
 
-img.model {
-  position: absolute !important;
-  top: -14vh !important;            /* 🔥 OVERLAP BANNER */
-  left: 62% !important;             /* 🔥 SHIFT RIGHT */
-  transform: translateX(-50%) !important;
-  height: 72vh !important;          /* 🔥 SMALLER */
-  z-index: 9999 !important;
-  pointer-events: none !important;
+/* ========= MODEL + BANNER FIX (ONE SHOT) ========= */
+
+img[src*="model.png"] {
+  position: relative !important;
+  transform: translateY(-120px) !important; /* pull model UP */
+  margin-bottom: -120px !important;         /* remove ghost gap */
+  z-index: 10 !important;                   /* over all layers */
+  height: 72vh !important;                  /* controlled size */
+}
+
+/* banner stays thin & centered (no full width) */
+img[src*="banner"] {
+  width: 85% !important;
+  height: 90px !important;
+  margin: 0 auto !important;
+  object-fit: cover !important;
+  display: block !important;
 }
 
 
