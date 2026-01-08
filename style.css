@@ -1078,11 +1078,11 @@ footer {
 }
 
 .hero-image {
-  width: 100vw;
-  height: 60vh;
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
+
 
 
 .hero,
@@ -1192,19 +1192,33 @@ footer {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 85vh;
-  z-index: 99999; /* force on top */
+  height: 88vh;
+  z-index: 4;   /* 👈 between BLLOOM & strip */
+  pointer-events: none;
 }
+
 
 /* BRAND */
 .hero-brand {
   position: absolute;
-  top: 12%;
+  top: 18%;              /* 👈 move it UP */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100000;
+  font-size: clamp(4rem, 12vw, 9rem);
+  z-index: 5;
   color: #ffffff;
+  pointer-events: none;
+  
 }
+
+.banner-strip span {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #111;
+  display: block;
+}
+
 
 /* HOOK */
 .hero-hook {
@@ -1215,3 +1229,4 @@ footer {
   z-index: 100000;
   color: #111111;
 }
+
