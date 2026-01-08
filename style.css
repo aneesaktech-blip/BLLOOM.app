@@ -1205,7 +1205,7 @@ footer {
 
 .banner-strip::after {
   width: 420px !important;     /* 🔥 bigger model */
-  height: 10500px !important;    /* 🔥 taller model */
+  height: 1050px !important;    /* 🔥 taller model */
   left: 98% !important;        /* 🔥 move to the right */
   top: -500px !important;      /* keeps overlap clean */
 }
@@ -1243,12 +1243,14 @@ footer {
 
 img[src*="model.png"] {
   position: relative !important;
+  height: 600px !important;
   top: -220px !important;     /* ← pulls it UP */
   right: -40px !important;   /* ← keeps it slightly right */
   transform: scale(1.15) !important; /* slightly bigger */
   z-index: 999 !important;
   pointer-events: none !important;
 }
+
 
 
 
