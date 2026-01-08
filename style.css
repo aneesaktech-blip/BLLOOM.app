@@ -1330,4 +1330,29 @@ body {
 
 
 
+/* ================= FIX BUILD QUIETLY VISIBILITY ================= */
+
+/* HERO IMAGE — NO NEGATIVE PUSH */
+.hero-image {
+  margin-bottom: 0 !important;
+}
+
+/* BUILD QUIETLY — FORCE IT JUST BELOW IMAGE (VISIBLE) */
+.hero-manifesto {
+  position: relative !important;
+  margin-top: 0.8rem !important;   /* 🔥 JUST BELOW PIC */
+  margin-bottom: 1.5rem !important;
+  padding: 0 !important;
+  text-align: center !important;
+  z-index: 5 !important;
+  color: #111 !important;
+  opacity: 1 !important;
+}
+
+/* REMOVE ANY NEGATIVE MARGIN DAMAGE */
+.hero-manifesto,
+.hero-manifesto * {
+  transform: none !important;
+}
+
 
