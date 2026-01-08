@@ -1150,10 +1150,8 @@ footer {
 }
 
 .hero-image {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  isolation: isolate; /* 🔥 THIS IS CRITICAL */
+  height: 65vh;
+  overflow: visible;
 }
 
 
@@ -1191,16 +1189,7 @@ footer {
 }
 
 
-/* MAN — ABOVE STRIP */
-.man {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 80vh;
-  z-index: 3;
-  pointer-events: none;
-}
+
 
 
 
@@ -1225,6 +1214,16 @@ footer {
   transform: translateX(-50%);
   z-index: 100000;
   color: #111111;
+}
+
+.model {
+  position: absolute;
+  bottom: -45vh;          /* 🎯 HIPS land on NEW YEAR NEW ME */
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100vh;          /* natural full-body scale */
+  z-index: 3;
+  pointer-events: none;
 }
 
 
