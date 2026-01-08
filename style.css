@@ -1150,6 +1150,14 @@ footer {
   pointer-events: none;
 }
 
+/* ===== ONLY MODEL ADJUSTMENT ===== */
+
+img.model {
+  position: absolute !important;
+  top: -8vh !important;          /* 🔼 move UP a little */
+  z-index: 999 !important;       /* 🔝 above all layers */
+}
+
 
 
 
