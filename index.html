@@ -135,23 +135,22 @@
   © BLLOOM — Designed in India. Worn without permission.
 </footer>
 <script>
-  const heroBrand = document.getElementById("heroBrand");
-  const strip = document.getElementById("blloomStrip");
+const hero = document.querySelector(".hero");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 60) {
-      heroBrand.classList.add("shrink");
-      strip.style.opacity = "1";
-    } else {
-      heroBrand.classList.remove("shrink");
-      strip.style.opacity = "0";
-    }
-  });
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 120) {
+    hero.classList.add("scrolled");
+  } else {
+    hero.classList.remove("scrolled");
+  }
+});
 </script>
+
 
 
 </body>
 </html>
+
 
 
 
