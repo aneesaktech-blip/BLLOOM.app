@@ -1151,6 +1151,80 @@ footer {
 }
 
 
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* IMAGE CONTAINER */
+.hero-image {
+  position: relative;
+  height: 90vh;
+}
+
+/* FULL BODY – BACK */
+.man-back {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 85vh;
+  z-index: 1;
+}
+
+/* BLLOOM */
+.hero-brand {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(4rem, 12vw, 9rem);
+  color: #fff;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+/* NEW YEAR NEW ME STRIP */
+.banner-strip {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 1.2rem 0;
+  text-align: center;
+  z-index: 2;
+}
+
+.banner-strip span {
+  font-size: clamp(2rem, 8vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #111;
+}
+
+/* THIGH OVER TEXT */
+.man-front {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 85vh;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* HOOK TEXT */
+.hero-hook {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  color: #111;
+}
+
 
 
 
