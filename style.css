@@ -1170,7 +1170,7 @@ footer {
   top: 110px;
   transform: translateX(-50%);
   width: 320px;
-  height: 1080px;
+  height: 10800px;
   background: url("model.png") center / contain no-repeat;
   z-index: 10;
   pointer-events: none;
@@ -1249,6 +1249,7 @@ img[src*="model.png"] {
   z-index: 999 !important;
   pointer-events: none !important;
 }
+
 
 
 
