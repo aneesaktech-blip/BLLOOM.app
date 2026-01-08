@@ -1149,37 +1149,29 @@ footer {
   z-index: 2;
   pointer-events: none;
 }
+/* ===== FINAL CLEANUP: REMOVE DUPLICATE MODEL ===== */
 
-/* ========= BANNER + MODEL (CORRECT FOR YOUR HTML) ========= */
-
-/* BANNER STRIP */
-.banner-strip {
-  position: relative;
-  height: 90px;                    /* thin banner */
-  width: 85%;
-  margin: 1.5rem auto 3rem;        /* small gap above & below */
-  background: url("banner.jpg") center / cover no-repeat;
-}
-
-/* MODEL ON TOP OF BANNER */
+/* 1️⃣ KEEP ONLY banner-strip model */
 .banner-strip::after {
   content: "";
   position: absolute;
-  left: 60%;                       /* shift to right */
-  top: -140px;                     /* pull model UP */
+  left: 60%;
+  top: -140px;
   transform: translateX(-50%);
-  width: 320px;                    /* control size */
+  width: 320px;
   height: 520px;
   background: url("model.png") center / contain no-repeat;
   z-index: 10;
   pointer-events: none;
 }
 
+/* 2️⃣ KILL ANY OTHER model.png ANYWHERE */
+img[src*="model.png"],
+*[style*="model.png"] {
+  display: none !important;
+}
 
-
-
-
-
-
-
-
+/* 3️⃣ REMOVE THAT BIG WHITE BLOCK */
+.banner-strip {
+  margin-bottom: 1.5rem !important;
+}
