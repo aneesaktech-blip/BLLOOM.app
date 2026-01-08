@@ -1150,44 +1150,30 @@ footer {
   pointer-events: none;
 }
 
-/* ===== ONLY MODEL ADJUSTMENT ===== */
+/* ========= BANNER + MODEL (CORRECT FOR YOUR HTML) ========= */
 
-/* ===== FORCE MOVE model.png ONLY ===== */
-
-/* ========= MODEL + BANNER FIX (ONE SHOT) ========= */
-
-/* ========= FORCE FIX MODEL SECTION (IMG OR BACKGROUND) ========= */
-
-/* CASE 1: model.png is an <img> */
-img[src*="model.png"] {
-  position: relative !important;
-  transform: translateY(-140px) !important;
-  margin-bottom: -140px !important;
-  z-index: 20 !important;
-  pointer-events: none !important;
+/* BANNER STRIP */
+.banner-strip {
+  position: relative;
+  height: 90px;                    /* thin banner */
+  width: 85%;
+  margin: 1.5rem auto 3rem;        /* small gap above & below */
+  background: url("banner.jpg") center / cover no-repeat;
 }
 
-/* CASE 2: model.png is a BACKGROUND IMAGE */
-*[style*="model.png"],
-*[class*="model"],
-*[id*="model"] {
-  background-position: center top !important;
-  background-size: contain !important;
-  margin-top: -140px !important;
-  padding-bottom: 140px !important;
-  z-index: 20 !important;
-  position: relative !important;
+/* MODEL ON TOP OF BANNER */
+.banner-strip::after {
+  content: "";
+  position: absolute;
+  left: 60%;                       /* shift to right */
+  top: -140px;                     /* pull model UP */
+  transform: translateX(-50%);
+  width: 320px;                    /* control size */
+  height: 520px;
+  background: url("model.png") center / contain no-repeat;
+  z-index: 10;
+  pointer-events: none;
 }
-
-/* SAFETY */
-body {
-  overflow-x: hidden !important;
-}
-
-
-
-
-
 
 
 
