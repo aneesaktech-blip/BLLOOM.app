@@ -1248,8 +1248,5 @@ footer {
   z-index: 3;            /* BELOW TEXT, ABOVE STRIP */
   pointer-events: none;
 }
-.new-drop {
-  margin-top: 10rem;
-  text-align: center;
-  font-size: clamp(2rem, 6vw, 4rem);
-}
+
+
