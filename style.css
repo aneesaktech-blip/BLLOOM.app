@@ -1242,22 +1242,18 @@ footer {
 /* ===== FORCE MODEL UP (ABSOLUTE OVERRIDE) ===== */
 
 img[src*="model.png"] {
+  height: 520px !important;   /* 🔼 yahan height badhao */
+  width: auto !important;     /* ratio safe rahe */
+  max-width: none !important;
   position: relative !important;
-  height: 800px !important;
+ 
+  
   top: -220px !important;     /* ← pulls it UP */
   right: -40px !important;   /* ← keeps it slightly right */
-  transform: scale(2.15) !important; /* slightly bigger */
+ 
   z-index: 999 !important;
   pointer-events: none !important;
 }
-
-
-
-
-
-
-
-
 
 
 
