@@ -1525,4 +1525,28 @@ footer {
   filter: drop-shadow(0 40px 80px rgba(0,0,0,0.35));
 }
 
+/* ===== FORCE FULL MODEL VISIBILITY ===== */
+
+/* New Drop container must NOT clip */
+.new-drop,
+.new-drop-content {
+  overflow: visible !important;
+}
+
+/* Model image positioning */
+.new-drop img,
+.new-drop .model,
+.new-drop .model-img {
+  position: absolute !important;
+  bottom: -40px !important;   /* shows legs */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  height: auto !important;
+  max-height: 120% !important; /* shows face */
+  width: auto !important;
+  z-index: 4 !important;
+  pointer-events: none;
+}
+
+
 
