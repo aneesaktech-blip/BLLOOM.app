@@ -1072,3 +1072,41 @@ footer {
 
 
 
+/* BIG BLLOOM (THE ONLY ONE) */
+.hero-logo {
+  position: fixed;
+  top: 140px;
+  left: 50%;
+  transform: translate(-50%, 0) scale(1);
+  transform-origin: center center;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 7vw, 100px);
+  letter-spacing: 0.32em;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* THIN STRIP */
+#blloomStrip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 46px;
+  background: white;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+#blloomStrip span {
+  font-family: "Playfair Display", serif;
+  font-size: 12px;
+  letter-spacing: 0.35em;
+}
+
