@@ -1198,10 +1198,11 @@ img[src*="model.png"],
 
 .banner-strip::after {
   width: 420px !important;     /* 🔥 bigger model */
-  height: 1050px !important;    /* 🔥 taller model */
+  height: 2050px !important;    /* 🔥 taller model */
   left: 88% !important;        /* 🔥 move to the right */
-  top: 170px !important;      /* keeps overlap clean */
+  top: 130px !important;      /* keeps overlap clean */
 }
+
 
 
 
