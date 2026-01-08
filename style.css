@@ -1177,3 +1177,20 @@ img[src*="model.png"],
 }
 
 
+/* ===== FINAL TIGHTENING (VIDEO → BANNER + MODEL SIZE) ===== */
+
+/* 1️⃣ Reduce gap between video and banner */
+.hero-manifesto {
+  margin-bottom: 0.6rem !important;   /* 🔥 pulls banner closer */
+}
+
+.banner-strip {
+  margin-top: 0.6rem !important;      /* 🔥 closes the gap */
+}
+
+/* 2️⃣ Increase model height slightly */
+.banner-strip::after {
+  height: 580px !important;           /* 🔥 was ~520px */
+  width: 350px !important;            /* keeps proportions */
+}
+
