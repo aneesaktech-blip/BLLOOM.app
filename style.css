@@ -1265,5 +1265,69 @@ html, body {
 
 
 
+/* ===== GLOBAL SPACING FIX ===== */
+
+/* Stop section padding from breaking layout */
+section {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Restore clean container spacing */
+.container,
+.collage,
+.products,
+.info-grid,
+footer {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+
+/* Kill accidental vertical gaps */
+section {
+  margin-top: 0 !important;
+}
+/* ===== HERO ALIGNMENT FIX ===== */
+.hero,
+.hero-editorial {
+  width: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make image truly edge-to-edge */
+.hero-image,
+.hero-photo,
+.hero-video {
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+/* ===== NEW YEAR NEW YOU FIX ===== */
+.new-year,
+.new-drop {
+  margin-top: 0 !important;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+}
+/* ===== PRODUCTS ALIGNMENT FIX ===== */
+.products {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.products h2 {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.product-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 
 
