@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +16,24 @@
 
 <body>
 
-<!-- ================= THIN STRIP ================= -->
+
+
+<!-- FLOATING SEARCH -->
+
+
+<!-- THIN STRIP -->
 <div id="blloomStrip">
-  <span>BLLOOM</span>
+  <span>
+    <span>B</span>
+    <span>L</span>
+    <span>L</span>
+    <span>O</span>
+    <span>O</span>
+    <span>M</span>
+  </span>
 </div>
 
-<!-- ================= HEADER ================= -->
+
 <header class="navbar">
   <nav class="nav-left">
     <a href="#">SHOP</a>
@@ -37,55 +50,153 @@
   </nav>
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero">
 
-  <!-- Image layer (shows first) -->
-  <div class="hero-image"></div>
 
-  <!-- Video layer (reveals on scroll) -->
-  <video class="hero-video" autoplay muted loop playsinline>
+  <div class="hero-image">
+    <h1 class="hero-brand">BLLOOM</h1>
+
+    <p class="hero-hook">
+      Too boring? Try Blloom.
+    </p>
+  </div>
+
+  <div class="hero-manifesto">
+    Build quietly. Market honestly. Let the product speak.
+  </div>
+<div class="banner-strip"></div>
+<div class="floating-model">
+  <img src="model.png" alt="">
+</div>
+</section>
+
+
+
+
+ 
+
+
+
+
+<!-- COLLAGE -->
+  <section class="new-drop">
+
+  <!-- background video -->
+  <video class="new-drop-video" autoplay muted loop playsinline>
     <source src="hero.mp4" type="video/mp4">
   </video>
 
-  <!-- Big BLLOOM -->
-  <div class="hero-logo" id="bigBloom">
-    BLLOOM
-  </div>
 
-  <!-- Tagline -->
-  <p class="hero-tagline">
-    Build quietly. Market honestly. Let the product speak.
-  </p>
-
-</section>
-
-<!-- ================= NEW DROP ================= -->
-<section class="new-drop">
-
-  <video class="new-drop-video" autoplay muted loop playsinline>
-    <source src="newdrop.mp4" type="video/mp4">
-  </video>
-
-  <div class="new-drop-overlay"></div>
-
+  <!-- content -->
   <div class="new-drop-content">
     <h2>NEW DROP</h2>
     <a href="#" class="btn">SHOP NOW</a>
   </div>
 
-  <!-- 3D MODEL -->
-  <div class="new-drop-model">
-    <img src="model.png" alt="Model">
-  </div>
-
 </section>
 
-<!-- ================= ARRIVALS ================= -->
-<section class="arrivals">
-  <h3>LATEST ARRIVALS</h3>
 
-  <div class="arrival-grid">
-    <div class="arrival-card">
-      <img src="product1.jpg">
-      <
+
+<!-- INFO GRID -->
+<section class="info-grid">
+  <div class="info-box">
+    <h3>THE BLLOOM STUDIO</h3>
+    <p>Where street meets precision.</p>
+  </div>
+  <div class="info-box">
+    <h3>LIMITED PIECES</h3>
+    <p>No restocks. No repeats.</p>
+  </div>
+  <div class="info-box">
+    <h3>ABOUT BLLOOM</h3>
+    <p>Designed in limited drops. Made to stand apart.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <h2>LATEST ARRIVALS</h2>
+
+  <div class="product-grid">
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Structured Jacket</h4>
+      <span>₹6,499</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Tailored Hoodie</h4>
+      <span>₹4,999</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Tech Cargo Pants</h4>
+      <span>₹5,999</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Minimal Tee</h4>
+      <span>₹2,499</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © BLLOOM — Designed in India. Worn without permission.
+</footer>
+<script>
+const hero = document.querySelector(".hero");
+const strip = document.getElementById("blloomStrip");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 120) {
+    hero.classList.add("scrolled");
+    strip.style.opacity = "1";
+  } else {
+    hero.classList.remove("scrolled");
+    strip.style.opacity = "0";
+  }
+});
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
