@@ -1114,12 +1114,11 @@ footer {
 /* THIN IMAGE STRIP BELOW TAGLINE */
 .banner-strip {
   width: 100%;
-  height: 36px;              /* very thin */
+  height: 56px;              /* very thin */
   margin-top: 24px;          /* space from text */
   background-image: url("banner.jpg");
   background-size: cover;
   background-position: center;
-  margin-left: -6vw;
-margin-right: -6vw;
 
 }
+
