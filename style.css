@@ -1170,7 +1170,7 @@ footer {
   top: 110px;
   transform: translateX(-50%);
   width: 320px;
-  height: 10800px;
+  height: 1080px;
   background: url("model.png") center / contain no-repeat;
   z-index: 10;
   pointer-events: none;
@@ -1205,7 +1205,7 @@ footer {
 
 .banner-strip::after {
   width: 420px !important;     /* 🔥 bigger model */
-  height: 1050px !important;    /* 🔥 taller model */
+  height: 10500px !important;    /* 🔥 taller model */
   left: 98% !important;        /* 🔥 move to the right */
   top: -500px !important;      /* keeps overlap clean */
 }
@@ -1249,6 +1249,7 @@ img[src*="model.png"] {
   z-index: 999 !important;
   pointer-events: none !important;
 }
+
 
 
 
