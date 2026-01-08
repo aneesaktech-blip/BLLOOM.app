@@ -1330,6 +1330,126 @@ section {
   margin: 0 auto;
 }
 
+
+/* ================= HARD OVERRIDE — DO NOT EDIT ABOVE ================= */
+
+/* GLOBAL RESET FOR LAYOUT BUGS */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
+/* KILL ALL SECTION SIDE PADDING */
+section {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* RESTORE PADDING ONLY WHERE NEEDED */
+.collage,
+.products,
+.info-grid,
+footer {
+  padding-left: 6vw !important;
+  padding-right: 6vw !important;
+}
+
+/* ================= HERO FORCE FIX ================= */
+
+.hero,
+.hero-editorial {
+  position: relative !important;
+  width: 100vw !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  left: 0 !important;
+}
+
+/* IMAGE / VIDEO FULL BLEED */
+.hero-image,
+.hero-photo,
+.hero-video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100% !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+/* FORCE IMAGE HEIGHT */
+.hero-image,
+.hero-photo {
+  height: 65vh !important;
+}
+
+/* FORCE VIDEO BELOW IMAGE */
+.hero-video {
+  top: 65vh !important;
+  height: 70vh !important;
+  opacity: 1 !important;
+}
+
+/* ================= BIG BLLOOM FIX ================= */
+
+.hero-logo,
+.brand-logo,
+.editorial-title {
+  position: absolute !important;
+  left: 50% !important;
+  top: 32vh !important;
+  transform: translateX(-50%) !important;
+  text-align: center !important;
+  margin: 0 !important;
+  z-index: 10 !important;
+  transform-origin: center center !important;
+}
+
+/* ================= THIN STRIP FORCE ================= */
+
+#blloomStrip {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 32px !important;
+  background: #fff !important;
+  border-bottom: 1px solid #e6e6e6 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 1 !important;
+  z-index: 99999 !important;
+}
+
+#blloomStrip span {
+  font-family: "Playfair Display", serif !important;
+  font-size: 13px !important;
+  letter-spacing: 0.9em !important;
+  color: #111 !important;
+}
+
+/* ================= NEW DROP / LATEST ARRIVALS FIX ================= */
+
+.new-drop,
+.products {
+  margin-top: 0 !important;
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+/* CENTER PRODUCT GRID */
+.product-grid {
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ================= END HARD OVERRIDE ================= */
 /* ===== IMAGE CLARITY OVERRIDE ===== */
 
 /* REMOVE WHITE WASH */
@@ -1386,389 +1506,24 @@ section {
   width: clamp(260px, 36vw, 540px);
 }
 
-header,
-.header,
-nav {
-  position: sticky !important;
-  top: 0 !important;
-  transform: none !important;
-  scale: 1 !important;
-  height: auto !important;
-  min-height: 70px !important;
-  background: #fff !important;
-  z-index: 9999 !important;
-}
-/* ================= FINAL OVERRIDE — DO NOT EDIT ABOVE ================= */
+/* ================= FORCE MODEL VISIBILITY ================= */
 
-/* kill side gaps */
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-/* force full-bleed hero */
-.hero,
-.hero-editorial {
-  width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
-}
-
-/* ONLY ONE hero logic */
-.hero-image,
-.hero-photo {
-  position: absolute !important;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-position: center !important;
-  background-size: cover !important;
-}
-
-/* BIG BLLOOM — LOCKED CENTER */
-.hero-logo,
-.brand-logo {
-  position: absolute !important;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) !important;
-  transform-origin: center center;
-  text-align: center;
-  white-space: nowrap;
-}
-
-/* prevent drifting on shrink */
-.hero.scrolled .hero-logo,
-.hero.scrolled .brand-logo {
-  transform: translate(-50%, -50%) scale(0.6) !important;
-  opacity: 0;
-}
-
-/* THIN STRIP — CLEAN */
-#blloomStrip {
-  height: 40px !important;
-  opacity: 0;
-}
-
-.hero.scrolled ~ #blloomStrip,
-#blloomStrip.active {
-  opacity: 1 !important;
-}
-
-/* ================= 3D FLOAT MODEL ================= */
-
-/* container */
+/* DETACH MODEL FROM ALL CLIPPING */
 .floating-model {
-  position: absolute;
-  top: 70%;
+  position: fixed !important;
+  top: 120px;                /* adjust vertical placement */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 6;
+  z-index: 999999 !important;
   pointer-events: none;
 }
 
-/* image */
+/* MODEL ITSELF */
 .floating-model img {
-  height: 90vh;
-  max-height: 900px;
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.25));
-  animation: floatUp 6s ease-in-out infinite;
+  width: clamp(280px, 38vw, 560px);
+  height: auto;
+  max-height: none !important;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.35));
 }
 
-/* float motion */
-@keyframes floatUp {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-24px); }
-  100% { transform: translateY(0); }
-}
-
-/* make New Drop NOT eat the model */
-.new-drop {
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-}
-
-/* ================= FINAL HARD OVERRIDE ================= */
-/* DO NOT EDIT ABOVE THIS POINT */
-
-/* FULL WIDTH RESET */
-body {
-  overflow-x: hidden;
-}
-
-/* HERO FULL BLEED – KILLS LEFT WHITE GAP */
-.hero {
-  position: relative !important;
-  width: 100vw !important;
-  margin-left: calc(-50vw + 50%) !important;
-  margin-right: calc(-50vw + 50%) !important;
-  height: 85vh !important;
-  overflow: hidden !important;
-}
-
-/* IMAGE BACKGROUND */
-.hero-image {
-  position: absolute !important;
-  inset: 0 !important;
-  background: url("brand.jpg") center / cover no-repeat !important;
-  z-index: 1 !important;
-}
-
-/* VIDEO BEHIND IMAGE */
-.hero-video {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  z-index: 0 !important;
-  opacity: 0 !important;
-  transition: opacity 1s ease !important;
-}
-
-/* ON SCROLL → IMAGE FADES, VIDEO SHOWS */
-.hero.scrolled .hero-image {
-  opacity: 0 !important;
-}
-
-.hero.scrolled .hero-video {
-  opacity: 1 !important;
-}
-
-/* BIG BLLOOM – PERFECT CENTER, NO SHIFT */
-.hero-logo {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) scale(1) !important;
-  transform-origin: center !important;
-  font-family: "Playfair Display", serif !important;
-  font-size: clamp(64px, 10vw, 150px) !important;
-  letter-spacing: 0.38em !important;
-  color: white !important;
-  z-index: 5 !important;
-  transition: transform 0.6s ease, opacity 0.6s ease !important;
-}
-
-/* SHRINK CLEANLY INTO STRIP */
-.hero.scrolled .hero-logo {
-  transform: translate(-50%, -50%) scale(0.6) !important;
-  opacity: 0 !important;
-}
-
-/* THIN WHITE STRIP */
-#blloomStrip {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 46px !important;
-  background: white !important;
-  border-bottom: 1px solid #e6e6e6 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  opacity: 0 !important;
-  z-index: 99999 !important;
-  transition: opacity 0.4s ease !important;
-}
-
-.hero.scrolled ~ #blloomStrip,
-#blloomStrip.active {
-  opacity: 1 !important;
-}
-
-#blloomStrip span {
-  font-family: "Playfair Display", serif !important;
-  font-size: 13px !important;
-  letter-spacing: 0.45em !important;
-}
-
-/* MODEL PNG – FLOATING 3D EFFECT */
-.model-float {
-  position: absolute !important;
-  bottom: -10% !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 6 !important;
-  pointer-events: none !important;
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.25)) !important;
-}
-
-/* NEW DROP – FIXED HEIGHT, CLEAN */
-.new-drop {
-  position: relative !important;
-  height: 36vh !important;
-  overflow: hidden !important;
-}
-
-/* VIDEO BEHIND NEW DROP */
-.new-drop-video {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  z-index: 1 !important;
-}
-
-.new-drop::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background: rgba(255,255,255,0.6) !important;
-  z-index: 2 !important;
-}
-
-.new-drop-content {
-  position: relative !important;
-  z-index: 3 !important;
-}
-
-.hero,
-.hero-section,
-.hero-wrapper {
-  position: relative !important;
-  height: 38vh !important;
-  max-height: 420px !important;
-  min-height: 300px !important;
-  overflow: hidden !important;
-}
-/* ================= FINAL HARD OVERRIDE ================= */
-/* DO NOT EDIT ABOVE THIS POINT */
-
-/* FULL WIDTH RESET */
-body {
-  overflow-x: hidden;
-}
-
-/* HERO FULL BLEED – KILLS LEFT WHITE GAP */
-.hero {
-  position: relative !important;
-  width: 100vw !important;
-  margin-left: calc(-50vw + 50%) !important;
-  margin-right: calc(-50vw + 50%) !important;
-  height: 85vh !important;
-  overflow: hidden !important;
-}
-
-/* IMAGE BACKGROUND */
-.hero-image {
-  position: absolute !important;
-  inset: 0 !important;
-  background: url("brand.jpg") center / cover no-repeat !important;
-  z-index: 1 !important;
-}
-
-/* VIDEO BEHIND IMAGE */
-.hero-video {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  z-index: 0 !important;
-  opacity: 0 !important;
-  transition: opacity 1s ease !important;
-}
-
-/* ON SCROLL → IMAGE FADES, VIDEO SHOWS */
-.hero.scrolled .hero-image {
-  opacity: 0 !important;
-}
-
-.hero.scrolled .hero-video {
-  opacity: 1 !important;
-}
-
-/* BIG BLLOOM – PERFECT CENTER, NO SHIFT */
-.hero-logo {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) scale(1) !important;
-  transform-origin: center !important;
-  font-family: "Playfair Display", serif !important;
-  font-size: clamp(64px, 10vw, 150px) !important;
-  letter-spacing: 0.38em !important;
-  color: white !important;
-  z-index: 5 !important;
-  transition: transform 0.6s ease, opacity 0.6s ease !important;
-}
-
-/* SHRINK CLEANLY INTO STRIP */
-.hero.scrolled .hero-logo {
-  transform: translate(-50%, -50%) scale(0.6) !important;
-  opacity: 0 !important;
-}
-
-/* THIN WHITE STRIP */
-#blloomStrip {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 46px !important;
-  background: white !important;
-  border-bottom: 1px solid #e6e6e6 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  opacity: 0 !important;
-  z-index: 99999 !important;
-  transition: opacity 0.4s ease !important;
-}
-
-.hero.scrolled ~ #blloomStrip,
-#blloomStrip.active {
-  opacity: 1 !important;
-}
-
-#blloomStrip span {
-  font-family: "Playfair Display", serif !important;
-  font-size: 13px !important;
-  letter-spacing: 0.45em !important;
-}
-
-/* MODEL PNG – FLOATING 3D EFFECT */
-.model-float {
-  position: absolute !important;
-  bottom: -10% !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 6 !important;
-  pointer-events: none !important;
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.25)) !important;
-}
-
-/* NEW DROP – FIXED HEIGHT, CLEAN */
-.new-drop {
-  position: relative !important;
-  height: 36vh !important;
-  overflow: hidden !important;
-}
-
-/* VIDEO BEHIND NEW DROP */
-.new-drop-video {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  z-index: 1 !important;
-}
-
-.new-drop::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background: rgba(255,255,255,0.6) !important;
-  z-index: 2 !important;
-}
-
-.new-drop-content {
-  position: relative !important;
-  z-index: 3 !important;
-}
 
