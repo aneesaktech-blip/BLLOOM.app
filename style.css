@@ -1192,11 +1192,11 @@ img[src*="model.png"],
 
 /* 1️⃣ Reduce gap between video and banner */
 .hero-manifesto {
-  margin-bottom: 0.001rem !important;   /* 🔥 pulls banner closer */
+  margin-bottom: 0.0001rem !important;   /* 🔥 pulls banner closer */
 }
 
 .banner-strip {
-  margin-top: 0.002rem !important;      /* 🔥 closes the gap */
+  margin-top: 0.0002rem !important;      /* 🔥 closes the gap */
 }
 
 /* 2️⃣ Increase model height slightly */
@@ -1211,7 +1211,7 @@ img[src*="model.png"],
   width: 420px !important;     /* 🔥 bigger model */
   height: 1050px !important;    /* 🔥 taller model */
   left: 88% !important;        /* 🔥 move to the right */
-  top: 30px !important;      /* keeps overlap clean */
+  top: 130px !important;      /* keeps overlap clean */
 }
 
 
@@ -1238,6 +1238,7 @@ img[src*="model.png"],
   position: relative !important;
   z-index: 5 !important;
 }
+
 
 
 
