@@ -1154,7 +1154,7 @@ footer {
 
 /* ===== FORCE MOVE model.png ONLY ===== */
 
-img[src*="model.png"] {
+.model{
   position: absolute !important;
   top: 8vh !important;        /* 🔼 move UP a little */
   left: 62% !important;        /* slight right shift (safe) */
@@ -1163,6 +1163,7 @@ img[src*="model.png"] {
   z-index:9999 !important;     /* 🔝 ABOVE EVERYTHING */
   pointer-events: none !important;
 }
+
 
 
 
