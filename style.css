@@ -1154,13 +1154,13 @@ footer {
 
 /* ===== FORCE MOVE model.png ONLY ===== */
 
-.model{
+img.model {
   position: absolute !important;
-  top: 8vh !important;        /* 🔼 move UP a little */
-  left: 62% !important;        /* slight right shift (safe) */
+  top: -14vh !important;            /* 🔥 OVERLAP BANNER */
+  left: 62% !important;             /* 🔥 SHIFT RIGHT */
   transform: translateX(-50%) !important;
-  height: 72vh !important;     /* keep it controlled */
-  z-index:9999 !important;     /* 🔝 ABOVE EVERYTHING */
+  height: 72vh !important;          /* 🔥 SMALLER */
+  z-index: 2 !important;
   pointer-events: none !important;
 }
 
