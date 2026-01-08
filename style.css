@@ -986,7 +986,7 @@ footer {
 .hero-image {
   position: relative;
   height: 60vh;
-  width: 200vw;
+  width: 100vw;
   background-image: url("brand.jpg");
   background-size: cover;
   background-position: center;
@@ -1062,6 +1062,7 @@ footer {
   font-size: 12px;
   letter-spacing: 0.35em;
 }
+
 
 
 
