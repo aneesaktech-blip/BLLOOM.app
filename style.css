@@ -1005,14 +1005,13 @@ footer {
 
 /* MANIFESTO BELOW IMAGE */
 .hero-manifesto {
-  padding: 28px 0;
   text-align: center;
-  font-family: "Inter", sans-serif;
+  margin-top: 2rem;     /* 🔥 reduced gap */
+  margin-bottom: 4rem;
+  letter-spacing: 0.2em;
   font-size: 0.85rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #111;
 }
+
 
 
 .hero-brand.shrink {
@@ -1202,12 +1201,14 @@ footer {
 
 .hero-brand {
   position: absolute;
-  top: 18%;
+  top: 12%;               /* 🔥 moved UP */
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(4rem, 12vw, 9rem);
-  color: #fff;
-  z-index: 2;
+  font-size: clamp(4.5rem, 13vw, 9.5rem);
+  font-weight: 700;       /* 🔥 bolder */
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  z-index: 3;
 }
 
 .hero-hook {
@@ -1231,14 +1232,7 @@ footer {
   z-index: 1;
 }
 
-.strip-text {
-  position: relative;
-  z-index: 5;
-  font-size: clamp(2.2rem, 6vw, 4.5rem);
-  font-weight: 800;
-  letter-spacing: 0.3em;
-  color: #111;
-}
+
 .model {
   position: absolute;
   top: -18vh;            /* 🎯 hips overlap strip */
@@ -1247,6 +1241,34 @@ footer {
   height: 95vh;
   z-index: 3;            /* BELOW TEXT, ABOVE STRIP */
   pointer-events: none;
+}
+.overlap-section {
+  position: relative;
+  margin-top: 4rem;
+}
+
+/* NEW YEAR NEW ME IMAGE */
+.newyear-banner {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* MODEL OVER BANNER IMAGE */
+.model {
+  position: absolute;
+  top: -20vh;          /* 🎯 hips overlap banner */
+  left: 50%;
+  transform: translateX(-50%);
+  height: 95vh;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-image {
+  height: 65vh;
+  overflow: hidden;   /* hero stays clean */
 }
 
 
