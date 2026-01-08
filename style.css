@@ -1329,3 +1329,59 @@ section {
   margin: 0 auto;
 }
 
+/* ===== IMAGE CLARITY OVERRIDE ===== */
+
+/* REMOVE WHITE WASH */
+.hero-image,
+.hero-photo {
+  background-image: url("brand.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* KILL ALL OVERLAYS */
+.hero-image::after,
+.hero-photo::after {
+  display: none !important;
+}
+
+/* RESTORE CONTRAST */
+.hero-image,
+.hero-photo {
+  filter: contrast(1.08) saturate(1.05) brightness(1.02) !important;
+}
+
+/* ENSURE IMAGE ON TOP */
+.hero-image,
+.hero-photo {
+  opacity: 1 !important;
+  z-index: 1 !important;
+}
+/* ===== STOP MODEL FROM BEING CUT ===== */
+
+/* allow overflow everywhere the model might live */
+.hero,
+.hero-editorial,
+.hero-brand,
+.new-drop,
+.identity-showcase {
+  overflow: visible !important;
+}
+
+/* force model above all clipping parents */
+.hero-model {
+  position: absolute !important;
+  top: -80px !important;      /* head visible */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 99999 !important;
+  pointer-events: none;
+}
+
+/* ensure image itself is not constrained */
+.hero-model img {
+  display: block;
+  max-height: none !important;
+  width: clamp(260px, 36vw, 540px);
+}
+
