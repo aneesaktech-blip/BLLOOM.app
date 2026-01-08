@@ -1222,6 +1222,46 @@ footer {
 
 
 
+/* ===== FINAL HARD OVERRIDE ===== */
+
+/* REMOVE LEFT WHITE GAP */
+html, body {
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  left: 0 !important;
+}
+
+/* IMAGE FULL WIDTH */
+.hero-image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+/* BIG BLLOOM FIX (NO SIDE SHIFT) */
+.hero-logo {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  transform-origin: center center !important;
+  text-align: center !important;
+  z-index: 10 !important;
+}
+
+/* FORCE STRIP TO SHOW */
+#blloomStrip {
+  opacity: 1 !important;
+}
+
 
 
 
