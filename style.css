@@ -1156,22 +1156,35 @@ footer {
 
 /* ========= MODEL + BANNER FIX (ONE SHOT) ========= */
 
+/* ========= FORCE FIX MODEL SECTION (IMG OR BACKGROUND) ========= */
+
+/* CASE 1: model.png is an <img> */
 img[src*="model.png"] {
   position: relative !important;
-  transform: translateY(-120px) !important; /* pull model UP */
-  margin-bottom: -120px !important;         /* remove ghost gap */
-  z-index: 10 !important;                   /* over all layers */
-  height: 72vh !important;                  /* controlled size */
+  transform: translateY(-140px) !important;
+  margin-bottom: -140px !important;
+  z-index: 20 !important;
+  pointer-events: none !important;
 }
 
-/* banner stays thin & centered (no full width) */
-img[src*="banner"] {
-  width: 85% !important;
-  height: 90px !important;
-  margin: 0 auto !important;
-  object-fit: cover !important;
-  display: block !important;
+/* CASE 2: model.png is a BACKGROUND IMAGE */
+*[style*="model.png"],
+*[class*="model"],
+*[id*="model"] {
+  background-position: center top !important;
+  background-size: contain !important;
+  margin-top: -140px !important;
+  padding-bottom: 140px !important;
+  z-index: 20 !important;
+  position: relative !important;
 }
+
+/* SAFETY */
+body {
+  overflow-x: hidden !important;
+}
+
+
 
 
 
