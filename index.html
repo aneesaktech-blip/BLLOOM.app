@@ -135,33 +135,24 @@
   © BLLOOM — Designed in India. Worn without permission.
 </footer>
 <script>
-const heroLogo = document.getElementById("heroLogo");
-const strip = document.getElementById("blloomStrip");
+  const heroBrand = document.getElementById("heroBrand");
+  const strip = document.getElementById("blloomStrip");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 120) {
-
-    /* BIG LOGO SHRINKS + DISAPPEARS */
-    heroLogo.style.transform = "scale(0.6)";
-    heroLogo.style.opacity = "0";
-
-    /* THIN STRIP APPEARS */
-    strip.style.opacity = "1";
-
-  } else {
-
-    /* RESET */
-    heroLogo.style.transform = "scale(1)";
-    heroLogo.style.opacity = "1";
-    strip.style.opacity = "0";
-  }
-});
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+      heroBrand.classList.add("shrink");
+      strip.style.opacity = "1";
+    } else {
+      heroBrand.classList.remove("shrink");
+      strip.style.opacity = "0";
+    }
+  });
 </script>
-
 
 
 </body>
 </html>
+
 
 
 
