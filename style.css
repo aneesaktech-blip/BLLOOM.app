@@ -1264,510 +1264,108 @@ html, body {
 
 
 
+/* ================= FINAL HERO TRUTH ================= */
 
-/* ===== GLOBAL SPACING FIX ===== */
-
-/* Stop section padding from breaking layout */
-section {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* Restore clean container spacing */
-.container,
-.collage,
-.products,
-.info-grid,
-footer {
-  padding-left: 6vw;
-  padding-right: 6vw;
-}
-
-/* Kill accidental vertical gaps */
-section {
-  margin-top: 0 !important;
-}
-/* ===== HERO ALIGNMENT FIX ===== */
-.hero,
-.hero-editorial {
-  width: 100%;
-  left: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/* Make image truly edge-to-edge */
-.hero-image,
-.hero-photo,
-.hero-video {
-  left: 0;
-  right: 0;
-  width: 100%;
-}
-/* ===== NEW YEAR NEW YOU FIX ===== */
-.new-year,
-.new-drop {
-  margin-top: 0 !important;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  display: flex;
-  align-items: center;
-}
-/* ===== PRODUCTS ALIGNMENT FIX ===== */
-.products {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-.products h2 {
-  margin-bottom: 48px;
-  text-align: center;
-}
-
-.product-grid {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* ===== IMAGE CLARITY OVERRIDE ===== */
-
-/* REMOVE WHITE WASH */
-.hero-image,
-.hero-photo {
-  background-image: url("brand.jpg") !important;
-  background-size: cover !important;
-  background-position: center !important;
-}
-
-/* KILL ALL OVERLAYS */
-.hero-image::after,
-.hero-photo::after {
-  display: none !important;
-}
-
-/* RESTORE CONTRAST */
-.hero-image,
-.hero-photo {
-  filter: contrast(1.08) saturate(1.05) brightness(1.02) !important;
-}
-
-/* ENSURE IMAGE ON TOP */
-.hero-image,
-.hero-photo {
-  opacity: 1 !important;
-  z-index: 1 !important;
-}
-/* ===== STOP MODEL FROM BEING CUT ===== */
-
-/* allow overflow everywhere the model might live */
-.hero,
-.hero-editorial,
-.hero-brand,
-.new-drop,
-.identity-showcase {
-  overflow: visible !important;
-}
-
-/* force model above all clipping parents */
-.hero-model {
-  position: absolute !important;
-  top: -80px !important;      /* head visible */
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 99999 !important;
-  pointer-events: none;
-}
-
-/* ensure image itself is not constrained */
-.hero-model img {
-  display: block;
-  max-height: none !important;
-  width: clamp(260px, 36vw, 540px);
-}
-
-header,
-.header,
-nav {
-  position: sticky !important;
-  top: 0 !important;
-  transform: none !important;
-  scale: 1 !important;
-  height: auto !important;
-  min-height: 70px !important;
-  background: #fff !important;
-  z-index: 9999 !important;
-}
-/* ================= FINAL OVERRIDE — DO NOT EDIT ABOVE ================= */
-
-/* kill side gaps */
 html, body {
-  width: 100%;
   overflow-x: hidden;
 }
 
-/* force full-bleed hero */
-.hero,
-.hero-editorial {
-  width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
-}
-
-/* ONLY ONE hero logic */
-.hero-image,
-.hero-photo {
-  position: absolute !important;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-position: center !important;
-  background-size: cover !important;
-}
-
-/* BIG BLLOOM — LOCKED CENTER */
-.hero-logo,
-.brand-logo {
-  position: absolute !important;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) !important;
-  transform-origin: center center;
-  text-align: center;
-  white-space: nowrap;
-}
-
-/* prevent drifting on shrink */
-.hero.scrolled .hero-logo,
-.hero.scrolled .brand-logo {
-  transform: translate(-50%, -50%) scale(0.6) !important;
-  opacity: 0;
-}
-
-/* THIN STRIP — CLEAN */
-#blloomStrip {
-  height: 40px !important;
-  opacity: 0;
-}
-
-.hero.scrolled ~ #blloomStrip,
-#blloomStrip.active {
-  opacity: 1 !important;
-}
-
-/* ================= 3D FLOAT MODEL ================= */
-
-/* container */
-.floating-model {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 6;
-  pointer-events: none;
-}
-
-/* image */
-.floating-model img {
-  height: 90vh;
-  max-height: 900px;
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.25));
-  animation: floatUp 6s ease-in-out infinite;
-}
-
-/* float motion */
-@keyframes floatUp {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-24px); }
-  100% { transform: translateY(0); }
-}
-
-/* make New Drop NOT eat the model */
-.new-drop {
-  overflow: hidden;
+/* HERO WRAPPER */
+.hero {
   position: relative;
+  width: 100vw;
+  height: 85vh;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+/* IMAGE */
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background: url("brand.jpg") center / cover no-repeat;
   z-index: 1;
 }
 
-/* ================= FINAL HARD OVERRIDE ================= */
-/* DO NOT EDIT ABOVE THIS POINT */
-
-/* FULL WIDTH RESET */
-body {
-  overflow-x: hidden;
-}
-
-/* HERO FULL BLEED – KILLS LEFT WHITE GAP */
-.hero {
-  position: relative !important;
-  width: 100vw !important;
-  margin-left: calc(-50vw + 50%) !important;
-  margin-right: calc(-50vw + 50%) !important;
-  height: 85vh !important;
-  overflow: hidden !important;
-}
-
-/* IMAGE BACKGROUND */
-.hero-image {
-  position: absolute !important;
-  inset: 0 !important;
-  background: url("brand.jpg") center / cover no-repeat !important;
-  z-index: 1 !important;
-}
-
-/* VIDEO BEHIND IMAGE */
+/* VIDEO (reveals on scroll) */
 .hero-video {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  z-index: 0 !important;
-  opacity: 0 !important;
-  transition: opacity 1s ease !important;
-}
-
-/* ON SCROLL → IMAGE FADES, VIDEO SHOWS */
-.hero.scrolled .hero-image {
-  opacity: 0 !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .hero.scrolled .hero-video {
-  opacity: 1 !important;
+  opacity: 1;
 }
 
-/* BIG BLLOOM – PERFECT CENTER, NO SHIFT */
-.hero-logo {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) scale(1) !important;
-  transform-origin: center !important;
-  font-family: "Playfair Display", serif !important;
-  font-size: clamp(64px, 10vw, 150px) !important;
-  letter-spacing: 0.38em !important;
-  color: white !important;
-  z-index: 5 !important;
-  transition: transform 0.6s ease, opacity 0.6s ease !important;
-}
-
-/* SHRINK CLEANLY INTO STRIP */
-.hero.scrolled .hero-logo {
-  transform: translate(-50%, -50%) scale(0.6) !important;
-  opacity: 0 !important;
-}
-
-/* THIN WHITE STRIP */
-#blloomStrip {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 46px !important;
-  background: white !important;
-  border-bottom: 1px solid #e6e6e6 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  opacity: 0 !important;
-  z-index: 99999 !important;
-  transition: opacity 0.4s ease !important;
-}
-
-.hero.scrolled ~ #blloomStrip,
-#blloomStrip.active {
-  opacity: 1 !important;
-}
-
-#blloomStrip span {
-  font-family: "Playfair Display", serif !important;
-  font-size: 13px !important;
-  letter-spacing: 0.45em !important;
-}
-
-/* MODEL PNG – FLOATING 3D EFFECT */
-.model-float {
-  position: absolute !important;
-  bottom: -10% !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 6 !important;
-  pointer-events: none !important;
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.25)) !important;
-}
-
-/* NEW DROP – FIXED HEIGHT, CLEAN */
-.new-drop {
-  position: relative !important;
-  height: 36vh !important;
-  overflow: hidden !important;
-}
-
-/* VIDEO BEHIND NEW DROP */
-.new-drop-video {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  z-index: 1 !important;
-}
-
-.new-drop::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background: rgba(255,255,255,0.6) !important;
-  z-index: 2 !important;
-}
-
-.new-drop-content {
-  position: relative !important;
-  z-index: 3 !important;
-}
-
-.hero,
-.hero-section,
-.hero-wrapper {
-  position: relative !important;
-  height: 38vh !important;
-  max-height: 420px !important;
-  min-height: 300px !important;
-  overflow: hidden !important;
-}
-/* ================= FINAL HARD OVERRIDE ================= */
-/* DO NOT EDIT ABOVE THIS POINT */
-
-/* FULL WIDTH RESET */
-body {
-  overflow-x: hidden;
-}
-
-/* HERO FULL BLEED – KILLS LEFT WHITE GAP */
-.hero {
-  position: relative !important;
-  width: 100vw !important;
-  margin-left: calc(-50vw + 50%) !important;
-  margin-right: calc(-50vw + 50%) !important;
-  height: 85vh !important;
-  overflow: hidden !important;
-}
-
-/* IMAGE BACKGROUND */
-.hero-image {
-  position: absolute !important;
-  inset: 0 !important;
-  background: url("brand.jpg") center / cover no-repeat !important;
-  z-index: 1 !important;
-}
-
-/* VIDEO BEHIND IMAGE */
-.hero-video {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  z-index: 0 !important;
-  opacity: 0 !important;
-  transition: opacity 1s ease !important;
-}
-
-/* ON SCROLL → IMAGE FADES, VIDEO SHOWS */
 .hero.scrolled .hero-image {
-  opacity: 0 !important;
+  opacity: 0;
 }
 
-.hero.scrolled .hero-video {
-  opacity: 1 !important;
-}
-
-/* BIG BLLOOM – PERFECT CENTER, NO SHIFT */
+/* BIG BLLOOM */
 .hero-logo {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) scale(1) !important;
-  transform-origin: center !important;
-  font-family: "Playfair Display", serif !important;
-  font-size: clamp(64px, 10vw, 150px) !important;
-  letter-spacing: 0.38em !important;
-  color: white !important;
-  z-index: 5 !important;
-  transition: transform 0.6s ease, opacity 0.6s ease !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(64px, 10vw, 150px);
+  letter-spacing: 0.38em;
+  color: #fff;
+  z-index: 3;
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* SHRINK CLEANLY INTO STRIP */
 .hero.scrolled .hero-logo {
-  transform: translate(-50%, -50%) scale(0.6) !important;
-  opacity: 0 !important;
+  transform: translate(-50%, -50%) scale(0.6);
+  opacity: 0;
 }
 
-/* THIN WHITE STRIP */
+/* FLOATING 3D MODEL */
+.hero-3d {
+  position: absolute;
+  left: 50%;
+  bottom: -120px;
+  transform: translateX(-50%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.hero-3d img {
+  width: clamp(260px, 36vw, 520px);
+  transform: perspective(1200px) rotateX(8deg);
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.35));
+}
+
+/* THIN STRIP */
 #blloomStrip {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 46px !important;
-  background: white !important;
-  border-bottom: 1px solid #e6e6e6 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  opacity: 0 !important;
-  z-index: 99999 !important;
-  transition: opacity 0.4s ease !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  background: white;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 9999;
+  transition: opacity 0.4s ease;
 }
 
-.hero.scrolled ~ #blloomStrip,
-#blloomStrip.active {
-  opacity: 1 !important;
+.hero.scrolled ~ #blloomStrip {
+  opacity: 1;
 }
 
 #blloomStrip span {
-  font-family: "Playfair Display", serif !important;
-  font-size: 13px !important;
-  letter-spacing: 0.45em !important;
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+  letter-spacing: 0.45em;
 }
-
-/* MODEL PNG – FLOATING 3D EFFECT */
-.model-float {
-  position: absolute !important;
-  bottom: -10% !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 6 !important;
-  pointer-events: none !important;
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.25)) !important;
-}
-
-/* NEW DROP – FIXED HEIGHT, CLEAN */
-.new-drop {
-  position: relative !important;
-  height: 36vh !important;
-  overflow: hidden !important;
-}
-
-/* VIDEO BEHIND NEW DROP */
-.new-drop-video {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  z-index: 1 !important;
-}
-
-.new-drop::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background: rgba(255,255,255,0.6) !important;
-  z-index: 2 !important;
-}
-
-.new-drop-content {
-  position: relative !important;
-  z-index: 3 !important;
-}
-
