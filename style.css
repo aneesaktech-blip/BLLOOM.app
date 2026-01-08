@@ -1176,11 +1176,7 @@ footer {
   pointer-events: none;
 }
 
-/* 2️⃣ KILL ANY OTHER model.png ANYWHERE */
-img[src*="model.png"],
-*[style*="model.png"] {
-  display: none !important;
-}
+
 
 /* 3️⃣ REMOVE THAT BIG WHITE BLOCK */
 .banner-strip {
@@ -1242,6 +1238,17 @@ img[src*="model.png"],
 
 
 
+
+/* ===== FORCE MODEL UP (ABSOLUTE OVERRIDE) ===== */
+
+img[src*="model.png"] {
+  position: relative !important;
+  top: -220px !important;     /* ← pulls it UP */
+  right: -40px !important;   /* ← keeps it slightly right */
+  transform: scale(1.15) !important; /* slightly bigger */
+  z-index: 999 !important;
+  pointer-events: none !important;
+}
 
 
 
