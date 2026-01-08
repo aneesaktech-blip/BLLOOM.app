@@ -1281,7 +1281,7 @@ footer {
 
 /* 2️⃣ BUILD QUIETLY → VERY CLOSE TO IMAGE */
 .hero-manifesto {
-  margin-top: 0.0005rem !important;   /* 🔥 VERY CLOSE */
+  margin-top: 0.00000000000000006rem !important;   /* 🔥 VERY CLOSE */
   margin-bottom: 2rem !important;
   padding: 0 !important;
   text-align: center;
@@ -1310,7 +1310,7 @@ img.model {
   top: 18vh !important;           /* 🔥 pulls model UP into banner */
   left: 80% !important;            /* 🔥 move RIGHT (not center) */
   transform: translateX(-50%) !important;
-  height: 72vh !important;         /* 🔥 smaller, not fat */
+  height: 47vh !important;         /* 🔥 smaller, not fat */
   z-index: 2 !important;
   pointer-events: none !important;
 }
@@ -1325,6 +1325,7 @@ img.model {
 body {
   overflow-x: hidden !important;
 }
+
 
 
 
