@@ -1005,13 +1005,14 @@ footer {
 
 /* MANIFESTO BELOW IMAGE */
 .hero-manifesto {
+  padding: 28px 0;
   text-align: center;
-  margin-top: 2rem;     /* 🔥 reduced gap */
-  margin-bottom: 4rem;
-  letter-spacing: 0.2em;
+  font-family: "Inter", sans-serif;
   font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111;
 }
-
 
 
 .hero-brand.shrink {
@@ -1076,8 +1077,12 @@ footer {
   color: #111;
 }
 
-
-
+.hero-image {
+  width: 100vw;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+}
 
 
 .hero,
@@ -1091,7 +1096,10 @@ footer {
 
 /* ================= 3D FLOATING MODEL ================= */
 
-
+.hero {
+  position: relative;
+  overflow: visible; /* IMPORTANT */
+}
 
 /* container */
 .hero-3d {
@@ -1143,216 +1151,9 @@ footer {
 }
 
 
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-image {
-  height: 65vh;
-  overflow: visible;
-}
-
-
-/* ================= HERO STACK FIX ================= */
-
-.hero,
-.hero-image {
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
-  height: 90vh;
-}
-
-/* STRIP — BEHIND MAN */
-.banner-strip {
-  position: absolute;
-  top: 48%;
-  left: 0;
-  width: 100%;
-  background: #ffffff;
-  padding: 1.2rem 0;
-  text-align: center;
-  z-index: 1;
-}
-
-.banner-strip {
-  position: absolute;
-  top: 55%;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  padding: 1.2rem 0;
-  text-align: center;
-  z-index: 2;
-}
 
 
 
 
-
-
-
-.hero-image {
-  height: 65vh;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-brand {
-  position: absolute;
-  top: 12%;               /* 🔥 moved UP */
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: clamp(4.5rem, 13vw, 9.5rem);
-  font-weight: 700;       /* 🔥 bolder */
-  letter-spacing: 0.08em;
-  color: #ffffff;
-  z-index: 3;
-}
-
-.hero-hook {
-  position: absolute;
-  bottom: 18%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  z-index: 2;
-}
-
-.overlap-section {
-  position: relative;
-  padding-top: 6rem;
-}
-.banner-strip {
-  position: relative;
-  background: #f2f2f2;
-  padding: 3rem 0;
-  text-align: center;
-  z-index: 1;
-}
-
-
-.model {
-  position: absolute;
-  top: -18vh;            /* 🎯 hips overlap strip */
-  left: 50%;
-  transform: translateX(-50%);
-  height: 95vh;
-  z-index: 3;            /* BELOW TEXT, ABOVE STRIP */
-  pointer-events: none;
-}
-.overlap-section {
-  position: relative;
-  margin-top: 4rem;
-}
-
-/* NEW YEAR NEW ME IMAGE */
-.newyear-banner {
-  width: 100%;
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-
-/* MODEL OVER BANNER IMAGE */
-.model {
-  position: absolute;
-  top: -20vh;          /* 🎯 hips overlap banner */
-  left: 50%;
-  transform: translateX(-50%);
-  height: 95vh;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.hero-image {
-  height: 65vh;
-  overflow: hidden;   /* hero stays clean */
-}
-
-
-/* ================= FINAL OVERRIDE — SPACING & BANNER ================= */
-
-/* 1️⃣ BUILD QUIETLY — FORCE IT JUST BELOW HERO IMAGE */
-.hero-manifesto {
-  margin-top: -2.5rem !important;   /* 🔥 PULL UP HARD */
-  margin-bottom: 1.5rem !important;
-  padding: 0 !important;
-  text-align: center !important;
-}
-
-/* 2️⃣ OVERLAP SECTION — CONTROL FLOW */
-.overlap-section {
-  position: relative !important;
-  margin-top: 0.5rem !important;    /* 🔥 SMALL GAP AFTER MANIFESTO */
-  padding: 0 !important;
-}
-
-/* 3️⃣ BANNER — NOT FULL WIDTH */
-img.newyear-banner {
-  width: 85% !important;            /* 🔥 NOT EDGE TO EDGE */
-  height: 85px !important;          /* 🔥 THIN STRIP */
-  margin: 0 auto !important;        /* CENTER IT */
-  object-fit: cover !important;
-  object-position: center !important;
-  display: block !important;
-  border-radius: 2px !important;    /* subtle polish */
-}
-
-/* 4️⃣ MODEL — OVER BANNER, RIGHT SIDE */
-img.model {
-  position: absolute !important;
-  top: -14vh !important;            /* 🔥 OVERLAP BANNER */
-  left: 62% !important;             /* 🔥 SHIFT RIGHT */
-  transform: translateX(-50%) !important;
-  height: 72vh !important;          /* 🔥 SMALLER */
-  z-index: 2 !important;
-  pointer-events: none !important;
-}
-
-/* 5️⃣ GAP BETWEEN BANNER & NEW DROP */
-.new-drop {
-  margin-top: 3rem !important;      /* 🔥 CLEAR BUT SMALL GAP */
-}
-
-/* 6️⃣ BLLOOM — SLIGHTLY UP + STRONG */
-.hero-brand {
-  top: 8% !important;
-  font-weight: 700 !important;
-}
-
-/* SAFETY */
-body {
-  overflow-x: hidden !important;
-}
-
-
-
-
-/* ================= FIX BUILD QUIETLY VISIBILITY ================= */
-
-/* HERO IMAGE — NO NEGATIVE PUSH */
-.hero-image {
-  margin-bottom: 0 !important;
-}
-
-/* BUILD QUIETLY — FORCE IT JUST BELOW IMAGE (VISIBLE) */
-.hero-manifesto {
-  position: relative !important;
-  margin-top: 0.8rem !important;   /* 🔥 JUST BELOW PIC */
-  margin-bottom: 1.5rem !important;
-  padding: 0 !important;
-  text-align: center !important;
-  z-index: 5 !important;
-  color: #111 !important;
-  opacity: 1 !important;
-}
-
-/* REMOVE ANY NEGATIVE MARGIN DAMAGE */
-.hero-manifesto,
-.hero-manifesto * {
-  transform: none !important;
-}
 
 
