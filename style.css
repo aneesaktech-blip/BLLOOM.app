@@ -1157,77 +1157,61 @@ footer {
   background: #fff;
 }
 
-/* IMAGE CONTAINER */
+/* ================= HERO STACK FIX ================= */
+
+.hero,
 .hero-image {
   position: relative;
+  z-index: 0;
+  overflow: hidden;
   height: 90vh;
 }
 
-/* FULL BODY – BACK */
-.man-back {
+/* STRIP — BEHIND MAN */
+.banner-strip {
+  position: absolute;
+  top: 48%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 1.2rem 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.banner-strip span {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: #111111;
+}
+
+/* MAN — ABOVE STRIP */
+.man {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   height: 85vh;
-  z-index: 1;
+  z-index: 99999; /* force on top */
 }
 
-/* BLLOOM */
+/* BRAND */
 .hero-brand {
   position: absolute;
   top: 12%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(4rem, 12vw, 9rem);
-  color: #fff;
-  z-index: 2;
-  mix-blend-mode: difference;
+  z-index: 100000;
+  color: #ffffff;
 }
 
-/* NEW YEAR NEW ME STRIP */
-.banner-strip {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  padding: 1.2rem 0;
-  text-align: center;
-  z-index: 2;
-}
-
-.banner-strip span {
-  font-size: clamp(2rem, 8vw, 5rem);
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: #111;
-}
-
-/* THIGH OVER TEXT */
-.man-front {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 85vh;
-  z-index: 3;
-  pointer-events: none;
-}
-
-/* HOOK TEXT */
+/* HOOK */
 .hero-hook {
   position: absolute;
   bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 4;
-  color: #111;
+  z-index: 100000;
+  color: #111111;
 }
-
-
-
-
-
-
-
