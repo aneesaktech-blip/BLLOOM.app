@@ -1207,7 +1207,7 @@ footer {
   width: 420px !important;     /* 🔥 bigger model */
   height: 1050px !important;    /* 🔥 taller model */
   left: 88% !important;        /* 🔥 move to the right */
-  top: 1030px !important;      /* keeps overlap clean */
+  top: -1030px !important;      /* keeps overlap clean */
 }
 
 
@@ -1249,6 +1249,7 @@ img[src*="model.png"] {
   z-index: 999 !important;
   pointer-events: none !important;
 }
+
 
 
 
