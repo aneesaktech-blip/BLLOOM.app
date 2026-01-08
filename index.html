@@ -137,12 +137,15 @@
 </footer>
 <script>
 const hero = document.querySelector(".hero");
+const strip = document.getElementById("blloomStrip");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 120) {
     hero.classList.add("scrolled");
+    strip.style.opacity = "1";
   } else {
     hero.classList.remove("scrolled");
+    strip.style.opacity = "0";
   }
 });
 </script>
@@ -151,6 +154,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
