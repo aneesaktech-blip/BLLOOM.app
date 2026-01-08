@@ -155,7 +155,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 8vw;
+
   background: rgba(255,255,255,0.45)
 
 }
@@ -400,7 +400,7 @@ footer {
     ),
     url("brand.jpg");
   background-size: cover;
-  background-position: center 30%;
+  
   animation: slowZoom 18s ease-in-out infinite alternate;
   z-index: 1;
 }
@@ -1082,4 +1082,5 @@ footer {
   background-size: cover;
   background-position: center;
 }
+
 
