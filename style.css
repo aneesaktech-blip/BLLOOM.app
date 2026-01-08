@@ -1156,7 +1156,7 @@ footer {
   content: "";
   position: absolute;
   left: 60%;
-  top: -140px;
+  top: 90px;
   transform: translateX(-50%);
   width: 320px;
   height: 520px;
@@ -1175,3 +1175,4 @@ img[src*="model.png"],
 .banner-strip {
   margin-bottom: 1.5rem !important;
 }
+
