@@ -1031,6 +1031,7 @@ footer {
   z-index: 2;
 }
 
+
 /* MANIFESTO BELOW IMAGE */
 .hero-manifesto {
   padding: 28px 0;
@@ -1063,6 +1064,11 @@ footer {
   letter-spacing: 0.35em;
 }
 
+
+.hero-brand.shrink {
+  transform: translate(-50%, -60%) scale(0.6);
+  opacity: 0;
+}
 
 
 
