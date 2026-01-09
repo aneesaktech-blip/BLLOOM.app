@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kids — BLLOOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+<header class="shop-header">
+  <div class="brand">BLLOOM</div>
+  <nav>
+    <a href="shop-women.html">Women</a>
+    <a href="shop-men.html">Men</a>
+    <a href="viewed.html">Recently Viewed</a>
+  </nav>
+</header>
+
+<section class="shop-hero">
+  <h1>Kids</h1>
+  <p>Playful. Smart. Comfortable.</p>
+</section>
+
+<main class="shop-grid">
+
+  <a href="product.html" class="product" onclick="trackProduct('k1','Soft Cotton Tee',999)">
+    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb">
+    <h3>Soft Cotton Tee</h3>
+    <span>₹999</span>
+  </a>
+
+  <a href="product.html" class="product" onclick="trackProduct('k2','Cozy Hoodie',1599)">
+    <img src="https://images.unsplash.com/photo-1602810318383-e386cc6e0b3f">
+    <h3>Cozy Hoodie</h3>
+    <span>₹1,599</span>
+  </a>
+
+  <a href="product.html" class="product" onclick="trackProduct('k3','Everyday Sneakers',1899)">
+    <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782">
+    <h3>Everyday Sneakers</h3>
+    <span>₹1,899</span>
+  </a>
+
+</main>
+
+<script>
+function trackProduct(id, name, price) {
+  let viewed = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+  viewed = viewed.filter(p => p.id !== id);
+
+  viewed.push({
+    id,
+    name,
+    price,
+    link: event.currentTarget.href
+  });
+
+  if (viewed.length > 6) viewed.shift();
+  localStorage.setItem("recentlyViewed", JSON.stringify(viewed));
+}
+</script>
+
+</body>
+</html>
