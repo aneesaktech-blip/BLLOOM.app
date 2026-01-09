@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wishlist — BLLOOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="wishlist.css">
+</head>
+
+<body>
+
+  <!-- AUTH CHECK -->
+  <script>
+    const loggedIn = localStorage.getItem("isLoggedIn");
+    if (loggedIn !== "true") {
+      window.location.href = "/login";
+    }
+  </script>
+
+  <!-- HEADER -->
+  <header class="wishlist-header">
+    <a href="/" class="back">← Home</a>
+    <div class="brand">BLLOOM</div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="wishlist-wrapper">
+
+    <h1>Your Wishlist</h1>
+    <p class="subtitle">Saved pieces you love</p>
+
+    <!-- EMPTY STATE -->
+    <div class="empty">
+      <p>Your wishlist is currently empty.</p>
+      <a href="/shop" class="shop-link">Explore the shop</a>
+    </div>
+
+    <!-- 
+    FUTURE PRODUCT CARD EXAMPLE
+    <div class="wishlist-grid">
+      <div class="item">
+        <img src="product.jpg">
+        <h4>Structured Jacket</h4>
+        <span>₹6,499</span>
+      </div>
+    </div>
+    -->
+
+  </main>
+
+</body>
+</html>
