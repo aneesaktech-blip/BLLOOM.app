@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout — BLLOOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- AUTH CHECK -->
+  <script>
+    if (!localStorage.getItem("isLoggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Inter&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+
+<header class="checkout-header">
+  <div class="brand">BLLOOM</div>
+</header>
+
+<main class="checkout-wrapper">
+
+  <h1>Checkout</h1>
+  <p class="subtitle">Complete your purchase</p>
+
+  <!-- ORDER SUMMARY -->
+  <div class="box">
+    <h3>Order Summary</h3>
+    <p>Selected Item</p>
+    <span class="price">₹2,999</span>
+  </div>
+
+  <!-- PAYMENT -->
+  <div class="box">
+    <h3>Payment Method</h3>
+
+    <label><input type="radio" name="pay" checked> UPI</label>
+    <label><input type="radio" name="pay"> Card</label>
+    <label><input type="radio" name="pay"> Cash on Delivery</label>
+
+    <button class="pay-btn" onclick="placeOrder()">Pay Now</button>
+  </div>
+
+</main>
+
+<script>
+function placeOrder() {
+  const order = {
+    id: "ORD" + Math.floor(Math.random() * 100000),
+    date: new Date().toLocaleString(),
+    amount: 2999
+  };
+
+  let orders = JSON.parse(localStorage.getItem("orders")) || [];
+  orders.push(order);
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  window.location.href = "order-placed.html";
+}
+</script>
+
+</body>
+</html>
