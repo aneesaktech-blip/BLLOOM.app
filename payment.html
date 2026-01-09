@@ -51,19 +51,45 @@
 
 <script>
 function placeOrder() {
-  const order = {
-    id: "ORD" + Math.floor(Math.random() * 100000),
-    date: new Date().toLocaleString(),
-    amount: 2999
+  const options = {
+    key: "rzp_test_XXXXXXXXXXXXXXXX", // 🔑 YOUR RAZORPAY KEY ID
+    amount: 299900, // amount in paise (₹2999)
+    currency: "INR",
+    name: "BLLOOM",
+    description: "Fashion Purchase",
+    image: "https://your-logo-link.png",
+
+    handler: function (response) {
+      // Payment successful
+      const order = {
+        paymentId: response.razorpay_payment_id,
+        amount: 2999,
+        date: new Date().toLocaleString(),
+        status: "Paid"
+      };
+
+      let orders = JSON.parse(localStorage.getItem("orders")) || [];
+      orders.push(order);
+      localStorage.setItem("orders", JSON.stringify(orders));
+
+      window.location.href = "order-placed.html";
+    },
+
+    prefill: {
+      name: JSON.parse(localStorage.getItem("currentUser"))?.name || "",
+      email: JSON.parse(localStorage.getItem("currentUser"))?.email || ""
+    },
+
+    theme: {
+      color: "#000000"
+    }
   };
 
-  let orders = JSON.parse(localStorage.getItem("orders")) || [];
-  orders.push(order);
-  localStorage.setItem("orders", JSON.stringify(orders));
-
-  window.location.href = "order-placed.html";
+  const rzp = new Razorpay(options);
+  rzp.open();
 }
 </script>
+
 
 </body>
 </html>
