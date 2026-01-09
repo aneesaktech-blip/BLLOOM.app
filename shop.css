@@ -135,3 +135,18 @@ body {
 
 }
 
+@media (max-width: 768px) {
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .product img {
+    height: 280px;
+  }
+
+  .product-actions {
+    flex-direction: column;
+  }
+}
