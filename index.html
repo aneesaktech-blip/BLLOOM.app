@@ -269,9 +269,23 @@ window.addEventListener("scroll", () => {
   });
 </script>
   
+<script>
+  const strip = document.getElementById("blloomStrip");
+
+  window.addEventListener("scroll", () => {
+    if (!strip) return;
+
+    if (window.scrollY > 120) {
+      strip.style.opacity = "1";   // SHOW strip
+    } else {
+      strip.style.opacity = "0";   // HIDE strip
+    }
+  });
+</script>
 
 </body>
 </html>
+
 
 
 
