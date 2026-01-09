@@ -1,0 +1,128 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  color: #111;
+  min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+.wishlist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 36px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.wishlist-header .brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+}
+
+.wishlist-header .back {
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+}
+
+/* ================= MAIN ================= */
+.wishlist-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 90px 32px;
+}
+
+.wishlist-wrapper h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 60px;
+}
+
+/* ================= GRID ================= */
+.viewed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+
+/* ================= CARD ================= */
+.viewed-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 26px;
+  text-align: center;
+}
+
+.viewed-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.viewed-card .price {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 18px;
+}
+
+/* ================= BUTTON ================= */
+.shop-link {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid #000;
+  color: #000;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+
+.shop-link:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* ================= EMPTY ================= */
+.empty {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 70px 30px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.empty p {
+  font-size: 15px;
+  margin-bottom: 26px;
+  color: #333;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .wishlist-wrapper {
+    padding: 60px 20px;
+  }
+
+  .wishlist-wrapper h1 {
+    font-size: 32px;
+  }
+}
