@@ -46,13 +46,42 @@
     </div>
   </div>
 
-  <script>
-    function signupUser() {
-      // Frontend-only signup
-      localStorage.setItem("isLoggedIn", "true");
-      window.location.href = "orders.html";
-    }
-  </script>
+<script>
+function signupUser() {
+  const name = document.querySelector('input[type="text"]').value;
+  const email = document.querySelector('input[type="email"]').value;
+  const password = document.querySelector('input[type="password"]').value;
+
+  if (!name || !email || !password) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+
+  // prevent duplicate email
+  if (users.find(u => u.email === email)) {
+    alert("Account already exists");
+    return;
+  }
+
+  const newUser = {
+    name,
+    email,
+    password,
+    role: "user"
+  };
+
+  users.push(newUser);
+  localStorage.setItem("users", JSON.stringify(users));
+
+  localStorage.setItem("currentUser", JSON.stringify(newUser));
+  localStorage.setItem("isLoggedIn", "true");
+
+  window.location.href = "orders.html";
+}
+</script>
+
 
 </body>
 </html>
