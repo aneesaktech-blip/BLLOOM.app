@@ -1307,7 +1307,7 @@ img[src*="model.png"] {
   font-size: 13px;
 }
 .site-header {
-  height: 30px;
+  height: 50px;
 }
 
 .site-header a {
@@ -1330,12 +1330,13 @@ img[src*="model.png"] {
 }
 
 .infinity {
-  font-size: 50px;     /* visually big but no vertical push */
+  font-size: 46px;     /* visually big but no vertical push */
   line-height: 1;
   margin-left: 8px;
 }
 main {
-  padding-top: 41px;   /* slightly more than header height */
+  padding-top: 60px;   /* slightly more than header height */
 }
+
 
 
