@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recently Viewed — BLLOOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- AUTH CHECK -->
+  <script>
+    if (!localStorage.getItem("isLoggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="orders.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="wishlist-header">
+    <a href="index.html" class="back">← Back</a>
+    <div class="brand">BLLOOM</div>
+    <a href="#" class="back" onclick="logout()">Logout</a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="wishlist-wrapper">
+    <h1>Recently Viewed</h1>
+    <p class="subtitle">Products you recently explored</p>
+
+    <div id="viewedContainer" class="empty">
+      <p>You haven’t viewed any products yet.</p>
+      <a href="index.html" class="shop-link">Explore Products</a>
+    </div>
+  </main>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    }
+
+    const viewed = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+    const container = document.getElementById("viewedContainer");
+
+    if (viewed.length > 0) {
+      container.innerHTML = "";
+
+      viewed.reverse().forEach(product => {
+        const div = document.createElement("div");
+        div.className = "empty";
+        div.style.marginBottom = "30px";
+
+        div.innerHTML = `
+          <p><strong>${product.name}</strong></p>
+          <p style="font-size:13px;color:#666;margin:8px 0;">₹${product.price}</p>
+          <a href="${product.link}" class="shop-link">View Product</a>
+        `;
+
+        container.appendChild(div);
+      });
+    }
+  </script>
+
+</body>
+</html>
