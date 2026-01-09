@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,9 +62,11 @@
 </div>
 
   <!-- CONTACT + INFINITY -->
-<div class="contact-link" id="infinityBtn">
-  CONTACT <span class="infinity">∞</span>
-</div>
+ <a href="#" class="contact-link">
+
+    CONTACT <span class="infinity" id="infinityBtn">∞</span>
+  </a>
+
 
   </nav>
 </header>
@@ -115,16 +118,15 @@
   <a href="about.html">ABOUT</a>
 <a href="shop.html">SHOP</a>
 
-<div class="infinity-panel" id="infinityPanel">
-  <ul>
-    <li><a href="profile.html">My Profile</a></li>
-    <li><a href="wishlist.html">Wishlist</a></li>
-    <li><a href="cart.html">Cart</a></li>
-    <li><a href="orders.html">Orders</a></li>
-    <li><a href="coupons.html">Coupons & Discounts</a></li>
-    <li><a href="last-viewed.html">Last Product Viewed</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="/profile">My Profile</a></li>
+  <li><a href="/wishlist">Wishlist</a></li>
+  <li><a href="/cart">Cart</a></li>
+  <li><a href="/orders">Orders</a></li>
+  <li><a href="/coupons">Coupons & Discounts</a></li>
+  <li><a href="/last-viewed">Last Product Viewed</a></li>
+</ul>
+
 
 </main>
 
@@ -303,26 +305,9 @@ window.addEventListener("scroll", () => {
     }
   });
 </script>
-<script>
-  const btn = document.getElementById("infinityBtn");
-  const panel = document.getElementById("infinityPanel");
-
-  btn.onclick = (e) => {
-    e.stopPropagation();
-    panel.style.display = "block";
-  };
-
-  document.onclick = () => {
-    panel.style.display = "none";
-  };
-
-  panel.onclick = (e) => e.stopPropagation();
-</script>
 
 </body>
 </html>
-
-
 
 
 
