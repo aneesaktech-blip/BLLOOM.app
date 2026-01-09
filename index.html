@@ -33,10 +33,12 @@
 </div>
 
 
+
 <header class="navbar">
   <nav class="nav-left">
-    <a href="#">SHOP</a>
-    <a href="#">ABOUT</a>
+ <a href="#" onclick="showPage('home')">HOME</a>
+<a href="#" onclick="showPage('aboutPage')">ABOUT</a>
+<a href="#" onclick="showPage('shopPage')">SHOP</a>
   </nav>
 <div class="header-search">
   <input type="text" placeholder="Search">
@@ -45,26 +47,30 @@
 <nav class="nav-right">
 
   <!-- STUDIO with hover bar -->
-  <div class="studio-wrapper">
-    <a href="#studio" class="studio-link">STUDIO</a>
+<div class="studio-wrapper">
+  <a href="#" class="studio-link">STUDIO</a>
 
-    <div class="studio-bar">
-      <span>Women’s</span>
-      <span>Men’s</span>
-      <span>Kid’s</span>
-    </div>
+  <div class="studio-bar">
+    <span onclick="showPage('shopPage')">Women’s</span>
+    <span onclick="showPage('shopPage')">Men’s</span>
+    <span onclick="showPage('shopPage')">Kid’s</span>
   </div>
+</div>
 
   <!-- CONTACT + INFINITY -->
-  <a href="#contact" class="contact-link">
+ <a href="#" class="contact-link">
+
     CONTACT <span class="infinity" id="infinityBtn">∞</span>
   </a>
 
 
   </nav>
 </header>
+  <main>
 
-<!-- HERO -->
+  <!-- HOME (default) -->
+  <section class="page active" id="home">
+    <!-- HERO -->
 <section class="hero">
 
   <div class="hero-image">
@@ -82,11 +88,31 @@
 
 </section>
 
+    <!-- your existing homepage content -->
+  </section>
 
+  <!-- ABOUT -->
+  <section class="page" id="aboutPage">
+    <h1>About BLOOM</h1>
+    <p>BLOOM is a modern fashion studio.</p>
+  </section>
 
+  <!-- SHOP -->
+  <section class="page" id="shopPage">
+    <h1>Shop</h1>
 
- 
+    <div class="category-bar">
+      <button data-category="women">Women</button>
+      <button data-category="men">Men</button>
+      <button data-category="kids">Kids</button>
+    </div>
 
+    <div class="products" id="productsArea">
+      Select a category
+    </div>
+  </section>
+
+</main>
 
 
 
@@ -163,17 +189,19 @@
   © BLLOOM — Designed in India. Worn without permission.
 </footer>
 <script>
-const hero = document.querySelector(".hero");
+const hero = document.querySelector(".hero") || null;
+
 const strip = document.getElementById("blloomStrip");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 120) {
-    hero.classList.add("scrolled");
-    strip.style.opacity = "1";
-  } else {
-    hero.classList.remove("scrolled");
-    strip.style.opacity = "0";
-  }
+ if (hero && window.scrollY > 120) {
+  hero.classList.add("scrolled");
+  strip.style.opacity = "1";
+} else if (hero) {
+  hero.classList.remove("scrolled");
+  strip.style.opacity = "0";
+}
+
 });
 </script>
 
@@ -208,9 +236,30 @@ window.addEventListener("scroll", () => {
   });
 </script>
 
+<script>
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(page => {
+      page.classList.remove('active');
+    });
+
+    document.getElementById(pageId).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  // Shop category logic
+  document.querySelectorAll('.category-bar button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.category;
+      document.getElementById('productsArea').innerText =
+        category.charAt(0).toUpperCase() + category.slice(1) + " products here";
+    });
+  });
+</script>
+  
 
 </body>
 </html>
+
 
 
 
