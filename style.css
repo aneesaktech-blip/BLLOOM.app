@@ -1592,3 +1592,61 @@ main {
   background: #222;
 }
 
+/* ================= MOBILE FIX FOR INDEX ================= */
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* GENERAL CONTAINERS */
+  section,
+  .container,
+  .wrapper,
+  .hero,
+  .banner {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* TEXT */
+  h1 {
+    font-size: 32px !important;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 22px !important;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  /* IMAGES */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* FLEX / GRID */
+  .flex,
+  .row,
+  .hero-content {
+    flex-direction: column !important;
+  }
+
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ABSOLUTE ELEMENTS */
+  .absolute,
+  .overlay,
+  .hero-text {
+    position: static !important;
+    transform: none !important;
+    margin-top: 20px;
+  }
+}
+
