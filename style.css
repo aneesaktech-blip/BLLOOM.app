@@ -1544,3 +1544,37 @@ main {
 }
 
 
+/* Infinity button styling */
+.infinity {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  margin-left: 8px;
+
+  border: 1px solid #000;
+  border-radius: 50%;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.infinity:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Click (active) feel */
+.infinity:active {
+  transform: scale(0.95);
+}
+
