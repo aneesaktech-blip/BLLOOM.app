@@ -143,13 +143,18 @@
       <a href="index.html">← Back to Home</a>
     </div>
   </div>
-<script>
+  <script>
 function loginUser() {
- const email = document.querySelector('input[type="email"]').value;
-const password = document.querySelector('input[type="password"]').value;
+  const emailInput = document.getElementById("loginEmail");
+  const passwordInput = document.getElementById("loginPassword");
 
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  console.log("Trying login:", email, password);
+  console.log("Users:", users);
 
   const user = users.find(
     u => u.email === email && u.password === password
@@ -166,10 +171,12 @@ const password = document.querySelector('input[type="password"]').value;
   if (user.role === "admin") {
     window.location.href = "admin.html";
   } else {
-    window.location.href = "order.html";
+    window.location.href = "orders.html";
   }
 }
 </script>
+
+
 
 </body>
 </html>
