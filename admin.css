@@ -168,3 +168,57 @@ body {
   height: 110px;
   object-fit: cover;
 }
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  /* GENERAL PADDING FIX */
+  body {
+    overflow-x: hidden;
+  }
+
+  header,
+  .shop-header,
+  .profile-header,
+  .admin-header {
+    padding: 16px 20px;
+  }
+
+  /* HEADINGS */
+  h1 {
+    font-size: 32px !important;
+  }
+
+  h2 {
+    font-size: 22px !important;
+  }
+
+  /* WRAPPERS */
+  .wishlist-wrapper,
+  .shop-grid,
+  .admin-wrapper,
+  .profile-wrapper,
+  .checkout-wrapper {
+    padding: 40px 20px !important;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .admin-box.grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-admin {
+    flex-direction: column;
+  }
+
+  .product-admin img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .list div {
+    font-size: 14px;
+  }
+}
+
