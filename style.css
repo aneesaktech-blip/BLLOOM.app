@@ -1506,3 +1506,41 @@ main {
   display: block;
 }
 
+
+/* ===== FORCE SHOW BLLOOM STRIP ===== */
+#blloomStrip {
+  opacity: 1 !important;
+  background: white;
+}
+
+#blloomStrip span {
+  color: black !important;
+  font-size: 14px !important;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 6px;
+}
+#blloomStrip {
+  position: fixed;
+  top: 42px;                 /* BELOW navbar */
+  left: 0;
+  width: 100%;
+  height: 26px;
+
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9998;
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#blloomStrip span span {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: 6px;
+  color: #111;
+}
