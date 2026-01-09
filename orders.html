@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Orders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="cart.css">
+
+  <!-- AUTH CHECK -->
+  <script>
+    if (!localStorage.getItem("isLoggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="wishlist-header">
+    <a href="index.html" class="back">← Back</a>
+    <div class="brand">BLOOM</div>
+    <a href="#" class="back" onclick="logout()">Logout</a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="wishlist-wrapper">
+    <h1>Orders</h1>
+    <p class="subtitle">Your past and current orders</p>
+
+    <!-- EMPTY ORDERS -->
+    <div class="empty">
+      <p>You haven’t placed any orders yet.</p>
+      <a href="index.html" class="shop-link">Start Shopping</a>
+    </div>
+  </main>
+
+  <!-- LOGOUT SCRIPT -->
+  <script>
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
