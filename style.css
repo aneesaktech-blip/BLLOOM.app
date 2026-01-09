@@ -1519,14 +1519,5 @@ main {
   color: #111;
 }
 
-/* ===== SPA PAGE VISIBILITY ===== */
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-}
-
 
 
