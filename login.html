@@ -145,8 +145,9 @@
   </div>
 <script>
 function loginUser() {
-  const email = document.querySelector('input[type="email"]').value;
-  const password = document.querySelector('input[type="password"]').value;
+ const email = document.querySelector('input[type="email"]').value;
+const password = document.querySelector('input[type="password"]').value;
+
 
   let users = JSON.parse(localStorage.getItem("users")) || [];
 
