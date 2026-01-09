@@ -1518,3 +1518,26 @@ main {
   letter-spacing: 9px;
   color: #111;
 }
+
+/* FIX CLICK ISSUE - FORCE MENU ON TOP */
+.infinity-panel {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background: #fff;
+  z-index: 2147483647; /* MAX POSSIBLE */
+  pointer-events: auto;
+}
+
+.infinity-panel a {
+  display: block;
+  padding: 14px 22px;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.infinity-panel a:hover {
+  background: #f2f2f2;
+}
