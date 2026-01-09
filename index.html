@@ -239,13 +239,21 @@ window.addEventListener("scroll", () => {
 
 <script>
   function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(page => {
-      page.classList.remove('active');
-    });
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
 
-    document.getElementById(pageId).classList.add('active');
-    window.scrollTo(0, 0);
+  // Show selected page
+  const target = document.getElementById(pageId);
+  if (target) {
+    target.classList.add('active');
   }
+
+  // Scroll to top
+  window.scrollTo(0, 0);
+}
+
 
   // Shop category logic
   document.querySelectorAll('.category-bar button').forEach(btn => {
@@ -260,6 +268,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
