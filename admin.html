@@ -91,26 +91,50 @@ function logout() {
 }
 
 /* ---------------- PRODUCTS ---------------- */
+<script>
 function addProduct() {
-  const name = pName.value;
-  const price = pPrice.value;
-  const category = pCategory.value;
+  const product = {
+    id: "P" + Date.now(),
+    name: pName.value,
+    price: pPrice.value,
+    discount: pDiscount.value,
+    color: pColor.value,
+    size: pSize.value,
+    category: pCategory.value,
+    image: pImage.value,
+    description: pDesc.value
+  };
 
-  if (!name || !price || !category) return alert("Fill all fields");
+  if (!product.name || !product.price) {
+    alert("Product name & price required");
+    return;
+  }
 
   const products = JSON.parse(localStorage.getItem("products")) || [];
-  products.push({ name, price, category });
-
+  products.push(product);
   localStorage.setItem("products", JSON.stringify(products));
+
   renderProducts();
 }
 
 function renderProducts() {
   const products = JSON.parse(localStorage.getItem("products")) || [];
-  productList.innerHTML = products.map(p =>
-    `<div><b>${p.name}</b> — ₹${p.price} (${p.category})</div>`
-  ).join("");
+  productList.innerHTML = products.map(p => `
+    <div class="product-admin">
+      <img src="${p.image}" />
+      <div>
+        <b>${p.name}</b>
+        <p>₹${p.price} (${p.discount || 0}% off)</p>
+        <p>${p.color} | ${p.size}</p>
+        <p>${p.category}</p>
+        <small>${p.description}</small>
+      </div>
+    </div>
+  `).join("");
 }
+
+renderProducts();
+</script>
 
 /* ---------------- COUPONS ---------------- */
 function addCoupon() {
