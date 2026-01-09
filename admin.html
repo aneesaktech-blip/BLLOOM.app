@@ -63,15 +63,24 @@
 
   <!-- ORDERS -->
   <section class="admin-section">
-    <h2>Orders</h2>
-    <div id="orderList" class="list"></div>
-  </section>
+  <h2>Products</h2>
 
-  <!-- USERS -->
-  <section class="admin-section">
-    <h2>Users</h2>
-    <div id="userList" class="list"></div>
-  </section>
+  <div class="admin-box grid">
+    <input id="pName" placeholder="Product name">
+    <input id="pPrice" placeholder="Price">
+    <input id="pDiscount" placeholder="Discount %">
+    <input id="pColor" placeholder="Color">
+    <input id="pSize" placeholder="Sizes (S,M,L)">
+    <input id="pCategory" placeholder="Category (women/men/kids)">
+    <input id="pImage" placeholder="Image URL">
+    <textarea id="pDesc" placeholder="Description"></textarea>
+
+    <button onclick="addProduct()">Add Product</button>
+  </div>
+
+  <div id="productList" class="list"></div>
+</section>
+
 </main>
 
  <script>
