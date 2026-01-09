@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,13 +74,6 @@
     .field input:focus {
       border-color: #000;
     }
-  <button
-  type="button"
-  class="login-btn"
-  onclick="alert('CLICKED')"
->
-  Login
-</button>
 
     .login-btn {
       width: 100%;
@@ -139,10 +133,7 @@
       <input type="password" placeholder="••••••••">
     </div>
 
-
-<button type="button" class="login-btn" onclick="loginUser()">Login</button>
-
-    
+    <button class="login-btn" onclick="loginUser()">Login</button>
 
     <div class="signup-text">
       Don’t have an account?
@@ -153,18 +144,12 @@
       <a href="index.html">← Back to Home</a>
     </div>
   </div>
-  <script>
+<script>
 function loginUser() {
-  const emailInput = document.getElementById("loginEmail");
-  const passwordInput = document.getElementById("loginPassword");
+  const email = document.querySelector('input[type="email"]').value;
+  const password = document.querySelector('input[type="password"]').value;
 
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trim();
-
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-
-  console.log("Trying login:", email, password);
-  console.log("Users:", users);
+  let users = JSON.parse(localStorage.getItem("users")) || [];
 
   const user = users.find(
     u => u.email === email && u.password === password
@@ -181,12 +166,10 @@ function loginUser() {
   if (user.role === "admin") {
     window.location.href = "admin.html";
   } else {
-    window.location.href = "orders.html";
+    window.location.href = "order.html";
   }
 }
 </script>
-
-
 
 </body>
 </html>
