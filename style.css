@@ -1463,13 +1463,10 @@ main {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10000; /* higher than EVERYTHING */
+  z-index: 300; /* higher than EVERYTHING */
   background: white;
 }
-#blloomStrip {
-  pointer-events: none;
-  z-index: 1;
-}
+
 .hero,
 .hero *,
 .new-drop,
@@ -1489,4 +1486,5 @@ main {
 .page.active {
   display: block;
 }
+
 
