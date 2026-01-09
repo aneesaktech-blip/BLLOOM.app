@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard — BLLOOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- AUTH CHECK (ADMIN ONLY) -->
+  <script>
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (!currentUser || currentUser.role !== "admin") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="admin-header">
+    <div class="brand">BLLOOM ADMIN</div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <!-- MAIN -->
+  <main class="admin-wrapper">
+    <h1>Admin Dashboard</h1>
+    <p class="subtitle">Manage users & platform data</p>
+
+    <!-- USERS -->
+    <section class="admin-section">
+      <h2>Registered Users</h2>
+      <div id="userList" class="user-list"></div>
+    </section>
+  </main>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("currentUser");
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    }
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const list = document.getElementById("userList");
+
+    if (users.length === 0) {
+      list.innerHTML = "<p>No users found.</p>";
+    } else {
+      list.innerHTML = users.map(user => `
+        <div class="user-card">
+          <strong>${user.name}</strong>
+          <span>${user.email}</span>
+          <em>${user.role}</em>
+        </div>
+      `).join("");
+    }
+  </script>
+
+</body>
+</html>
