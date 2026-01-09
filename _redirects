@@ -1,2 +1,17 @@
-/about        /about.html        200
-/shop         /shop.html         200
+/about           /about.html           200
+/shop            /shop.html            200
+/profile         /profile.html         200
+/wishlist        /wishlist.html        200
+/cart            /cart.html            200
+/orders          /orders.html          200
+/coupons         /coupons.html         200
+/last-viewed     /last-viewed.html     200
+
+/login           /login.html           200
+/signup          /signup.html          200
+/settings        /settings.html        200
+/help            /help.html            200
+/contact         /contact.html         200
+/women    /shop-women.html    200
+/men      /shop-men.html      200
+/kids     /shop-kids.html     200
