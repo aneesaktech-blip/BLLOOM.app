@@ -67,34 +67,37 @@
 
   </nav>
 </header>
-<main>
+  <main>
 
-  <!-- HOME PAGE -->
+  <!-- HOME (default) -->
   <section class="page active" id="home">
+    <!-- HERO -->
+<section class="hero">
 
-    <section class="hero">...</section>
+  <div class="hero-image">
+    <h1 class="hero-brand">BLLOOM</h1>
 
-    <section class="new-drop">...</section>
+    <p class="hero-hook">
+      Too boring? Try Blloom.
+    </p>
+  </div>
 
-    <section class="info-grid">...</section>
+  <div class="hero-manifesto">
+    Build quietly. Market honestly. Let the product speak.
+  </div>
+<div class="banner-strip"></div>
 
-    <section class="products">
-      <h2>LATEST ARRIVALS</h2>
-      ...
-    </section>
+</section>
 
-    <footer>
-      © BLLOOM — Designed in India. Worn without permission.
-    </footer>
+    <!-- your existing homepage content -->
 
-  </section>
-
-  <!-- ABOUT PAGE -->
+  <!-- ABOUT -->
   <section class="page" id="aboutPage">
-    <h1>About BLLOOM</h1>
+    <h1>About BLOOM</h1>
+    <p>BLOOM is a modern fashion studio.</p>
   </section>
 
-  <!-- SHOP PAGE -->
+  <!-- SHOP -->
   <section class="page" id="shopPage">
     <h1>Shop</h1>
 
@@ -109,16 +112,47 @@
     </div>
   </section>
 
-  <!-- PROFILE -->
-  <section class="page" id="profilePage"><h1>My Profile</h1></section>
-  <section class="page" id="wishlistPage"><h1>Wishlist</h1></section>
-  <section class="page" id="cartPage"><h1>Cart</h1></section>
-  <section class="page" id="ordersPage"><h1>Orders</h1></section>
-  <section class="page" id="couponsPage"><h1>Coupons & Discounts</h1></section>
-  <section class="page" id="lastViewedPage"><h1>Last Product Viewed</h1></section>
+    <!-- ABOUT -->
+<section class="page" id="aboutPage">
+  <h1>About BLLOOM</h1>
+</section>
+
+<!-- SHOP -->
+<section class="page" id="shopPage">
+  <h1>Shop</h1>
+</section>
+
+<!-- PROFILE -->
+<section class="page" id="profilePage">
+  <h1>My Profile</h1>
+</section>
+
+<!-- WISHLIST -->
+<section class="page" id="wishlistPage">
+  <h1>Wishlist</h1>
+</section>
+
+<!-- CART -->
+<section class="page" id="cartPage">
+  <h1>Cart</h1>
+</section>
+
+<!-- ORDERS -->
+<section class="page" id="ordersPage">
+  <h1>Orders</h1>
+</section>
+
+<!-- COUPONS -->
+<section class="page" id="couponsPage">
+  <h1>Coupons & Discounts</h1>
+</section>
+
+<!-- LAST VIEWED -->
+<section class="page" id="lastViewedPage">
+  <h1>Last Product Viewed</h1>
+</section>
 
 </main>
-
 
 
 
@@ -282,31 +316,22 @@ window.addEventListener("scroll", () => {
   });
 </script>
   
-
-  <script>
+<script>
   const strip = document.getElementById("blloomStrip");
-
-  function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(p =>
-      p.classList.remove('active')
-    );
-
-    const target = document.getElementById(pageId);
-    if (target) target.classList.add('active');
-
-    window.scrollTo(0, 0);
-  }
 
   window.addEventListener("scroll", () => {
     if (!strip) return;
-    strip.style.opacity = window.scrollY > 120 ? "1" : "0";
+
+    if (window.scrollY > 120) {
+      strip.style.opacity = "1";   // SHOW strip
+    } else {
+      strip.style.opacity = "0";   // HIDE strip
+    }
   });
 </script>
 
-
 </body>
 </html>
-
 
 
 
