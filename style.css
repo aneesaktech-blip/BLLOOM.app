@@ -1793,3 +1793,75 @@ main {
   }
 }
 
+/* ================= DESKTOP vs MOBILE HOME ================= */
+
+/* Hide mobile version by default */
+.mobile-home {
+  display: none;
+}
+
+/* ---------------- MOBILE HOME ---------------- */
+@media (max-width: 768px) {
+
+  /* Hide desktop homepage */
+  .desktop-home {
+    display: none !important;
+  }
+
+  /* Show mobile homepage */
+  .mobile-home {
+    display: block;
+    min-height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    background: #fafafa;
+  }
+
+  .mobile-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    letter-spacing: 4px;
+    margin-bottom: 6px;
+  }
+
+  .mobile-header p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .mobile-hero {
+    margin-top: 40px;
+  }
+
+  .mobile-hero img {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto 30px;
+    display: block;
+  }
+
+  .mobile-btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .mobile-links {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .mobile-links a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #000;
+  }
+}
+
