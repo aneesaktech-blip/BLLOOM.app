@@ -74,28 +74,78 @@
   </section>
 </main>
 
-  <script>
-    function logout() {
-      localStorage.removeItem("currentUser");
-      localStorage.removeItem("isLoggedIn");
-      window.location.href = "login.html";
-    }
+ <script>
+function logout() {
+  localStorage.removeItem("currentUser");
+  localStorage.removeItem("isLoggedIn");
+  window.location.href = "login.html";
+}
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const list = document.getElementById("userList");
+/* ---------------- PRODUCTS ---------------- */
+function addProduct() {
+  const name = pName.value;
+  const price = pPrice.value;
+  const category = pCategory.value;
 
-    if (users.length === 0) {
-      list.innerHTML = "<p>No users found.</p>";
-    } else {
-      list.innerHTML = users.map(user => `
-        <div class="user-card">
-          <strong>${user.name}</strong>
-          <span>${user.email}</span>
-          <em>${user.role}</em>
-        </div>
-      `).join("");
-    }
-  </script>
+  if (!name || !price || !category) return alert("Fill all fields");
+
+  const products = JSON.parse(localStorage.getItem("products")) || [];
+  products.push({ name, price, category });
+
+  localStorage.setItem("products", JSON.stringify(products));
+  renderProducts();
+}
+
+function renderProducts() {
+  const products = JSON.parse(localStorage.getItem("products")) || [];
+  productList.innerHTML = products.map(p =>
+    `<div><b>${p.name}</b> — ₹${p.price} (${p.category})</div>`
+  ).join("");
+}
+
+/* ---------------- COUPONS ---------------- */
+function addCoupon() {
+  const code = cCode.value.toUpperCase();
+  const discount = cDiscount.value;
+
+  if (!code || !discount) return alert("Fill all fields");
+
+  const coupons = JSON.parse(localStorage.getItem("coupons")) || [];
+  coupons.push({ code, discount });
+
+  localStorage.setItem("coupons", JSON.stringify(coupons));
+  renderCoupons();
+}
+
+function renderCoupons() {
+  const coupons = JSON.parse(localStorage.getItem("coupons")) || [];
+  couponList.innerHTML = coupons.map(c =>
+    `<div><b>${c.code}</b> — ${c.discount}% OFF</div>`
+  ).join("");
+}
+
+/* ---------------- ORDERS ---------------- */
+function renderOrders() {
+  const orders = JSON.parse(localStorage.getItem("orders")) || [];
+  orderList.innerHTML = orders.map(o =>
+    `<div>Order ${o.id || ""} — ₹${o.amount} — ${o.status || "Paid"}</div>`
+  ).join("");
+}
+
+/* ---------------- USERS ---------------- */
+function renderUsers() {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  userList.innerHTML = users.map(u =>
+    `<div><b>${u.name}</b> — ${u.email} (${u.role})</div>`
+  ).join("");
+}
+
+/* INIT */
+renderProducts();
+renderCoupons();
+renderOrders();
+renderUsers();
+</script>
 
 </body>
 </html>
