@@ -1482,3 +1482,11 @@ main {
   pointer-events: auto;
 }
 
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
