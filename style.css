@@ -1497,7 +1497,7 @@ main {
   top: 48px;                 /* just below navbar */
   left: 0;
   width: 100%;
-  height: 29px;
+  height: 26px;
 
   background: white;
 
@@ -1513,10 +1513,11 @@ main {
 }
 
 #blloomStrip span span {
-  font-family: 'Inter', sans-serif;
-  font-size: 26px;
+
+  font-size: 22px;
   letter-spacing: 9px;
   color: #111;
 }
+
 
 
