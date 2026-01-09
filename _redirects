@@ -5,7 +5,7 @@
 /cart            /cart.html            200
 /orders          /orders.html          200
 /coupons         /coupons.html         200
-/last-viewed     /last-viewed.html     200
+/last-viewed     /viewed.html     200
 
 /login           /login.html           200
 /signup          /signup.html          200
