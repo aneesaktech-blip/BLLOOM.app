@@ -1,0 +1,113 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== BODY ===== */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  font-family: 'Inter', sans-serif;
+  color: #111;
+}
+
+/* ===== LOGIN WRAPPER ===== */
+.login-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 60px 40px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ===== BRAND ===== */
+.brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* ===== SUBTITLE ===== */
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* ===== INPUT FIELD ===== */
+.field {
+  margin-bottom: 22px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(0,0,0,0.15);
+  font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+.field input:focus {
+  border-color: #000;
+}
+
+/* ===== LOGIN BUTTON ===== */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #111;
+}
+
+/* ===== BACK HOME ===== */
+.back-home {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.back-home a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .login-wrapper {
+    padding: 40px 24px;
+  }
+
+  .brand {
+    font-size: 28px;
+  }
+}
