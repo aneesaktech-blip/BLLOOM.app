@@ -1513,7 +1513,7 @@ main {
 }
 
 #blloomStrip span span {
-  font-family: 'Inter', sans-serif;
+ 
   font-size: 26px;
   letter-spacing: 9px;
   color: #111;
@@ -1541,3 +1541,4 @@ main {
 .infinity-panel a:hover {
   background: #f2f2f2;
 }
+
