@@ -129,4 +129,14 @@ body {
   }
 
 }
+@media (max-width: 600px) {
+
+  .profile-card {
+    padding: 20px;
+  }
+
+  .profile-card p {
+    font-size: 14px;
+  }
+}
 
