@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <title>Login — BLLOOM</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="login.css">
 
-  <!-- Luxury Fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
@@ -92,6 +91,17 @@
       background: #111;
     }
 
+    .signup-text {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .signup-text a {
+      color: #000;
+      text-decoration: underline;
+    }
+
     .back-home {
       margin-top: 26px;
       text-align: center;
@@ -124,16 +134,20 @@
 
     <button class="login-btn" onclick="loginUser()">Login</button>
 
+    <div class="signup-text">
+      Don’t have an account?
+      <a href="signup.html">Sign up</a>
+    </div>
+
     <div class="back-home">
-      <a href="/">← Back to Home</a>
+      <a href="index.html">← Back to Home</a>
     </div>
   </div>
 
   <script>
     function loginUser() {
-      // Temporary frontend login
       localStorage.setItem("isLoggedIn", "true");
-      window.location.href = "/profile";
+      window.location.href = "orders.html";
     }
   </script>
 
