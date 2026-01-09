@@ -19,7 +19,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px 32px;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   background: #fff;
 }
 
@@ -58,7 +58,7 @@ body {
 /* ===== EMPTY STATE ===== */
 .empty {
   padding: 80px 20px;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   background: #fff;
 }
 
