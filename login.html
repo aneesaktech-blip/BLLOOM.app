@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login — BLLOOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="login.css">
+
+  <!-- Luxury Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fafafa;
+      font-family: 'Inter', sans-serif;
+      color: #111;
+    }
+
+    .login-wrapper {
+      width: 100%;
+      max-width: 420px;
+      padding: 60px 40px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(0,0,0,0.15);
+      font-size: 14px;
+      outline: none;
+    }
+
+    .field input:focus {
+      border-color: #000;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      background: #000;
+      color: #fff;
+      border: none;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .login-btn:hover {
+      background: #111;
+    }
+
+    .back-home {
+      margin-top: 26px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .back-home a {
+      color: #000;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-wrapper">
+    <div class="brand">BLLOOM</div>
+    <div class="subtitle">Welcome back</div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" placeholder="you@blloom.com">
+    </div>
+
+    <div class="field">
+      <label>Password</label>
+      <input type="password" placeholder="••••••••">
+    </div>
+
+    <button class="login-btn" onclick="loginUser()">Login</button>
+
+    <div class="back-home">
+      <a href="/">← Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    function loginUser() {
+      // Temporary frontend login
+      localStorage.setItem("isLoggedIn", "true");
+      window.location.href = "/profile";
+    }
+  </script>
+
+</body>
+</html>
