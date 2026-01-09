@@ -116,3 +116,15 @@ body {
     padding: 50px 26px;
   }
 }
+@media (max-width: 480px) {
+
+  .login-wrapper,
+  .signup-wrapper {
+    padding: 40px 24px;
+  }
+
+  .brand {
+    font-size: 28px;
+  }
+}
+
