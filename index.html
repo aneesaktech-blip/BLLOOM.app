@@ -301,20 +301,22 @@ window.addEventListener("scroll", () => {
 </script>
 <script>
   document.getElementById("profileLink").addEventListener("click", function (e) {
-    e.preventDefault(); // stops # jump
+    e.preventDefault();
 
     const loggedIn = localStorage.getItem("isLoggedIn");
 
     if (loggedIn === "true") {
-      window.location.href = "profile.html";
+      window.location.href = "/profile";
     } else {
-      window.location.href = "login.html";
+      window.location.href = "/login";
     }
   });
 </script>
 
+
 </body>
 </html>
+
 
 
 
