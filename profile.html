@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Profile — BLLOOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- AUTH CHECK -->
+  <script>
+    if (!localStorage.getItem("currentUser")) {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+<header class="profile-header">
+  <div class="brand">BLLOOM</div>
+  <button onclick="logout()">Logout</button>
+</header>
+
+<main class="profile-wrapper">
+  <h1>My Profile</h1>
+  <p class="subtitle">Account details</p>
+
+  <div class="profile-card">
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Role:</strong> <span id="role"></span></p>
+  </div>
+</main>
+
+<script>
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+
+  document.getElementById("name").innerText = user.name;
+  document.getElementById("email").innerText = user.email;
+  document.getElementById("role").innerText = user.role;
+
+  function logout() {
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>
