@@ -1513,7 +1513,7 @@ main {
 }
 
 #blloomStrip span span {
- 
+ font-family: 'Playfair Display', serif;
   font-size: 26px;
   letter-spacing: 9px;
   color: #111;
@@ -1521,6 +1521,7 @@ main {
 
 /* FIX CLICK ISSUE - FORCE MENU ON TOP */
 .infinity-panel {
+  font-family: 'Playfair Display', serif;
   position: fixed;
   top: 70px;
   right: 20px;
@@ -1541,4 +1542,5 @@ main {
 .infinity-panel a:hover {
   background: #f2f2f2;
 }
+
 
