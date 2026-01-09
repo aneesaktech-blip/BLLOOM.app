@@ -219,7 +219,8 @@ window.addEventListener("scroll", () => {
 
 <!-- Infinity Menu Panel -->
 <div class="infinity-panel" id="infinityPanel">
-  <a href="myprofile.html">My Profile</a>
+ <a href="#" id="profileLink">My Profile</a>
+
 <a href="wishlist.html">Wishlist</a>
 <a href="cart.html">Cart</a>
    <a href="order.html">Oders</a>
@@ -298,9 +299,23 @@ window.addEventListener("scroll", () => {
     }
   });
 </script>
+<script>
+  document.getElementById("profileLink").addEventListener("click", function (e) {
+    e.preventDefault(); // stops # jump
+
+    const loggedIn = localStorage.getItem("isLoggedIn");
+
+    if (loggedIn === "true") {
+      window.location.href = "profile.html";
+    } else {
+      window.location.href = "login.html";
+    }
+  });
+</script>
 
 </body>
 </html>
+
 
 
 
