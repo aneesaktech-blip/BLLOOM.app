@@ -111,6 +111,46 @@
     </div>
   </section>
 
+    <!-- ABOUT -->
+<section class="page" id="aboutPage">
+  <h1>About BLLOOM</h1>
+</section>
+
+<!-- SHOP -->
+<section class="page" id="shopPage">
+  <h1>Shop</h1>
+</section>
+
+<!-- PROFILE -->
+<section class="page" id="profilePage">
+  <h1>My Profile</h1>
+</section>
+
+<!-- WISHLIST -->
+<section class="page" id="wishlistPage">
+  <h1>Wishlist</h1>
+</section>
+
+<!-- CART -->
+<section class="page" id="cartPage">
+  <h1>Cart</h1>
+</section>
+
+<!-- ORDERS -->
+<section class="page" id="ordersPage">
+  <h1>Orders</h1>
+</section>
+
+<!-- COUPONS -->
+<section class="page" id="couponsPage">
+  <h1>Coupons & Discounts</h1>
+</section>
+
+<!-- LAST VIEWED -->
+<section class="page" id="lastViewedPage">
+  <h1>Last Product Viewed</h1>
+</section>
+
 </main>
 
 
@@ -238,17 +278,24 @@ window.addEventListener("scroll", () => {
 </script>
 
 <script>
-  function showPage(pageId) {
-  // Hide all pages
+const hero = document.querySelector(".hero");
+const strip = document.getElementById("blloomStrip");
+
+function showPage(pageId) {
   document.querySelectorAll('.page').forEach(page => {
     page.classList.remove('active');
   });
 
-  const hero = document.querySelector(".hero");
-const strip = document.getElementById("blloomStrip");
+  const target = document.getElementById(pageId);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  window.scrollTo(0, 0);
+}
 
 window.addEventListener("scroll", () => {
-  if (!hero || !strip) return;
+  if (!strip) return;
 
   if (window.scrollY > 120) {
     strip.style.opacity = "1";
@@ -256,7 +303,6 @@ window.addEventListener("scroll", () => {
     strip.style.opacity = "0";
   }
 });
-
 
 
   // Shop category logic
@@ -285,6 +331,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
