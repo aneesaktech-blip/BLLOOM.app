@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Coupons — BLLOOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- AUTH CHECK (MUST BE IN HEAD) -->
+  <script>
+    if (!localStorage.getItem("isLoggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="orders.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="wishlist-header">
+    <a href="index.html" class="back">← Back</a>
+    <div class="brand">BLLOOM</div>
+    <a href="#" class="back" onclick="logout()">Logout</a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="wishlist-wrapper">
+    <h1>Coupons</h1>
+    <p class="subtitle">Available offers & discounts</p>
+
+    <!-- EMPTY COUPONS STATE -->
+    <div class="empty">
+      <p>You don’t have any coupons right now.</p>
+      <a href="index.html" class="shop-link">Continue Shopping</a>
+    </div>
+  </main>
+
+  <!-- LOGOUT -->
+  <script>
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
