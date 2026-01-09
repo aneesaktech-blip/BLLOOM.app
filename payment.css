@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  color: #111;
+}
+
+.checkout-header {
+  padding: 22px 36px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.checkout-wrapper {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.box {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 26px;
+  margin-bottom: 24px;
+}
+
+.box h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.pay-btn:hover {
+  background: #111;
+}
