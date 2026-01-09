@@ -1340,3 +1340,31 @@ main {
 
 
 
+
+.site-header {
+  height: 42px !important;
+  padding: 0 32px !important;
+  align-items: center;
+}
+.site-header * {
+  line-height: 1 !important;
+}
+.site-header a {
+  padding: 0 !important;
+  margin: 0 18px 0 0;
+  font-size: 12px;
+}
+.nav-center input {
+  height: 18px !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+.infinity {
+  font-size: 24px;
+  line-height: 1;
+  display: inline-block;
+}
+main {
+  padding-top: 46px;
+}
+.site-header { height: 36px !important; }
