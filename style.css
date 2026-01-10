@@ -1592,169 +1592,19 @@ main {
 .infinity:hover {
   background: #222;
 }
-/* =====================================================
-   BLLOOM MOBILE LUXE (PHONE ONLY)
-===================================================== */
 
-@media screen and (max-width: 600px) {
 
-  /* HIDE DESKTOP */
+
+.mobile-app {
+  display: none;
+}
+
+@media (max-width: 600px) {
   .desktop-home {
     display: none !important;
   }
 
-  .blloom-mobile {
-    display: block;
-    background: #fff;
-    color: #000;
-    font-family: 'Cormorant Garamond', serif;
-    overflow-x: hidden;
+  .mobile-app {
+    display: block !important;
   }
-
-  /* ================= HEADER ================= */
-
-  .navbar {
-    display: flex;
-    flex-direction: column;
-    padding: 14px 16px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .nav-left,
-  .nav-right {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav-left a,
-  .nav-right a {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
-
-  .header-search {
-    margin: 12px 0;
-  }
-
-  .header-search input {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ddd;
-    font-size: 13px;
-    font-family: 'Inter', sans-serif;
-  }
-
-  .infinity {
-    font-size: 20px;
-    cursor: pointer;
-  }
-
-  /* ================= STRIP ================= */
-
-  .blloom-strip {
-    text-align: center;
-    font-size: 11px;
-    letter-spacing: 6px;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-  }
-
-  /* ================= HERO ================= */
-
-  .hero {
-    padding: 80px 20px 60px;
-    text-align: center;
-  }
-
-  .hero-brand {
-    font-size: 42px;
-    letter-spacing: 6px;
-    margin-bottom: 16px;
-  }
-
-  .hero-hook {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: #555;
-  }
-
-  .hero-manifesto {
-    margin-top: 40px;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #777;
-  }
-
-  .banner-strip {
-    display: none;
-  }
-
-  /* ================= INFO GRID ================= */
-
-  .info-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    padding: 60px 20px;
-  }
-
-  .info-box {
-    text-align: center;
-    border-top: 1px solid #eee;
-    padding-top: 40px;
-  }
-
-  .info-box:first-child {
-    border-top: none;
-    padding-top: 0;
-  }
-
-  .info-box h3 {
-    font-size: 20px;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-  }
-
-  .info-box p {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
-    max-width: 280px;
-    margin: 0 auto;
-  }
-
-  /* ================= PRODUCTS ================= */
-
-  .blloom-products {
-    padding: 40px 16px 80px;
-  }
-
-  .blloom-product {
-    margin-bottom: 60px;
-    text-align: center;
-  }
-
-  .blloom-product img {
-    width: 100%;
-    display: block;
-    margin-bottom: 14px;
-  }
-
-  .blloom-product p {
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
-
-  .blloom-product span {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: #777;
-    margin-top: 6px;
-    display: block;
-  }
-
 }
-
