@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -313,65 +314,30 @@ window.addEventListener("scroll", () => {
     }
   });
 </script>
-
-  <div class="mobile-home gucci-mobile">
-
-  <!-- MOBILE HEADER -->
- <header class="mobile-header">
-
-  <div class="mobile-left">
-    <a href="about.html">ABOUT</a>
-    <a href="#">STUDIO</a>
-  </div>
-
-  <div class="mobile-logo">BLLOOM</div>
-
-  <div class="mobile-right">
-    <a href="/contact">CONTACT</a>
-    <span class="infinity-mobile">∞</span>
-  </div>
-
-</header>
-<div class="mobile-strip">
-  <span>B L L O O M</span>
 </div>
-<section class="mobile-hero-text">
-  <p class="eyebrow">BLLOOM STUDIO</p>
-  <h1>BLLOOM</h1>
-  <p class="tagline">Too boring? Try Blloom.</p>
-</section>
-<script>
-(function () {
-  const strip = document.getElementById("blloomStrip");
-  const infinityBtn = document.getElementById("infinityBtn");
-  const infinityPanel = document.getElementById("infinityPanel");
+<div class="mobile-home">
 
-  if (strip) {
-    window.addEventListener("scroll", () => {
-      strip.style.opacity = window.scrollY > 120 ? "1" : "0";
-    });
-  }
+  <header class="mobile-header">
+    <h1>BLLOOM</h1>
+    <p>Too boring? Try Blloom.</p>
+  </header>
 
-  if (infinityBtn && infinityPanel) {
-    infinityBtn.addEventListener("click", e => {
-      e.stopPropagation();
-      infinityPanel.classList.toggle("active");
-    });
+  <section class="mobile-hero">
+    <img src="model.png" alt="BLLOOM model">
+    <a href="shop-women.html" class="mobile-btn">Shop Now</a>
+  </section>
 
-    document.addEventListener("click", () => {
-      infinityPanel.classList.remove("active");
-    });
-  }
-})();
-</script>
+  <section class="mobile-links">
+    <a href="shop-women.html">Women</a>
+    <a href="shop-men.html">Men</a>
+    <a href="shop-kids.html">Kids</a>
+  </section>
+
+</div>
 
 
 </body>
 </html>
-
-
-
-
 
 
 
