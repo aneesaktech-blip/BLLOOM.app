@@ -323,165 +323,66 @@ window.addEventListener("scroll", () => {
 </script>
 </div>
 <!-- ================= MOBILE APP (FEAR OF GOD STYLE) ================= -->
-<div class="mobile-app">
+<!-- ================= MOBILE VERSION ================= -->
+<div class="mobile-only">
 
-  <!-- Tailwind + Lucide (mobile only is fine) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- SCROLL STRIP -->
+  <div id="scroll-strip" class="hidden-strip">
+    B&nbsp;&nbsp;L&nbsp;&nbsp;L&nbsp;&nbsp;O&nbsp;&nbsp;O&nbsp;&nbsp;M
+  </div>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap');
+  <!-- MOBILE HEADER -->
+  <header class="mobile-header">
+    <button id="openMenu" class="icon-btn">∞</button>
 
-    .mobile-app {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      padding-bottom: 6rem;
-    }
+    <div class="mobile-logo">BLLOOM</div>
 
-    .serif { font-family: 'Playfair Display', serif; }
+    <div class="mobile-actions">
+      <a href="cart.html" class="icon-btn">🛒</a>
+      <a href="profile.html" class="icon-btn">👤</a>
+      <button class="icon-btn">🔍</button>
+    </div>
+  </header>
 
-    .glass {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 50px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-  </style>
-
-  <!-- HEADER -->
-  <header class="flex justify-between items-center p-6 bg-white sticky top-0 z-50">
-    <button class="p-2 hover:bg-gray-100 rounded-full transition" id="openInfinity">
-      <i data-lucide="infinity" class="w-8 h-8 text-black"></i>
-    </button>
-
-    <div class="flex gap-4">
-      <button class="p-2">
-        <i data-lucide="bell" class="w-6 h-6"></i>
-      </button>
-      <button class="p-2" id="openSearch">
-        <i data-lucide="search" class="w-6 h-6"></i>
-       
-  <button class="icon-btn" id="mobileMenuBtn">∞</button>
-
-  <div class="mobile-logo">BLLOOM</div>
-        <!-- MOBILE HEADER -->
-<header class="mobile-header">
-  <nav class="mobile-nav">
+  <!-- INFINITY MENU -->
+  <div id="infinityMenu" class="infinity-menu">
     <a href="index.html">HOME</a>
     <a href="about.html">ABOUT</a>
     <a href="shop.html">STUDIO</a>
     <a href="contact.html">CONTACT</a>
-  </nav>
-
-  <div class="mobile-icons">
-    <button class="icon-btn">🔍</button>
-    <button class="icon-btn" id="mobileInfinity">∞</button>
+    <a href="wishlist.html">WISHLIST</a>
   </div>
-</header>
 
-<!-- THIN STRIP -->
-<div class="mobile-strip" id="mobileStrip">
-  B&nbsp;&nbsp;L&nbsp;&nbsp;L&nbsp;&nbsp;O&nbsp;&nbsp;O&nbsp;&nbsp;M
-</div>
+  <!-- MAIN -->
+  <main class="mobile-container">
 
-
-      </button>
-    </div>
-
-</div>
-  </header>
-<div class="mobile-strip" id="mobileStrip">
-  B&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;M
-</div>
-
-  <!-- MAIN CONTENT -->
-  <main class="max-w-md mx-auto px-4">
-
-   <!-- MOBILE BRAND SECTION -->
-<section class="mobile-brand">
-  <p class="eyebrow">BLLOOM STUDIO</p>
-  <h1 class="brand-name">BLLOOM</h1>
-</section>
-
-
-    <!-- FEATURED -->
-    <div class="relative rounded-3xl overflow-hidden mb-10 h-[400px]">
-      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800"
-           class="w-full h-full object-cover">
-
-      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-
-      <div class="absolute bottom-6 left-6 text-white">
-        <p class="text-xs uppercase tracking-widest mb-1">VOGUE • 4.8 ★</p>
-        <h1 class="serif text-6xl italic mb-4">VOGUE</h1>
-        <button class="bg-white text-black text-xs font-bold px-6 py-3 rounded-full uppercase">
-          Visit Store
-        </button>
+    <section class="hero-card">
+      <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80">
+      <div class="hero-text">
+        <h1>BLLOOM</h1>
+        <p>Too boring? Try BLLOOM.</p>
       </div>
-    </div>
+      <a href="shop.html" class="visit-btn">Visit Store</a>
+    </section>
 
-    <!-- PRODUCTS -->
-    <section>
-      <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">Our products</h2>
-        <button class="flex items-center gap-2 border px-4 py-1 rounded-lg text-sm">
-          <i data-lucide="sliders-horizontal" class="w-4 h-4"></i> Filter
-        </button>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4">
-        <!-- PRODUCT CARD -->
-        <div class="space-y-2">
-          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1539109132382-381bb3f1cff8?auto=format&fit=crop&q=80&w=400"
-                 class="w-full h-full object-cover">
-            <button class="absolute top-3 right-3 p-2 bg-white/50 rounded-full">
-              <i data-lucide="heart" class="w-4 h-4"></i>
-            </button>
-          </div>
-          <p class="text-sm font-medium">Women's baggy pant</p>
-          <p class="text-sm font-bold">€ 790.00</p>
-        </div>
-
-        <div class="space-y-2">
-          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=400"
-                 class="w-full h-full object-cover">
-            <button class="absolute top-3 right-3 p-2 bg-white/50 rounded-full">
-              <i data-lucide="heart" class="w-4 h-4"></i>
-            </button>
-          </div>
-          <p class="text-sm font-medium">Women's sweat shirt</p>
-          <p class="text-sm font-bold">€ 330.00</p>
-        </div>
-      </div>
+    <section class="product-grid-mini">
+      <img src="https://images.unsplash.com/photo-1539109132384-3615557de1ae?w=300">
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300">
+      <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300">
     </section>
 
   </main>
 
   <!-- BOTTOM NAV -->
-  <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm glass px-6 py-4 flex justify-between items-center shadow-2xl">
-    <div class="flex flex-col items-center">
-      <i data-lucide="home" class="w-6 h-6"></i>
-      <span class="text-[10px] font-semibold">Home</span>
-    </div>
-    <div class="flex flex-col items-center opacity-60">
-      <i data-lucide="shopping-cart" class="w-6 h-6"></i>
-      <span class="text-[10px]">Cart</span>
-    </div>
-    <div class="flex flex-col items-center opacity-60">
-      <i data-lucide="heart" class="w-6 h-6"></i>
-      <span class="text-[10px]">Wishlist</span>
-    </div>
-    <div class="flex flex-col items-center opacity-60">
-      <img src="https://i.pravatar.cc/100?img=32" class="w-6 h-6 rounded-full">
-      <span class="text-[10px]">Profile</span>
-    </div>
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item active">🏠<small>Home</small></a>
+    <a href="cart.html" class="nav-item">🛒<small>Cart</small></a>
+    <a href="wishlist.html" class="nav-item">♡<small>Wishlist</small></a>
+    <a href="profile.html" class="nav-item">👤<small>Profile</small></a>
   </nav>
 
 </div>
-<!-- ================= END MOBILE APP ================= -->
+<!-- ================= END MOBILE ================= -->
 
 <script>
   const mobileStrip = document.getElementById("mobileStrip");
@@ -497,6 +398,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
