@@ -361,27 +361,49 @@ window.addEventListener("scroll", () => {
       </button>
       <button class="p-2" id="openSearch">
         <i data-lucide="search" class="w-6 h-6"></i>
+       
+  <button class="icon-btn" id="mobileMenuBtn">∞</button>
+
+  <div class="mobile-logo">BLLOOM</div>
+        <!-- MOBILE HEADER -->
+<header class="mobile-header">
+  <nav class="mobile-nav">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="shop.html">STUDIO</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+  <div class="mobile-icons">
+    <button class="icon-btn">🔍</button>
+    <button class="icon-btn" id="mobileInfinity">∞</button>
+  </div>
+</header>
+
+<!-- THIN STRIP -->
+<div class="mobile-strip" id="mobileStrip">
+  B&nbsp;&nbsp;L&nbsp;&nbsp;L&nbsp;&nbsp;O&nbsp;&nbsp;O&nbsp;&nbsp;M
+</div>
+
+
       </button>
     </div>
+
+</div>
   </header>
+<div class="mobile-strip" id="mobileStrip">
+  B&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;M
+</div>
 
   <!-- MAIN CONTENT -->
   <main class="max-w-md mx-auto px-4">
 
-    <!-- BRANDS -->
-    <section class="mb-8">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-sm font-semibold uppercase tracking-wider">Shop by brand</h2>
-        <a href="#" class="text-xs text-gray-500">See all</a>
-      </div>
+   <!-- MOBILE BRAND SECTION -->
+<section class="mobile-brand">
+  <p class="eyebrow">BLLOOM STUDIO</p>
+  <h1 class="brand-name">BLLOOM</h1>
+</section>
 
-      <div class="flex gap-6 overflow-x-auto">
-        <span class="font-bold text-xl">ZARA</span>
-        <span class="serif italic text-xl">VOGUE</span>
-        <span class="font-bold text-xl">CHANEL</span>
-        <span class="serif text-lg">Ralph Lauren</span>
-      </div>
-    </section>
 
     <!-- FEATURED -->
     <div class="relative rounded-3xl overflow-hidden mb-10 h-[400px]">
@@ -461,9 +483,21 @@ window.addEventListener("scroll", () => {
 </div>
 <!-- ================= END MOBILE APP ================= -->
 
+<script>
+  const mobileStrip = document.getElementById("mobileStrip");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 120) {
+      mobileStrip.classList.add("show");
+    } else {
+      mobileStrip.classList.remove("show");
+    }
+  });
+</script>
 
 </body>
 </html>
+
 
 
 
