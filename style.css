@@ -1592,101 +1592,169 @@ main {
 .infinity:hover {
   background: #222;
 }
-
-
 /* =====================================================
-   FEAR OF GOD – MOBILE ONLY
+   BLLOOM MOBILE LUXE (PHONE ONLY)
 ===================================================== */
 
-/* hidden by default */
-.fog-mobile {
-  display: none;
-}
-
-/* PHONE ONLY */
 @media screen and (max-width: 600px) {
 
+  /* HIDE DESKTOP */
   .desktop-home {
     display: none !important;
   }
 
-  .fog-mobile {
+  .blloom-mobile {
     display: block;
-    font-family: 'Cormorant Garamond', serif;
     background: #fff;
     color: #000;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
   }
 
-  /* HEADER */
-  .fog-header {
+  /* ================= HEADER ================= */
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-left,
+  .nav-right {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 20px;
+  }
+
+  .nav-left a,
+  .nav-right a {
     font-size: 11px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
   }
 
-  .fog-logo {
-    font-size: 18px;
-    letter-spacing: 4px;
+  .header-search {
+    margin: 12px 0;
   }
 
-  /* STRIP */
-  .fog-strip {
+  .header-search input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .infinity {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  /* ================= STRIP ================= */
+
+  .blloom-strip {
     text-align: center;
     font-size: 11px;
     letter-spacing: 6px;
     padding: 10px 0;
-    border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
   }
 
-  /* HERO */
-  .fog-hero {
-    text-align: center;
+  /* ================= HERO ================= */
+
+  .hero {
     padding: 80px 20px 60px;
+    text-align: center;
   }
 
-  .fog-hero h1 {
+  .hero-brand {
     font-size: 42px;
     letter-spacing: 6px;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
-  .fog-hero p {
+  .hero-hook {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     color: #555;
   }
 
-  /* PRODUCTS */
-  .fog-products {
-    padding: 0 20px 80px;
+  .hero-manifesto {
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #777;
   }
 
-  .fog-product {
+  .banner-strip {
+    display: none;
+  }
+
+  /* ================= INFO GRID ================= */
+
+  .info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 60px 20px;
+  }
+
+  .info-box {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+  }
+
+  .info-box:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .info-box h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .info-box p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  /* ================= PRODUCTS ================= */
+
+  .blloom-products {
+    padding: 40px 16px 80px;
+  }
+
+  .blloom-product {
     margin-bottom: 60px;
     text-align: center;
   }
 
-  .fog-product img {
+  .blloom-product img {
     width: 100%;
-    height: auto;
+    display: block;
     margin-bottom: 14px;
   }
 
-  .fog-product p {
+  .blloom-product p {
     font-size: 14px;
     letter-spacing: 1px;
   }
 
-  .fog-product span {
-    display: block;
+  .blloom-product span {
     font-family: 'Inter', sans-serif;
     font-size: 13px;
-    color: #888;
+    color: #777;
     margin-top: 6px;
+    display: block;
   }
+
 }
+
