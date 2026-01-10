@@ -323,81 +323,295 @@ window.addEventListener("scroll", () => {
 </script>
 </div>
 <!-- ================= MOBILE APP (FEAR OF GOD STYLE) ================= -->
-<!-- ================= MOBILE VERSION ================= -->
-<div class="mobile-only">
+<div class="mobile-blloom-suite">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap');
 
-  <!-- SCROLL STRIP -->
-  <div id="scroll-strip" class="hidden-strip">
-    B&nbsp;&nbsp;L&nbsp;&nbsp;L&nbsp;&nbsp;O&nbsp;&nbsp;O&nbsp;&nbsp;M
-  </div>
+        .mobile-blloom-suite {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+            background-color: #e2e4e1; /* The grey background from your screenshot */
+            font-family: 'Inter', sans-serif;
+        }
 
-  <!-- MOBILE HEADER -->
-  <header class="mobile-header">
-    <button id="openMenu" class="icon-btn">∞</button>
+        /* THE B L L O O M STRIP */
+        .scrolling-strip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            border-bottom: 0.5px solid #eee;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
 
-    <div class="mobile-logo">BLLOOM</div>
+        .ticker {
+            display: flex;
+            white-space: nowrap;
+            animation: move-ticker 15s linear infinite;
+        }
 
-    <div class="mobile-actions">
-      <a href="cart.html" class="icon-btn">🛒</a>
-      <a href="profile.html" class="icon-btn">👤</a>
-      <button class="icon-btn">🔍</button>
+        .ticker span {
+            font-size: 10px;
+            letter-spacing: 12px;
+            padding-right: 60px;
+            font-weight: 300;
+            color: #000;
+        }
+
+        @keyframes move-ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* THE PHONE FRAME */
+        .blloom-phone {
+            width: 350px;
+            height: 720px;
+            background: #fff;
+            border-radius: 45px;
+            border: 12px solid #1a1a1a;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .screen-content {
+            height: 100%;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+        .screen-content::-webkit-scrollbar { display: none; }
+
+        /* Trigger strip on scroll */
+        .blloom-phone:hover .scrolling-strip { opacity: 1; }
+
+        /* HEADER & NAVIGATION */
+        .blloom-header {
+            padding: 50px 20px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .infinity-menu {
+            font-size: 24px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 18px;
+            font-size: 18px;
+        }
+
+        /* HERO CARD (BLUR STYLE) */
+        .hero-section {
+            padding: 0 15px;
+        }
+
+        .hero-card {
+            width: 100%;
+            height: 420px;
+            border-radius: 30px;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1539109132384-3615557de1ae?auto=format&fit=crop&w=800');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px 20px;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .hero-card h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 55px;
+            margin: 0;
+            letter-spacing: -2px;
+        }
+
+        .visit-store-pill {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* GRID COMPONENTS */
+        .blloom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 15px;
+        }
+
+        .grid-item {
+            text-align: left;
+        }
+
+        .grid-item img {
+            width: 100%;
+            border-radius: 18px;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+
+        .grid-item p { font-size: 12px; margin: 8px 0 2px; color: #666; }
+        .grid-item strong { font-size: 13px; color: #000; }
+
+        /* FLOATING NAV */
+        .blloom-nav {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            height: 65px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            border-radius: 35px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .nav-icon { font-size: 20px; color: #333; opacity: 0.6; cursor: pointer; }
+        .nav-icon.active { opacity: 1; }
+        
+        /* ADD TO CART UI */
+        .size-selector {
+            display: flex;
+            gap: 8px;
+            margin: 20px 0;
+        }
+        .size-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            background: white;
+        }
+        .size-btn.active { background: black; color: white; border-color: black; }
+
+        .action-btns {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+        .btn-buy { flex: 1; height: 55px; border: 1px solid #000; background: transparent; border-radius: 4px; font-weight: 600; }
+        .btn-cart { flex: 1; height: 55px; border: none; background: #000; color: #fff; border-radius: 4px; font-weight: 600; }
+
+    </style>
+
+    <div class="blloom-phone">
+        <div class="scrolling-strip">
+            <div class="ticker">
+                <span>B L L O O M</span><span>B L L O O M</span><span>B L L O O M</span><span>B L L O O M</span>
+            </div>
+        </div>
+        <div class="screen-content">
+            <div class="blloom-header">
+                <div class="infinity-menu">∞</div>
+                <div class="header-icons">
+                    <span>🔔</span><span>🔍</span>
+                </div>
+            </div>
+            <div class="hero-section">
+                <div class="hero-card">
+                    <button class="visit-store-pill">Visit store</button>
+                    <h1>BLLOOM</h1>
+                    <p style="font-size:11px; opacity:0.8;">Too boring? Try Blloom.</p>
+                </div>
+            </div>
+            <div class="blloom-grid">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300">
+                    <p>Core Sweatshirt</p><strong>€ 330.00</strong>
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1539109132384-3615557de1ae?w=300">
+                    <p>Oversized Coat</p><strong>€ 790.00</strong>
+                </div>
+            </div>
+        </div>
+        <div class="blloom-nav">
+            <span class="nav-icon active">🏠</span>
+            <span class="nav-icon">🛒</span>
+            <span class="nav-icon">🤍</span>
+            <span class="nav-icon">👤</span>
+        </div>
     </div>
-  </header>
 
-  <!-- INFINITY MENU -->
-  <div id="infinityMenu" class="infinity-menu">
-    <a href="index.html">HOME</a>
-    <a href="about.html">ABOUT</a>
-    <a href="shop.html">STUDIO</a>
-    <a href="contact.html">CONTACT</a>
-    <a href="wishlist.html">WISHLIST</a>
-  </div>
+    <div class="blloom-phone">
+        <div class="scrolling-strip">
+            <div class="ticker">
+                <span>B L L O O M</span><span>B L L O O M</span><span>B L L O O M</span><span>B L L O O M</span>
+            </div>
+        </div>
+        <div class="screen-content">
+            <div class="blloom-header">
+                <span style="font-size:20px;">←</span>
+                <strong style="font-size:14px; letter-spacing:1px;">DETAILS</strong>
+                <div class="header-icons"><span>🔔</span></div>
+            </div>
+            <div style="padding: 0 15px;">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600" style="width:100%; border-radius:25px;">
+                <h2 style="font-family:'Playfair Display', serif; font-size:28px; margin: 20px 0 5px;">BLLOOM Sweater</h2>
+                <h3 style="margin:0; font-weight:400;">€ 330.00</h3>
+                
+                <p style="font-size:11px; color:#888; margin-top:25px; text-transform:uppercase;">Choose Size</p>
+                <div class="size-selector">
+                    <div class="size-btn">S</div>
+                    <div class="size-btn active">M</div>
+                    <div class="size-btn">L</div>
+                    <div class="size-btn">XL</div>
+                </div>
 
-  <!-- MAIN -->
-  <main class="mobile-container">
-
-    <section class="hero-card">
-      <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80">
-      <div class="hero-text">
-        <h1>BLLOOM</h1>
-        <p>Too boring? Try BLLOOM.</p>
-      </div>
-      <a href="shop.html" class="visit-btn">Visit Store</a>
-    </section>
-
-    <section class="product-grid-mini">
-      <img src="https://images.unsplash.com/photo-1539109132384-3615557de1ae?w=300">
-      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300">
-      <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300">
-    </section>
-
-  </main>
-
-  <!-- BOTTOM NAV -->
-  <nav class="bottom-nav">
-    <a href="index.html" class="nav-item active">🏠<small>Home</small></a>
-    <a href="cart.html" class="nav-item">🛒<small>Cart</small></a>
-    <a href="wishlist.html" class="nav-item">♡<small>Wishlist</small></a>
-    <a href="profile.html" class="nav-item">👤<small>Profile</small></a>
-  </nav>
-
+                <div class="action-btns">
+                    <button class="btn-buy">BUY NOW</button>
+                    <button class="btn-cart">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+        <div class="blloom-nav">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-icon active">🛒</span>
+            <span class="nav-icon">🤍</span>
+            <span class="nav-icon">👤</span>
+        </div>
+    </div>
 </div>
-<!-- ================= END MOBILE ================= -->
-
-<script>
-  const mobileStrip = document.getElementById("mobileStrip");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 120) {
-      mobileStrip.classList.add("show");
-    } else {
-      mobileStrip.classList.remove("show");
-    }
-  });
-</script>
-
 </body>
 </html>
+
 
 
 
