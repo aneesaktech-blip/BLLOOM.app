@@ -1593,3 +1593,100 @@ main {
   background: #222;
 }
 
+
+/* =====================================================
+   FEAR OF GOD – MOBILE ONLY
+===================================================== */
+
+/* hidden by default */
+.fog-mobile {
+  display: none;
+}
+
+/* PHONE ONLY */
+@media screen and (max-width: 600px) {
+
+  .desktop-home {
+    display: none !important;
+  }
+
+  .fog-mobile {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    background: #fff;
+    color: #000;
+  }
+
+  /* HEADER */
+  .fog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .fog-logo {
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+
+  /* STRIP */
+  .fog-strip {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 6px;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* HERO */
+  .fog-hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+  }
+
+  .fog-hero h1 {
+    font-size: 42px;
+    letter-spacing: 6px;
+    margin-bottom: 14px;
+  }
+
+  .fog-hero p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #555;
+  }
+
+  /* PRODUCTS */
+  .fog-products {
+    padding: 0 20px 80px;
+  }
+
+  .fog-product {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .fog-product img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 14px;
+  }
+
+  .fog-product p {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .fog-product span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #888;
+    margin-top: 6px;
+  }
+}
