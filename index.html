@@ -236,9 +236,12 @@ window.addEventListener("scroll", () => {
 </div>
 
   <script>
-  const infinityBtn = document.getElementById("infinityBtn");
-  const infinityPanel = document.getElementById("infinityPanel");
+    const btn = document.getElementById("openInfinity");
+if (btn) {
+  btn.onclick = () => {};
+}
 
+  
   infinityBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     infinityPanel.classList.toggle("active");
@@ -461,6 +464,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
