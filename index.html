@@ -313,75 +313,62 @@ window.addEventListener("scroll", () => {
     }
   });
 </script>
-</div>
+
   <div class="mobile-home gucci-mobile">
 
   <!-- MOBILE HEADER -->
-  <header class="mobile-header">
+ <header class="mobile-header">
 
-  <nav class="mobile-nav-left">
+  <div class="mobile-left">
     <a href="about.html">ABOUT</a>
-    <a href="#" class="studio-mobile">STUDIO</a>
-  </nav>
+    <a href="#">STUDIO</a>
+  </div>
 
   <div class="mobile-logo">BLLOOM</div>
 
-  <nav class="mobile-nav-right">
+  <div class="mobile-right">
     <a href="/contact">CONTACT</a>
-    <span class="infinity-mobile" id="infinityBtnMobile">∞</span>
-  </nav>
-
-</header>
-<!-- MOBILE HERO -->
-<div class="mobile-home fog-mobile">
-
-  <!-- HEADER -->
-  <header class="fog-header">
-    <span class="fog-link">ABOUT</span>
-    <span class="fog-logo">BLLOOM</span>
-    <span class="fog-link">CONTACT</span>
-  </header>
-
-  <!-- HERO -->
-  <section class="fog-hero">
-    <h1>BLLOOM</h1>
-    <p>Too boring? Try Blloom.</p>
-  </section>
-
-  <!-- WHITE STRIP -->
-  <div class="fog-strip">
-    B L L O O M
+    <span class="infinity-mobile">∞</span>
   </div>
 
-  <!-- PRODUCTS -->
-  <section class="fog-products">
-
-    <div class="fog-product">
-      <img src="https://via.placeholder.com/900x1200">
-      <p>Structured Jacket</p>
-      <span>₹6,499</span>
-    </div>
-
-    <div class="fog-product">
-      <img src="https://via.placeholder.com/900x1200">
-      <p>Tailored Hoodie</p>
-      <span>₹4,999</span>
-    </div>
-
-    <div class="fog-product">
-      <img src="https://via.placeholder.com/900x1200">
-      <p>Minimal Tee</p>
-      <span>₹2,499</span>
-    </div>
-
-  </section>
-
+</header>
+<div class="mobile-strip">
+  <span>B L L O O M</span>
 </div>
+<section class="mobile-hero-text">
+  <p class="eyebrow">BLLOOM STUDIO</p>
+  <h1>BLLOOM</h1>
+  <p class="tagline">Too boring? Try Blloom.</p>
+</section>
+<script>
+(function () {
+  const strip = document.getElementById("blloomStrip");
+  const infinityBtn = document.getElementById("infinityBtn");
+  const infinityPanel = document.getElementById("infinityPanel");
 
+  if (strip) {
+    window.addEventListener("scroll", () => {
+      strip.style.opacity = window.scrollY > 120 ? "1" : "0";
+    });
+  }
+
+  if (infinityBtn && infinityPanel) {
+    infinityBtn.addEventListener("click", e => {
+      e.stopPropagation();
+      infinityPanel.classList.toggle("active");
+    });
+
+    document.addEventListener("click", () => {
+      infinityPanel.classList.remove("active");
+    });
+  }
+})();
+</script>
 
 
 </body>
 </html>
+
 
 
 
