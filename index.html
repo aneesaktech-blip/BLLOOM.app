@@ -316,53 +316,149 @@ window.addEventListener("scroll", () => {
   });
 </script>
 
-  <div class="mobile-home">
+<!-- ================= MOBILE APP (FEAR OF GOD STYLE) ================= -->
+<div class="mobile-app">
+
+  <!-- Tailwind + Lucide (mobile only is fine) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap');
+
+    .mobile-app {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      padding-bottom: 6rem;
+    }
+
+    .serif { font-family: 'Playfair Display', serif; }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  </style>
 
   <!-- HEADER -->
-  <header class="fog-header">
-    <a href="about.html">ABOUT</a>
-    <span class="logo">BLLOOM</span>
-    <a href="contact.html">CONTACT</a>
+  <header class="flex justify-between items-center p-6 bg-white sticky top-0 z-50">
+    <button class="p-2 hover:bg-gray-100 rounded-full transition" id="openInfinity">
+      <i data-lucide="infinity" class="w-8 h-8 text-black"></i>
+    </button>
+
+    <div class="flex gap-4">
+      <button class="p-2">
+        <i data-lucide="bell" class="w-6 h-6"></i>
+      </button>
+      <button class="p-2" id="openSearch">
+        <i data-lucide="search" class="w-6 h-6"></i>
+      </button>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="fog-hero">
-    <h1>BLLOOM</h1>
-    <p>Too boring? Try Blloom.</p>
-  </section>
+  <!-- MAIN CONTENT -->
+  <main class="max-w-md mx-auto px-4">
 
-  <!-- WHITE STRIP -->
-  <div class="fog-strip">
-    B L L O O M
-  </div>
+    <!-- BRANDS -->
+    <section class="mb-8">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-sm font-semibold uppercase tracking-wider">Shop by brand</h2>
+        <a href="#" class="text-xs text-gray-500">See all</a>
+      </div>
 
-  <!-- PRODUCTS -->
-  <section class="fog-products">
+      <div class="flex gap-6 overflow-x-auto">
+        <span class="font-bold text-xl">ZARA</span>
+        <span class="serif italic text-xl">VOGUE</span>
+        <span class="font-bold text-xl">CHANEL</span>
+        <span class="serif text-lg">Ralph Lauren</span>
+      </div>
+    </section>
 
-    <div class="fog-product">
-      <img src="https://via.placeholder.com/900x1200">
-      <p>Structured Jacket</p>
-      <span>₹6,499</span>
+    <!-- FEATURED -->
+    <div class="relative rounded-3xl overflow-hidden mb-10 h-[400px]">
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800"
+           class="w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+      <div class="absolute bottom-6 left-6 text-white">
+        <p class="text-xs uppercase tracking-widest mb-1">VOGUE • 4.8 ★</p>
+        <h1 class="serif text-6xl italic mb-4">VOGUE</h1>
+        <button class="bg-white text-black text-xs font-bold px-6 py-3 rounded-full uppercase">
+          Visit Store
+        </button>
+      </div>
     </div>
 
-    <div class="fog-product">
-      <img src="https://via.placeholder.com/900x1200">
-      <p>Tailored Hoodie</p>
-      <span>₹4,999</span>
-    </div>
+    <!-- PRODUCTS -->
+    <section>
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">Our products</h2>
+        <button class="flex items-center gap-2 border px-4 py-1 rounded-lg text-sm">
+          <i data-lucide="sliders-horizontal" class="w-4 h-4"></i> Filter
+        </button>
+      </div>
 
-    <div class="fog-product">
-      <img src="https://via.placeholder.com/900x1200">
-      <p>Minimal Tee</p>
-      <span>₹2,499</span>
-    </div>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- PRODUCT CARD -->
+        <div class="space-y-2">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1539109132382-381bb3f1cff8?auto=format&fit=crop&q=80&w=400"
+                 class="w-full h-full object-cover">
+            <button class="absolute top-3 right-3 p-2 bg-white/50 rounded-full">
+              <i data-lucide="heart" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <p class="text-sm font-medium">Women's baggy pant</p>
+          <p class="text-sm font-bold">€ 790.00</p>
+        </div>
 
-  </section>
+        <div class="space-y-2">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=400"
+                 class="w-full h-full object-cover">
+            <button class="absolute top-3 right-3 p-2 bg-white/50 rounded-full">
+              <i data-lucide="heart" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <p class="text-sm font-medium">Women's sweat shirt</p>
+          <p class="text-sm font-bold">€ 330.00</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM NAV -->
+  <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm glass px-6 py-4 flex justify-between items-center shadow-2xl">
+    <div class="flex flex-col items-center">
+      <i data-lucide="home" class="w-6 h-6"></i>
+      <span class="text-[10px] font-semibold">Home</span>
+    </div>
+    <div class="flex flex-col items-center opacity-60">
+      <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+      <span class="text-[10px]">Cart</span>
+    </div>
+    <div class="flex flex-col items-center opacity-60">
+      <i data-lucide="heart" class="w-6 h-6"></i>
+      <span class="text-[10px]">Wishlist</span>
+    </div>
+    <div class="flex flex-col items-center opacity-60">
+      <img src="https://i.pravatar.cc/100?img=32" class="w-6 h-6 rounded-full">
+      <span class="text-[10px]">Profile</span>
+    </div>
+  </nav>
 
 </div>
+<!-- ================= END MOBILE APP ================= -->
+
 
 </body>
 </html>
+
 
 
 
