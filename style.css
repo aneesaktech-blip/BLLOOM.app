@@ -1692,3 +1692,33 @@ main {
     letter-spacing: 4px;
   }
 }
+/* ================= RESPONSIVE SWITCH ================= */
+
+/* Default: hide mobile */
+.mobile-only {
+  display: none;
+}
+
+/* Desktop stays visible */
+.desktop-home {
+  display: block;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+
+  /* Hide desktop */
+  .desktop-home {
+    display: none !important;
+  }
+
+  /* Show mobile */
+  .mobile-only {
+    display: block;
+  }
+
+  body {
+    background: #fff;
+  }
+}
+
