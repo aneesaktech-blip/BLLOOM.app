@@ -323,48 +323,54 @@ window.addEventListener("scroll", () => {
 </script>
 </div>
 <!-- ================= MOBILE APP (FEAR OF GOD STYLE) ================= -->
-<div class="mobile-blloom-suite">
+<div class="blloom-mobile-site">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap');
 
-        .mobile-blloom-suite {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 40px 20px;
-            background-color: #e2e4e1; /* The grey background from your screenshot */
+        /* RESET & BASE */
+        .blloom-mobile-site {
+            --brand-black: #1a1a1a;
+            --brand-white: #ffffff;
+            --brand-gray: #f8f8f8;
+            margin: 0;
+            padding: 0;
             font-family: 'Inter', sans-serif;
+            background-color: var(--brand-white);
+            color: var(--brand-black);
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* THE B L L O O M STRIP */
+        /* 1. SCROLLING B L L O O M STRIP (Appears on scroll) */
         .scrolling-strip {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             background: white;
-            height: 28px;
+            height: 30px;
             display: flex;
             align-items: center;
             overflow: hidden;
             border-bottom: 0.5px solid #eee;
-            z-index: 100;
+            z-index: 1000;
             opacity: 0;
-            transition: opacity 0.4s ease;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
         }
 
         .ticker {
             display: flex;
             white-space: nowrap;
-            animation: move-ticker 15s linear infinite;
+            animation: move-ticker 20s linear infinite;
         }
 
         .ticker span {
-            font-size: 10px;
-            letter-spacing: 12px;
-            padding-right: 60px;
+            font-size: 11px;
+            letter-spacing: 15px;
+            padding-right: 80px;
             font-weight: 300;
-            color: #000;
+            text-transform: uppercase;
         }
 
         @keyframes move-ticker {
@@ -372,245 +378,235 @@ window.addEventListener("scroll", () => {
             100% { transform: translateX(-50%); }
         }
 
-        /* THE PHONE FRAME */
-        .blloom-phone {
-            width: 350px;
-            height: 720px;
-            background: #fff;
-            border-radius: 45px;
-            border: 12px solid #1a1a1a;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.1);
-            flex-shrink: 0;
-        }
-
-        .screen-content {
-            height: 100%;
-            overflow-y: auto;
-            scrollbar-width: none;
-        }
-        .screen-content::-webkit-scrollbar { display: none; }
-
-        /* Trigger strip on scroll */
-        .blloom-phone:hover .scrolling-strip { opacity: 1; }
-
-        /* HEADER & NAVIGATION */
+        /* 2. HEADER (Fixed) */
         .blloom-header {
-            padding: 50px 20px 15px;
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 900;
         }
 
-        .infinity-menu {
-            font-size: 24px;
-            cursor: pointer;
+        .infinity-icon {
+            font-size: 28px;
             font-weight: bold;
+            line-height: 1;
         }
 
-        .header-icons {
+        .header-right {
             display: flex;
-            gap: 18px;
-            font-size: 18px;
+            gap: 20px;
+            font-size: 20px;
         }
 
-        /* HERO CARD (BLUR STYLE) */
+        /* 3. HERO SECTION (Desktop Screenshot Style) */
         .hero-section {
-            padding: 0 15px;
+            padding: 10px 20px;
         }
 
-        .hero-card {
+        .hero-banner {
             width: 100%;
-            height: 420px;
+            height: 75vh;
             border-radius: 30px;
-            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1539109132384-3615557de1ae?auto=format&fit=crop&w=800');
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1539109132384-3615557de1ae?auto=format&fit=crop&w=1000');
             background-size: cover;
             background-position: center;
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 30px 20px;
-            color: white;
+            padding: 40px 25px;
             box-sizing: border-box;
+            color: white;
         }
 
-        .hero-card h1 {
+        .hero-banner h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 55px;
+            font-size: clamp(60px, 15vw, 90px);
             margin: 0;
-            letter-spacing: -2px;
+            letter-spacing: -3px;
         }
 
-        .visit-store-pill {
+        .hero-banner p {
+            margin: 0;
+            font-size: 14px;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        .visit-pill {
             position: absolute;
             top: 25px;
-            right: 20px;
-            background: rgba(255,255,255,0.25);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.3);
+            right: 25px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.4);
             color: white;
-            padding: 8px 18px;
-            border-radius: 25px;
+            padding: 10px 20px;
+            border-radius: 30px;
             font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 600;
         }
 
-        /* GRID COMPONENTS */
-        .blloom-grid {
+        /* 4. PRODUCT GRID */
+        .product-feed {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            padding: 15px;
+            gap: 15px;
+            padding: 30px 20px;
         }
 
-        .grid-item {
-            text-align: left;
-        }
-
-        .grid-item img {
+        .product-card {
             width: 100%;
-            border-radius: 18px;
+        }
+
+        .product-card img {
+            width: 100%;
             aspect-ratio: 3/4;
             object-fit: cover;
+            border-radius: 20px;
         }
 
-        .grid-item p { font-size: 12px; margin: 8px 0 2px; color: #666; }
-        .grid-item strong { font-size: 13px; color: #000; }
+        .product-card h4 {
+            margin: 10px 0 2px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #444;
+        }
 
-        /* FLOATING NAV */
-        .blloom-nav {
-            position: absolute;
-            bottom: 25px;
+        .product-card span {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* 5. FLOATING BOTTOM NAV (Glassmorphism) */
+        .bottom-nav {
+            position: fixed;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 85%;
-            height: 65px;
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(20px);
-            border-radius: 35px;
+            width: 90%;
+            max-width: 400px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(25px);
+            border-radius: 40px;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             border: 1px solid rgba(255,255,255,0.5);
+            z-index: 1000;
         }
 
-        .nav-icon { font-size: 20px; color: #333; opacity: 0.6; cursor: pointer; }
-        .nav-icon.active { opacity: 1; }
-        
-        /* ADD TO CART UI */
-        .size-selector {
+        .nav-btn {
             display: flex;
-            gap: 8px;
-            margin: 20px 0;
-        }
-        .size-btn {
-            width: 40px;
-            height: 40px;
-            border: 1px solid #eee;
-            border-radius: 50%;
-            display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            background: white;
+            font-size: 22px;
+            color: #888;
+            cursor: pointer;
         }
-        .size-btn.active { background: black; color: white; border-color: black; }
 
-        .action-btns {
-            display: flex;
-            gap: 10px;
-            margin-top: 25px;
+        .nav-btn.active { color: #000; }
+        .nav-btn small { font-size: 9px; text-transform: uppercase; font-weight: 700; margin-top: 4px; }
+
+        /* DESKTOP PREVIEW MODE (When not on mobile) */
+        @media (min-width: 768px) {
+            .blloom-mobile-site {
+                max-width: 430px;
+                margin: 50px auto;
+                height: 850px;
+                border: 12px solid #1a1a1a;
+                border-radius: 50px;
+                overflow-y: auto;
+                box-shadow: 0 50px 100px rgba(0,0,0,0.2);
+            }
+            .scrolling-strip, .bottom-nav {
+                width: 430px;
+                left: auto;
+                transform: none;
+            }
+            .bottom-nav { bottom: 10px; width: 80%; left: 10%; }
         }
-        .btn-buy { flex: 1; height: 55px; border: 1px solid #000; background: transparent; border-radius: 4px; font-weight: 600; }
-        .btn-cart { flex: 1; height: 55px; border: none; background: #000; color: #fff; border-radius: 4px; font-weight: 600; }
-
     </style>
 
-    <div class="blloom-phone">
-        <div class="scrolling-strip">
-            <div class="ticker">
-                <span>B L L O O M</span><span>B L L O O M</span><span>B L L O O M</span><span>B L L O O M</span>
-            </div>
-        </div>
-        <div class="screen-content">
-            <div class="blloom-header">
-                <div class="infinity-menu">∞</div>
-                <div class="header-icons">
-                    <span>🔔</span><span>🔍</span>
-                </div>
-            </div>
-            <div class="hero-section">
-                <div class="hero-card">
-                    <button class="visit-store-pill">Visit store</button>
-                    <h1>BLLOOM</h1>
-                    <p style="font-size:11px; opacity:0.8;">Too boring? Try Blloom.</p>
-                </div>
-            </div>
-            <div class="blloom-grid">
-                <div class="grid-item">
-                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300">
-                    <p>Core Sweatshirt</p><strong>€ 330.00</strong>
-                </div>
-                <div class="grid-item">
-                    <img src="https://images.unsplash.com/photo-1539109132384-3615557de1ae?w=300">
-                    <p>Oversized Coat</p><strong>€ 790.00</strong>
-                </div>
-            </div>
-        </div>
-        <div class="blloom-nav">
-            <span class="nav-icon active">🏠</span>
-            <span class="nav-icon">🛒</span>
-            <span class="nav-icon">🤍</span>
-            <span class="nav-icon">👤</span>
+    <div id="blloomStrip" class="scrolling-strip">
+        <div class="ticker">
+            <span>B &nbsp; L &nbsp; L &nbsp; O &nbsp; O &nbsp; M</span>
+            <span>B &nbsp; L &nbsp; L &nbsp; O &nbsp; O &nbsp; M</span>
+            <span>B &nbsp; L &nbsp; L &nbsp; O &nbsp; O &nbsp; M</span>
+            <span>B &nbsp; L &nbsp; L &nbsp; O &nbsp; O &nbsp; M</span>
         </div>
     </div>
 
-    <div class="blloom-phone">
-        <div class="scrolling-strip">
-            <div class="ticker">
-                <span>B L L O O M</span><span>B L L O O M</span><span>B L L O O M</span><span>B L L O O M</span>
-            </div>
+    <header class="blloom-header">
+        <div class="infinity-icon">∞</div>
+        <div class="header-right">
+            <span>🔔</span>
+            <span>🔍</span>
         </div>
-        <div class="screen-content">
-            <div class="blloom-header">
-                <span style="font-size:20px;">←</span>
-                <strong style="font-size:14px; letter-spacing:1px;">DETAILS</strong>
-                <div class="header-icons"><span>🔔</span></div>
-            </div>
-            <div style="padding: 0 15px;">
-                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600" style="width:100%; border-radius:25px;">
-                <h2 style="font-family:'Playfair Display', serif; font-size:28px; margin: 20px 0 5px;">BLLOOM Sweater</h2>
-                <h3 style="margin:0; font-weight:400;">€ 330.00</h3>
-                
-                <p style="font-size:11px; color:#888; margin-top:25px; text-transform:uppercase;">Choose Size</p>
-                <div class="size-selector">
-                    <div class="size-btn">S</div>
-                    <div class="size-btn active">M</div>
-                    <div class="size-btn">L</div>
-                    <div class="size-btn">XL</div>
-                </div>
+    </header>
 
-                <div class="action-btns">
-                    <button class="btn-buy">BUY NOW</button>
-                    <button class="btn-cart">ADD TO CART</button>
-                </div>
+    <main>
+        <section class="hero-section">
+            <div class="hero-banner">
+                <button class="visit-pill">VISIT STORE</button>
+                <h1>BLLOOM</h1>
+                <p>TOO BORING? TRY BLLOOM.</p>
             </div>
-        </div>
-        <div class="blloom-nav">
-            <span class="nav-icon">🏠</span>
-            <span class="nav-icon active">🛒</span>
-            <span class="nav-icon">🤍</span>
-            <span class="nav-icon">👤</span>
-        </div>
-    </div>
+        </section>
+
+        <section class="product-feed">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500">
+                <h4>Women's sweat shirt</h4>
+                <span>€ 330.00</span>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1539109132384-3615557de1ae?w=500">
+                <h4>Wool Sweater</h4>
+                <span>€ 790.00</span>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500">
+                <h4>Denim Jacket</h4>
+                <span>€ 880.00</span>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=500">
+                <h4>Core Bomber</h4>
+                <span>€ 860.00</span>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <div class="nav-btn active">🏠<small>Home</small></div>
+        <div class="nav-btn">🛒<small>Cart</small></div>
+        <div class="nav-btn">🤍<small>Wishlist</small></div>
+        <div class="nav-btn">👤<small>Profile</small></div>
+    </nav>
+
+    <script>
+        // Trigger the B L L O O M strip on scroll
+        window.onscroll = function() {
+            var strip = document.getElementById("blloomStrip");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                strip.style.opacity = "1";
+            } else {
+                strip.style.opacity = "0";
+            }
+        };
+    </script>
 </div>
 </body>
 </html>
+
 
 
 
