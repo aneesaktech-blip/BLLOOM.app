@@ -1722,3 +1722,98 @@ main {
   }
 }
 
+@media (max-width: 768px) {
+  /* Black and White Icons */
+  .black-white-icon {
+    filter: grayscale(100%) brightness(0); /* Forces icons to pure black */
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  /* The Sticky White Strip */
+  .sticky-strip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    opacity: 0; /* Hidden by default */
+    transform: translateY(-100%);
+    transition: all 0.3s ease;
+  }
+
+  .sticky-strip.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .strip-title {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  /* General Layout */
+  .mobile-app-container {
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .icon-btn-black {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: black;
+  }
+
+  .product-card {
+    margin: 0 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 450px;
+    position: relative;
+    background: #f9f9f9;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .brand-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+  }
+
+  .visit-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  /* Buttons */
+  .btn-buy { background: #f0f0f0; border: none; }
+  .btn-cart { background: #000; color: #fff; border: none; }
+}
