@@ -382,8 +382,20 @@ window.addEventListener("scroll", () => {
     <span class="black-white-icon">👤</span>
   </div>
 </div>
+  <script>
+  window.onscroll = function() {
+    const stickyStrip = document.getElementById("sticky-header-strip");
+    // Show strip after scrolling down 150px
+    if (window.pageYOffset > 150) {
+      stickyStrip.classList.add("visible");
+    } else {
+      stickyStrip.classList.remove("visible");
+    }
+  };
+</script>
 </body>
 </html>
+
 
 
 
