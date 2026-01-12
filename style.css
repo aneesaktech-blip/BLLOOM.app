@@ -2720,12 +2720,24 @@ body {
 .sort.active {
   color: #000;
 }
-@media (max-width: 768px) {
+/* ===== FINAL RESPONSIVE OVERRIDE (DO NOT TOUCH ABOVE) ===== */
+
+/* DEFAULT: DESKTOP / LAPTOP */
+.desktop_header {
+  display: block !important;
+}
+
+.mobile_header {
+  display: none !important;
+}
+
+/* MOBILE ONLY */
+@media screen and (max-width: 768px) {
   .desktop_header {
-    display: none;
+    display: none !important;
   }
 
   .mobile_header {
-    display: block;
+    display: block !important;
   }
 }
