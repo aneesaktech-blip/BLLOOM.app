@@ -2720,3 +2720,12 @@ body {
 .sort.active {
   color: #000;
 }
+@media (max-width: 768px) {
+  .desktop_header {
+    display: none;
+  }
+
+  .mobile_header {
+    display: block;
+  }
+}
