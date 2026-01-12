@@ -2806,3 +2806,107 @@ body {
   padding: 0 18px;
 }
 
+
+/* ===== biAX FLOATING BUTTON ===== */
+#biax-float-btn {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 56px;
+  height: 56px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+#biax-float-btn img {
+  width: 28px;
+  height: 28px;
+}
+
+/* ===== SIDE CHAT PANEL ===== */
+#biax-panel {
+  position: fixed;
+  right: -380px;
+  bottom: 0;
+  width: 360px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -10px 0 40px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.35s ease;
+  z-index: 9998;
+}
+
+#biax-panel.active {
+  right: 0;
+}
+
+/* HEADER */
+.biax-panel-header {
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.biax-panel-header img {
+  height: 26px;
+}
+
+.biax-actions button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* CHAT */
+.biax-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.bot-msg {
+  background: #f6f1eb;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  max-width: 85%;
+}
+
+/* INPUT */
+.biax-input {
+  display: flex;
+  border-top: 1px solid #eee;
+}
+
+.biax-input input {
+  flex: 1;
+  border: none;
+  padding: 14px;
+  outline: none;
+}
+
+.biax-input button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0 18px;
+}
+
+/* MOBILE: hide desktop chatbot */
+@media (max-width: 768px) {
+  #biax-float-btn,
+  #biax-panel {
+    display: none;
+  }
+}
