@@ -1,0 +1,70 @@
+/* =========================
+   biAX — BLLOOM AI STYLES
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.biax-page {
+  background: #f6f1eb; /* BLLOOM light brown */
+  height: 100vh;
+  font-family: "Garamond", serif;
+}
+
+/* MAIN WRAPPER */
+.biax-wrapper {
+  max-width: 420px;
+  height: 100vh;
+  margin: 0 auto;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.biax-header {
+  padding: 16px 18px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.biax-header a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+
+/* CHAT AREA */
+.biax-messages {
+  flex: 1;
+  padding: 18px;
+  overflow-y: auto;
+  background: #fff;
+}
+
+/* BOT MESSAGE */
+.bot-msg {
+  background: #f6f1eb;
+  padding: 12px 14px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  max-width: 80%;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* USER MESSAGE */
+.user-msg {
+  background: #000;
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  max-width
