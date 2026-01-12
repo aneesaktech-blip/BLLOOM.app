@@ -17,12 +17,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+
+  <body>
+
+<!-- ICON SYSTEM (HIDDEN, BUT REQUIRED) -->
+<svg style="display:none;">
+  <symbol id="icon-cart" viewBox="0 0 24 24">
+    <path d="M6 6h15l-1.5 9h-12z" fill="none" stroke="black" stroke-width="1.5"/>
+    <circle cx="9" cy="21" r="1"/>
+    <circle cx="18" cy="21" r="1"/>
+  </symbol>
+
+  <symbol id="icon-user" viewBox="0 0 24 24">
+    <circle cx="12" cy="8" r="4" fill="none" stroke="black" stroke-width="1.5"/>
+    <path d="M4 22c2-4 14-4 16 0" fill="none" stroke="black" stroke-width="1.5"/>
+  </symbol>
+
+  <symbol id="icon-search" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="7" fill="none" stroke="black" stroke-width="1.5"/>
+    <line x1="16" y1="16" x2="22" y2="22" stroke="black" stroke-width="1.5"/>
+  </symbol>
+
+  <symbol id="icon-infinity" viewBox="0 0 24 24">
+    <path d="M5 12c2-4 6-4 8 0s6 4 8 0" fill="none" stroke="black" stroke-width="1.5"/>
+  </symbol>
+</svg>
+
 <div class="desktop-home">
 
 
@@ -322,82 +349,225 @@ window.addEventListener("scroll", () => {
   });
 </script>
 </div>
-<div class="mobile-app-container">
-  <div id="sticky-header-strip" class="sticky-strip">
-     <button class="icon-btn-black">←</button>
-     <span class="strip-title">Product Details</span>
-     <div class="header-icons-black">
-        <span class="black-white-icon">🔔</span>
-        <span class="black-white-icon">🔍</span>
-     </div>
-  </div>
+<div class="mobile"> 
+  <div class="top-strip">
+  <span class="brand-script">BLLOOM</span>
+</div>
 
-  <div class="mobile-header">
-    <button class="icon-btn-black">←</button>
-    <span class="header-title">Product Details</span>
-    <div class="header-icons-black">
-      <span class="black-white-icon">🔔</span>
-      <span class="black-white-icon">🔍</span>
-    </div>
-  </div>
+  <section class="blloom-hero">
+  <img src="images/hero.jpg" alt="BLLOOM Editorial" />
 
-  <div class="product-card">
-    <div class="brand-tag">
-      <div>
-        <strong style="color: black;">BLOOM</strong>
-        <p style="color: #666; font-size: 10px;">⭐ 4.8 (87K+ reviews)</p>
+  <div class="hero-overlay">
+    <span class="hero-tag">EDITORIAL</span>
+    <h1>BLLOOM</h1>
+    <button class="hero-btn" onclick="scrollToFlash()">View Story</button>
+
+  </div>
+</section>
+
+  <!-- MOBILE HEADER -->
+  <div class="mobile_header">
+    <div class="mobile_top">
+      <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Kolkata, India</span>
       </div>
-      <button class="visit-btn">Visit store</button>
-    </div>
-    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1000" alt="Bloom Product">
+      <div class="top_icons">
+  <span class="top_infinity">∞</span>
+  <i class="fa-regular fa-user profile"></i>
+</div>
+<div class="filter_drawer" id="filterDrawer">
+  <div class="filter_head">
+    <h3>Filter & Sort</h3>
+    <span onclick="closeFilters()">✕</span>
   </div>
 
-  <div class="product-info">
-    <div class="title-row">
-      <h2>Bloom Essential Sweatshirt</h2>
-      <div class="qty-selector">
-        <button>-</button><span>1</span><button>+</button>
-      </div>
-    </div>
-    <p class="price">€ 330.00</p>
-    
-    <p class="label">Choose Size</p>
-    <div class="size-options">
-      <button>S</button>
-      <button class="active">M</button>
-      <button>L</button>
-      <button>XL</button>
-    </div>
-
-    <div class="button-group">
-      <button class="btn-buy">Buy now</button>
-      <button class="btn-cart">Add to cart</button>
-    </div>
+  <div class="filter_group">
+    <h4>Sort by price</h4>
+    <button>Low → High</button>
+    <button>High → Low</button>
   </div>
 
-  <div class="floating-nav">
-    <span class="black-white-icon">🏠</span>
-    <span class="black-white-icon">🛒</span>
-    <span class="black-white-icon">❤️</span>
-    <span class="black-white-icon">👤</span>
+  <div class="filter_group">
+    <h4>Category</h4>
+    <button>Men</button>
+    <button>Women</button>
+    <button>Kids</button>
+  </div>
+
+  <div class="filter_group">
+    <h4>Latest</h4>
+    <button>Latest Arrivals</button>
   </div>
 </div>
-  <script>
-  window.onscroll = function() {
-    const stickyStrip = document.getElementById("sticky-header-strip");
-    // Show strip after scrolling down 150px
-    if (window.pageYOffset > 150) {
-      stickyStrip.classList.add("visible");
-    } else {
-      stickyStrip.classList.remove("visible");
-    }
-  };
+
+    </div>
+
+    <div class="mobile_search">
+      <i class="fa-solid fa-magnifying-glass search_icon"></i>
+      <input type="text" placeholder="Search on BLLOOM">
+      <i class="fa-solid fa-sliders filter" onclick="openFilters()"></i>
+
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="banner_text">
+      <h2>New Collection</h2>
+      <p>50% OFF for first order</p>
+      <button>Shop Now</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+  </div>
+
+  <!-- CATEGORY -->
+  
+
+  <section class="specialise">
+
+  <h2>What we specialise in</h2>
+
+  <div class="specialise-grid">
+    <div class="spec-card">
+      <i class="fa-solid fa-hood-cloak"></i>
+      <p>Hoodies</p>
+    </div>
+
+    <div class="spec-card">
+      <i class="fa-solid fa-shirt"></i>
+      <p>Oversized</p>
+    </div>
+
+    <div class="spec-card">
+      <i class="fa-solid fa-crop"></i>
+      <p>Crop Tops</p>
+    </div>
+
+    <div class="spec-card">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <p>Tote Bags</p>
+    </div>
+  </div>
+
+  <!-- VIDEO INSIDE SPECIALISE -->
+  <div class="specialise-video">
+    <video autoplay muted loop playsinline>
+      <source src="hero.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</section>
+
+
+
+
+  <!-- FLASH SALE -->
+ <section class="flash-sale">
+
+  <h2 class="section-title">Flash Sale</h2>
+
+  <!-- MEN / WOMEN -->
+  <div class="gender-text">
+    <span class="gender active">Men</span>
+    <span class="divider">/</span>
+    <span class="gender">Women</span>
+  </div>
+
+  <!-- MODEL IMAGES BLOCK -->
+  <div class="model-block">
+    <img src="male.jpg" alt="Men Collection" class="model-img">
+    <img src="female.jpg" alt="Women Collection" class="model-img">
+  </div>
+
+  <!-- PRODUCTS BLOCK -->
+  <div class="products-block">
+
+    <div class="sort-text">
+      <span class="sort active">Newest</span>
+      <span class="sort">Popular</span>
+    </div>
+
+    <!-- products grid here -->
+  </div>
+
+</section>
+
+  <!-- SORT TABS -->
+  <div class="sort-tabs">
+    <button class="sort-tab active">Newest</button>
+    <button class="sort-tab">Popular</button>
+  </div>
+
+</section>
+
+
+</section>
+
+
+
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1520974735194-5a9d68d07b94">
+        <p>BLLOOM Jacket</p>
+        <strong>₹1200</strong>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+        <p>BLLOOM Shirt</p>
+        <strong>₹899</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <div class="mobile_nav">
+  <a href="index.html" class="active"><i class="fa-solid fa-house"></i></a>
+  <a href="shop.html"><i class="fa-solid fa-bag-shopping"></i></a>
+  <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+  <a href="orders.html"><i class="fa-regular fa-comment"></i></a>
+  <a href="profile.html"><i class="fa-regular fa-user"></i></a>
+</div>
+
+</div>
+<!-- ============ MOBILE END ============ -->
+ <script>
+function openFilters() {
+  document.getElementById("filterDrawer").classList.add("open");
+}
+
+function closeFilters() {
+  document.getElementById("filterDrawer").classList.remove("open");
+}
 </script>
+<script>
+const strip = document.getElementById("blloomStrip");
+const hero = document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+  if (!strip) return;
+
+  if (window.scrollY > 120) {
+    strip.style.opacity = "1";
+    hero && hero.classList.add("scrolled");
+  } else {
+    strip.style.opacity = "0";
+    hero && hero.classList.remove("scrolled");
+  }
+});
+</script>
+
+<script>
+function scrollToFlash() {
+  document.querySelector(".flash")?.scrollIntoView({
+    behavior: "smooth"
+  });
+}
+</script>
+
 </body>
 </html>
-
-
-
 
 
 
