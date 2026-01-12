@@ -261,7 +261,8 @@ window.addEventListener("scroll", () => {
 <a href="viewed.html">Last Product Viewed</a>
   
 </div>
-<a href="biax.html" id="biax-float-btn">biAX</a>
+
+  
 
   <script>
     const btn = document.getElementById("openInfinity");
@@ -462,9 +463,6 @@ window.addEventListener("scroll", () => {
 
 
 
-<a href="biax.html">
-  💬
-</a>
 
   <!-- FLASH SALE -->
  <section class="flash-sale">
@@ -532,6 +530,8 @@ window.addEventListener("scroll", () => {
   <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
   <a href="orders.html"><i class="fa-regular fa-comment"></i></a>
   <a href="profile.html"><i class="fa-regular fa-user"></i></a>
+    <a href="biax.html">💬</a>
+
 </div>
 
 </div>
@@ -569,13 +569,36 @@ function scrollToFlash() {
   });
 }
 </script>
-<!-- biAX Floating AI Button -->
+<!-- biAX Floating Button -->
 <div id="biax-float-btn">
-  <img src="biax-logo.svg" alt="biAX AI">
+  <img src="biax-logo.svg" alt="">
 </div>
+
+<!-- biAX Side Panel -->
+<div id="biax-panel">
+  <div class="biax-panel-header">
+   <span class="biax-logo">∞</span>
+
+    <div class="biax-actions">
+      <button id="biax-expand">⤢</button>
+      <button id="biax-close">✕</button>
+    </div>
+  </div>
+
+  <div class="biax-messages">
+    <div class="bot-msg">Hey, I’m biAX 👋</div>
+  </div>
+
+  <div class="biax-input">
+    <input placeholder="Ask biAX…" />
+    <button>➤</button>
+  </div>
+</div>
+
 
 </body>
 </html>
+
 
 
 
