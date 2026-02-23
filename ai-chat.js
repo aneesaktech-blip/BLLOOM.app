@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function addMessage(text, type) {
     const div = document.createElement("div");
-    div.className = `ai-message ${type}`;
+    div.className = `ai-message ${type`;
     div.innerText = text;
     messages.appendChild(div);
     messages.scrollTop = messages.scrollHeight;
