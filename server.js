@@ -1,39 +1,43 @@
 import express from "express";
-import fetch from "node-fetch";
-import dotenv from "dotenv";
-
-dotenv.config();
+import cors from "cors";
+import OpenAI from "openai";
 
 const app = express();
-app.use(express.json());
+const PORT = 3000;
 
-app.post("/api/chat", async (req, res) => {
-  try {
+// ===== Put your API key here directly =====
+const OPENAI_API_KEY = "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";
+
+// Enable CORS and JSON parsing
+app.use(cors());
+app.use(express.json());
+app.use(express.static(".")); // serve index.html and ai-chat.js
+
+// ===== Chat route =====
+app.post("/chat", async (req, res) => {
     const userMessage = req.body.message;
 
-    const response = await fetch(
-      "https://api.openai.com/v1/chat/completions",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
-        },
-        body: JSON.stringify({
-          model: "gpt-4o-mini",
-          messages: [{ role: "user", content: userMessage }]
-        })
-      }
-    );
+    try {
+        const client = new OpenAI({ apiKey: OPENAI_API_KEY });
 
-    const data = await response.json();
-    res.json({ reply: data.choices[0].message.content });
+        const completion = await client.chat.completions.create({
+            model: "gpt-3.5-turbo",
+            messages: [
+                { role: "system", content: "You are biAX, AI assistant for Blloom clothing brand." },
+                { role: "user", content: userMessage }
+            ],
+            max_tokens: 300
+        });
 
-  } catch (error) {
-    res.status(500).json({ reply: "Server error" });
-  }
+        const reply = completion.choices[0].message.content;
+        res.json({ reply });
+    } catch (error) {
+        console.error("OpenAI API error:", error);
+        res.json({ reply: "AI error occurred." });
+    }
 });
 
-app.listen(3001, () => {
-  console.log("✅ AI server running on http://localhost:3001");
+// ===== Start server =====
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
 });
