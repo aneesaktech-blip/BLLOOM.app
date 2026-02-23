@@ -1,57 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
+<meta charset="UTF-8">
+<title>biAX — BLLOOM AI</title>
 
-  <meta charset="UTF-8">
-  <title>biAX — BLLOOM AI</title>
-  <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="biax.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="biax.css">
+
 </head>
 
 <body class="biax-page">
 
-  <div class="biax-wrapper">
+<div class="biax-wrapper">
 
-    <header class="biax-header">
-      <span>biAX</span>
-      <a href="index.html">✕</a>
-    </header>
-<!-- biAX Side Chat -->
+<header class="biax-header">
+<span>biAX</span>
+<a href="index.html">✕</a>
+</header>
+
+<!-- biAX Chat Panel -->
 <div id="biax-panel">
 
-  <div class="biax-panel-header">
-    <img src="biax-logo.svg" alt="biAX">
-    <div class="biax-actions">
-      <button id="biax-expand">⤢</button>
-      <button id="biax-close">✕</button>
-    </div>
-  </div>
+<div class="biax-panel-header">
+<img src="biax-logo.svg" alt="biAX">
 
-  <div class="biax-messages">
-    <div class="bot-msg">
-      Hey, I’m biAX.  
-      Ask me about sizes, drops, or styling.
-    </div>
-  </div>
+<div class="biax-actions">
+<button id="biax-expand">⤢</button>
+<button id="biax-close">✕</button>
+</div>
+</div>
 
-  <div class="biax-input">
-    <input placeholder="Ask biAX…" />
-    <button>➤</button>
-  </div>
+<div class="biax-messages" id="biax-messages">
+<div class="bot-msg">
+Hey 👋 I’m biAX. Ask me anything about BLLOOM.
+</div>
+</div>
+
+<div class="biax-input">
+<input id="biax-text" placeholder="Sizes, drops, orders..." />
+<button onclick="sendMessage()">➤</button>
+</div>
 
 </div>
 
-    <div class="biax-messages" id="biax-messages">
-      <div class="bot-msg">Hey 👋 I’m biAX. Ask me anything about BLLOOM.</div>
-    </div>
-
-    <div class="biax-input">
-      <input id="biax-text" placeholder="Sizes, drops, orders..." />
-      <button onclick="sendMessage()">➤</button>
-    </div>
-
-  </div>
+</div>
 
 <script src="biax.js"></script>
 </body>
