@@ -573,8 +573,22 @@ function scrollToFlash() {
   </div>
 </div>
 </div>
+<script>
+const aiButton = document.getElementById("aiButton");
+const aiChat = document.getElementById("aiChat");
+const closeChat = document.getElementById("closeChat");
+
+aiButton.addEventListener("click", () => {
+  aiChat.classList.add("active");
+});
+
+closeChat.addEventListener("click", () => {
+  aiChat.classList.remove("active");
+});
+</script>
 </body>
 </html>
+
 
 
 
