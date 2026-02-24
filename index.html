@@ -554,27 +554,219 @@ function scrollToFlash() {
   });
 }
 <style>
-  #aiButton { position: fixed; right: 24px; bottom: 24px; width: 58px; height: 58px; border: 0; border-radius: 999px; background: linear-gradient(135deg,#23c7c9,#1ba4d8); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(27,164,216,.45); z-index: 2147483000; cursor:pointer; }
-  #aiButton svg { width: 24px; height: 24px; fill: #fff; }
-  #aiChat { position: fixed; right: 24px; bottom: 92px; width: min(380px, calc(100vw - 28px)); height: min(70vh, 520px); background:#fff; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,.22); display:flex; flex-direction:column; opacity:0; pointer-events:none; transform: translateY(16px) scale(.98); transition: opacity .2s, transform .25s; z-index:2147482999; overflow:hidden; }
-  #aiChat.active { opacity:1; pointer-events:auto; transform: translateY(0) scale(1); }
-  #aiBackdrop { position: fixed; inset:0; background: rgba(0,0,0,.3); opacity:0; pointer-events:none; transition: opacity .2s; z-index:2147482998; }
-  #aiBackdrop.active { opacity:1; pointer-events:auto; }
-  #closeChat { position:absolute; top:10px; right:10px; border:0; width:30px; height:30px; border-radius:999px; background:rgba(255,255,255,.18); color:#fff; cursor:pointer; z-index:2; }
-  .ai-topbar { display:flex; flex-direction:column; gap:6px; min-height:116px; padding:18px 16px 14px; color:#fff; background:linear-gradient(135deg,#23c7c9,#2098cf); }
-  .ai-topbar strong { font-size:25px; line-height:1.1; }
-  .ai-topbar span { font-size:13px; opacity:.92; }
-  .ai-body { display:flex; flex:1; flex-direction:column; gap:12px; justify-content:space-between; background:#f5f7f8; padding:14px; }
-  .ai-messages { flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:10px; }
-  .ai-bot-msg,.ai-user-msg { max-width:86%; padding:10px 12px; border-radius:12px; font-size:14px; line-height:1.4; }
-  .ai-bot-msg { background:#e8ecef; color:#151515; }
-  .ai-user-msg { align-self:flex-end; background:#d5f3f7; color:#0f2b33; }
-  .ai-chip-row { display:flex; flex-wrap:wrap; gap:8px; }
-  .ai-chip { border:1px solid #2aa8d2; border-radius:999px; background:#fff; color:#0d5572; padding:6px 10px; font-size:13px; cursor:pointer; }
-  .ai-input-wrap { display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #d8d8d8; border-radius:999px; padding:8px 10px; }
-  .ai-input-wrap input { flex:1; border:0; outline:none; background:transparent; }
-  .ai-input-wrap button { border:0; background:transparent; color:#8c8c8c; cursor:pointer; }
-  @media (max-width:768px){ #aiButton { right:16px; bottom:16px; } #aiChat { right:10px; bottom:82px; width:calc(100vw - 20px); height:min(68vh,500px);} }
+  #aiButton {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 58px;
+    height: 58px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #7f66ff, #5ac8ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 14px 32px rgba(111, 118, 255, 0.45);
+    z-index: 2147483000;
+    cursor: pointer;
+  }
+
+  #aiButton svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+  }
+
+  #aiBackdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 18, 38, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 2147482998;
+  }
+
+  #aiBackdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #aiChat {
+    position: fixed;
+    right: 22px;
+    bottom: 90px;
+    width: min(360px, calc(100vw - 24px));
+    height: min(72vh, 560px);
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f4efff 0%, #eef6ff 48%, #fdfdff 100%);
+    box-shadow: 0 28px 70px rgba(41, 46, 95, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(14px) scale(0.98);
+    transition: opacity 0.2s ease, transform 0.25s ease;
+    z-index: 2147482999;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #aiChat.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  #closeChat {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.5);
+    color: #4f4b7a;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .ai-topbar {
+    text-align: center;
+    padding: 28px 24px 18px;
+    color: #2f2d4d;
+  }
+
+  .ai-topbar h3 {
+    margin: 0;
+    font-size: 33px;
+    font-weight: 700;
+  }
+
+  .ai-topbar p {
+    margin: 6px 0 0;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .ai-avatar {
+    width: 112px;
+    height: 112px;
+    border-radius: 999px;
+    margin: 18px auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 35% 30%, #ca8bff 0%, #7c76ff 45%, #5ac8ff 100%);
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5), 0 14px 30px rgba(110, 102, 245, 0.35);
+  }
+
+  .ai-eye {
+    width: 12px;
+    height: 24px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    margin: 0 9px;
+  }
+
+  .ai-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px 14px 16px;
+    height: 100%;
+  }
+
+  .ai-chip-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .ai-chip {
+    border: 1px solid #dfd8ff;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    color: #5c5388;
+    padding: 9px 10px;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .ai-messages {
+    min-height: 70px;
+    max-height: 115px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-bot-msg,
+  .ai-user-msg {
+    max-width: 86%;
+    font-size: 13px;
+    line-height: 1.4;
+    padding: 8px 10px;
+    border-radius: 12px;
+  }
+
+  .ai-bot-msg {
+    background: rgba(255, 255, 255, 0.9);
+    color: #433f66;
+  }
+
+  .ai-user-msg {
+    margin-left: auto;
+    background: #dcefff;
+    color: #22425d;
+  }
+
+  .ai-input-wrap {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd8f6;
+    border-radius: 999px;
+    padding: 8px 10px;
+  }
+
+  .ai-input-wrap input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #37345d;
+  }
+
+  .ai-input-wrap button {
+    border: 0;
+    background: linear-gradient(135deg, #7f66ff, #5ac8ff);
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    #aiButton {
+      right: 14px;
+      bottom: 14px;
+    }
+
+    #aiChat {
+      right: 8px;
+      bottom: 78px;
+      width: calc(100vw - 16px);
+      height: min(74vh, 560px);
+    }
+  }
 </style>
 
 <!-- AI Floating Button -->
@@ -590,20 +782,24 @@ function scrollToFlash() {
 <div id="aiChat" role="dialog" aria-label="AI chat" aria-hidden="true">
   <button id="closeChat" type="button" aria-label="Close AI chat">✕</button>
   <div class="ai-topbar">
-    <strong>BLLOOM AI</strong>
-    <span>Ask about products, orders, or sizing.</span>
+    <h3>Hello, Marry!</h3>
+    <p>How can I help you today?</p>
+    <div class="ai-avatar" aria-hidden="true">
+      <span class="ai-eye"></span><span class="ai-eye"></span>
+    </div>
   </div>
   <div class="ai-body">
+    <div class="ai-chip-row">
+      <button class="ai-chip" type="button">✨ Create an image</button>
+      <button class="ai-chip" type="button">💡 Give me ideas</button>
+      <button class="ai-chip" type="button">📝 Do the task</button>
+      <button class="ai-chip" type="button">🌐 Translate text</button>
+    </div>
     <div class="ai-messages" id="aiMessages">
-      <div class="ai-bot-msg">Hey 👋 I’m BLLOOM AI. How can I help today?</div>
-      <div class="ai-chip-row">
-        <button class="ai-chip" type="button">Track my order</button>
-        <button class="ai-chip" type="button">What’s new?</button>
-        <button class="ai-chip" type="button">Size help</button>
-      </div>
+      <div class="ai-bot-msg">Hi! I’m BLLOOM AI. Ask me anything about products or orders.</div>
     </div>
     <div class="ai-input-wrap">
-      <input id="aiInput" type="text" aria-label="Type your message" placeholder="Write a message" />
+      <input id="aiInput" type="text" aria-label="Type your message" placeholder="Ask me anything..." />
       <button id="aiSend" type="button" aria-label="Send message">➤</button>
     </div>
   </div>
@@ -656,9 +852,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const replyMap = {
+    "✨ create an image": "You can generate mood-board prompts from product themes.",
+    "💡 give me ideas": "Try street-luxe layers: oversized hoodie + structured trouser + clean sneakers.",
+    "📝 do the task": "Sure — tell me the exact task and I'll break it down step by step.",
+    "🌐 translate text": "Send your text and tell me the target language.",
     "track my order": "You can track orders from your profile > orders section.",
-    "what’s new?": "Fresh drops are live in the New Collection section.",
-    "size help": "Tell me your usual fit and I’ll recommend a size.",
   };
 
   const sendMessage = (text) => {
@@ -692,3 +890,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
