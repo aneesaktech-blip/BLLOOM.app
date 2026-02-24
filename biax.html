@@ -1,50 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>biAX — BLLOOM AI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biax AI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* light background instead of full black */
+        }
 
+        /* Center "AI" text */
+        .ai-text {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 48px;
+            font-weight: bold;
+            color: #000;
+        }
 
-<link rel="stylesheet" href="biax.css">
+        /* AI icon button */
+        #biax-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
 
+        /* AI chat window */
+        #biax-chat {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            max-width: 90%;
+            height: 500px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            display: none; /* hidden by default */
+            z-index: 1000;
+        }
+    </style>
 </head>
+<body>
+    <div class="ai-text">AI</div>
 
-<body class="biax-page">
+    <!-- AI Icon -->
+    <div id="biax-icon">AI</div>
 
-<div class="biax-wrapper">
+    <!-- AI Chat Window -->
+    <div id="biax-chat">
+        <iframe src="biax-chat.html" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
 
-<header class="biax-header">
-<span>biAX</span>
-<a href="index.html">✕</a>
-</header>
+    <script>
+        const icon = document.getElementById('biax-icon');
+        const chat = document.getElementById('biax-chat');
 
-<!-- biAX Chat Panel -->
-<div id="biax-panel">
-
-<div class="biax-panel-header">
-<img src="biax-logo.svg" alt="biAX">
-
-<div class="biax-actions">
-<button id="biax-expand">⤢</button>
-<button id="biax-close">✕</button>
-</div>
-</div>
-
-<div class="biax-messages" id="biax-messages">
-<div class="bot-msg">
-Hey 👋 I’m biAX. Ask me anything about BLLOOM.
-</div>
-</div>
-
-<div class="biax-input">
-<input id="biax-text" placeholder="Sizes, drops, orders..." />
-<button onclick="sendMessage()">➤</button>
-</div>
-
-</div>
-
-</div>
-
-<script src="biax.js"></script>
+        // Toggle chat window on icon click
+        icon.addEventListener('click', () => {
+            if(chat.style.display === 'none' || chat.style.display === '') {
+                chat.style.display = 'block';
+            } else {
+                chat.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
