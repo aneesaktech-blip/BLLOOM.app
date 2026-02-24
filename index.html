@@ -559,6 +559,567 @@ function scrollToFlash() {
   });
 }
 </script>
+    
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BLLOOM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+  <body>
+
+<!-- ICON SYSTEM (HIDDEN, BUT REQUIRED) -->
+<svg style="display:none;">
+  <symbol id="icon-cart" viewBox="0 0 24 24">
+    <path d="M6 6h15l-1.5 9h-12z" fill="none" stroke="black" stroke-width="1.5"/>
+    <circle cx="9" cy="21" r="1"/>
+    <circle cx="18" cy="21" r="1"/>
+  </symbol>
+
+  <symbol id="icon-user" viewBox="0 0 24 24">
+    <circle cx="12" cy="8" r="4" fill="none" stroke="black" stroke-width="1.5"/>
+    <path d="M4 22c2-4 14-4 16 0" fill="none" stroke="black" stroke-width="1.5"/>
+  </symbol>
+
+  <symbol id="icon-search" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="7" fill="none" stroke="black" stroke-width="1.5"/>
+    <line x1="16" y1="16" x2="22" y2="22" stroke="black" stroke-width="1.5"/>
+  </symbol>
+
+  <symbol id="icon-infinity" viewBox="0 0 24 24">
+    <path d="M5 12c2-4 6-4 8 0s6 4 8 0" fill="none" stroke="black" stroke-width="1.5"/>
+  </symbol>
+</svg>
+
+<div class="desktop-home">
+
+
+<!-- FLOATING SEARCH -->
+
+
+<!-- THIN STRIP -->
+<div id="blloomStrip">
+  <span>
+    <span>B</span>
+    <span>L</span>
+    <span>L</span>
+    <span>O</span>
+    <span>O</span>
+    <span>M</span>
+  </span>
+</div>
+
+
+
+<header class="navbar">
+  <nav class="nav-left">
+<a href="index.html">HOME</a>
+<a href="about.html">ABOUT</a>
+<a href="shop.html">SHOP</a>
+
+  </nav>
+<div class="header-search">
+  <input type="text" placeholder="Search">
+</div>
+
+<nav class="nav-right">
+
+  <!-- STUDIO with hover bar -->
+<div class="studio-wrapper">
+  <a href="#" class="studio-link">STUDIO</a>
+
+  <div class="studio-bar">
+    <a href="shop-women.html">Women’s</a>
+<a href="shop-men.html">Men’s</a>
+<a href="shop-kids.html">Kid’s</a>
+
+  </div>
+</div>
+
+  <!-- CONTACT + INFINITY -->
+<a href="/contact" class="contact-link">
+  CONTACT
+</a>
+
+<span class="infinity" id="infinityBtn">∞</span>
+
+
+    
+
+
+  </nav>
+</header>
+  <main>
+
+  <!-- HOME (default) -->
+  <section class="page active" id="home">
+    <!-- HERO -->
+<section class="hero">
+
+  <div class="hero-image">
+    <h1 class="hero-brand">BLLOOM</h1>
+
+    <p class="hero-hook">
+      Too boring? Try Blloom.
+    </p>
+  </div>
+
+  <div class="hero-manifesto">
+    Build quietly. Market honestly. Let the product speak.
+  </div>
+<div class="banner-strip"></div>
+
+</section>
+
+    <!-- your existing homepage content -->
+
+  <!-- ABOUT -->
+  <section class="page" id="aboutPage">
+    <h1>About BLOOM</h1>
+    <p>BLOOM is a modern fashion studio.</p>
+  </section>
+
+  <!-- SHOP -->
+  <section class="page" id="shopPage">
+    <h1>Shop</h1>
+
+    <div class="category-bar">
+      <button data-category="women">Women</button>
+      <button data-category="men">Men</button>
+      <button data-category="kids">Kids</button>
+    </div>
+
+    <div class="products" id="productsArea">
+      Select a category
+    </div>
+  </section>
+
+  
+
+</main>
+
+
+
+<!-- COLLAGE -->
+  <section class="new-drop">
+
+  <!-- background video -->
+  <video class="new-drop-video" autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+<div class="hero-3d">
+  <img src="model.png" alt="Floating Model">
+</div>
+
+  <!-- content -->
+  <div class="new-drop-content">
+    <h2>NEW DROP</h2>
+    <a href="#" class="btn">SHOP NOW</a>
+  </div>
+
+</section>
+
+
+
+<!-- INFO GRID -->
+<section class="info-grid">
+  <div class="info-box">
+    <h3>THE BLLOOM STUDIO</h3>
+    <p>Where street meets precision.</p>
+  </div>
+  <div class="info-box">
+    <h3>LIMITED PIECES</h3>
+    <p>No restocks. No repeats.</p>
+  </div>
+  <div class="info-box">
+    <h3>ABOUT BLLOOM</h3>
+    <p>Designed in limited drops. Made to stand apart.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <h2>LATEST ARRIVALS</h2>
+
+  <div class="product-grid">
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Structured Jacket</h4>
+      <span>₹6,499</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Tailored Hoodie</h4>
+      <span>₹4,999</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Tech Cargo Pants</h4>
+      <span>₹5,999</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Minimal Tee</h4>
+      <span>₹2,499</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © BLLOOM — Designed in India. Worn without permission.
+</footer>
+    </section>
+
+<script>
+const hero = document.querySelector(".hero") || null;
+
+const strip = document.getElementById("blloomStrip");
+
+window.addEventListener("scroll", () => {
+ if (hero && window.scrollY > 120) {
+  hero.classList.add("scrolled");
+  strip.style.opacity = "1";
+} else if (hero) {
+  hero.classList.remove("scrolled");
+  strip.style.opacity = "0";
+}
+
+});
+</script>
+
+<!-- Infinity Menu Panel -->
+<div class="infinity-panel" id="infinityPanel">
+ <a href="#" id="profileLink">My Profile</a>
+
+<a href="wishlist.html">Wishlist</a>
+<a href="cart.html">Cart</a>
+   <a href="order.html">Oders</a>
+<a href="coupons.html">Coupons & Discounts</a>
+<a href="viewed.html">Last Product Viewed</a>
+  
+</div>
+
+  
+
+  <script>
+    const btn = document.getElementById("openInfinity");
+if (btn) {
+  btn.onclick = () => {};
+}
+
+  
+  infinityBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    infinityPanel.classList.toggle("active");
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", () => {
+    infinityPanel.classList.remove("active");
+  });
+
+  infinityPanel.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+</script>
+
+<script>
+const hero = document.querySelector(".hero");
+const strip = document.getElementById("blloomStrip");
+
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+
+  const target = document.getElementById(pageId);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener("scroll", () => {
+  if (!strip) return;
+
+  if (window.scrollY > 120) {
+    strip.style.opacity = "1";
+  } else {
+    strip.style.opacity = "0";
+  }
+});
+
+
+  // Shop category logic
+  document.querySelectorAll('.category-bar button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.category;
+      document.getElementById('productsArea').innerText =
+        category.charAt(0).toUpperCase() + category.slice(1) + " products here";
+    });
+  });
+</script>
+  
+<script>
+  const strip = document.getElementById("blloomStrip");
+
+  window.addEventListener("scroll", () => {
+    if (!strip) return;
+
+    if (window.scrollY > 120) {
+      strip.style.opacity = "1";   // SHOW strip
+    } else {
+      strip.style.opacity = "0";   // HIDE strip
+    }
+  });
+</script>
+<script>
+  document.getElementById("profileLink").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const loggedIn = localStorage.getItem("isLoggedIn");
+
+    if (loggedIn === "true") {
+      window.location.href = "/profile";
+    } else {
+      window.location.href = "/login";
+    }
+  });
+</script>
+</div>
+<div class="mobile"> 
+  <div class="top-strip">
+  <span class="brand-script">BLLOOM</span>
+</div>
+
+  <section class="blloom-hero">
+  <img src="images/hero.jpg" alt="BLLOOM Editorial" />
+
+  <div class="hero-overlay">
+    <span class="hero-tag">EDITORIAL</span>
+    <h1>BLLOOM</h1>
+    <button class="hero-btn" onclick="scrollToFlash()">View Story</button>
+
+  </div>
+</section>
+
+  <!-- MOBILE HEADER -->
+  <div class="mobile_header">
+    <div class="mobile_top">
+      <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Kolkata, India</span>
+      </div>
+      <div class="top_icons">
+  <span class="top_infinity">∞</span>
+  <i class="fa-regular fa-user profile"></i>
+</div>
+<div class="filter_drawer" id="filterDrawer">
+  <div class="filter_head">
+    <h3>Filter & Sort</h3>
+    <span onclick="closeFilters()">✕</span>
+  </div>
+
+  <div class="filter_group">
+    <h4>Sort by price</h4>
+    <button>Low → High</button>
+    <button>High → Low</button>
+  </div>
+
+  <div class="filter_group">
+    <h4>Category</h4>
+    <button>Men</button>
+    <button>Women</button>
+    <button>Kids</button>
+  </div>
+
+  <div class="filter_group">
+    <h4>Latest</h4>
+    <button>Latest Arrivals</button>
+  </div>
+</div>
+
+    </div>
+
+    <div class="mobile_search">
+      <i class="fa-solid fa-magnifying-glass search_icon"></i>
+      <input type="text" placeholder="Search on BLLOOM">
+      <i class="fa-solid fa-sliders filter" onclick="openFilters()"></i>
+
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="banner_text">
+      <h2>New Collection</h2>
+      <p>50% OFF for first order</p>
+      <button>Shop Now</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+  </div>
+
+  <!-- CATEGORY -->
+  
+
+  <section class="specialise">
+
+  <h2>What we specialise in</h2>
+
+  <div class="specialise-grid">
+    <div class="spec-card">
+      <i class="fa-solid fa-hood-cloak"></i>
+      <p>Hoodies</p>
+    </div>
+
+    <div class="spec-card">
+      <i class="fa-solid fa-shirt"></i>
+      <p>Oversized</p>
+    </div>
+
+    <div class="spec-card">
+      <i class="fa-solid fa-crop"></i>
+      <p>Crop Tops</p>
+    </div>
+
+    <div class="spec-card">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <p>Tote Bags</p>
+    </div>
+  </div>
+
+  <!-- VIDEO INSIDE SPECIALISE -->
+  <div class="specialise-video">
+    <video autoplay muted loop playsinline>
+      <source src="hero.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</section>
+
+
+
+
+  <!-- FLASH SALE -->
+ <section class="flash-sale">
+
+  <h2 class="section-title">Flash Sale</h2>
+
+  <!-- MEN / WOMEN -->
+  <div class="gender-text">
+    <span class="gender active">Men</span>
+    <span class="divider">/</span>
+    <span class="gender">Women</span>
+  </div>
+
+  <!-- MODEL IMAGES BLOCK -->
+  <div class="model-block">
+    <img src="male.jpg" alt="Men Collection" class="model-img">
+    <img src="female.jpg" alt="Women Collection" class="model-img">
+  </div>
+
+  <!-- PRODUCTS BLOCK -->
+  <div class="products-block">
+
+    <div class="sort-text">
+      <span class="sort active">Newest</span>
+      <span class="sort">Popular</span>
+    </div>
+
+    <!-- products grid here -->
+  </div>
+
+</section>
+
+  <!-- SORT TABS -->
+  <div class="sort-tabs">
+    <button class="sort-tab active">Newest</button>
+    <button class="sort-tab">Popular</button>
+  </div>
+
+</section>
+
+
+</section>
+
+
+
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1520974735194-5a9d68d07b94">
+        <p>BLLOOM Jacket</p>
+        <strong>₹1200</strong>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+        <p>BLLOOM Shirt</p>
+        <strong>₹899</strong>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+<!-- ============ MOBILE END ============ -->
+ <script>
+function openFilters() {
+  document.getElementById("filterDrawer").classList.add("open");
+}
+
+function closeFilters() {
+  document.getElementById("filterDrawer").classList.remove("open");
+}
+</script>
+<script>
+const strip = document.getElementById("blloomStrip");
+const hero = document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+  if (!strip) return;
+
+  if (window.scrollY > 120) {
+    strip.style.opacity = "1";
+    hero && hero.classList.add("scrolled");
+  } else {
+    strip.style.opacity = "0";
+    hero && hero.classList.remove("scrolled");
+  }
+});
+</script>
+
+<script>
+function scrollToFlash() {
+  document.querySelector(".flash")?.scrollIntoView({
+    behavior: "smooth"
+  });
+}
+</script>
 <!-- AI Floating Button -->
 <div id="aiButton">∞</div>
 
@@ -588,6 +1149,780 @@ closeChat.addEventListener("click", () => {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BLLOOM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+  <body>
+
+<!-- ICON SYSTEM (HIDDEN, BUT REQUIRED) -->
+<svg style="display:none;">
+  <symbol id="icon-cart" viewBox="0 0 24 24">
+    <path d="M6 6h15l-1.5 9h-12z" fill="none" stroke="black" stroke-width="1.5"/>
+    <circle cx="9" cy="21" r="1"/>
+    <circle cx="18" cy="21" r="1"/>
+  </symbol>
+
+  <symbol id="icon-user" viewBox="0 0 24 24">
+    <circle cx="12" cy="8" r="4" fill="none" stroke="black" stroke-width="1.5"/>
+    <path d="M4 22c2-4 14-4 16 0" fill="none" stroke="black" stroke-width="1.5"/>
+  </symbol>
+
+  <symbol id="icon-search" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="7" fill="none" stroke="black" stroke-width="1.5"/>
+    <line x1="16" y1="16" x2="22" y2="22" stroke="black" stroke-width="1.5"/>
+  </symbol>
+
+  <symbol id="icon-infinity" viewBox="0 0 24 24">
+    <path d="M5 12c2-4 6-4 8 0s6 4 8 0" fill="none" stroke="black" stroke-width="1.5"/>
+  </symbol>
+</svg>
+
+<div class="desktop-home">
+
+
+<!-- FLOATING SEARCH -->
+
+
+<!-- THIN STRIP -->
+<div id="blloomStrip">
+  <span>
+    <span>B</span>
+    <span>L</span>
+    <span>L</span>
+    <span>O</span>
+    <span>O</span>
+    <span>M</span>
+  </span>
+</div>
+
+
+
+<header class="navbar">
+  <nav class="nav-left">
+<a href="index.html">HOME</a>
+<a href="about.html">ABOUT</a>
+<a href="shop.html">SHOP</a>
+
+  </nav>
+<div class="header-search">
+  <input type="text" placeholder="Search">
+</div>
+
+<nav class="nav-right">
+
+  <!-- STUDIO with hover bar -->
+<div class="studio-wrapper">
+  <a href="#" class="studio-link">STUDIO</a>
+
+  <div class="studio-bar">
+    <a href="shop-women.html">Women’s</a>
+<a href="shop-men.html">Men’s</a>
+<a href="shop-kids.html">Kid’s</a>
+
+  </div>
+</div>
+
+  <!-- CONTACT + INFINITY -->
+<a href="/contact" class="contact-link">
+  CONTACT
+</a>
+
+<span class="infinity" id="infinityBtn">∞</span>
+
+
+    
+
+
+  </nav>
+</header>
+  <main>
+
+  <!-- HOME (default) -->
+  <section class="page active" id="home">
+    <!-- HERO -->
+<section class="hero">
+
+  <div class="hero-image">
+    <h1 class="hero-brand">BLLOOM</h1>
+
+    <p class="hero-hook">
+      Too boring? Try Blloom.
+    </p>
+  </div>
+
+  <div class="hero-manifesto">
+    Build quietly. Market honestly. Let the product speak.
+  </div>
+<div class="banner-strip"></div>
+
+</section>
+
+    <!-- your existing homepage content -->
+
+  <!-- ABOUT -->
+  <section class="page" id="aboutPage">
+    <h1>About BLOOM</h1>
+    <p>BLOOM is a modern fashion studio.</p>
+  </section>
+
+  <!-- SHOP -->
+  <section class="page" id="shopPage">
+    <h1>Shop</h1>
+
+    <div class="category-bar">
+      <button data-category="women">Women</button>
+      <button data-category="men">Men</button>
+      <button data-category="kids">Kids</button>
+    </div>
+
+    <div class="products" id="productsArea">
+      Select a category
+    </div>
+  </section>
+
+  
+
+</main>
+
+
+
+<!-- COLLAGE -->
+  <section class="new-drop">
+
+  <!-- background video -->
+  <video class="new-drop-video" autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+<div class="hero-3d">
+  <img src="model.png" alt="Floating Model">
+</div>
+
+  <!-- content -->
+  <div class="new-drop-content">
+    <h2>NEW DROP</h2>
+    <a href="#" class="btn">SHOP NOW</a>
+  </div>
+
+</section>
+
+
+
+<!-- INFO GRID -->
+<section class="info-grid">
+  <div class="info-box">
+    <h3>THE BLLOOM STUDIO</h3>
+    <p>Where street meets precision.</p>
+  </div>
+  <div class="info-box">
+    <h3>LIMITED PIECES</h3>
+    <p>No restocks. No repeats.</p>
+  </div>
+  <div class="info-box">
+    <h3>ABOUT BLLOOM</h3>
+    <p>Designed in limited drops. Made to stand apart.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <h2>LATEST ARRIVALS</h2>
+
+  <div class="product-grid">
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Structured Jacket</h4>
+      <span>₹6,499</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Tailored Hoodie</h4>
+      <span>₹4,999</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Tech Cargo Pants</h4>
+      <span>₹5,999</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/600x800">
+      <h4>Minimal Tee</h4>
+      <span>₹2,499</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © BLLOOM — Designed in India. Worn without permission.
+</footer>
+    </section>
+
+<script>
+const hero = document.querySelector(".hero") || null;
+
+const strip = document.getElementById("blloomStrip");
+
+window.addEventListener("scroll", () => {
+ if (hero && window.scrollY > 120) {
+  hero.classList.add("scrolled");
+  strip.style.opacity = "1";
+} else if (hero) {
+  hero.classList.remove("scrolled");
+  strip.style.opacity = "0";
+}
+
+});
+</script>
+
+<!-- Infinity Menu Panel -->
+<div class="infinity-panel" id="infinityPanel">
+ <a href="#" id="profileLink">My Profile</a>
+
+<a href="wishlist.html">Wishlist</a>
+<a href="cart.html">Cart</a>
+   <a href="order.html">Oders</a>
+<a href="coupons.html">Coupons & Discounts</a>
+<a href="viewed.html">Last Product Viewed</a>
+  
+</div>
+
+  
+
+  <script>
+    const btn = document.getElementById("openInfinity");
+if (btn) {
+  btn.onclick = () => {};
+}
+
+  
+  infinityBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    infinityPanel.classList.toggle("active");
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", () => {
+    infinityPanel.classList.remove("active");
+  });
+
+  infinityPanel.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+</script>
+
+<script>
+const hero = document.querySelector(".hero");
+const strip = document.getElementById("blloomStrip");
+
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+
+  const target = document.getElementById(pageId);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener("scroll", () => {
+  if (!strip) return;
+
+  if (window.scrollY > 120) {
+    strip.style.opacity = "1";
+  } else {
+    strip.style.opacity = "0";
+  }
+});
+
+
+  // Shop category logic
+  document.querySelectorAll('.category-bar button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.category;
+      document.getElementById('productsArea').innerText =
+        category.charAt(0).toUpperCase() + category.slice(1) + " products here";
+    });
+  });
+</script>
+  
+<script>
+  const strip = document.getElementById("blloomStrip");
+
+  window.addEventListener("scroll", () => {
+    if (!strip) return;
+
+    if (window.scrollY > 120) {
+      strip.style.opacity = "1";   // SHOW strip
+    } else {
+      strip.style.opacity = "0";   // HIDE strip
+    }
+  });
+</script>
+<script>
+  document.getElementById("profileLink").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const loggedIn = localStorage.getItem("isLoggedIn");
+
+    if (loggedIn === "true") {
+      window.location.href = "/profile";
+    } else {
+      window.location.href = "/login";
+    }
+  });
+</script>
+</div>
+<div class="mobile"> 
+  <div class="top-strip">
+  <span class="brand-script">BLLOOM</span>
+</div>
+
+  <section class="blloom-hero">
+  <img src="images/hero.jpg" alt="BLLOOM Editorial" />
+
+  <div class="hero-overlay">
+    <span class="hero-tag">EDITORIAL</span>
+    <h1>BLLOOM</h1>
+    <button class="hero-btn" onclick="scrollToFlash()">View Story</button>
+
+  </div>
+</section>
+
+  <!-- MOBILE HEADER -->
+  <div class="mobile_header">
+    <div class="mobile_top">
+      <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Kolkata, India</span>
+      </div>
+      <div class="top_icons">
+  <span class="top_infinity">∞</span>
+  <i class="fa-regular fa-user profile"></i>
+</div>
+<div class="filter_drawer" id="filterDrawer">
+  <div class="filter_head">
+    <h3>Filter & Sort</h3>
+    <span onclick="closeFilters()">✕</span>
+  </div>
+
+  <div class="filter_group">
+    <h4>Sort by price</h4>
+    <button>Low → High</button>
+    <button>High → Low</button>
+  </div>
+
+  <div class="filter_group">
+    <h4>Category</h4>
+    <button>Men</button>
+    <button>Women</button>
+    <button>Kids</button>
+  </div>
+
+  <div class="filter_group">
+    <h4>Latest</h4>
+    <button>Latest Arrivals</button>
+  </div>
+</div>
+
+    </div>
+
+    <div class="mobile_search">
+      <i class="fa-solid fa-magnifying-glass search_icon"></i>
+      <input type="text" placeholder="Search on BLLOOM">
+      <i class="fa-solid fa-sliders filter" onclick="openFilters()"></i>
+
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="banner_text">
+      <h2>New Collection</h2>
+      <p>50% OFF for first order</p>
+      <button>Shop Now</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+  </div>
+
+  <!-- CATEGORY -->
+  
+
+  <section class="specialise">
+
+  <h2>What we specialise in</h2>
+
+  <div class="specialise-grid">
+    <div class="spec-card">
+      <i class="fa-solid fa-hood-cloak"></i>
+      <p>Hoodies</p>
+    </div>
+
+    <div class="spec-card">
+      <i class="fa-solid fa-shirt"></i>
+      <p>Oversized</p>
+    </div>
+
+    <div class="spec-card">
+      <i class="fa-solid fa-crop"></i>
+      <p>Crop Tops</p>
+    </div>
+
+    <div class="spec-card">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <p>Tote Bags</p>
+    </div>
+  </div>
+
+  <!-- VIDEO INSIDE SPECIALISE -->
+  <div class="specialise-video">
+    <video autoplay muted loop playsinline>
+      <source src="hero.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</section>
+
+
+
+
+  <!-- FLASH SALE -->
+ <section class="flash-sale">
+
+  <h2 class="section-title">Flash Sale</h2>
+
+  <!-- MEN / WOMEN -->
+  <div class="gender-text">
+    <span class="gender active">Men</span>
+    <span class="divider">/</span>
+    <span class="gender">Women</span>
+  </div>
+
+  <!-- MODEL IMAGES BLOCK -->
+  <div class="model-block">
+    <img src="male.jpg" alt="Men Collection" class="model-img">
+    <img src="female.jpg" alt="Women Collection" class="model-img">
+  </div>
+
+  <!-- PRODUCTS BLOCK -->
+  <div class="products-block">
+
+    <div class="sort-text">
+      <span class="sort active">Newest</span>
+      <span class="sort">Popular</span>
+    </div>
+
+    <!-- products grid here -->
+  </div>
+
+</section>
+
+  <!-- SORT TABS -->
+  <div class="sort-tabs">
+    <button class="sort-tab active">Newest</button>
+    <button class="sort-tab">Popular</button>
+  </div>
+
+</section>
+
+
+</section>
+
+
+
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1520974735194-5a9d68d07b94">
+        <p>BLLOOM Jacket</p>
+        <strong>₹1200</strong>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+        <p>BLLOOM Shirt</p>
+        <strong>₹899</strong>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+<!-- ============ MOBILE END ============ -->
+ <script>
+function openFilters() {
+  document.getElementById("filterDrawer").classList.add("open");
+}
+
+function closeFilters() {
+  document.getElementById("filterDrawer").classList.remove("open");
+}
+</script>
+<script>
+const strip = document.getElementById("blloomStrip");
+const hero = document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+  if (!strip) return;
+
+  if (window.scrollY > 120) {
+    strip.style.opacity = "1";
+    hero && hero.classList.add("scrolled");
+  } else {
+    strip.style.opacity = "0";
+    hero && hero.classList.remove("scrolled");
+  }
+});
+</script>
+
+<script>
+function scrollToFlash() {
+  document.querySelector(".flash")?.scrollIntoView({
+    behavior: "smooth"
+  });
+}
+</script>
+</div>
+
+<style>
+  #aiButton { position: fixed; right: 24px; bottom: 24px; width: 58px; height: 58px; border: 0; border-radius: 999px; background: linear-gradient(135deg,#23c7c9,#1ba4d8); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(27,164,216,.45); z-index: 2147483000; cursor:pointer; }
+  #aiButton svg { width: 24px; height: 24px; fill: #fff; }
+  #aiChat { position: fixed; right: 24px; bottom: 92px; width: min(380px, calc(100vw - 28px)); height: min(70vh, 520px); background:#fff; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,.22); display:flex; flex-direction:column; opacity:0; pointer-events:none; transform: translateY(16px) scale(.98); transition: opacity .2s, transform .25s; z-index:2147482999; overflow:hidden; }
+  #aiChat.active { opacity:1; pointer-events:auto; transform: translateY(0) scale(1); }
+  #aiBackdrop { position: fixed; inset:0; background: rgba(0,0,0,.3); opacity:0; pointer-events:none; transition: opacity .2s; z-index:2147482998; }
+  #aiBackdrop.active { opacity:1; pointer-events:auto; }
+  #closeChat { position:absolute; top:10px; right:10px; border:0; width:30px; height:30px; border-radius:999px; background:rgba(255,255,255,.18); color:#fff; cursor:pointer; z-index:2; }
+  .ai-topbar { display:flex; flex-direction:column; gap:6px; min-height:116px; padding:18px 16px 14px; color:#fff; background:linear-gradient(135deg,#23c7c9,#2098cf); }
+  .ai-topbar strong { font-size:25px; line-height:1.1; }
+  .ai-topbar span { font-size:13px; opacity:.92; }
+  .ai-body { display:flex; flex:1; flex-direction:column; gap:12px; justify-content:space-between; background:#f5f7f8; padding:14px; }
+  .ai-messages { flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:10px; }
+  .ai-bot-msg,.ai-user-msg { max-width:86%; padding:10px 12px; border-radius:12px; font-size:14px; line-height:1.4; }
+  .ai-bot-msg { background:#e8ecef; color:#151515; }
+  .ai-user-msg { align-self:flex-end; background:#d5f3f7; color:#0f2b33; }
+  .ai-chip-row { display:flex; flex-wrap:wrap; gap:8px; }
+  .ai-chip { border:1px solid #2aa8d2; border-radius:999px; background:#fff; color:#0d5572; padding:6px 10px; font-size:13px; cursor:pointer; }
+  .ai-input-wrap { display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #d8d8d8; border-radius:999px; padding:8px 10px; }
+  .ai-input-wrap input { flex:1; border:0; outline:none; background:transparent; }
+  .ai-input-wrap button { border:0; background:transparent; color:#8c8c8c; cursor:pointer; }
+  @media (max-width:768px){ #aiButton { right:16px; bottom:16px; } #aiChat { right:10px; bottom:82px; width:calc(100vw - 20px); height:min(68vh,500px);} }
+</style>
+
+<!-- AI Floating Button -->
+<button id="aiButton" type="button" aria-label="Open AI chat" aria-expanded="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12 3C6.48 3 2 6.94 2 11.8c0 2.6 1.3 4.95 3.4 6.58V22l3.22-1.77c1.06.29 2.2.45 3.38.45 5.52 0 10-3.94 10-8.8S17.52 3 12 3z" />
+  </svg>
+</button>
+
+<div id="aiBackdrop" aria-hidden="true"></div>
+
+<!-- Chat Drawer -->
+<div id="aiChat" role="dialog" aria-label="AI chat" aria-hidden="true">
+  <button id="closeChat" type="button" aria-label="Close AI chat">✕</button>
+  <div class="ai-topbar">
+    <strong>BLLOOM AI</strong>
+    <span>Ask about products, orders, or sizing.</span>
+  </div>
+  <div class="ai-body">
+    <div class="ai-messages" id="aiMessages">
+      <div class="ai-bot-msg">Hey 👋 I’m BLLOOM AI. How can I help today?</div>
+      <div class="ai-chip-row">
+        <button class="ai-chip" type="button">Track my order</button>
+        <button class="ai-chip" type="button">What’s new?</button>
+        <button class="ai-chip" type="button">Size help</button>
+      </div>
+    </div>
+    <div class="ai-input-wrap">
+      <input id="aiInput" type="text" aria-label="Type your message" placeholder="Write a message" />
+      <button id="aiSend" type="button" aria-label="Send message">➤</button>
+    </div>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const aiButton = document.getElementById("aiButton");
+  const aiChat = document.getElementById("aiChat");
+  const aiBackdrop = document.getElementById("aiBackdrop");
+  const closeChat = document.getElementById("closeChat");
+  const aiMessages = document.getElementById("aiMessages");
+  const aiInput = document.getElementById("aiInput");
+  const aiSend = document.getElementById("aiSend");
+
+  if (!aiButton || !aiChat || !aiBackdrop || !closeChat || !aiMessages || !aiInput || !aiSend) return;
+
+  const openChat = () => {
+    aiChat.classList.add("active");
+    aiBackdrop.classList.add("active");
+    aiChat.setAttribute("aria-hidden", "false");
+    aiButton.setAttribute("aria-expanded", "true");
+  };
+
+  const closeWidget = () => {
+    aiChat.classList.remove("active");
+    aiBackdrop.classList.remove("active");
+    aiChat.setAttribute("aria-hidden", "true");
+    aiButton.setAttribute("aria-expanded", "false");
+  };
+
+  aiButton.addEventListener("click", () => {
+    if (aiChat.classList.contains("active")) {
+      closeWidget();
+    } else {
+      openChat();
+    }
+  });
+
+  closeChat.addEventListener("click", () => {
+    closeWidget();
+  });
+
+
+  const addMessage = (text, type) => {
+    const msg = document.createElement("div");
+    msg.className = type === "user" ? "ai-user-msg" : "ai-bot-msg";
+    msg.textContent = text;
+    aiMessages.appendChild(msg);
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+  };
+
+  const replyMap = {
+    "track my order": "You can track orders from your profile > orders section.",
+    "what’s new?": "Fresh drops are live in the New Collection section.",
+    "size help": "Tell me your usual fit and I’ll recommend a size.",
+  };
+
+  const sendMessage = (text) => {
+    const clean = text.trim();
+    if (!clean) return;
+    addMessage(clean, "user");
+    aiInput.value = "";
+    setTimeout(() => {
+      const key = clean.toLowerCase();
+      addMessage(replyMap[key] || "Got it ✅ Our team will help you with that soon.", "bot");
+    }, 350);
+  };
+
+  aiSend.addEventListener("click", () => sendMessage(aiInput.value));
+  aiInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") sendMessage(aiInput.value);
+  });
+
+  aiMessages.addEventListener("click", (event) => {
+    const chip = event.target.closest(".ai-chip");
+    if (!chip) return;
+    sendMessage(chip.textContent || "");
+  });
+
+  aiBackdrop.addEventListener("click", closeWidget);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeWidget();
+  });
+});
+
+</body>
+</html>
+
 
 
 
