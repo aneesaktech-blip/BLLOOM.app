@@ -413,118 +413,8 @@ window.addEventListener("scroll", () => {
     </div>
   </div>
 
-  <!-- BANNER -->
-  <div class="banner">
-    <div class="banner_text">
-      <h2>New Collection</h2>
-      <p>50% OFF for first order</p>
-      <button>Shop Now</button>
-    </div>
-    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-  </div>
 
-  <!-- CATEGORY -->
-  
-
-  <section class="specialise">
-
-  <h2>What we specialise in</h2>
-
-  <div class="specialise-grid">
-    <div class="spec-card">
-      <i class="fa-solid fa-hood-cloak"></i>
-      <p>Hoodies</p>
-    </div>
-
-    <div class="spec-card">
-      <i class="fa-solid fa-shirt"></i>
-      <p>Oversized</p>
-    </div>
-
-    <div class="spec-card">
-      <i class="fa-solid fa-crop"></i>
-      <p>Crop Tops</p>
-    </div>
-
-    <div class="spec-card">
-      <i class="fa-solid fa-bag-shopping"></i>
-      <p>Tote Bags</p>
-    </div>
-  </div>
-
-  <!-- VIDEO INSIDE SPECIALISE -->
-  <div class="specialise-video">
-    <video autoplay muted loop playsinline>
-      <source src="hero.mp4" type="video/mp4">
-    </video>
-  </div>
-
-</section>
-
-
-
-
-  <!-- FLASH SALE -->
- <section class="flash-sale">
-
-  <h2 class="section-title">Flash Sale</h2>
-
-  <!-- MEN / WOMEN -->
-  <div class="gender-text">
-    <span class="gender active">Men</span>
-    <span class="divider">/</span>
-    <span class="gender">Women</span>
-  </div>
-
-  <!-- MODEL IMAGES BLOCK -->
-  <div class="model-block">
-    <img src="male.jpg" alt="Men Collection" class="model-img">
-    <img src="female.jpg" alt="Women Collection" class="model-img">
-  </div>
-
-  <!-- PRODUCTS BLOCK -->
-  <div class="products-block">
-
-    <div class="sort-text">
-      <span class="sort active">Newest</span>
-      <span class="sort">Popular</span>
-    </div>
-
-    <!-- products grid here -->
-  </div>
-
-</section>
-
-  <!-- SORT TABS -->
-  <div class="sort-tabs">
-    <button class="sort-tab active">Newest</button>
-    <button class="sort-tab">Popular</button>
-  </div>
-
-</section>
-
-
-</section>
-
-
-
-    <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1520974735194-5a9d68d07b94">
-        <p>BLLOOM Jacket</p>
-        <strong>₹1200</strong>
-      </div>
-
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-        <p>BLLOOM Shirt</p>
-        <strong>₹899</strong>
-      </div>
-    </div>
-  </div>
-
-  
-</div>
+ 
 <!-- ============ MOBILE END ============ -->
  <script>
 function openFilters() {
@@ -561,40 +451,9 @@ function scrollToFlash() {
 </script>
   
 </div>
-<!-- ============ MOBILE END ============ -->
- <script>
-function openFilters() {
-  document.getElementById("filterDrawer").classList.add("open");
-}
 
-function closeFilters() {
-  document.getElementById("filterDrawer").classList.remove("open");
-}
-</script>
-<script>
-const strip = document.getElementById("blloomStrip");
-const hero = document.querySelector(".hero");
+ 
 
-window.addEventListener("scroll", () => {
-  if (!strip) return;
-
-  if (window.scrollY > 120) {
-    strip.style.opacity = "1";
-    hero && hero.classList.add("scrolled");
-  } else {
-    strip.style.opacity = "0";
-    hero && hero.classList.remove("scrolled");
-  }
-});
-</script>
-
-<script>
-function scrollToFlash() {
-  document.querySelector(".flash")?.scrollIntoView({
-    behavior: "smooth"
-  });
-}
-</script>
 <!-- AI Floating Button -->
 <div id="aiButton">∞</div>
 
@@ -1397,6 +1256,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
