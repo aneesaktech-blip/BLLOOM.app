@@ -559,31 +559,143 @@ function scrollToFlash() {
   });
 }
 </script>
+</div>
+
+<style>
+  #aiButton { position: fixed; right: 24px; bottom: 24px; width: 58px; height: 58px; border: 0; border-radius: 999px; background: linear-gradient(135deg,#23c7c9,#1ba4d8); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(27,164,216,.45); z-index: 2147483000; cursor:pointer; }
+  #aiButton svg { width: 24px; height: 24px; fill: #fff; }
+  #aiChat { position: fixed; right: 24px; bottom: 92px; width: min(380px, calc(100vw - 28px)); height: min(70vh, 520px); background:#fff; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,.22); display:flex; flex-direction:column; opacity:0; pointer-events:none; transform: translateY(16px) scale(.98); transition: opacity .2s, transform .25s; z-index:2147482999; overflow:hidden; }
+  #aiChat.active { opacity:1; pointer-events:auto; transform: translateY(0) scale(1); }
+  #aiBackdrop { position: fixed; inset:0; background: rgba(0,0,0,.3); opacity:0; pointer-events:none; transition: opacity .2s; z-index:2147482998; }
+  #aiBackdrop.active { opacity:1; pointer-events:auto; }
+  #closeChat { position:absolute; top:10px; right:10px; border:0; width:30px; height:30px; border-radius:999px; background:rgba(255,255,255,.18); color:#fff; cursor:pointer; z-index:2; }
+  .ai-topbar { display:flex; flex-direction:column; gap:6px; min-height:116px; padding:18px 16px 14px; color:#fff; background:linear-gradient(135deg,#23c7c9,#2098cf); }
+  .ai-topbar strong { font-size:25px; line-height:1.1; }
+  .ai-topbar span { font-size:13px; opacity:.92; }
+  .ai-body { display:flex; flex:1; flex-direction:column; gap:12px; justify-content:space-between; background:#f5f7f8; padding:14px; }
+  .ai-messages { flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:10px; }
+  .ai-bot-msg,.ai-user-msg { max-width:86%; padding:10px 12px; border-radius:12px; font-size:14px; line-height:1.4; }
+  .ai-bot-msg { background:#e8ecef; color:#151515; }
+  .ai-user-msg { align-self:flex-end; background:#d5f3f7; color:#0f2b33; }
+  .ai-chip-row { display:flex; flex-wrap:wrap; gap:8px; }
+  .ai-chip { border:1px solid #2aa8d2; border-radius:999px; background:#fff; color:#0d5572; padding:6px 10px; font-size:13px; cursor:pointer; }
+  .ai-input-wrap { display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #d8d8d8; border-radius:999px; padding:8px 10px; }
+  .ai-input-wrap input { flex:1; border:0; outline:none; background:transparent; }
+  .ai-input-wrap button { border:0; background:transparent; color:#8c8c8c; cursor:pointer; }
+  @media (max-width:768px){ #aiButton { right:16px; bottom:16px; } #aiChat { right:10px; bottom:82px; width:calc(100vw - 20px); height:min(68vh,500px);} }
+</style>
+
 <!-- AI Floating Button -->
-<div id="aiButton">∞</div>
+<button id="aiButton" type="button" aria-label="Open AI chat" aria-expanded="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12 3C6.48 3 2 6.94 2 11.8c0 2.6 1.3 4.95 3.4 6.58V22l3.22-1.77c1.06.29 2.2.45 3.38.45 5.52 0 10-3.94 10-8.8S17.52 3 12 3z" />
+  </svg>
+</button>
+
+<div id="aiBackdrop" aria-hidden="true"></div>
 
 <!-- Chat Drawer -->
-<div id="aiChat">
-  <div class="ai-header">
-    <span>Bloom AI</span>
-    <button id="closeChat">✕</button>
+<div id="aiChat" role="dialog" aria-label="AI chat" aria-hidden="true">
+  <button id="closeChat" type="button" aria-label="Close AI chat">✕</button>
+  <div class="ai-topbar">
+    <strong>BLLOOM AI</strong>
+    <span>Ask about products, orders, or sizing.</span>
   </div>
   <div class="ai-body">
-    <p>Hello 👋 How can I help you?</p>
+    <div class="ai-messages" id="aiMessages">
+      <div class="ai-bot-msg">Hey 👋 I’m BLLOOM AI. How can I help today?</div>
+      <div class="ai-chip-row">
+        <button class="ai-chip" type="button">Track my order</button>
+        <button class="ai-chip" type="button">What’s new?</button>
+        <button class="ai-chip" type="button">Size help</button>
+      </div>
+    </div>
+    <div class="ai-input-wrap">
+      <input id="aiInput" type="text" aria-label="Type your message" placeholder="Write a message" />
+      <button id="aiSend" type="button" aria-label="Send message">➤</button>
+    </div>
   </div>
 </div>
-</div>
 <script>
-const aiButton = document.getElementById("aiButton");
-const aiChat = document.getElementById("aiChat");
-const closeChat = document.getElementById("closeChat");
+document.addEventListener("DOMContentLoaded", () => {
+  const aiButton = document.getElementById("aiButton");
+  const aiChat = document.getElementById("aiChat");
+  const aiBackdrop = document.getElementById("aiBackdrop");
+  const closeChat = document.getElementById("closeChat");
+  const aiMessages = document.getElementById("aiMessages");
+  const aiInput = document.getElementById("aiInput");
+  const aiSend = document.getElementById("aiSend");
 
-aiButton.addEventListener("click", () => {
-  aiChat.classList.add("active");
-});
+  if (!aiButton || !aiChat || !aiBackdrop || !closeChat || !aiMessages || !aiInput || !aiSend) return;
 
-closeChat.addEventListener("click", () => {
-  aiChat.classList.remove("active");
+  const openChat = () => {
+    aiChat.classList.add("active");
+    aiBackdrop.classList.add("active");
+    aiChat.setAttribute("aria-hidden", "false");
+    aiButton.setAttribute("aria-expanded", "true");
+  };
+
+  const closeWidget = () => {
+    aiChat.classList.remove("active");
+    aiBackdrop.classList.remove("active");
+    aiChat.setAttribute("aria-hidden", "true");
+    aiButton.setAttribute("aria-expanded", "false");
+  };
+
+  aiButton.addEventListener("click", () => {
+    if (aiChat.classList.contains("active")) {
+      closeWidget();
+    } else {
+      openChat();
+    }
+  });
+
+  closeChat.addEventListener("click", () => {
+    closeWidget();
+  });
+
+
+  const addMessage = (text, type) => {
+    const msg = document.createElement("div");
+    msg.className = type === "user" ? "ai-user-msg" : "ai-bot-msg";
+    msg.textContent = text;
+    aiMessages.appendChild(msg);
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+  };
+
+  const replyMap = {
+    "track my order": "You can track orders from your profile > orders section.",
+    "what’s new?": "Fresh drops are live in the New Collection section.",
+    "size help": "Tell me your usual fit and I’ll recommend a size.",
+  };
+
+  const sendMessage = (text) => {
+    const clean = text.trim();
+    if (!clean) return;
+    addMessage(clean, "user");
+    aiInput.value = "";
+    setTimeout(() => {
+      const key = clean.toLowerCase();
+      addMessage(replyMap[key] || "Got it ✅ Our team will help you with that soon.", "bot");
+    }, 350);
+  };
+
+  aiSend.addEventListener("click", () => sendMessage(aiInput.value));
+  aiInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") sendMessage(aiInput.value);
+  });
+
+  aiMessages.addEventListener("click", (event) => {
+    const chip = event.target.closest(".ai-chip");
+    if (!chip) return;
+    sendMessage(chip.textContent || "");
+  });
+
+  aiBackdrop.addEventListener("click", closeWidget);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeWidget();
+  });
 });
 </script>
 </body>
