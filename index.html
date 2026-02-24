@@ -845,6 +845,13 @@ document.addEventListener("DOMContentLoaded", () => {
     closeWidget();
   });
 
+const addMessage = (text, type) => {
+  const msg = document.createElement("div");
+  msg.className = type === "user" ? "ai-user-msg" : "ai-bot-msg";
+  msg.textContent = text;
+  aiMessages.appendChild(msg);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+};
 const sendMessage = async (text) => {
   const clean = text.trim();
   if (!clean) return;
@@ -896,6 +903,7 @@ aiInput.addEventListener("keydown", (event) => {
 </script>
 </body>
 </html>
+
 
 
 
