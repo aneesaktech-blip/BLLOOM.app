@@ -154,19 +154,18 @@ document.addEventListener("DOMContentLoaded", () => {
     return div;
   }
 
-  async function fetchAI(prompt) {
-    const res = await fetch("https://api.openai.com/v1/responses", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer YOUR_API_KEY_HERE"
-      },
-      body: JSON.stringify({
-        model: "gpt-4.1-mini",
-        input: prompt
-      })
-    });
+ async function fetchAI(prompt) {
+  const res = await fetch("http://localhost:3000/chat", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ message: prompt })
+  });
 
+  const data = await res.json();
+  return data.reply;
+}
     const data = await res.json();
     return data.output[0].content[0].text;
   }
