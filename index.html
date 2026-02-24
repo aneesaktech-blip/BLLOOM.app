@@ -845,38 +845,41 @@ document.addEventListener("DOMContentLoaded", () => {
     closeWidget();
   });
 
+const sendMessage = async (text) => {
+  const clean = text.trim();
+  if (!clean) return;
 
-  const addMessage = (text, type) => {
-    const msg = document.createElement("div");
-    msg.className = type === "user" ? "ai-user-msg" : "ai-bot-msg";
-    msg.textContent = text;
-    aiMessages.appendChild(msg);
-    aiMessages.scrollTop = aiMessages.scrollHeight;
-  };
+  addMessage(clean, "user");
+  aiInput.value = "";
 
-  const replyMap = {
-    "✨ create an image": "You can generate mood-board prompts from product themes.",
-    "💡 give me ideas": "Try street-luxe layers: oversized hoodie + structured trouser + clean sneakers.",
-    "📝 do the task": "Sure — tell me the exact task and I'll break it down step by step.",
-    "🌐 translate text": "Send your text and tell me the target language.",
-    "track my order": "You can track orders from your profile > orders section.",
-  };
+  try {
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message: clean })
+    });
 
-  const sendMessage = (text) => {
-    const clean = text.trim();
-    if (!clean) return;
-    addMessage(clean, "user");
-    aiInput.value = "";
-    setTimeout(() => {
-      const key = clean.toLowerCase();
-      addMessage(replyMap[key] || "Got it ✅ Our team will help you with that soon.", "bot");
-    }, 350);
-  };
+    const data = await response.json();
 
-  aiSend.addEventListener("click", () => sendMessage(aiInput.value));
-  aiInput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") sendMessage(aiInput.value);
-  });
+    if (data.reply) {
+      addMessage(data.reply, "bot");
+    } else {
+      addMessage("Something went wrong.", "bot");
+    }
+
+  } catch (error) {
+    console.error(error);
+    addMessage("Server error. Try again.", "bot");
+  }
+};
+
+aiSend.addEventListener("click", () => sendMessage(aiInput.value));
+aiInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") sendMessage(aiInput.value);
+});
+ 
 
   aiMessages.addEventListener("click", (event) => {
     const chip = event.target.closest(".ai-chip");
@@ -893,6 +896,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
