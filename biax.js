@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return div;
   }
 
- async function fetchAI(prompt) {
+async function fetchAI(prompt) {
   const res = await fetch("http://localhost:3000/chat", {
     method: "POST",
     headers: {
@@ -163,11 +163,12 @@ document.addEventListener("DOMContentLoaded", () => {
     body: JSON.stringify({ message: prompt })
   });
 
+  if (!res.ok) {
+    throw new Error("Server error");
+  }
+
   const data = await res.json();
   return data.reply;
 }
-    const data = await res.json();
-    return data.output[0].content[0].text;
-  }
 
 });
