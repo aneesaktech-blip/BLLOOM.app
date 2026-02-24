@@ -6,17 +6,25 @@ export default async function handler(req, res) {
       return res.status(405).json({ error: "Method not allowed" });
     }
 
+    if (!req.body || !req.body.message) {
+      return res.status(400).json({ reply: "No message received." });
+    }
+
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-    const { message } = req.body;
-
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
-        { role: "system", content: "You are biAX, AI assistant for BLLOOM clothing brand." },
-        { role: "user", content: message }
+        {
+          role: "system",
+          content: "You are biAX, AI assistant for BLLOOM clothing brand.",
+        },
+        {
+          role: "user",
+          content: req.body.message,
+        },
       ],
     });
 
@@ -26,6 +34,8 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error("API ERROR:", error);
-    return res.status(500).json({ reply: "Server crashed." });
+    return res.status(500).json({
+      reply: error.message || "Server crashed.",
+    });
   }
 }
