@@ -802,13 +802,18 @@ function scrollToFlash() {
       <div class="ai-bot-msg">Hi! I’m BLLOOM AI. Ask me anything about products or orders.</div>
     </div>
     <div class="ai-input-wrap">
-      <input id="aiInput" type="text" aria-label="Type your message" placeholder="Ask me anything..." />
-      <button id="aiSend" type="button" aria-label="Send message">➤</button>
-    </div>
+  <input type="file" id="aiFile" hidden />
+  <button id="uploadBtn" type="button">📎</button>
+
+  <input id="aiInput" type="text" placeholder="Ask me anything..." />
+
+  <button id="aiSend" type="button">➤</button>
+</div>
   </div>
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
   const aiButton = document.getElementById("aiButton");
   const aiChat = document.getElementById("aiChat");
   const aiBackdrop = document.getElementById("aiBackdrop");
@@ -816,93 +821,126 @@ document.addEventListener("DOMContentLoaded", () => {
   const aiMessages = document.getElementById("aiMessages");
   const aiInput = document.getElementById("aiInput");
   const aiSend = document.getElementById("aiSend");
+  const aiFile = document.getElementById("aiFile");
+  const uploadBtn = document.getElementById("uploadBtn");
 
-  if (!aiButton || !aiChat || !aiBackdrop || !closeChat || !aiMessages || !aiInput || !aiSend) return;
+  if (!aiButton) return;
 
+  // OPEN / CLOSE
   const openChat = () => {
     aiChat.classList.add("active");
     aiBackdrop.classList.add("active");
-    aiChat.setAttribute("aria-hidden", "false");
-    aiButton.setAttribute("aria-expanded", "true");
   };
 
   const closeWidget = () => {
     aiChat.classList.remove("active");
     aiBackdrop.classList.remove("active");
-    aiChat.setAttribute("aria-hidden", "true");
-    aiButton.setAttribute("aria-expanded", "false");
   };
 
-  aiButton.addEventListener("click", () => {
-    if (aiChat.classList.contains("active")) {
-      closeWidget();
-    } else {
-      openChat();
-    }
+  aiButton.onclick = () =>
+    aiChat.classList.contains("active") ? closeWidget() : openChat();
+
+  closeChat.onclick = closeWidget;
+  aiBackdrop.onclick = closeWidget;
+
+  // ADD MESSAGE
+  const addMessage = (text, type) => {
+    const msg = document.createElement("div");
+    msg.className = type === "user" ? "ai-user-msg" : "ai-bot-msg";
+    msg.textContent = text;
+    aiMessages.appendChild(msg);
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+    return msg;
+  };
+
+  // FILE UPLOAD
+  uploadBtn.onclick = () => aiFile.click();
+
+  aiFile.addEventListener("change", () => {
+    const file = aiFile.files[0];
+    if (!file) return;
+
+    addMessage("Uploaded: " + file.name, "user");
+
+    const preview = document.createElement("div");
+    preview.className = "ai-bot-msg";
+    preview.textContent = "File received. (Backend processing can be added)";
+    aiMessages.appendChild(preview);
   });
 
-  closeChat.addEventListener("click", () => {
-    closeWidget();
+  // SEND MESSAGE
+  const sendMessage = async (text) => {
+    const clean = text.trim();
+    if (!clean) return;
+
+    addMessage(clean, "user");
+    aiInput.value = "";
+
+    const thinking = addMessage("BLLOOM AI is thinking...", "bot");
+
+    try {
+
+      // IMAGE MODE
+      if (clean.toLowerCase().includes("image")) {
+
+        const response = await fetch("/api/image", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt: clean })
+        });
+
+        const data = await response.json();
+        thinking.remove();
+
+        if (data.imageUrl) {
+          const img = document.createElement("img");
+          img.src = data.imageUrl;
+          img.style.width = "100%";
+          img.style.borderRadius = "14px";
+          img.style.marginTop = "8px";
+          aiMessages.appendChild(img);
+        } else {
+          addMessage("Image generation failed.", "bot");
+        }
+
+        return;
+      }
+
+      // NORMAL CHAT
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: clean })
+      });
+
+      const data = await response.json();
+      thinking.remove();
+      addMessage(data.reply || "Something went wrong.", "bot");
+
+    } catch (error) {
+      thinking.remove();
+      console.error(error);
+      addMessage("Server error.", "bot");
+    }
+  };
+
+  aiSend.onclick = () => sendMessage(aiInput.value);
+
+  aiInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") sendMessage(aiInput.value);
   });
 
-const addMessage = (text, type) => {
-  const msg = document.createElement("div");
-  msg.className = type === "user" ? "ai-user-msg" : "ai-bot-msg";
-  msg.textContent = text;
-  aiMessages.appendChild(msg);
-  aiMessages.scrollTop = aiMessages.scrollHeight;
-};
-const sendMessage = async (text) => {
-  const clean = text.trim();
-  if (!clean) return;
-
-  addMessage(clean, "user");
-  aiInput.value = "";
-
-  try {
-    const response = await fetch("/api/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ message: clean })
-    });
-
-    const data = await response.json();
-
-    if (data.reply) {
-      addMessage(data.reply, "bot");
-    } else {
-      addMessage("Something went wrong.", "bot");
-    }
-
-  } catch (error) {
-    console.error(error);
-    addMessage("Server error. Try again.", "bot");
-  }
-};
-
-aiSend.addEventListener("click", () => sendMessage(aiInput.value));
-aiInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") sendMessage(aiInput.value);
-});
- 
-
-  aiMessages.addEventListener("click", (event) => {
-    const chip = event.target.closest(".ai-chip");
+  // CHIP CLICK
+  aiMessages.addEventListener("click", (e) => {
+    const chip = e.target.closest(".ai-chip");
     if (!chip) return;
-    sendMessage(chip.textContent || "");
+    sendMessage(chip.textContent);
   });
 
-  aiBackdrop.addEventListener("click", closeWidget);
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeWidget();
-  });
-});
-</script>
+});</script>
 </body>
 </html>
+
 
 
 
