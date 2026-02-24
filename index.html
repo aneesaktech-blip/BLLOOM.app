@@ -811,7 +811,7 @@ function scrollToFlash() {
 </div>
   </div>
 </div>
-<script>
+  <script>
 document.addEventListener("DOMContentLoaded", () => {
 
   const aiButton = document.getElementById("aiButton");
@@ -821,29 +821,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const aiMessages = document.getElementById("aiMessages");
   const aiInput = document.getElementById("aiInput");
   const aiSend = document.getElementById("aiSend");
-  const aiFile = document.getElementById("aiFile");
-  const uploadBtn = document.getElementById("uploadBtn");
 
-  if (!aiButton) return;
+  // ---- ADD FILE INPUT DYNAMICALLY ----
+  const fileInput = document.createElement("input");
+  fileInput.type = "file";
+  fileInput.style.display = "none";
+  document.body.appendChild(fileInput);
 
-  // OPEN / CLOSE
-  const openChat = () => {
-    aiChat.classList.add("active");
-    aiBackdrop.classList.add("active");
-  };
-
-  const closeWidget = () => {
-    aiChat.classList.remove("active");
-    aiBackdrop.classList.remove("active");
-  };
-
+  // ---- OPEN / CLOSE ----
   aiButton.onclick = () =>
-    aiChat.classList.contains("active") ? closeWidget() : openChat();
+    aiChat.classList.toggle("active");
 
-  closeChat.onclick = closeWidget;
-  aiBackdrop.onclick = closeWidget;
+  closeChat.onclick = () =>
+    aiChat.classList.remove("active");
 
-  // ADD MESSAGE
+  aiBackdrop.onclick = () =>
+    aiChat.classList.remove("active");
+
+  // ---- ADD MESSAGE ----
   const addMessage = (text, type) => {
     const msg = document.createElement("div");
     msg.className = type === "user" ? "ai-user-msg" : "ai-bot-msg";
@@ -853,93 +848,92 @@ document.addEventListener("DOMContentLoaded", () => {
     return msg;
   };
 
-  // FILE UPLOAD
-  uploadBtn.onclick = () => aiFile.click();
+  // ---- FAKE THINKING ----
+  const fakeThinking = (callback) => {
+    const thinking = addMessage("BLLOOM AI is thinking...", "bot");
 
-  aiFile.addEventListener("change", () => {
-    const file = aiFile.files[0];
-    if (!file) return;
+    setTimeout(() => {
+      thinking.remove();
+      callback();
+    }, 1500); // 1.5 sec fake delay
+  };
 
-    addMessage("Uploaded: " + file.name, "user");
-
-    const preview = document.createElement("div");
-    preview.className = "ai-bot-msg";
-    preview.textContent = "File received. (Backend processing can be added)";
-    aiMessages.appendChild(preview);
-  });
-
-  // SEND MESSAGE
-  const sendMessage = async (text) => {
+  // ---- SEND MESSAGE ----
+  const sendMessage = (text) => {
     const clean = text.trim();
     if (!clean) return;
 
     addMessage(clean, "user");
     aiInput.value = "";
 
-    const thinking = addMessage("BLLOOM AI is thinking...", "bot");
-
-    try {
+    fakeThinking(() => {
 
       // IMAGE MODE
       if (clean.toLowerCase().includes("image")) {
 
-        const response = await fetch("/api/image", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ prompt: clean })
-        });
+        const img = document.createElement("img");
+        img.src = "https://images.unsplash.com/photo-1520974735194-5a9d68d07b94";
+        img.style.width = "100%";
+        img.style.borderRadius = "14px";
+        img.style.marginTop = "8px";
 
-        const data = await response.json();
-        thinking.remove();
-
-        if (data.imageUrl) {
-          const img = document.createElement("img");
-          img.src = data.imageUrl;
-          img.style.width = "100%";
-          img.style.borderRadius = "14px";
-          img.style.marginTop = "8px";
-          aiMessages.appendChild(img);
-        } else {
-          addMessage("Image generation failed.", "bot");
-        }
-
+        aiMessages.appendChild(img);
         return;
       }
 
-      // NORMAL CHAT
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: clean })
-      });
-
-      const data = await response.json();
-      thinking.remove();
-      addMessage(data.reply || "Something went wrong.", "bot");
-
-    } catch (error) {
-      thinking.remove();
-      console.error(error);
-      addMessage("Server error.", "bot");
-    }
+      // NORMAL FAKE REPLY
+      addMessage("This is a demo AI response for BLLOOM.", "bot");
+    });
   };
 
+  // ---- FILE UPLOAD ----
+  fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    addMessage("Uploaded: " + file.name, "user");
+
+    fakeThinking(() => {
+      addMessage("File received successfully.", "bot");
+    });
+  });
+
+  // ---- BUTTON EVENTS ----
   aiSend.onclick = () => sendMessage(aiInput.value);
 
   aiInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") sendMessage(aiInput.value);
   });
 
-  // CHIP CLICK
-  aiMessages.addEventListener("click", (e) => {
-    const chip = e.target.closest(".ai-chip");
-    if (!chip) return;
-    sendMessage(chip.textContent);
+  // ---- CHIP BUTTONS ----
+  document.querySelectorAll(".ai-chip").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (btn.textContent.includes("Create")) {
+        sendMessage("create image");
+      } else if (btn.textContent.includes("Translate")) {
+        sendMessage("translate text");
+      } else {
+        sendMessage(btn.textContent);
+      }
+    });
   });
 
-});</script>
+  // ---- ADD UPLOAD BUTTON NEXT TO SEND ----
+  const uploadBtn = document.createElement("button");
+  uploadBtn.innerHTML = "📎";
+  uploadBtn.style.border = "0";
+  uploadBtn.style.background = "transparent";
+  uploadBtn.style.cursor = "pointer";
+
+  uploadBtn.onclick = () => fileInput.click();
+
+  document.querySelector(".ai-input-wrap").prepend(uploadBtn);
+
+});
+</script>
 </body>
 </html>
+
 
 
 
