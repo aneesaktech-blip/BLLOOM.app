@@ -947,18 +947,35 @@ data.forEach(product => {
   const card = document.createElement("div")
   card.className = "product"
 
-  card.innerHTML = `
-    <img src="${product.image}">
-    <h4>${product.name}</h4>
-    <span>₹${product.price}</span>
+card.innerHTML = `
+  <img src="${product.image}">
+  <h4>${product.name}</h4>
+  <span>₹${product.price}</span>
 
-    <div class="sizes">
-      <button>S</button>
-      <button>M</button>
-      <button>L</button>
-      <button>XL</button>
-    </div>
-    const addBtn = card.querySelector(".add-cart")
+  <div class="sizes">
+    <button>S</button>
+    <button>M</button>
+    <button>L</button>
+    <button>XL</button>
+  </div>
+
+  <button class="add-cart">🛒 Add to Cart</button>
+`
+
+
+// SIZE SELECTION
+const sizeButtons = card.querySelectorAll(".sizes button")
+
+sizeButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    sizeButtons.forEach(b => b.classList.remove("active"))
+    btn.classList.add("active")
+  })
+})
+
+
+// ADD TO CART
+const addBtn = card.querySelector(".add-cart")
 
 addBtn.addEventListener("click", () => {
 
@@ -983,23 +1000,10 @@ addBtn.addEventListener("click", () => {
   localStorage.setItem("cart", JSON.stringify(cart))
 
   alert("Added to cart")
-
 })
 
-    <button class="add-cart">🛒</button>
-  `
-const sizeButtons = card.querySelectorAll(".sizes button")
 
-sizeButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-
-    sizeButtons.forEach(b => b.classList.remove("active"))
-
-    btn.classList.add("active")
-
-  })
-})
-  container.appendChild(card)
+container.appendChild(card)
 })
   
 }
@@ -1008,6 +1012,7 @@ loadProducts();
     
 </body>
 </html>
+
 
 
 
