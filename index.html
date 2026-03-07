@@ -943,37 +943,35 @@ async function loadProducts() {
     container.innerHTML = "<p>No products found</p>";
     return;
   }
+data.forEach(product => {
+  const card = document.createElement("div")
+  card.className = "product"
 
-  data.forEach(product => {
-    const card = document.createElement("div");
-    card.className = "product-card";
+  card.innerHTML = `
+    <img src="${product.image}">
+    <h4>${product.name}</h4>
+    <span>$${product.price}</span>
 
-      
-      card.innerHTML = `
-  <img src="${product.image}">
-  <h4>${product.name}</h4>
-  <span>$${product.price}</span>
+    <div class="sizes">
+      <button>S</button>
+      <button>M</button>
+      <button>L</button>
+      <button>XL</button>
+    </div>
 
-  <div class="sizes">
-    <button>S</button>
-    <button>M</button>
-    <button>L</button>
-    <button>XL</button>
-  </div>
+    <button class="add-cart">Add to Cart</button>
+  `
 
-  <button class="add-cart">Add to Cart</button>
-
-    `;
-
-    container.appendChild(card);
-  });
-}
+  container.appendChild(card)
+})
+  
 
 loadProducts();
 </script>
     
 </body>
 </html>
+
 
 
 
