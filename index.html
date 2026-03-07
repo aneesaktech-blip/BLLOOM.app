@@ -939,8 +939,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+
+    <script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"
+
+const supabaseUrl = "https://tyxmnzcsbuskagvwsgnx.supabase.co"
+const supabaseKey = "sb_publishable_GeGnrQvqnd1-9jeeKuVa9Q_xSL2Wqgx"
+
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+async function loadProducts() {
+  const { data, error } = await supabase
+    .from("products")
+    .select("*")
+
+  console.log(data)
+}
+
+loadProducts()
+</script>
 </body>
 </html>
+
 
 
 
