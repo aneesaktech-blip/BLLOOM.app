@@ -3331,3 +3331,46 @@ font-size: 18px;
 margin-top: 60px;
 }
 
+/* SIZE BUTTONS */
+
+.sizes {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.sizes button {
+  border: 1px solid black;
+  background: white;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sizes button:hover {
+  background: black;
+  color: white;
+}
+
+.sizes button.active {
+  background: black;
+  color: white;
+}
+
+
+/* ADD TO CART BUTTON */
+
+.add-cart {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-cart:hover {
+  opacity: 0.8;
+}
