@@ -958,10 +958,47 @@ data.forEach(product => {
       <button>L</button>
       <button>XL</button>
     </div>
+    const addBtn = card.querySelector(".add-cart")
 
-    <button class="add-cart">Add to Cart</button>
+addBtn.addEventListener("click", () => {
+
+  const selectedSize = card.querySelector(".sizes .active")
+
+  if(!selectedSize){
+    alert("Select a size first")
+    return
+  }
+
+  const cartItem = {
+    name: product.name,
+    price: product.price,
+    image: product.image,
+    size: selectedSize.textContent
+  }
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+  cart.push(cartItem)
+
+  localStorage.setItem("cart", JSON.stringify(cart))
+
+  alert("Added to cart")
+
+})
+
+    <button class="add-cart">🛒</button>
   `
+const sizeButtons = card.querySelectorAll(".sizes button")
 
+sizeButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    sizeButtons.forEach(b => b.classList.remove("active"))
+
+    btn.classList.add("active")
+
+  })
+})
   container.appendChild(card)
 })
   
@@ -971,6 +1008,7 @@ loadProducts();
     
 </body>
 </html>
+
 
 
 
