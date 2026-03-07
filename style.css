@@ -3193,3 +3193,45 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 .product span {
   color: #555;
 }
+
+.sizes {
+  margin-top: 8px;
+}
+
+.sizes button {
+  border: 1px solid black;
+  background: transparent;
+  padding: 4px 10px;
+  margin-right: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sizes button:hover {
+  background: black;
+  color: white;
+}
+
+.add-cart {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.add-cart:hover {
+  opacity: 0.8;
+} 
+.add-cart {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.product:hover .add-cart {
+  opacity: 1;
+  transform: translateY(0);
+}
