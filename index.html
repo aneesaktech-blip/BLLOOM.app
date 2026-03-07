@@ -939,45 +939,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+<script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-    <script type="module">
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"
+const supabaseUrl = "https://tyxmnzcsbuskagvwsgnx.supabase.co";
+const supabaseKey = "sb_publishable_GeGnrQvqnd1-9jeeKuVa9Q_xSL2Wqgx";
 
-const supabaseUrl = "https://tyxmnzcsbuskagvwsgnx.supabase.co"
-const supabaseKey = "sb_publishable_GeGnrQvqnd1-9jeeKuVa9Q_xSL2Wqgx"
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-const supabase = createClient(supabaseUrl, supabaseKey)
-       const container = document.getElementById("products")
+const container = document.getElementById("products");
 
 async function loadProducts() {
-const { data, error } = await supabase
-.from("products")
-.select("*")
+  const { data, error } = await supabase
+    .from("products")
+    .select("*");
 
-data.forEach(product => {
-const card = document.createElement("div")
+  if (error) {
+    console.error("Error loading products:", error);
+    return;
+  }
 
-```
-card.innerHTML = `
-  <img src="${product.image}" width="200">
-  <h3>${product.name}</h3>
-  <p>$${product.price}</p>
-`
+  if (!data || data.length === 0) {
+    container.innerHTML = "<p>No products found</p>";
+    return;
+  }
 
-container.appendChild(card)
-```
+  data.forEach(product => {
+    const card = document.createElement("div");
+    card.className = "product-card";
 
-})
+    card.innerHTML = `
+      <img src="${product.image}" width="200" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>$${product.price}</p>
+    `;
+
+    container.appendChild(card);
+  });
 }
 
-loadProducts()
-
-
-
+loadProducts();
 </script>
     
 </body>
 </html>
+
 
 
 
