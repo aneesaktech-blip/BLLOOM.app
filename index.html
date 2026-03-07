@@ -811,24 +811,23 @@ function scrollToFlash() {
 </div>
   </div>
 </div>
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
 
   const aiButton = document.getElementById("aiButton");
   const aiChat = document.getElementById("aiChat");
   const aiBackdrop = document.getElementById("aiBackdrop");
   const closeChat = document.getElementById("closeChat");
+
   const aiMessages = document.getElementById("aiMessages");
   const aiInput = document.getElementById("aiInput");
   const aiSend = document.getElementById("aiSend");
 
-  // ---- ADD FILE INPUT DYNAMICALLY ----
-  const fileInput = document.createElement("input");
-  fileInput.type = "file";
-  fileInput.style.display = "none";
-  document.body.appendChild(fileInput);
+  const uploadBtn = document.getElementById("uploadBtn");
+  const fileInput = document.getElementById("aiFile");
 
-  // ---- OPEN / CLOSE ----
+
+  // OPEN CHAT
   aiButton.onclick = () =>
     aiChat.classList.toggle("active");
 
@@ -838,55 +837,10 @@ document.addEventListener("DOMContentLoaded", () => {
   aiBackdrop.onclick = () =>
     aiChat.classList.remove("active");
 
-  // ---- ADD MESSAGE ----
-  const addMessage = (text, type) => {
-    const msg = document.createElement("div");
-    msg.className = type === "user" ? "ai-user-msg" : "ai-bot-msg";
-    msg.textContent = text;
-    aiMessages.appendChild(msg);
-    aiMessages.scrollTop = aiMessages.scrollHeight;
-    return msg;
-  };
 
-  // ---- FAKE THINKING ----
-  const fakeThinking = (callback) => {
-    const thinking = addMessage("BLLOOM AI is thinking...", "bot");
+  // FILE UPLOAD
+  uploadBtn.onclick = () => fileInput.click();
 
-    setTimeout(() => {
-      thinking.remove();
-      callback();
-    }, 1500); // 1.5 sec fake delay
-  };
-
-  // ---- SEND MESSAGE ----
-  const sendMessage = (text) => {
-    const clean = text.trim();
-    if (!clean) return;
-
-    addMessage(clean, "user");
-    aiInput.value = "";
-
-    fakeThinking(() => {
-
-      // IMAGE MODE
-      if (clean.toLowerCase().includes("image")) {
-
-        const img = document.createElement("img");
-        img.src = "https://images.unsplash.com/photo-1520974735194-5a9d68d07b94";
-        img.style.width = "100%";
-        img.style.borderRadius = "14px";
-        img.style.marginTop = "8px";
-
-        aiMessages.appendChild(img);
-        return;
-      }
-
-      // NORMAL FAKE REPLY
-      addMessage("This is a demo AI response for BLLOOM.", "bot");
-    });
-  };
-
-  // ---- FILE UPLOAD ----
   fileInput.addEventListener("change", () => {
     const file = fileInput.files[0];
     if (!file) return;
@@ -898,45 +852,96 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ---- BUTTON EVENTS ----
- aiSend.onclick = () => {
-  sendMessage(aiInput.value);
-  aiInput.focus();
-};
-  aiInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
+
+  // ADD MESSAGE
+  const addMessage = (text, type) => {
+    const msg = document.createElement("div");
+    msg.className = type === "user" ? "ai-user-msg" : "ai-bot-msg";
+    msg.textContent = text;
+
+    aiMessages.appendChild(msg);
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+
+    return msg;
+  };
+
+
+  // FAKE THINKING
+  const fakeThinking = (callback) => {
+    const thinking = addMessage("BLLOOM AI is thinking...", "bot");
+
+    setTimeout(() => {
+      thinking.remove();
+      callback();
+    }, 1500);
+  };
+
+
+  // SEND MESSAGE
+  const sendMessage = (text) => {
+    const clean = text.trim();
+    if (!clean) return;
+
+    addMessage(clean, "user");
+    aiInput.value = "";
+
+    fakeThinking(() => {
+
+      if (clean.toLowerCase().includes("image")) {
+
+        const img = document.createElement("img");
+        img.src = "https://images.unsplash.com/photo-1520974735194-5a9d68d07b94";
+        img.style.width = "100%";
+        img.style.borderRadius = "14px";
+
+        aiMessages.appendChild(img);
+        return;
+      }
+
+      addMessage("This is a demo AI response for BLLOOM.", "bot");
+
+    });
+  };
+
+
+  // SEND BUTTON
+  aiSend.onclick = () => {
     sendMessage(aiInput.value);
     aiInput.focus();
-  }
-});
-  // ---- CHIP BUTTONS ----
+  };
+
+
+  // ENTER KEY
+  aiInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      sendMessage(aiInput.value);
+      aiInput.focus();
+    }
+  });
+
+
+  // CHIP BUTTONS
   document.querySelectorAll(".ai-chip").forEach(btn => {
     btn.addEventListener("click", () => {
+
       if (btn.textContent.includes("Create")) {
         sendMessage("create image");
+
       } else if (btn.textContent.includes("Translate")) {
         sendMessage("translate text");
+
       } else {
         sendMessage(btn.textContent);
       }
+
     });
   });
-
-  // ---- ADD UPLOAD BUTTON NEXT TO SEND ----
-  const uploadBtn = document.createElement("button");
-  uploadBtn.innerHTML = "📎";
-  uploadBtn.style.border = "0";
-  uploadBtn.style.background = "transparent";
-  uploadBtn.style.cursor = "pointer";
-
-  uploadBtn.onclick = () => fileInput.click();
-
-  document.querySelector(".ai-input-wrap").prepend(uploadBtn);
 
 });
 </script>
 </body>
 </html>
+
 
 
 
