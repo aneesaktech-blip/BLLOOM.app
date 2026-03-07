@@ -3110,3 +3110,13 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.4);
   flex-direction: column;
   gap: 8px;
 }
+.ai-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ai-input-wrap {
+  margin-top: auto;
+}
+
