@@ -899,12 +899,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ---- BUTTON EVENTS ----
-  aiSend.onclick = () => sendMessage(aiInput.value);
-
+ aiSend.onclick = () => {
+  sendMessage(aiInput.value);
+  aiInput.focus();
+};
   aiInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") sendMessage(aiInput.value);
-  });
-
+  if (e.key === "Enter") {
+    sendMessage(aiInput.value);
+    aiInput.focus();
+  }
+});
   // ---- CHIP BUTTONS ----
   document.querySelectorAll(".ai-chip").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -933,6 +937,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
