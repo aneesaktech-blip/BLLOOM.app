@@ -957,12 +957,36 @@ async function loadProducts() {
 }
 
 loadProducts()
+      const container = document.getElementById("products")
+
+async function loadProducts() {
+const { data, error } = await supabase
+.from("products")
+.select("*")
+
+data.forEach(product => {
+const card = document.createElement("div")
+
+```
+card.innerHTML = `
+  <img src="${product.image}" width="200">
+  <h3>${product.name}</h3>
+  <p>$${product.price}</p>
+`
+
+container.appendChild(card)
+```
+
+})
+}
+
+loadProducts()
+
 </script>
-    <script>
-alert("Website script working")
-</script>
+    
 </body>
 </html>
+
 
 
 
