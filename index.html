@@ -947,17 +947,7 @@ const supabaseUrl = "https://tyxmnzcsbuskagvwsgnx.supabase.co"
 const supabaseKey = "sb_publishable_GeGnrQvqnd1-9jeeKuVa9Q_xSL2Wqgx"
 
 const supabase = createClient(supabaseUrl, supabaseKey)
-
-async function loadProducts() {
-  const { data, error } = await supabase
-    .from("products")
-    .select("*")
-
-  console.log(data)
-}
-
-loadProducts()
-      const container = document.getElementById("products")
+       const container = document.getElementById("products")
 
 async function loadProducts() {
 const { data, error } = await supabase
@@ -982,10 +972,13 @@ container.appendChild(card)
 
 loadProducts()
 
+
+
 </script>
     
 </body>
 </html>
+
 
 
 
