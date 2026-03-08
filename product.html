@@ -121,7 +121,7 @@ border-radius:6px;
     }
 
     .product-shell {
-      width: min(1180px, 100%);
+      width: min(1400px, 100%);
       background: var(--panel);
       border-radius: 16px;
       box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
@@ -169,11 +169,10 @@ border-radius:6px;
       letter-spacing: 0.06em;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: 1.25fr 1fr 0.92fr;
-      min-height: 560px;
-    }
+    .layout{
+display:grid;
+grid-template-columns: 1.3fr 1fr;
+}
 
     .gallery-wrap {
       display: grid;
@@ -417,10 +416,10 @@ border-radius:6px;
     }
 
     @media (max-width: 1040px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
+     .layout{
+display:grid;
+grid-template-columns: 1.3fr 1fr;
+}
       .gallery-wrap,
       .details {
         border-right: 0;
@@ -462,6 +461,12 @@ border-radius:6px;
         flex-wrap: wrap;
       }
     }
+    .desc{
+margin-top:20px;
+color:#666;
+line-height:1.6;
+font-size:14px;
+}
   </style>
 </head>
 
@@ -509,7 +514,7 @@ const oldPrice = product.discount_price ? product.price : ""
 document.getElementById("productPage").innerHTML = `
 
 <header class="topbar">
-<span>US | ₹</span>
+<span>IN | ₹</span>
 <span class="logo">BLLOOM</span>
 
 <div class="top-icons">
@@ -545,13 +550,13 @@ document.getElementById("productPage").innerHTML = `
 
 <article class="details">
 
-<p class="breadcrumbs">BLLOOM > Clothing > T-Shirts</p>
+<p class="breadcrumbs">BLLOOM > Clothing > Oversized T-Shirts</p>
 
 <h1 class="title">${name}</h1>
 
 <div class="rating">
 <span class="stars">★★★★★</span>
-<span>14 reviews</span>
+
 </div>
 
 <p class="color">Washed Black</p>
@@ -568,37 +573,22 @@ ${oldPrice ? `<span class="old">₹${oldPrice}</span>` : ""}
 <button>XL</button>
 </div>
 
-<p class="fit">Fit Guide</p>
+
 
 <button class="add-cart">Add To Cart</button>
-
-<p class="shipping">
-Free Standard Shipping + Returns on Most Orders
+<p class="desc">
+Heavyweight acid wash oversized tee.
+Premium cotton with vintage fade.
 </p>
 
-<p class="stylist">Connect With A Stylist</p>
+<p class="shipping">
+Premium heavyweight cotton.
+Designed in India.
+</p>
+
+
 
 </article>
-
-<aside class="side-card">
-
-<div class="side-head">
-
-<h4>
-<i class="fa-solid fa-bars"></i> Living Spaces
-</h4>
-
-<p class="search-box">search furniture</p>
-
-<div class="chips">
-<span>living room</span>
-<span>bedroom</span>
-<span>dining room</span>
-</div>
-
-</div>
-
-</aside>
 
 </section>
 `
