@@ -465,9 +465,10 @@ border-radius:6px;
   </style>
 </head>
 
-<body>
 
-<div id="productPage"></div>
+    <body>
+
+<main class="product-shell" id="productPage"></main>
 
 <script type="module">
 
@@ -494,59 +495,132 @@ console.error(error)
 return
 }
 
-const product = data
+renderProduct(data)
 
-let priceHTML = ""
-
-if(product.discount_price){
-priceHTML = `
-<span class="new-price">₹${product.discount_price}</span>
-<span class="old-price">₹${product.price}</span>
-`
-}else{
-priceHTML = `<span class="new-price">₹${product.price}</span>`
 }
+
+function renderProduct(product){
+
+const image = product.image
+const name = product.name
+const price = product.discount_price || product.price
+const oldPrice = product.discount_price ? product.price : ""
 
 document.getElementById("productPage").innerHTML = `
 
-<div class="product-page">
+<header class="topbar">
+<span>US | ₹</span>
+<span class="logo">BLLOOM</span>
 
-<div>
-<img src="${product.image}">
+<div class="top-icons">
+<i class="fa-solid fa-magnifying-glass"></i>
+<i class="fa-regular fa-user"></i>
+<i class="fa-regular fa-heart"></i>
+<i class="fa-solid fa-bag-shopping"></i>
+</div>
+</header>
+
+<nav class="tabs">
+<span>NEW IN</span>
+<span>CLASSICS</span>
+<span>CLOTHING</span>
+<span>SHOES</span>
+<span>BAGS + ACCESSORIES</span>
+<span>ESSENTIALS</span>
+</nav>
+
+<section class="layout">
+
+<div class="gallery-wrap">
+
+<div class="thumbs">
+<img class="active" src="${image}">
 </div>
 
-<div class="product-info">
+<div class="hero">
+<img id="heroImage" src="${image}">
+</div>
 
-<h1>${product.name}</h1>
+</div>
+
+<article class="details">
+
+<p class="breadcrumbs">BLLOOM > Clothing > T-Shirts</p>
+
+<h1 class="title">${name}</h1>
+
+<div class="rating">
+<span class="stars">★★★★★</span>
+<span>14 reviews</span>
+</div>
+
+<p class="color">Washed Black</p>
 
 <div class="price">
-${priceHTML}
+<span class="new">₹${price}</span>
+${oldPrice ? `<span class="old">₹${oldPrice}</span>` : ""}
 </div>
 
-<div class="sizes">
+<div class="size-row">
 <button>S</button>
 <button>M</button>
 <button>L</button>
 <button>XL</button>
 </div>
 
+<p class="fit">Fit Guide</p>
+
 <button class="add-cart">Add To Cart</button>
 
+<p class="shipping">
+Free Standard Shipping + Returns on Most Orders
+</p>
+
+<p class="stylist">Connect With A Stylist</p>
+
+</article>
+
+<aside class="side-card">
+
+<div class="side-head">
+
+<h4>
+<i class="fa-solid fa-bars"></i> Living Spaces
+</h4>
+
+<p class="search-box">search furniture</p>
+
+<div class="chips">
+<span>living room</span>
+<span>bedroom</span>
+<span>dining room</span>
 </div>
 
 </div>
 
+</aside>
+
+</section>
 `
 
-// SIZE SELECT
+activateSizes()
 
-const sizeButtons = document.querySelectorAll(".sizes button")
+}
 
-sizeButtons.forEach(btn=>{
-btn.addEventListener("click",()=>{
-sizeButtons.forEach(b=>b.classList.remove("active"))
+function activateSizes(){
+
+const sizeButtons = document.querySelectorAll(".size-row button")
+
+sizeButtons.forEach(btn => {
+
+btn.addEventListener("click", () => {
+
+sizeButtons.forEach(b => b.classList.remove("active"))
+
 btn.classList.add("active")
+
 })
+
 })
 
 }
@@ -555,152 +629,5 @@ loadProduct()
 
 </script>
 
-  <main class="product-shell" id="productPage"></main>
-
-  <script type="module">
-    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
-    const supabaseUrl = "https://tyxmnzcsbuskagvwsgnx.supabase.co";
-    const supabaseKey = "sb_publishable_GeGnrQvqnd1-9jeeKuVa9Q_xSL2Wqgx";
-    const supabase = createClient(supabaseUrl, supabaseKey);
-
-    const params = new URLSearchParams(window.location.search);
-    const productId = params.get("id") || "1";
-
-    const placeholderImages = [
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80",
-      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80"
-    ];
-
-    function renderProduct(product) {
-      const image = product?.image || placeholderImages[0];
-      const name = product?.name || "Tyler Sweatshirt";
-      const color = product?.color || "Washed Black";
-      const price = product?.discount_price || product?.price || 200;
-      const oldPrice = product?.discount_price && product?.price ? product.price : "";
-
-      document.getElementById("productPage").innerHTML = `
-        <header class="topbar">
-          <span>US | $</span>
-          <span class="logo">ANINE BING</span>
-          <div class="top-icons">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-regular fa-user"></i>
-            <i class="fa-regular fa-heart"></i>
-            <i class="fa-solid fa-bag-shopping"></i>
-          </div>
-        </header>
-
-        <nav class="tabs">
-          <span>NEW IN</span>
-          <span>CLASSICS</span>
-          <span>CLOTHING</span>
-          <span>SHOES</span>
-          <span>BAGS + ACCESSORIES</span>
-          <span>ESSENTIALS</span>
-        </nav>
-
-        <section class="layout">
-          <div class="gallery-wrap">
-            <div class="thumbs">
-              <img class="active" src="${image}" alt="thumbnail 1">
-              <img src="${placeholderImages[1]}" alt="thumbnail 2">
-              <img src="${placeholderImages[2]}" alt="thumbnail 3">
-            </div>
-            <div class="hero">
-              <img id="heroImage" src="${image}" alt="${name}">
-            </div>
-          </div>
-
-          <article class="details">
-            <p class="breadcrumbs">ANINE BING > Clothing > Sweatshirts > Tyler Sweatshirt</p>
-            <h1 class="title">${name}</h1>
-            <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span>14 reviews</span>
-            </div>
-            <p class="color">${color}</p>
-
-            <div class="price">
-              <span class="new">$${price}</span>
-              ${oldPrice ? `<span class="old">$${oldPrice}</span>` : ""}
-            </div>
-
-            <div class="size-row">
-              <button>XXS</button>
-              <button>XS</button>
-              <button class="active">S</button>
-              <button>M</button>
-              <button>L</button>
-              <button>XL</button>
-            </div>
-
-            <p class="fit">Fit Guide</p>
-            <button class="add-cart">Add to Cart</button>
-            <p class="shipping">Free Standard Shipping + Returns on Most Orders</p>
-            <p class="stylist">Connect with a Stylist</p>
-          </article>
-
-          <aside class="side-card">
-            <div class="side-head">
-              <h4><i class="fa-solid fa-bars"></i> Living Spaces</h4>
-              <p class="search-box">search furniture</p>
-              <div class="chips">
-                <span>living room</span>
-                <span>bedroom</span>
-                <span>dining room</span>
-              </div>
-            </div>
-
-            <div class="rec-item">
-              <p class="name">Lodge Grey Performance Fabric Velvet 96" Sofa</p>
-              <div class="rating"><span class="stars">★★★★★</span><span>11 reviews</span></div>
-              <p class="price-tag">$1095</p>
-              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80" alt="sofa">
-            </div>
-          </aside>
-        </section>
-      `;
-
-      const sizeButtons = document.querySelectorAll(".size-row button");
-      sizeButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          sizeButtons.forEach((btn) => btn.classList.remove("active"));
-          button.classList.add("active");
-        });
-      });
-
-      const heroImage = document.getElementById("heroImage");
-      document.querySelectorAll(".thumbs img").forEach((thumb) => {
-        thumb.addEventListener("click", () => {
-          document.querySelectorAll(".thumbs img").forEach((img) => img.classList.remove("active"));
-          thumb.classList.add("active");
-          heroImage.src = thumb.src;
-        });
-      });
-    }
-
-    async function loadProduct() {
-      try {
-        const { data, error } = await supabase
-          .from("products")
-          .select("*")
-          .eq("id", productId)
-          .single();
-
-        if (error) {
-          renderProduct(null);
-          return;
-        }
-
-        renderProduct(data);
-      } catch (_err) {
-        renderProduct(null);
-      }
-    }
-
-    loadProduct();
-  </script>
 </body>
 </html>
