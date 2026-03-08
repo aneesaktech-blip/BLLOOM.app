@@ -147,15 +147,8 @@ border-radius:6px;
       letter-spacing: 0.25em;
     }
 
-    .top-icons {
-      display: flex;
-      gap: 12px;
-      color: #666;
-    }
-
-    .top-icons i {
-      cursor: pointer;
-    }
+  
+  
 
     .tabs {
       display: flex;
@@ -467,6 +460,20 @@ color:#666;
 line-height:1.6;
 font-size:14px;
 }
+    .top-icons a{
+color:#444;
+margin-left:12px;
+font-size:14px;
+transition:0.2s;
+}
+
+.top-icons a:hover{
+color:black;
+transform:scale(1.1);
+}
+    function openSearch(){
+document.getElementById("searchPanel").style.display="block"
+}
   </style>
 </head>
 
@@ -518,9 +525,7 @@ document.getElementById("productPage").innerHTML = `
 <span class="logo">BLLOOM</span>
 <div class="top-icons">
 
-<a href="/search.html">
-<i class="fa-solid fa-magnifying-glass"></i>
-</a>
+<i class="fa-solid fa-magnifying-glass" onclick="openSearch()"></i>
 
 <a href="/account.html">
 <i class="fa-regular fa-user"></i>
@@ -586,9 +591,37 @@ ${oldPrice ? `<span class="old">₹${oldPrice}</span>` : ""}
 <button>XL</button>
 </div>
 
+const addCartBtn = document.getElementById("addCartBtn")
 
+addCartBtn.addEventListener("click", () => {
 
-<button class="add-cart">Add To Cart</button>
+  const selectedSize = document.querySelector(".size-row button.active")
+
+  if(!selectedSize){
+    alert("Please select a size first")
+    return
+  }
+
+  const cartItem = {
+    id: product.id,
+    name: product.name,
+    price: product.discount_price || product.price,
+    image: product.image,
+    size: selectedSize.textContent,
+    quantity: 1
+  }
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+  cart.push(cartItem)
+
+  localStorage.setItem("cart", JSON.stringify(cart))
+
+  alert("Added to cart 🛍")
+
+})
+<button class="add-cart" id="addCartBtn">ADD TO CART</button>
+
 <p class="desc">
 Heavyweight acid wash oversized tee.
 Premium cotton with vintage fade.
