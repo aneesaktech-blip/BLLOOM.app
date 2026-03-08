@@ -592,35 +592,7 @@ ${oldPrice ? `<span class="old">₹${oldPrice}</span>` : ""}
 <button>XL</button>
 </div>
 
-const addCartBtn = document.getElementById("addCartBtn")
 
-addCartBtn.addEventListener("click", () => {
-
-  const selectedSize = document.querySelector(".size-row button.active")
-
-  if(!selectedSize){
-    alert("Please select a size first")
-    return
-  }
-
-  const cartItem = {
-    id: product.id,
-    name: product.name,
-    price: product.discount_price || product.price,
-    image: product.image,
-    size: selectedSize.textContent,
-    quantity: 1
-  }
-
-  let cart = JSON.parse(localStorage.getItem("cart")) || []
-
-  cart.push(cartItem)
-
-  localStorage.setItem("cart", JSON.stringify(cart))
-
-  alert("Added to cart 🛍")
-
-})
 <button class="add-cart" id="addCartBtn">ADD TO CART</button>
 
 <p class="desc">
