@@ -3317,52 +3317,105 @@ color:#999;
 margin-left:6px;
 font-size:13px;
 }
+/* PRODUCT CARD */
+
+.product{
+  width:260px;
+  padding:16px;
+  border-radius:16px;
+  background:white;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  transition:0.2s;
+}
+
+.product:hover{
+  transform:translateY(-4px);
+}
+
+
+/* PRODUCT IMAGE */
+
+.product img{
+  width:100%;
+  border-radius:12px;
+}
+
+
+/* PRODUCT NAME */
+
+.product h4{
+  margin-top:12px;
+  font-size:16px;
+  font-weight:500;
+}
+
+
+/* PRICE */
+
+.price{
+  margin-top:6px;
+  font-size:18px;
+  font-weight:600;
+  color:#e63946;
+}
+
 
 /* SIZE BUTTONS */
 
 .sizes{
-display:flex;
-justify-content:center;
-gap:10px;
-margin-top:10px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:12px;
 }
 
 .sizes button{
-width:32px;
-height:32px;
-border-radius:50%;
-border:1px solid #ccc;
-background:white;
-font-size:12px;
-cursor:pointer;
-transition:0.2s;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:1px solid #5a3e2b;
+  background:white;
+  color:#5a3e2b;
+  font-size:12px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.2s;
 }
 
 .sizes button:hover{
-background:black;
-color:white;
+  background:#5a3e2b;
+  color:white;
 }
 
 .sizes button.active{
-background:black;
-color:white;
+  background:#5a3e2b;
+  color:white;
 }
 
-/* CART ICON */
+
+/* CART ICON BUTTON */
 
 .cart-btn{
-margin-top:14px;
-width:40px;
-height:40px;
-border-radius:50%;
-border:none;
-background:#3b2a1f;
-color:white;
-cursor:pointer;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-left:auto;
-margin-right:auto;
-font-size:16px;
+  margin-top:14px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:none;
+  background:#5a3e2b;
+  color:white;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:16px;
+  transition:0.2s;
+}
+
+.cart-btn:hover{
+  background:#3b2a1f;
 }
