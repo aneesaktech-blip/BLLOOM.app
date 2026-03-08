@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
-
+  
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -930,88 +930,114 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 const container = document.getElementById("products");
 
 async function loadProducts() {
+
   const { data, error } = await supabase
     .from("products")
-    .select("*");
+    .select("*")
 
   if (error) {
-    console.error("Error loading products:", error);
-    return;
-  }
-
-  if (!data || data.length === 0) {
-    container.innerHTML = "<p>No products found</p>";
-    return;
-  }
-data.forEach(product => {
-  const card = document.createElement("div")
-  card.className = "product"
-
-card.innerHTML = `
-  <img src="${product.image}">
-  <h4>${product.name}</h4>
-  <span>₹${product.price}</span>
-
-  <div class="sizes">
-    <button>S</button>
-    <button>M</button>
-    <button>L</button>
-    <button>XL</button>
-  </div>
-
-  <button class="add-cart">🛒 Add to Cart</button>
-`
-
-
-// SIZE SELECTION
-const sizeButtons = card.querySelectorAll(".sizes button")
-
-sizeButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    sizeButtons.forEach(b => b.classList.remove("active"))
-    btn.classList.add("active")
-  })
-})
-
-
-// ADD TO CART
-const addBtn = card.querySelector(".add-cart")
-
-addBtn.addEventListener("click", () => {
-
-  const selectedSize = card.querySelector(".sizes .active")
-
-  if(!selectedSize){
-    alert("Select a size first")
+    console.error("Error loading products:", error)
     return
   }
 
-  const cartItem = {
-    name: product.name,
-    price: product.price,
-    image: product.image,
-    size: selectedSize.textContent
+  if (!data || data.length === 0) {
+    container.innerHTML = "<p>No products found</p>"
+    return
   }
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || []
+  data.forEach(product => {
 
-  cart.push(cartItem)
+    const card = document.createElement("div")
+    card.className = "product"
 
-  localStorage.setItem("cart", JSON.stringify(cart))
+    card.innerHTML = `
+    
+      <a href="product.html?id=${product.id}" class="product-link">
+        <img src="${product.image}" class="product-img">
+      </a>
 
-  alert("Added to cart")
-})
+      <h4 class="product-name">${product.name}</h4>
+
+      <div class="price">
+
+        ${
+          product.discount_price 
+          ? `<span class="new-price">₹${product.discount_price}</span>
+             <span class="old-price">₹${product.price}</span>`
+          : `<span class="new-price">₹${product.price}</span>`
+        }
+
+      </div>
+
+      <div class="sizes">
+        <button>S</button>
+        <button>M</button>
+        <button>L</button>
+        <button>XL</button>
+      </div>
+
+      <button class="cart-btn">
+        <i class="fa-solid fa-bag-shopping"></i>
+      </button>
+    `
 
 
-container.appendChild(card)
-})
-  
+    // SIZE SELECTION
+    const sizeButtons = card.querySelectorAll(".sizes button")
+
+    sizeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+
+        sizeButtons.forEach(b => b.classList.remove("active"))
+
+        btn.classList.add("active")
+
+      })
+    })
+
+
+    // ADD TO CART
+    const addBtn = card.querySelector(".cart-btn")
+
+    addBtn.addEventListener("click", () => {
+
+      const selectedSize = card.querySelector(".sizes .active")
+
+      if (!selectedSize) {
+        alert("Select a size first")
+        return
+      }
+
+      const cartItem = {
+        id: product.id,
+        name: product.name,
+        price: product.discount_price || product.price,
+        image: product.image,
+        size: selectedSize.textContent
+      }
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+      cart.push(cartItem)
+
+      localStorage.setItem("cart", JSON.stringify(cart))
+
+      alert("Added to cart")
+
+    })
+
+    container.appendChild(card)
+
+  })
+
 }
-loadProducts();
+
+loadProducts()
 </script>
     
 </body>
 </html>
+
 
 
 
