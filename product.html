@@ -1,30 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Product – BLLOOM</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Product</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* PAGE LAYOUT */
+
+.product-page{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+max-width:1100px;
+margin:80px auto;
+padding:20px;
+}
+
+/* IMAGE */
+
+.product-page img{
+width:100%;
+border-radius:12px;
+}
+
+/* PRODUCT INFO */
+
+.product-info h1{
+font-size:28px;
+margin-bottom:10px;
+}
+
+/* PRICE */
+
+.price{
+font-size:22px;
+margin:10px 0;
+}
+
+.new-price{
+color:#e63946;
+font-weight:600;
+}
+
+.old-price{
+text-decoration:line-through;
+color:#888;
+margin-left:10px;
+}
+
+/* SIZE BUTTONS */
+
+.sizes{
+display:flex;
+gap:10px;
+margin:20px 0;
+}
+
+.sizes button{
+width:40px;
+height:40px;
+border-radius:50%;
+border:1px solid #5a3e2b;
+background:white;
+color:#5a3e2b;
+cursor:pointer;
+}
+
+.sizes button.active{
+background:#5a3e2b;
+color:white;
+}
+
+/* ADD TO CART */
+
+.add-cart{
+margin-top:20px;
+padding:14px 30px;
+border:none;
+background:#5a3e2b;
+color:white;
+cursor:pointer;
+font-size:15px;
+border-radius:6px;
+}
+
+</style>
 </head>
 
 <body>
 
-<header class="navbar dark">
-  <div class="logo">BLLOOM</div>
-  <nav class="menu">
-    <a href="shop.html">Back to Shop</a>
-    <a href="cart.html">Cart</a>
-  </nav>
-</header>
+<div id="productPage"></div>
 
-<section class="page">
-  <h1>Black Hoodie</h1>
-  <p>Premium fabric. Oversized fit.</p>
+<script type="module">
 
-  <button onclick="addToCart()">Add to Cart</button>
-  <button onclick="addToWishlist()">♡ Wishlist</button>
-</section>
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-<script src="cart.js"></script>
-<script src="wishlist.js"></script>
+const supabaseUrl = "https://tyxmnzcsbuskagvwsgnx.supabase.co";
+const supabaseKey = "sb_publishable_GeGnrQvqnd1-9jeeKuVa9Q_xSL2Wqgx";
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+const params = new URLSearchParams(window.location.search);
+const productId = params.get("id");
+
+async function loadProduct(){
+
+const { data, error } = await supabase
+.from("products")
+.select("*")
+.eq("id", productId)
+.single()
+
+if(error){
+console.error(error)
+return
+}
+
+const product = data
+
+let priceHTML = ""
+
+if(product.discount_price){
+priceHTML = `
+<span class="new-price">₹${product.discount_price}</span>
+<span class="old-price">₹${product.price}</span>
+`
+}else{
+priceHTML = `<span class="new-price">₹${product.price}</span>`
+}
+
+document.getElementById("productPage").innerHTML = `
+
+<div class="product-page">
+
+<div>
+<img src="${product.image}">
+</div>
+
+<div class="product-info">
+
+<h1>${product.name}</h1>
+
+<div class="price">
+${priceHTML}
+</div>
+
+<div class="sizes">
+<button>S</button>
+<button>M</button>
+<button>L</button>
+<button>XL</button>
+</div>
+
+<button class="add-cart">Add To Cart</button>
+
+</div>
+
+</div>
+
+`
+
+// SIZE SELECT
+
+const sizeButtons = document.querySelectorAll(".sizes button")
+
+sizeButtons.forEach(btn=>{
+btn.addEventListener("click",()=>{
+sizeButtons.forEach(b=>b.classList.remove("active"))
+btn.classList.add("active")
+})
+})
+
+}
+
+loadProduct()
+
+</script>
+
 </body>
 </html>
-
