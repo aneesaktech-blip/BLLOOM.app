@@ -3374,3 +3374,68 @@ margin-top: 60px;
 .add-cart:hover {
   opacity: 0.8;
 }
+
+
+
+
+.product{
+width:260px;
+padding:15px;
+border-radius:14px;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+position:relative;
+}
+
+.product-img{
+width:100%;
+border-radius:10px;
+}
+
+.price{
+margin-top:6px;
+}
+
+.new-price{
+font-weight:600;
+}
+
+.old-price{
+text-decoration:line-through;
+color:#999;
+margin-left:8px;
+}
+
+.sizes{
+display:flex;
+gap:8px;
+margin-top:10px;
+}
+
+.sizes button{
+width:30px;
+height:30px;
+border-radius:50%;
+border:1px solid #ddd;
+background:white;
+cursor:pointer;
+}
+
+.sizes button.active{
+background:black;
+color:white;
+}
+
+.cart-btn{
+position:absolute;
+bottom:15px;
+right:15px;
+width:38px;
+height:38px;
+border-radius:50%;
+background:#3b2a1f;
+color:white;
+border:none;
+cursor:pointer;
+font-size:15px;
+}
