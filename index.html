@@ -920,6 +920,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <script type="module">
+
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 const supabaseUrl = "https://tyxmnzcsbuskagvwsgnx.supabase.co";
@@ -933,40 +934,45 @@ async function loadProducts() {
 
   const { data, error } = await supabase
     .from("products")
-    .select("*")
+    .select("*");
 
   if (error) {
-    console.error("Error loading products:", error)
-    return
+    console.error("Error loading products:", error);
+    return;
   }
 
   if (!data || data.length === 0) {
-    container.innerHTML = "<p>No products found</p>"
-    return
+    container.innerHTML = "<p>No products found</p>";
+    return;
   }
 
   data.forEach(product => {
 
-    const card = document.createElement("div")
-    card.className = "product"
+    const card = document.createElement("div");
+    card.className = "product";
+
+    let priceHTML = "";
+
+    if (product.discount_price) {
+      priceHTML = `
+        <span class="new-price">₹${product.discount_price}</span>
+        <span class="old-price">₹${product.price}</span>
+      `;
+    } else {
+      priceHTML = `
+        <span class="new-price">₹${product.price}</span>
+      `;
+    }
 
     card.innerHTML = `
-    
-      <a href="product.html?id=${product.id}" class="product-link">
+      <a href="product.html?id=${product.id}">
         <img src="${product.image}" class="product-img">
       </a>
 
       <h4 class="product-name">${product.name}</h4>
 
       <div class="price">
-
-        ${
-          product.discount_price 
-          ? `<span class="new-price">₹${product.discount_price}</span>
-             <span class="old-price">₹${product.price}</span>`
-          : `<span class="new-price">₹${product.price}</span>`
-        }
-
+        ${priceHTML}
       </div>
 
       <div class="sizes">
@@ -979,33 +985,28 @@ async function loadProducts() {
       <button class="cart-btn">
         <i class="fa-solid fa-bag-shopping"></i>
       </button>
-    `
-
+    `;
 
     // SIZE SELECTION
-    const sizeButtons = card.querySelectorAll(".sizes button")
+    const sizeButtons = card.querySelectorAll(".sizes button");
 
     sizeButtons.forEach(btn => {
       btn.addEventListener("click", () => {
-
-        sizeButtons.forEach(b => b.classList.remove("active"))
-
-        btn.classList.add("active")
-
-      })
-    })
-
+        sizeButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
 
     // ADD TO CART
-    const addBtn = card.querySelector(".cart-btn")
+    const addBtn = card.querySelector(".cart-btn");
 
     addBtn.addEventListener("click", () => {
 
-      const selectedSize = card.querySelector(".sizes .active")
+      const selectedSize = card.querySelector(".sizes .active");
 
       if (!selectedSize) {
-        alert("Select a size first")
-        return
+        alert("Select a size first");
+        return;
       }
 
       const cartItem = {
@@ -1014,29 +1015,30 @@ async function loadProducts() {
         price: product.discount_price || product.price,
         image: product.image,
         size: selectedSize.textContent
-      }
+      };
 
-      let cart = JSON.parse(localStorage.getItem("cart")) || []
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-      cart.push(cartItem)
+      cart.push(cartItem);
 
-      localStorage.setItem("cart", JSON.stringify(cart))
+      localStorage.setItem("cart", JSON.stringify(cart));
 
-      alert("Added to cart")
+      alert("Added to cart");
 
-    })
+    });
 
-    container.appendChild(card)
+    container.appendChild(card);
 
-  })
+  });
 
 }
 
-loadProducts()
+loadProducts();
+
 </script>
-    
 </body>
 </html>
+
 
 
 
