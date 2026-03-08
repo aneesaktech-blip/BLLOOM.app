@@ -584,45 +584,15 @@ document.getElementById("productPage").innerHTML = `
 ${oldPrice ? `<span class="old">₹${oldPrice}</span>` : ""}
 </div>
 
+document.getElementById("productPage").innerHTML = `
 <div class="size-row">
 <button>S</button>
 <button>M</button>
 <button>L</button>
 <button>XL</button>
 </div>
+
 <button class="add-cart" id="addCartBtn">ADD TO CART</button>
-
-<script>
-const addCartBtn = document.getElementById("addCartBtn")
-
-addCartBtn.addEventListener("click", () => {
-
- const selectedSize = document.querySelector(".size-row button.active")
-
- if(!selectedSize){
-  alert("Please select a size first")
-  return
- }
-
- const cartItem = {
-  id: product.id,
-  name: product.name,
-  price: product.discount_price || product.price,
-  image: product.image,
-  size: selectedSize.textContent,
-  quantity: 1
- }
-
- let cart = JSON.parse(localStorage.getItem("cart")) || []
-
- cart.push(cartItem)
-
- localStorage.setItem("cart", JSON.stringify(cart))
-
- alert("Added to cart 🛍")
-
-})
-</script>
 
 <p class="desc">
 Heavyweight acid wash oversized tee.
@@ -630,11 +600,10 @@ Premium cotton with vintage fade.
 </p>
 
 <p class="shipping">
-Premium heavyweight cotton.
+Premium heavyweight cotton.<br>
 Designed in India.
 </p>
-
-
+`
 
 </article>
 
