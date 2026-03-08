@@ -89,6 +89,380 @@ border-radius:6px;
 }
 
 </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | BLLOOM</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #e9edf2;
+      --panel: #ffffff;
+      --text: #1e1e1e;
+      --muted: #777;
+      --border: #ddd;
+      --soft: #f7f7f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(90deg, #8ba7c7 0 42%, var(--bg) 42% 100%);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 18px;
+    }
+
+    .product-shell {
+      width: min(1180px, 100%);
+      background: var(--panel);
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      border: 1px solid #ececec;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      border-bottom: 1px solid #efefef;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #fcfcfc;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.25em;
+    }
+
+    .top-icons {
+      display: flex;
+      gap: 12px;
+      color: #666;
+    }
+
+    .top-icons i {
+      cursor: pointer;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      font-size: 11px;
+      text-transform: uppercase;
+      padding: 10px;
+      border-bottom: 1px solid #f0f0f0;
+      color: #444;
+      letter-spacing: 0.06em;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr 0.92fr;
+      min-height: 560px;
+    }
+
+    .gallery-wrap {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      border-right: 1px solid #ececec;
+      background: #fafafa;
+    }
+
+    .thumbs {
+      border-right: 1px solid #ececec;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .thumbs img {
+      width: 100%;
+      height: 96px;
+      object-fit: cover;
+      border: 1px solid #d7d7d7;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #f8f8f8;
+    }
+
+    .thumbs img.active,
+    .thumbs img:hover {
+      border-color: #333;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px;
+    }
+
+    .hero img {
+      max-width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+    }
+
+    .details {
+      padding: 22px 24px;
+      border-right: 1px solid #ececec;
+    }
+
+    .breadcrumbs {
+      font-size: 10px;
+      color: #868686;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .title {
+      font-size: 22px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .rating {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      font-size: 12px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      letter-spacing: 0.08em;
+      font-size: 11px;
+    }
+
+    .color {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .price {
+      margin-bottom: 14px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .price .new {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .price .old {
+      color: #999;
+      text-decoration: line-through;
+      font-size: 15px;
+    }
+
+    .size-row {
+      display: flex;
+      gap: 9px;
+      margin: 14px 0 18px;
+      flex-wrap: wrap;
+    }
+
+    .size-row button {
+      min-width: 44px;
+      height: 36px;
+      border: 1px solid #c9c9c9;
+      background: #fff;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 2px;
+    }
+
+    .size-row button.active,
+    .size-row button:hover {
+      background: #1f1f1f;
+      color: #fff;
+      border-color: #1f1f1f;
+    }
+
+    .fit {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 18px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .add-cart {
+      width: 100%;
+      border: 1px solid #222;
+      background: #fff;
+      height: 45px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .add-cart:hover {
+      background: #222;
+      color: #fff;
+    }
+
+    .shipping,
+    .stylist {
+      font-size: 11px;
+      margin-top: 14px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .side-card {
+      background: #f6f8fb;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .side-head {
+      background: #fff;
+      border: 1px solid #dedede;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .side-head h4 {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .search-box {
+      border: 1px solid #ddd;
+      background: #f8f8f8;
+      padding: 7px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      color: #777;
+    }
+
+    .chips {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chips span {
+      font-size: 9px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 4px 7px;
+      background: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .rec-item {
+      background: #fff;
+      border: 1px solid #dedede;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 11px;
+    }
+
+    .rec-item .name {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .rec-item .price-tag {
+      color: #d03e32;
+      font-size: 22px;
+      font-weight: 600;
+      margin: 4px 0;
+    }
+
+    .rec-item img {
+      width: 100%;
+      border-radius: 4px;
+      margin-top: 8px;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+    }
+
+    @media (max-width: 1040px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-wrap,
+      .details {
+        border-right: 0;
+        border-bottom: 1px solid #ececec;
+      }
+
+      .hero img {
+        max-height: 460px;
+      }
+
+      .side-card {
+        padding-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 10px;
+      }
+
+      .gallery-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .thumbs {
+        order: 2;
+        flex-direction: row;
+        overflow-x: auto;
+      }
+
+      .thumbs img {
+        width: 64px;
+        min-width: 64px;
+        height: 64px;
+      }
+
+      .tabs {
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -181,5 +555,152 @@ loadProduct()
 
 </script>
 
+  <main class="product-shell" id="productPage"></main>
+
+  <script type="module">
+    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+    const supabaseUrl = "https://tyxmnzcsbuskagvwsgnx.supabase.co";
+    const supabaseKey = "sb_publishable_GeGnrQvqnd1-9jeeKuVa9Q_xSL2Wqgx";
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get("id") || "1";
+
+    const placeholderImages = [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=400&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80"
+    ];
+
+    function renderProduct(product) {
+      const image = product?.image || placeholderImages[0];
+      const name = product?.name || "Tyler Sweatshirt";
+      const color = product?.color || "Washed Black";
+      const price = product?.discount_price || product?.price || 200;
+      const oldPrice = product?.discount_price && product?.price ? product.price : "";
+
+      document.getElementById("productPage").innerHTML = `
+        <header class="topbar">
+          <span>US | $</span>
+          <span class="logo">ANINE BING</span>
+          <div class="top-icons">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-user"></i>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-bag-shopping"></i>
+          </div>
+        </header>
+
+        <nav class="tabs">
+          <span>NEW IN</span>
+          <span>CLASSICS</span>
+          <span>CLOTHING</span>
+          <span>SHOES</span>
+          <span>BAGS + ACCESSORIES</span>
+          <span>ESSENTIALS</span>
+        </nav>
+
+        <section class="layout">
+          <div class="gallery-wrap">
+            <div class="thumbs">
+              <img class="active" src="${image}" alt="thumbnail 1">
+              <img src="${placeholderImages[1]}" alt="thumbnail 2">
+              <img src="${placeholderImages[2]}" alt="thumbnail 3">
+            </div>
+            <div class="hero">
+              <img id="heroImage" src="${image}" alt="${name}">
+            </div>
+          </div>
+
+          <article class="details">
+            <p class="breadcrumbs">ANINE BING > Clothing > Sweatshirts > Tyler Sweatshirt</p>
+            <h1 class="title">${name}</h1>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span>14 reviews</span>
+            </div>
+            <p class="color">${color}</p>
+
+            <div class="price">
+              <span class="new">$${price}</span>
+              ${oldPrice ? `<span class="old">$${oldPrice}</span>` : ""}
+            </div>
+
+            <div class="size-row">
+              <button>XXS</button>
+              <button>XS</button>
+              <button class="active">S</button>
+              <button>M</button>
+              <button>L</button>
+              <button>XL</button>
+            </div>
+
+            <p class="fit">Fit Guide</p>
+            <button class="add-cart">Add to Cart</button>
+            <p class="shipping">Free Standard Shipping + Returns on Most Orders</p>
+            <p class="stylist">Connect with a Stylist</p>
+          </article>
+
+          <aside class="side-card">
+            <div class="side-head">
+              <h4><i class="fa-solid fa-bars"></i> Living Spaces</h4>
+              <p class="search-box">search furniture</p>
+              <div class="chips">
+                <span>living room</span>
+                <span>bedroom</span>
+                <span>dining room</span>
+              </div>
+            </div>
+
+            <div class="rec-item">
+              <p class="name">Lodge Grey Performance Fabric Velvet 96" Sofa</p>
+              <div class="rating"><span class="stars">★★★★★</span><span>11 reviews</span></div>
+              <p class="price-tag">$1095</p>
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80" alt="sofa">
+            </div>
+          </aside>
+        </section>
+      `;
+
+      const sizeButtons = document.querySelectorAll(".size-row button");
+      sizeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          sizeButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+        });
+      });
+
+      const heroImage = document.getElementById("heroImage");
+      document.querySelectorAll(".thumbs img").forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+          document.querySelectorAll(".thumbs img").forEach((img) => img.classList.remove("active"));
+          thumb.classList.add("active");
+          heroImage.src = thumb.src;
+        });
+      });
+    }
+
+    async function loadProduct() {
+      try {
+        const { data, error } = await supabase
+          .from("products")
+          .select("*")
+          .eq("id", productId)
+          .single();
+
+        if (error) {
+          renderProduct(null);
+          return;
+        }
+
+        renderProduct(data);
+      } catch (_err) {
+        renderProduct(null);
+      }
+    }
+
+    loadProduct();
+  </script>
 </body>
 </html>
