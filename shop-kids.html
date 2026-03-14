@@ -1,67 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kids — BLLOOM</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Inter&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shop.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kids — BLLOOM</title>
+<link rel="stylesheet" href="css/blloom.css">
+<style>
+.shop-layout { display: grid; grid-template-columns: 220px 1fr; gap: 2.5rem; padding: 2rem 2rem 5rem; align-items: start; }
+.sidebar { position: sticky; top: 80px; }
+.sidebar-section { margin-bottom: 2rem; }
+.sidebar-title { font-family: var(--font-ui); font-size: 0.65rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.8rem; }
+.sidebar-links { display: flex; flex-direction: column; gap: 0.1rem; }
+.sidebar-link { font-size: 0.82rem; color: var(--white-faint); padding: 0.4rem 0.6rem; border-radius: var(--radius); cursor: pointer; transition: all var(--transition); border: none; background: transparent; text-align: left; width: 100%; font-family: var(--font-body); }
+.sidebar-link:hover { color: var(--white); background: var(--bg2); }
+.sidebar-link.active { color: var(--accent); background: var(--accent-dim); }
+.price-inputs { display: flex; gap: 0.5rem; align-items: center; }
+.price-input { width: 80px; background: var(--bg2); border: 1px solid var(--border); color: var(--white); font-size: 0.78rem; padding: 0.4rem 0.6rem; border-radius: var(--radius); font-family: var(--font-body); outline: none; }
+.price-input:focus { border-color: rgba(212,255,0,0.4); }
+.results-count { font-size: 0.72rem; color: var(--white-faint); font-family: var(--font-ui); margin-bottom: 1.5rem; }
+.shop-nav-links { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.shop-nav-link { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--white-dim); padding: 0.4rem 0.9rem; border: 1px solid var(--border); border-radius: 20px; transition: all var(--transition); }
+.shop-nav-link:hover { color: var(--white); border-color: var(--border-hover); }
+.shop-nav-link.here { color: var(--white); border-color: var(--white); }
+@media(max-width:860px) { .shop-layout { grid-template-columns: 1fr; } .sidebar { position: static; } }
+</style>
 </head>
 <body>
+<nav class="b-nav">
+  <a href="index.html" class="b-nav-logo">BLLOOM</a>
+  <div class="b-nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="shop.html" class="active">Shop</a><a href="contact.html">Contact</a></div>
+  <div class="b-nav-actions"><a href="wishlist.html" class="b-nav-icon">♡</a><a href="cart.html" class="b-nav-icon">⌗<div class="b-nav-badge"></div></a></div>
+  <button class="b-hamburger" onclick="document.getElementById('mm').classList.toggle('open')"><span></span><span></span><span></span></button>
+</nav>
+<div class="b-mobile-menu" id="mm"><a href="index.html">Home</a><a href="about.html">About</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a></div>
 
-<header class="shop-header">
-  <div class="brand">BLLOOM</div>
-  <nav>
-    <a href="shop-women.html">Women</a>
-    <a href="shop-men.html">Men</a>
-    <a href="viewed.html">Recently Viewed</a>
-  </nav>
-</header>
+<div class="b-page">
+  <div class="b-page-header">
+    <div class="b-page-header-bg">KIDS</div>
+    <div class="b-page-eyebrow">Little ones collection</div>
+    <h1 class="b-page-title">KIDS'</h1>
+    <p class="b-page-sub">Playful. Smart. Comfortable. Designed for the next generation.</p>
+  </div>
 
-<section class="shop-hero">
-  <h1>Kids</h1>
-  <p>Playful. Smart. Comfortable.</p>
-</section>
+  <div class="b-marquee-wrap">
+    <div class="b-marquee">
+      <span>SOFT COTTON TEES</span><span class="b-dot">*</span><span>COZY HOODIES</span><span class="b-dot">*</span><span>PLAYFUL PRINTS</span><span class="b-dot">*</span><span>EVERYDAY COMFORT</span><span class="b-dot">*</span><span>MADE TO LAST</span><span class="b-dot">*</span>
+      <span>SOFT COTTON TEES</span><span class="b-dot">*</span><span>COZY HOODIES</span><span class="b-dot">*</span><span>PLAYFUL PRINTS</span><span class="b-dot">*</span><span>EVERYDAY COMFORT</span><span class="b-dot">*</span><span>MADE TO LAST</span><span class="b-dot">*</span>
+    </div>
+  </div>
 
-<main class="shop-grid">
+  <div class="shop-layout">
+    <div class="sidebar">
+      <div class="shop-nav-links">
+        <a href="shop-women.html" class="shop-nav-link">Women</a>
+        <a href="shop-men.html" class="shop-nav-link">Men</a>
+        <a href="shop-kids.html" class="shop-nav-link here">Kids</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Category</div>
+        <div class="sidebar-links">
+          <button class="sidebar-link active" onclick="filterCat('all',this)">All Kids'</button>
+          <button class="sidebar-link" onclick="filterCat('tees',this)">Tees</button>
+          <button class="sidebar-link" onclick="filterCat('hoodies',this)">Hoodies</button>
+          <button class="sidebar-link" onclick="filterCat('sets',this)">Sets</button>
+          <button class="sidebar-link" onclick="filterCat('accessories',this)">Accessories</button>
+        </div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Age group</div>
+        <div class="sidebar-links">
+          <button class="sidebar-link active" onclick="filterCat('all',this)">All ages</button>
+          <button class="sidebar-link" onclick="">2 to 4 years</button>
+          <button class="sidebar-link" onclick="">5 to 8 years</button>
+          <button class="sidebar-link" onclick="">9 to 12 years</button>
+        </div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Sort by</div>
+        <div class="sidebar-links">
+          <button class="sidebar-link active" onclick="sortBy('new',this)">Newest first</button>
+          <button class="sidebar-link" onclick="sortBy('low',this)">Price: low to high</button>
+          <button class="sidebar-link" onclick="sortBy('high',this)">Price: high to low</button>
+        </div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Price range</div>
+        <div class="price-inputs">
+          <input class="price-input" type="number" placeholder="Min" id="pmin">
+          <span style="color:var(--white-faint);font-size:0.8rem">to</span>
+          <input class="price-input" type="number" placeholder="Max" id="pmax">
+        </div>
+        <button class="b-btn b-btn-ghost b-btn-sm" style="margin-top:0.6rem;width:100%" onclick="applyFilters()">Apply</button>
+      </div>
+    </div>
 
-  <a href="product.html" class="product" onclick="trackProduct('k1','Soft Cotton Tee',999)">
-    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb">
-    <h3>Soft Cotton Tee</h3>
-    <span>₹999</span>
-  </a>
+    <div>
+      <div class="results-count" id="results-count">6 products</div>
+      <div class="b-products-grid" id="products-grid">
 
-  <a href="product.html" class="product" onclick="trackProduct('k2','Cozy Hoodie',1599)">
-    <img src="https://images.unsplash.com/photo-1602810318383-e386cc6e0b3f">
-    <h3>Cozy Hoodie</h3>
-    <span>₹1,599</span>
-  </a>
+        <a href="product.html" class="b-product-card" data-cat="tees" data-price="849">
+          <div class="b-product-card-img">
+            <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=600&q=80" alt="Soft Cotton Tee">
+            <div class="b-product-badge b-badge-sale">15% OFF</div>
+            <div class="b-product-card-overlay"><span class="b-btn b-btn-accent b-btn-sm">Quick View</span></div>
+            <button class="b-wishlist-btn" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="b-product-card-info">
+            <div class="b-product-name">Soft Cotton Tee</div>
+            <div><span class="b-product-price">₹849</span><span class="b-product-price-old">₹999</span></div>
+          </div>
+        </a>
 
-  <a href="product.html" class="product" onclick="trackProduct('k3','Everyday Sneakers',1899)">
-    <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782">
-    <h3>Everyday Sneakers</h3>
-    <span>₹1,899</span>
-  </a>
+        <a href="product.html" class="b-product-card" data-cat="hoodies" data-price="1359">
+          <div class="b-product-card-img">
+            <img src="https://images.unsplash.com/photo-1602810318383-e386cc6e0b3f?w=600&q=80" alt="Cozy Hoodie">
+            <div class="b-product-badge b-badge-hot">HOT</div>
+            <div class="b-product-card-overlay"><span class="b-btn b-btn-accent b-btn-sm">Quick View</span></div>
+            <button class="b-wishlist-btn" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="b-product-card-info">
+            <div class="b-product-name">Cozy Hoodie</div>
+            <div><span class="b-product-price">₹1,359</span><span class="b-product-price-old">₹1,599</span></div>
+          </div>
+        </a>
 
-</main>
+        <a href="product.html" class="b-product-card" data-cat="tees" data-price="679">
+          <div class="b-product-card-img">
+            <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=600&q=80" alt="Graphic Print Tee">
+            <div class="b-product-badge b-badge-new">NEW</div>
+            <div class="b-product-card-overlay"><span class="b-btn b-btn-accent b-btn-sm">Quick View</span></div>
+            <button class="b-wishlist-btn" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="b-product-card-info">
+            <div class="b-product-name">Graphic Print Tee</div>
+            <div><span class="b-product-price">₹679</span><span class="b-product-price-old">₹799</span></div>
+          </div>
+        </a>
 
+        <a href="product.html" class="b-product-card" data-cat="sets" data-price="1614">
+          <div class="b-product-card-img">
+            <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=600&q=80" alt="Play Set">
+            <div class="b-product-badge b-badge-new">NEW</div>
+            <div class="b-product-card-overlay"><span class="b-btn b-btn-accent b-btn-sm">Quick View</span></div>
+            <button class="b-wishlist-btn" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="b-product-card-info">
+            <div class="b-product-name">Play Set (Top + Bottom)</div>
+            <div><span class="b-product-price">₹1,614</span><span class="b-product-price-old">₹1,899</span></div>
+          </div>
+        </a>
+
+        <a href="product.html" class="b-product-card" data-cat="accessories" data-price="509">
+          <div class="b-product-card-img">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80" alt="Mini Tote Bag">
+            <div class="b-product-card-overlay"><span class="b-btn b-btn-accent b-btn-sm">Quick View</span></div>
+            <button class="b-wishlist-btn" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="b-product-card-info">
+            <div class="b-product-name">Mini Tote Bag</div>
+            <div><span class="b-product-price">₹509</span><span class="b-product-price-old">₹599</span></div>
+          </div>
+        </a>
+
+        <a href="product.html" class="b-product-card" data-cat="hoodies" data-price="1189">
+          <div class="b-product-card-img">
+            <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=80" alt="Zip-Up Hoodie">
+            <div class="b-product-badge b-badge-sale">15% OFF</div>
+            <div class="b-product-card-overlay"><span class="b-btn b-btn-accent b-btn-sm">Quick View</span></div>
+            <button class="b-wishlist-btn" onclick="event.preventDefault()">♡</button>
+          </div>
+          <div class="b-product-card-info">
+            <div class="b-product-name">Zip-Up Hoodie</div>
+            <div><span class="b-product-price">₹1,189</span><span class="b-product-price-old">₹1,399</span></div>
+          </div>
+        </a>
+
+      </div>
+      <div class="b-empty" id="empty-state" style="display:none">
+        <div class="b-empty-icon">🔍</div>
+        <div class="b-empty-title">NO RESULTS</div>
+        <p class="b-empty-sub">No products match your filters. Try adjusting your selection.</p>
+        <button class="b-btn b-btn-accent b-mt2" onclick="resetFilters()">Clear Filters</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="b-footer">
+  <div class="b-footer-logo-col"><div class="b-footer-logo">BLLOOM</div><div class="b-footer-tagline">Designed in India. Worn without permission.</div></div>
+  <div><div class="b-footer-col-title">Navigate</div><div class="b-footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a></div></div>
+  <div><div class="b-footer-col-title">Shop</div><div class="b-footer-links"><a href="shop-women.html">Women</a><a href="shop-men.html">Men</a><a href="shop-kids.html">Kids</a><a href="cart.html">Cart</a></div></div>
+  <div class="b-footer-copy"><span>© BLLOOM — Kolkata, India</span><span>Designed by Aneesa Karim</span></div>
+</footer>
 <script>
-function trackProduct(id, name, price) {
-  let viewed = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
-  viewed = viewed.filter(p => p.id !== id);
-
-  viewed.push({
-    id,
-    name,
-    price,
-    link: event.currentTarget.href
-  });
-
-  if (viewed.length > 6) viewed.shift();
-  localStorage.setItem("recentlyViewed", JSON.stringify(viewed));
-}
+let currentCat = 'all';
+function filterCat(cat, btn) { currentCat = cat; document.querySelectorAll('.sidebar-link').forEach(b => { if (b.getAttribute('onclick') && b.getAttribute('onclick').includes('filterCat')) b.classList.remove('active'); }); btn.classList.add('active'); applyFilters(); }
+function sortBy(type, btn) { document.querySelectorAll('.sidebar-link').forEach(b => { if (b.getAttribute('onclick') && b.getAttribute('onclick').includes('sortBy')) b.classList.remove('active'); }); btn.classList.add('active'); const grid = document.getElementById('products-grid'); const cards = [...grid.querySelectorAll('.b-product-card')]; cards.sort((a, b) => { const pa = parseInt(a.dataset.price), pb = parseInt(b.dataset.price); if (type === 'low') return pa - pb; if (type === 'high') return pb - pa; return 0; }); cards.forEach(c => grid.appendChild(c)); }
+function applyFilters() { const min = parseInt(document.getElementById('pmin').value) || 0; const max = parseInt(document.getElementById('pmax').value) || Infinity; const cards = document.querySelectorAll('#products-grid .b-product-card'); let visible = 0; cards.forEach(c => { const catMatch = currentCat === 'all' || c.dataset.cat === currentCat; const priceMatch = parseInt(c.dataset.price) >= min && parseInt(c.dataset.price) <= max; const show = catMatch && priceMatch; c.style.display = show ? '' : 'none'; if (show) visible++; }); document.getElementById('results-count').textContent = visible + ' product' + (visible !== 1 ? 's' : ''); document.getElementById('empty-state').style.display = visible === 0 ? 'flex' : 'none'; }
+function resetFilters() { currentCat = 'all'; document.getElementById('pmin').value = ''; document.getElementById('pmax').value = ''; document.querySelectorAll('#products-grid .b-product-card').forEach(c => c.style.display = ''); document.getElementById('results-count').textContent = '6 products'; document.getElementById('empty-state').style.display = 'none'; }
 </script>
-
 </body>
 </html>
